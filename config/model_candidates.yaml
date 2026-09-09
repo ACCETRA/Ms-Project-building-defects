@@ -1,0 +1,64 @@
+schema_version: 1
+status: provisional_for_feasibility
+hardware_profile: quadro_t2000_4gb
+
+runtime:
+  python: 3.11.9
+  torch: 2.6.0+cu124
+  torchvision: 0.21.0+cu124
+  ultralytics: 8.4.143
+  transformers: 5.16.1
+  accelerate: 1.14.0
+
+models:
+  florence_base:
+    checkpoint: florence-community/Florence-2-base-ft
+    origin_checkpoint: microsoft/Florence-2-base-ft
+    local_path: weights/florence-community-2-base-ft
+    role: detection_and_triage
+    initial_mode: inference
+    cuda_smoke_status: passed
+  florence_large:
+    checkpoint: florence-community/Florence-2-large-ft
+    origin_checkpoint: microsoft/Florence-2-large-ft
+    local_path: weights/florence-community-2-large-ft
+    role: uncertain_case_escalation
+    initial_mode: inference_feasibility_only
+    cuda_smoke_status: passed
+  yolo_detector:
+    checkpoint: yolo11n.pt
+    local_path: weights/yolo/yolo11n.pt
+    role: autonomous_detection
+    initial_mode: inference_then_finetune
+    cuda_smoke_status: passed
+  yolo_segmenter:
+    checkpoint: yolo11n-seg.pt
+    local_path: weights/yolo/yolo11n-seg.pt
+    role: autonomous_instance_segmentation
+    initial_mode: inference_then_finetune
+    cuda_smoke_status: passed
+  sam_segmenter:
+    checkpoint: facebook/sam2.1-hiera-tiny
+    local_path: weights/sam2.1-hiera-tiny
+    role: box_prompted_segmentation
+    initial_mode: inference_no_finetuning
+    cuda_smoke_status: passed
+  resnet_classifier:
+    checkpoint: torchvision/resnet50/default
+    local_path: weights/resnet/resnet50-11ad3fa6.pth
+    role: image_or_crop_multilabel_classification
+    initial_mode: pretrained_backbone_then_finetune_head
+    cuda_smoke_status: passed
+
+feasibility:
+  image_sizes: [512, 640]
+  initial_batch_size: 1
+  sample_count_min: 200
+  sample_count_max: 500
+  require_cuda: true
+  log_peak_vram: true
+  forbid_silent_cpu_fallback: true
+
+optional_after_baseline:
+  - checkpoint: yolo26n.pt
+    reason: evaluate newer small-target-aware detector only after the core matrix is complete

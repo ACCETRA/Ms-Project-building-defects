@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-09-08T19:12:59.610897+00:00",
+  "scope": "cuda_hardware_smoke_no_training_not_accuracy",
+  "model_id": "resnet50",
+  "sample": {
+    "sample_id": "cif_0001",
+    "source_dataset": "CiF-tiled",
+    "split": "train",
+    "group_id": "SB-AB18-AB_S-220.JPG",
+    "image": "data/feasibility_v0/images/cif/cif_0001.jpg",
+    "sha256": "579249033e5b368ea77483eb942a7e68d17a4ddf15780de8819aa7d07b205dc2",
+    "width": 1024,
+    "height": 1024
+  },
+  "environment": {
+    "python": "3.11.9",
+    "torch": "2.6.0+cu124",
+    "cuda_available": true,
+    "gpu": "Quadro T2000",
+    "compute_capability": "7.5",
+    "total_vram_bytes": 4294639616
+  },
+  "checkpoint": "weights/resnet/resnet50-11ad3fa6.pth",
+  "dtype": "float16",
+  "requested_image_size": 224,
+  "processed_tensor_shape": [
+    1,
+    3,
+    224,
+    224
+  ],
+  "cold_inference_seconds": 0.2765,
+  "warm_inference_seconds": 0.0276,
+  "output": {
+    "logit_shape": [
+      1,
+      1000
+    ],
+    "imagenet_top1_index": 462,
+    "interpretation": "runtime_only_not_a_defect_prediction"
+  },
+  "total_seconds": 3.0065,
+  "peak_allocated_vram_bytes": 66629120,
+  "peak_reserved_vram_bytes": 79691776,
+  "status": "passed"
+}

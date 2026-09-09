@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-09-09T06:53:50.368324+00:00",
+  "scope": "cuda_hardware_smoke_no_training_not_accuracy",
+  "model_id": "yolo11n_seg",
+  "sample": {
+    "sample_id": "cif_0001",
+    "source_dataset": "CiF-tiled",
+    "split": "train",
+    "group_id": "SB-AB18-AB_S-220.JPG",
+    "image": "data/feasibility_v0/images/cif/cif_0001.jpg",
+    "sha256": "579249033e5b368ea77483eb942a7e68d17a4ddf15780de8819aa7d07b205dc2",
+    "width": 1024,
+    "height": 1024
+  },
+  "environment": {
+    "python": "3.11.9",
+    "torch": "2.6.0+cu124",
+    "cuda_available": true,
+    "gpu": "Quadro T2000",
+    "compute_capability": "7.5",
+    "total_vram_bytes": 4294639616
+  },
+  "checkpoint": "weights/yolo/yolo11n-seg.pt",
+  "dtype": "float16",
+  "requested_image_size": 640,
+  "cold_inference_seconds": 2.0688,
+  "warm_inference_seconds": 0.062,
+  "output": {
+    "detections": 0,
+    "has_masks": false
+  },
+  "total_seconds": 2.7904,
+  "peak_allocated_vram_bytes": 75748352,
+  "peak_reserved_vram_bytes": 92274688,
+  "status": "passed"
+}

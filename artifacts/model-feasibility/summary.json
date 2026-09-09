@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-09-09T06:52:15.635283+00:00",
+  "scope": "cuda_hardware_smoke_no_training_not_accuracy",
+  "all_expected_reports_present": true,
+  "all_passed": true,
+  "training_only_sample_confirmed": true,
+  "sample_ids": [
+    "cif_0001"
+  ],
+  "warning": "These timings are single-image smoke measurements, not throughput, quality, model-selection, or accuracy results.",
+  "models": [
+    {
+      "model_id": "yolo11n",
+      "status": "passed",
+      "checkpoint": "weights/yolo/yolo11n.pt",
+      "dtype": "float16",
+      "requested_image_size": "512",
+      "cold_inference_seconds": 1.8613,
+      "warm_inference_seconds": 0.0444,
+      "peak_allocated_vram_bytes": 51671552,
+      "peak_reserved_vram_bytes": 73400320,
+      "sample_id": "cif_0001",
+      "split": "train"
+    },
+    {
+      "model_id": "yolo11n_seg",
+      "status": "passed",
+      "checkpoint": "weights/yolo/yolo11n-seg.pt",
+      "dtype": "float16",
+      "requested_image_size": "512",
+      "cold_inference_seconds": 1.9362,
+      "warm_inference_seconds": 0.0512,
+      "peak_allocated_vram_bytes": 61841408,
+      "peak_reserved_vram_bytes": 73400320,
+      "sample_id": "cif_0001",
+      "split": "train"
+    },
+    {
+      "model_id": "resnet50",
+      "status": "passed",
+      "checkpoint": "weights/resnet/resnet50-11ad3fa6.pth",
+      "dtype": "float16",
+      "requested_image_size": "224",
+      "cold_inference_seconds": 0.2765,
+      "warm_inference_seconds": 0.0276,
+      "peak_allocated_vram_bytes": 66629120,
+      "peak_reserved_vram_bytes": 79691776,
+      "sample_id": "cif_0001",
+      "split": "train"
+    },
+    {
+      "model_id": "sam2_1_hiera_tiny",
+      "status": "passed",
+      "checkpoint": "weights/sam2.1-hiera-tiny",
+      "dtype": "float16",
+      "requested_image_size": "1024",
+      "cold_inference_seconds": 1.165,
+      "warm_inference_seconds": 0.7371,
+      "peak_allocated_vram_bytes": 286328832,
+      "peak_reserved_vram_bytes": 371195904,
+      "sample_id": "cif_0001",
+      "split": "train"
+    },
+    {
+      "model_id": "florence_2_base_ft",
+      "status": "passed",
+      "checkpoint": "weights/florence-community-2-base-ft",
+      "dtype": "float16",
+      "requested_image_size": "[1024, 1024]",
+      "cold_inference_seconds": 1.7684,
+      "warm_inference_seconds": 1.2619,
+      "peak_allocated_vram_bytes": 657961472,
+      "peak_reserved_vram_bytes": 692060160,
+      "sample_id": "cif_0001",
+      "split": "train"
+    },
+    {
+      "model_id": "florence_2_large_ft",
+      "status": "passed",
+      "checkpoint": "weights/florence-community-2-large-ft",
+      "dtype": "float16",
+      "requested_image_size": "[1024, 1024]",
+      "cold_inference_seconds": 4.9154,
+      "warm_inference_seconds": 4.4874,
+      "peak_allocated_vram_bytes": 1895186944,
+      "peak_reserved_vram_bytes": 1939865600,
+      "sample_id": "cif_0001",
+      "split": "train"
+    }
+  ]
+}

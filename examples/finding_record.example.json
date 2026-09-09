@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0.0-beta",
+  "finding_id": "finding-demo-0001",
+  "project_id": "project-demo",
+  "inspection_id": "inspection-demo-2026-09-08",
+  "created_at": "2026-09-08T08:00:00Z",
+  "image": {
+    "source_image_id": "image-demo-0001",
+    "parent_image_id": null,
+    "uri": "inspection://project-demo/images/image-demo-0001.jpg",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "width_pixels": 1920,
+    "height_pixels": 1080,
+    "captured_at": null,
+    "capture_mode": "handheld",
+    "camera_id": null,
+    "quality": {
+      "decision": "accepted_with_warning",
+      "flags": ["compression"],
+      "notes": "Usable for candidate detection; fine-width measurement may be unreliable."
+    }
+  },
+  "location": {
+    "site_id": "site-demo",
+    "building_id": "building-a",
+    "elevation_or_facade": "north facade",
+    "floor": "2",
+    "room_or_zone": null,
+    "element_type": "wall",
+    "gps": null
+  },
+  "prediction": {
+    "immutable": true,
+    "defect_family": "crack",
+    "subtype": "linear",
+    "confidence": 0.87,
+    "geometry": {
+      "coordinate_space": "source_image_pixels",
+      "box_xywh": [412.0, 188.0, 227.0, 491.0],
+      "mask": {
+        "encoding": "polygon_xy",
+        "points": [[421.0, 191.0], [438.0, 279.0], [510.0, 451.0], [625.0, 673.0]]
+      },
+      "centerline_uri": null
+    },
+    "pipeline_route": ["detector", "box_prompted_segmenter"],
+    "escalation_state": "completed"
+  },
+  "measurement": {
+    "scale_status": "not_provided",
+    "scale_method": "none",
+    "pixel": {
+      "length": 535.4,
+      "max_width": 7.0,
+      "area": 1832.0
+    }
+  },
+  "review": {
+    "state": "unreviewed",
+    "reviewer_id": null,
+    "reviewed_at": null,
+    "reviewer_label": null,
+    "notes": null
+  },
+  "provenance": {
+    "model_id": "placeholder-until-baseline-selected",
+    "checkpoint_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "pipeline_version": "0.1.0-feasibility",
+    "taxonomy_version": "BDI-TAX-001@0.1.0-draft",
+    "dataset_manifest_version": "feasibility_v0_materialized",
+    "runtime": "windows-python311-cuda-pending"
+  },
+  "evidence_links": [
+    {
+      "modality": "RGB",
+      "uri": "inspection://project-demo/images/image-demo-0001.jpg",
+      "status": "source"
+    }
+  ],
+  "limitation_codes": [
+    "candidate_only",
+    "qualified_review_required",
+    "not_structural_safety_determination",
+    "uncalibrated_measurement"
+  ]
+}

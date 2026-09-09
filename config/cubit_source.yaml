@@ -1,0 +1,50 @@
+schema_version: 1
+dataset:
+  name: CUBIT-InSeg
+  role: primary_public_building_facade_source
+  repository: https://github.com/benyunzhao/CUBIT-InSeg
+  official_download_folder: https://drive.google.com/drive/folders/1HqS0rMWgwsy70TbaZYFqwzgFxLL_hp_b
+  license: CC-BY-4.0
+  accessed: 2026-09-09
+  annotation_format: yolo_instance_segmentation_polygons
+  native_classes:
+    0: crack
+    1: spalling
+  policy:
+    preserve_official_splits: true
+    test_split_locked: true
+    test_labels_may_be_integrity_checked: true
+    test_label_contents_may_be_profiled: false
+    test_images_may_be_used_for_tuning: false
+
+archives:
+  - split: train
+    kind: images
+    google_drive_file_id: 1LEaYyASd7nHL-RryO1i-ucF2X5NAikqo
+    local_path: datasets/building-target/CUBIT-InSeg/CUBIT-InSeg/train/images.zip
+    expected_members: 5596
+  - split: train
+    kind: labels
+    google_drive_file_id: 1KEYRaHPRZ6G3ScoOOsFjzDYDzOzVXeUg
+    local_path: datasets/building-target/CUBIT-InSeg/CUBIT-InSeg/train/labels.zip
+    expected_members: 5596
+  - split: val
+    kind: images
+    google_drive_file_id: 1lO3fmx-d1z2MMZY7IWH7qElima_tlRC9
+    local_path: datasets/building-target/CUBIT-InSeg/CUBIT-InSeg/val/images.zip
+    expected_members: 699
+  - split: val
+    kind: labels
+    google_drive_file_id: 18mcByc-ewyaVRmU24dI31T0t7HVsvdvm
+    local_path: datasets/building-target/CUBIT-InSeg/CUBIT-InSeg/val/labels.zip
+    expected_members: 699
+  - split: test
+    kind: images
+    google_drive_file_id: 1tMuYgRsIwuc0JMvF3Gx3YcrAgcDLMyds
+    local_path: datasets/building-target/CUBIT-InSeg/CUBIT-InSeg/test/images.zip
+    expected_members: 701
+  - split: test
+    kind: labels
+    google_drive_file_id: 1_qUAxyGrJhzMpJj8HrD2x7xz2DANzJEj
+    local_path: datasets/building-target/CUBIT-InSeg/CUBIT-InSeg/test/labels.zip
+    expected_members: 701

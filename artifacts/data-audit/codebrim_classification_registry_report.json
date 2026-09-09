@@ -1,0 +1,53 @@
+{
+  "registry_version": "codebrim_classification_source_v1",
+  "purpose": "source registry; not a balanced training selection",
+  "image_records": 7729,
+  "records_by_split": {
+    "test": 632,
+    "train": 6481,
+    "val": 616
+  },
+  "parent_images_by_split": {
+    "test": 135,
+    "train": 1249,
+    "val": 140
+  },
+  "cross_split_parent_count": 0,
+  "cross_split_parent_examples": {},
+  "images_without_metadata": [],
+  "metadata_rows_without_image_count": 5,
+  "metadata_rows_without_image": [
+    "image_0001587_crop_0000001.png",
+    "image_0001587_crop_0000002.png",
+    "image_0001587_crop_0000003.png",
+    "image_0001587_crop_0000004.png",
+    "image_0001587_crop_0000005.png"
+  ],
+  "images_with_native_label": {
+    "test": {
+      "Background": 150,
+      "CorrosionStain": 150,
+      "Crack": 150,
+      "Efflorescence": 149,
+      "ExposedBars": 150,
+      "Spallation": 150
+    },
+    "train": {
+      "Background": 2185,
+      "CorrosionStain": 1263,
+      "Crack": 2208,
+      "Efflorescence": 543,
+      "ExposedBars": 1215,
+      "Spallation": 1608
+    },
+    "val": {
+      "Background": 150,
+      "CorrosionStain": 146,
+      "Crack": 149,
+      "Efflorescence": 141,
+      "ExposedBars": 142,
+      "Spallation": 140
+    }
+  },
+  "extraction_requirement": "vendor/7zip-portable/x64/7za.exe"
+}

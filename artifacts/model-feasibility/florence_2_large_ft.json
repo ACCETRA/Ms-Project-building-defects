@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-09-08T19:13:29.442673+00:00",
+  "scope": "cuda_hardware_smoke_no_training_not_accuracy",
+  "model_id": "florence_2_large_ft",
+  "sample": {
+    "sample_id": "cif_0001",
+    "source_dataset": "CiF-tiled",
+    "split": "train",
+    "group_id": "SB-AB18-AB_S-220.JPG",
+    "image": "data/feasibility_v0/images/cif/cif_0001.jpg",
+    "sha256": "579249033e5b368ea77483eb942a7e68d17a4ddf15780de8819aa7d07b205dc2",
+    "width": 1024,
+    "height": 1024
+  },
+  "environment": {
+    "python": "3.11.9",
+    "torch": "2.6.0+cu124",
+    "cuda_available": true,
+    "gpu": "Quadro T2000",
+    "compute_capability": "7.5",
+    "total_vram_bytes": 4294639616
+  },
+  "checkpoint": "weights/florence-community-2-large-ft",
+  "dtype": "float16",
+  "requested_image_size": [
+    1024,
+    1024
+  ],
+  "processed_tensor_shape": [
+    1,
+    3,
+    768,
+    768
+  ],
+  "task_prompt": "<OD>",
+  "max_new_tokens": 32,
+  "cold_inference_seconds": 4.9154,
+  "warm_inference_seconds": 4.4874,
+  "output": {
+    "generated_token_count": 11,
+    "parsed_box_count": 1,
+    "parsed_labels": [
+      "human face"
+    ],
+    "interpretation": "pretrained_runtime_smoke_not_defect_accuracy"
+  },
+  "total_seconds": 16.0038,
+  "peak_allocated_vram_bytes": 1895186944,
+  "peak_reserved_vram_bytes": 1939865600,
+  "status": "passed"
+}

@@ -1,0 +1,16 @@
+schema_version: 1
+python: "3.11"
+torch:
+  version: "2.6.0+cu124"
+  wheel: "vendor/wheels/torch-2.6.0+cu124-cp311-cp311-win_amd64.whl"
+  size_bytes: 2532350702
+  sha256: "6a1fb2714e9323f11edb6e8abf7aad5f79e45ad25c081cde87681a18d99c29eb"
+torchvision:
+  version: "0.21.0+cu124"
+  wheel: "vendor/wheels/torchvision-0.21.0+cu124-cp311-cp311-win_amd64.whl"
+  size_bytes: 6140993
+  sha256: "000a013584ad2304ab30496318145f284ac364622addb5ee3a5abd2769ba146f"
+verification:
+  command: ".\\.venv\\Scripts\\python.exe scripts\\verify_cuda.py"
+  report: "artifacts/environment/cuda_verification.json"
+  cpu_fallback_allowed: false

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-09-08T19:13:06.807784+00:00",
+  "scope": "cuda_hardware_smoke_no_training_not_accuracy",
+  "model_id": "sam2_1_hiera_tiny",
+  "sample": {
+    "sample_id": "cif_0001",
+    "source_dataset": "CiF-tiled",
+    "split": "train",
+    "group_id": "SB-AB18-AB_S-220.JPG",
+    "image": "data/feasibility_v0/images/cif/cif_0001.jpg",
+    "sha256": "579249033e5b368ea77483eb942a7e68d17a4ddf15780de8819aa7d07b205dc2",
+    "width": 1024,
+    "height": 1024
+  },
+  "environment": {
+    "python": "3.11.9",
+    "torch": "2.6.0+cu124",
+    "cuda_available": true,
+    "gpu": "Quadro T2000",
+    "compute_capability": "7.5",
+    "total_vram_bytes": 4294639616
+  },
+  "checkpoint": "weights/sam2.1-hiera-tiny",
+  "dtype": "float16",
+  "requested_image_size": 1024,
+  "processed_tensor_shape": [
+    1,
+    3,
+    1024,
+    1024
+  ],
+  "prompt_type": "ground_truth_box_hardware_smoke_only",
+  "prompt_box_xyxy": [
+    179.0,
+    943.0,
+    515.0,
+    1023.0
+  ],
+  "cold_inference_seconds": 1.165,
+  "warm_inference_seconds": 0.7371,
+  "output": {
+    "mask_shape": [
+      1,
+      1,
+      1024,
+      1024
+    ],
+    "mask_pixels": 14314,
+    "iou_score": 0.9384765625
+  },
+  "total_seconds": 6.4486,
+  "peak_allocated_vram_bytes": 286328832,
+  "peak_reserved_vram_bytes": 371195904,
+  "status": "passed"
+}

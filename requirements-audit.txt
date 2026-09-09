@@ -1,0 +1,6 @@
+# Dataset audit and feasibility-set preparation only.
+# These match the environment used to generate the checked-in reports.
+numpy==2.3.5
+Pillow==12.0.0
+pyarrow==24.0.0
+jsonschema==4.25.1

@@ -1,0 +1,68 @@
+dataset,split,native_label,images_with_label,instances_or_shapes,pixels,count_basis
+DACL10K-v2-devphase,train,ACrack,332,376,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,train,Bearing,730,1048,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,train,Cavity,1188,8119,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,train,Crack,1727,3154,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,train,Drainage,1030,1404,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,train,EJoint,395,450,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,train,Efflorescence,1523,3450,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,train,ExposedRebars,773,1753,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,train,Graffiti,795,1880,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,train,Hollowareas,1097,1363,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,train,JTape,767,923,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,train,PEquipment,1319,1674,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,train,Restformwork,713,851,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,train,Rockpocket,311,525,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,train,Rust,3450,12837,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,train,Spalling,3262,8484,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,train,WConccor,265,360,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,train,Weathering,2704,4064,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,train,Wetspot,965,1443,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,validation,ACrack,42,48,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,validation,Bearing,105,160,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,validation,Cavity,167,1152,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,validation,Crack,254,472,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,validation,Drainage,151,248,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,validation,EJoint,51,56,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,validation,Efflorescence,206,515,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,validation,ExposedRebars,104,247,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,validation,Graffiti,146,320,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,validation,Hollowareas,155,194,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,validation,JTape,128,155,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,validation,PEquipment,175,214,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,validation,Restformwork,133,171,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,validation,Rockpocket,52,92,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,validation,Rust,465,1883,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,validation,Spalling,477,1400,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,validation,WConccor,38,52,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,validation,Weathering,392,570,,LabelMe-style polygons/shapes
+DACL10K-v2-devphase,validation,Wetspot,144,218,,LabelMe-style polygons/shapes
+CODEBRIM-original,unsplit_original,Background,40,49,,Pascal/VOC-style XML objects
+CODEBRIM-original,unsplit_original,CorrosionStain,573,1550,,Pascal/VOC-style XML objects
+CODEBRIM-original,unsplit_original,Crack,629,2502,,Pascal/VOC-style XML objects
+CODEBRIM-original,unsplit_original,Efflorescence,320,828,,Pascal/VOC-style XML objects
+CODEBRIM-original,unsplit_original,ExposedBars,446,1502,,Pascal/VOC-style XML objects
+CODEBRIM-original,unsplit_original,Spallation,563,1892,,Pascal/VOC-style XML objects
+CODEBRIM-original,unsplit_original,defect,2,3,,Pascal/VOC-style XML objects
+CODEBRIM-classification,test,Background,150,,,multi-label crop metadata
+CODEBRIM-classification,test,CorrosionStain,150,,,multi-label crop metadata
+CODEBRIM-classification,test,Crack,150,,,multi-label crop metadata
+CODEBRIM-classification,test,Efflorescence,149,,,multi-label crop metadata
+CODEBRIM-classification,test,ExposedBars,150,,,multi-label crop metadata
+CODEBRIM-classification,test,Spallation,150,,,multi-label crop metadata
+CODEBRIM-classification,train,Background,2185,,,multi-label crop metadata
+CODEBRIM-classification,train,CorrosionStain,1263,,,multi-label crop metadata
+CODEBRIM-classification,train,Crack,2208,,,multi-label crop metadata
+CODEBRIM-classification,train,Efflorescence,543,,,multi-label crop metadata
+CODEBRIM-classification,train,ExposedBars,1215,,,multi-label crop metadata
+CODEBRIM-classification,train,Spallation,1608,,,multi-label crop metadata
+CODEBRIM-classification,val,Background,150,,,multi-label crop metadata
+CODEBRIM-classification,val,CorrosionStain,146,,,multi-label crop metadata
+CODEBRIM-classification,val,Crack,149,,,multi-label crop metadata
+CODEBRIM-classification,val,Efflorescence,141,,,multi-label crop metadata
+CODEBRIM-classification,val,ExposedBars,142,,,multi-label crop metadata
+CODEBRIM-classification,val,Spallation,140,,,multi-label crop metadata
+CUBIT-InSeg,train,crack,2535,41811,,YOLO instance-segmentation polygon lines
+CUBIT-InSeg,train,spalling,3061,8224,,YOLO instance-segmentation polygon lines
+CUBIT-InSeg,val,crack,299,5029,,YOLO instance-segmentation polygon lines
+CUBIT-InSeg,val,spalling,400,1106,,YOLO instance-segmentation polygon lines

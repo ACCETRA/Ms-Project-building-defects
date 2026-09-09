@@ -1,0 +1,23 @@
+{
+  "checked_at_utc": "2026-09-08T13:01:36.581402+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "status": "passed",
+  "torch_version": "2.6.0+cu124",
+  "torchvision_version": "0.21.0+cu124",
+  "torch_cuda_build": "12.4",
+  "cuda_available": true,
+  "nvidia_smi": "Quadro T2000, 4096 MiB, 595.95",
+  "device_name": "Quadro T2000",
+  "compute_capability": "7.5",
+  "device_total_memory_bytes": 4294639616,
+  "float16_matmul_shape": [
+    1024,
+    1024
+  ],
+  "float16_matmul_checksum": 26728.107421875,
+  "peak_allocated_bytes": 19006976,
+  "peak_reserved_bytes": 23068672,
+  "free_memory_after_test_bytes": 3412852736,
+  "total_memory_after_test_bytes": 4294639616
+}

@@ -1,0 +1,23 @@
+{
+  "verified_on": "2026-09-08",
+  "tool": "7-Zip 26.02 x64 portable",
+  "tool_path": "vendor/7zip-portable/x64/7za.exe",
+  "classification_archive": {
+    "path": "datasets/CODEBRIM/CODEBRIM_classification_dataset.zip",
+    "size_bytes": 7911716093,
+    "md5": "c1612d9674e2e628e72e7f5817c40130",
+    "full_test_exit_code": 0,
+    "header_warning": "32-bit overflow in headers",
+    "decoded_probe_images": 6
+  },
+  "original_archive": {
+    "path": "datasets/CODEBRIM/CODEBRIM_original_images.zip",
+    "size_bytes": 8310630622,
+    "md5": "27baf3a036d0b7d757ff4df47c08c449",
+    "full_test_exit_code": 0,
+    "header_warning": "32-bit overflow in headers",
+    "decoded_probe_images": 5
+  },
+  "conclusion": "Both publisher archives are usable through 7-Zip. Python zipfile and Windows tar are incompatible with their oversized legacy ZIP headers and must not be used to extract image payloads.",
+  "probe_directory": "artifacts/data-audit/codebrim-recovery-samples"
+}

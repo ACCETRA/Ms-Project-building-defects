@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "workspace": "D:\\ALI's Project",
+  "raw_files_modified": false,
+  "sources": [
+    {
+      "source": "CiF-tiled",
+      "local_path": "datasets\\CiF-tiled",
+      "available": true,
+      "license": "CDLA-Permissive-2.0",
+      "domain": "mixed civil infrastructure",
+      "annotation_types": [
+        "instance polygons",
+        "boxes"
+      ],
+      "archive_or_files_size_bytes": 23619174776,
+      "splits": {},
+      "notes": [
+        "Tiled release only; parent-image fields must control leakage.",
+        "Do not count 1024x1024 tiles as independent structures.",
+        "Detailed parquet audit skipped: No module named 'pyarrow'"
+      ]
+    },
+    {
+      "source": "DACL10K-v2-devphase",
+      "local_path": "datasets\\DACL10K\\dacl10k_v2_devphase.zip",
+      "available": true,
+      "license": "CC BY-NC 4.0",
+      "domain": "bridges",
+      "annotation_types": [
+        "multi-label semantic polygons"
+      ],
+      "archive_or_files_size_bytes": 5109737241,
+      "splits": {
+        "train": {
+          "images": 6935,
+          "annotations": 6935
+        },
+        "validation": {
+          "images": 975,
+          "annotations": 975
+        },
+        "testdev": {
+          "images": 1012,
+          "annotations": 0
+        }
+      },
+      "notes": [
+        "Bridge-domain stress/transfer source, not primary building validation.",
+        "Test-dev images have no public labels in this archive."
+      ]
+    },
+    {
+      "source": "CODEBRIM-original",
+      "local_path": "datasets\\CODEBRIM\\CODEBRIM_original_images.zip",
+      "available": true,
+      "license": "custom non-commercial research/educational license",
+      "domain": "bridges",
+      "annotation_types": [
+        "bounding boxes",
+        "multi-target source labels"
+      ],
+      "archive_or_files_size_bytes": 8310630622,
+      "splits": {
+        "unsplit_original": {
+          "images": 1590,
+          "xml_annotations": 1052,
+          "images_without_matching_xml_by_stem": 538,
+          "boxes": 5233
+        }
+      },
+      "notes": [
+        "Not pixel-mask ground truth.",
+        "Archive contains macOS resource-fork entries that must be ignored.",
+        "Regular-member read failures: original_dataset/images/image_0000673.jpg: Bad magic number for file header; original_dataset/images/image_0000631.jpg: Truncated file header; original_dataset/images/image_0001574.jpg: Overlapped entries: 'original_dataset/images/image_0001574.jpg' (possible zip bomb)",
+        "Full archive passed portable 7-Zip verification; use 7-Zip for image extraction because standard ZIP readers cannot handle the headers."
+      ]
+    },
+    {
+      "source": "CODEBRIM-classification",
+      "local_path": "datasets\\CODEBRIM\\CODEBRIM_classification_dataset.zip",
+      "available": true,
+      "license": "custom non-commercial research/educational license",
+      "domain": "bridge defect crops",
+      "annotation_types": [
+        "multi-label crop classification"
+      ],
+      "archive_or_files_size_bytes": 7911716093,
+      "splits": {
+        "test": {
+          "images": 632,
+          "background_folder": 150,
+          "defects_folder": 482
+        },
+        "train": {
+          "images": 6481,
+          "background_folder": 2185,
+          "defects_folder": 4296
+        },
+        "val": {
+          "images": 616,
+          "background_folder": 150,
+          "defects_folder": 466
+        }
+      },
+      "notes": [
+        "Official unbalanced classification release selected; do not use the publisher's duplicated balanced archive.",
+        "Crops from a common parent filename must be checked for cross-split parent leakage.",
+        "Read failures: classification_dataset/test/background/image_0000058_crop_0000002.png: Bad magic number for file header; classification_dataset/train/defects/image_0001513_crop_0000004.png: Bad magic number for file header",
+        "Full archive passed portable 7-Zip verification; six extracted probes decoded successfully. Use 7-Zip for image extraction."
+      ],
+      "metadata_rows_matched": 7729,
+      "metadata_rows_without_image": 5,
+      "duplicate_crop_basenames": 0
+    },
+    {
+      "source": "S2DS",
+      "local_path": "datasets\\building-target\\S2DS\\s2ds.zip",
+      "available": true,
+      "license": "academic use only; redistribution prohibited",
+      "domain": "mostly concrete structural surfaces",
+      "annotation_types": [
+        "semantic color masks"
+      ],
+      "archive_or_files_size_bytes": 1241309613,
+      "splits": {
+        "train": {
+          "images": 563,
+          "masks": 563,
+          "unpaired_images": 0,
+          "unpaired_masks": 0
+        },
+        "val": {
+          "images": 87,
+          "masks": 87,
+          "unpaired_images": 0,
+          "unpaired_masks": 0
+        },
+        "test": {
+          "images": 93,
+          "masks": 93,
+          "unpaired_images": 0,
+          "unpaired_masks": 0
+        }
+      },
+      "notes": [
+        "Official split contains 743 image/mask pairs."
+      ]
+    },
+    {
+      "source": "UAV75",
+      "local_path": "datasets\\UAV-candidates\\UAV75",
+      "available": true,
+      "license": "repository GPL-3.0; confirm dataset/media scope before release",
+      "domain": "UAV structural surfaces",
+      "annotation_types": [
+        "pixel labels",
+        "line-style crack labels"
+      ],
+      "archive_or_files_size_bytes": 31043717,
+      "splits": {
+        "train": {
+          "images": 50,
+          "masks": 50,
+          "unpaired_images": 0,
+          "unpaired_masks": 0
+        },
+        "val": {
+          "images": 10,
+          "masks": 10,
+          "unpaired_images": 0,
+          "unpaired_masks": 0
+        },
+        "test": {
+          "images": 15,
+          "masks": 15,
+          "unpaired_images": 0,
+          "unpaired_masks": 0
+        }
+      },
+      "notes": [
+        "75-image stress set with crack and planking/context labels.",
+        "Keep official splits; too small to support a standalone performance claim."
+      ]
+    },
+    {
+      "source": "CUBIT-InSeg",
+      "local_path": "datasets\\building-target\\CUBIT-InSeg\\CUBIT-InSeg",
+      "available": true,
+      "acquisition_complete": false,
+      "license": "CC BY 4.0",
+      "domain": "UAV building facades",
+      "annotation_types": [
+        "instance masks",
+        "boxes"
+      ],
+      "archive_or_files_size_bytes": 4025220888,
+      "splits": {
+        "train": {
+          "expected_images": 5596,
+          "image_archive": false,
+          "label_archive": true,
+          "image_members": null,
+          "label_members": 5596,
+          "count_matches_expected": null,
+          "malformed_label_lines": 0
+        },
+        "val": {
+          "expected_images": 699,
+          "image_archive": true,
+          "label_archive": true,
+          "image_members": 699,
+          "label_members": 699,
+          "count_matches_expected": true,
+          "malformed_label_lines": 0
+        },
+        "test": {
+          "expected_images": 701,
+          "image_archive": true,
+          "label_archive": true,
+          "image_members": 701,
+          "label_members": 701,
+          "count_matches_expected": true
+        }
+      },
+      "notes": [
+        "Preferred building-facade target benchmark.",
+        "Keep the official test split locked; do not use it for model selection.",
+        "Missing archives: train_images."
+      ]
+    },
+    {
+      "source": "Liu-UAV-benchmark-repository",
+      "local_path": "datasets\\UAV-candidates\\Liu-UAV-benchmark",
+      "available": true,
+      "license": "repository license present; linked consolidated dataset unresolved",
+      "domain": "repository describes consolidated crack sources",
+      "annotation_types": [
+        "samples/code only in local clone"
+      ],
+      "archive_or_files_size_bytes": 109957596,
+      "splits": {},
+      "notes": [
+        "Do not include until image provenance and data license are verified."
+      ]
+    },
+    {
+      "source": "ConRebSeg-toolkit",
+      "local_path": "references\\toolkits\\ConRebSeg",
+      "available": true,
+      "license": "source/toolkit terms require review; self-collected data release is separate",
+      "domain": "reinforced-concrete construction scenes",
+      "annotation_types": [
+        "segmentation metadata/tooling"
+      ],
+      "archive_or_files_size_bytes": 17356835,
+      "splits": {},
+      "notes": [
+        "Optional for exposed bars/construction context; not primary crack ground truth.",
+        "Full approximately 22 GB data has not been acquired."
+      ]
+    }
+  ]
+}

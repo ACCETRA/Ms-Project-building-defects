@@ -1,0 +1,15 @@
+{
+  "manifest_version": "feasibility_v0",
+  "samples_verified": 300,
+  "all_readable": true,
+  "samples_by_source": {
+    "CiF-tiled": 120,
+    "DACL10K-v2-devphase": 60,
+    "S2DS": 80,
+    "UAV75": 40
+  },
+  "total_image_bytes": 192201920,
+  "total_annotation_bytes": 5036222,
+  "materialized_manifest": "data/manifests/feasibility_v0_materialized.csv",
+  "verification_csv": "artifacts/data-audit/feasibility_materialization.csv"
+}

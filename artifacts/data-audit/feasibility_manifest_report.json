@@ -1,0 +1,83 @@
+{
+  "manifest_version": "feasibility_v0",
+  "seed": 20260908,
+  "purpose": "hardware and data-pipeline smoke test only; not an accuracy benchmark",
+  "policy": {
+    "partitions_used": [
+      "train"
+    ],
+    "held_out_partitions_used": false,
+    "cif_group_rule": "one selected tile per file_name_original"
+  },
+  "total_samples": 300,
+  "samples_by_source": {
+    "CiF-tiled": 120,
+    "S2DS": 80,
+    "UAV75": 40,
+    "DACL10K-v2-devphase": 60
+  },
+  "images_with_native_label": {
+    "CiF-tiled": {
+      "Crack": 69,
+      "Crack with Precipitation": 10,
+      "Net-Crack": 15,
+      "Spalling": 29,
+      "Algae": 6,
+      "Rust": 20
+    },
+    "S2DS": {
+      "efflorescence": 12,
+      "corrosion": 32,
+      "crack": 41,
+      "spalling": 24
+    },
+    "UAV75": {
+      "crack": 40
+    },
+    "DACL10K-v2-devphase": {
+      "Cavity": 13,
+      "Crack": 34,
+      "Hollowareas": 14,
+      "Rockpocket": 8,
+      "Rust": 30,
+      "Spalling": 37,
+      "WConccor": 2,
+      "Weathering": 22,
+      "Wetspot": 9,
+      "Graffiti": 7,
+      "Restformwork": 7,
+      "Efflorescence": 10,
+      "Bearing": 6,
+      "PEquipment": 8,
+      "ACrack": 7,
+      "ExposedRebars": 8,
+      "Drainage": 8,
+      "JTape": 6,
+      "EJoint": 1
+    }
+  },
+  "images_with_canonical_label": {
+    "CiF-tiled": {
+      "crack": 85,
+      "spalling": 29,
+      "rust_staining": 20
+    },
+    "S2DS": {
+      "efflorescence_leaching": 12,
+      "rust_staining": 32,
+      "crack": 41,
+      "spalling": 24
+    },
+    "UAV75": {
+      "crack": 40
+    },
+    "DACL10K-v2-devphase": {
+      "crack": 39,
+      "honeycombing_rock_pocket": 8,
+      "rust_staining": 30,
+      "spalling": 37,
+      "efflorescence_leaching": 10,
+      "exposed_rebar": 8
+    }
+  }
+}

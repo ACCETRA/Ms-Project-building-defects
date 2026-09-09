@@ -1,0 +1,28 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Generated audit/experiment outputs
+artifacts/**/*.tmp
+artifacts/**/cache/
+runs/
+weights/
+
+# Datasets and model caches stay outside version control
+datasets/
+data/*
+!data/manifests/
+!data/manifests/*.csv
+vendor/
+references/papers/
+references/toolkits/
+artifacts/data-audit/codebrim-recovery-samples/
+.cache/
+
+# Local secrets and machine overrides
+.env
+.env.*
+!.env.example
+config/local*.yaml

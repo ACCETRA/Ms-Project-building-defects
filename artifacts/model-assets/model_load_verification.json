@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-09-08T19:08:50.898467+00:00",
+  "scope": "deserialization_only_no_training_no_inference",
+  "python": "3.11.9",
+  "torch": "2.6.0+cu124",
+  "cuda_available": true,
+  "passed": true,
+  "models": [
+    {
+      "model_id": "yolo11n",
+      "local_path": "weights/yolo/yolo11n.pt",
+      "parameter_count": 2624080,
+      "status": "passed",
+      "load_seconds": 0.249
+    },
+    {
+      "model_id": "yolo11n_seg",
+      "local_path": "weights/yolo/yolo11n-seg.pt",
+      "parameter_count": 2876848,
+      "status": "passed",
+      "load_seconds": 0.046
+    },
+    {
+      "model_id": "resnet50",
+      "local_path": "weights/resnet/resnet50-11ad3fa6.pth",
+      "parameter_count": 25557032,
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "status": "passed",
+      "load_seconds": 1.601
+    },
+    {
+      "model_id": "sam2_1_hiera_tiny",
+      "local_path": "weights/sam2.1-hiera-tiny",
+      "parameter_count": 31440721,
+      "processor": "Sam2Processor",
+      "compatibility_notice": "The source config is sam2_video; initial image prompting uses its Sam2Model-compatible subset and still requires an inference smoke test.",
+      "status": "passed",
+      "load_seconds": 2.142
+    },
+    {
+      "model_id": "florence_2_base_ft",
+      "local_path": "weights/florence-community-2-base-ft",
+      "parameter_count": 231443968,
+      "processor": "Florence2Processor",
+      "status": "passed",
+      "load_seconds": 1.082
+    },
+    {
+      "model_id": "florence_2_large_ft",
+      "local_path": "weights/florence-community-2-large-ft",
+      "parameter_count": 770213888,
+      "processor": "Florence2Processor",
+      "status": "passed",
+      "load_seconds": 2.321
+    }
+  ]
+}
