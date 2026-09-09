@@ -21,9 +21,9 @@ Important guardrails:
 
 ## 2. What is blocked vs. what is safe to do now
 
-### Blocked until owner/advisor decisions are made
+### Blocked until co-owner decisions are made
 
-These are not optional technical tasks; they need a user decision before finalization:
+These are not optional technical tasks; they are shared responsibilities of the co-owners and must be resolved before finalization:
 
 1. ResNet vs RetinaNet
 2. Engineering reviewer identity and review schedule
@@ -31,7 +31,7 @@ These are not optional technical tasks; they need a user decision before finaliz
 4. YOLO licensing/open-source direction
 5. Whether physical crack dimensions are required for beta 1 and how they will be calibrated
 
-These decisions are recorded in:
+The co-owners are expected to complete these items directly, while contributors continue the parallel execution tasks listed below. These decisions are recorded in:
 
 - [docs/FIRST_WEEK_PLAN.md](docs/FIRST_WEEK_PLAN.md)
 - [docs/ROADMAP_V2.md](docs/ROADMAP_V2.md)
