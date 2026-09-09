@@ -78,7 +78,7 @@ The structural-engineering reviewer must approve this mapping and define what is
 ### Splitting and leakage controls
 
 - Respect CiF's official parent-image splits.
-- Respect CUBIT-InSeg's official train/validation/test split and keep its test images unavailable to model, threshold, and user-interface tuning.
+- Start from CUBIT-InSeg's official train/validation/test boundaries, but apply the recorded exact-dedup decision manifest with priority `test > val > train`. Keep its test images unavailable to model, threshold, and user-interface tuning. The immutable publisher archives stay unchanged.
 - For CODEBRIM, split by bridge/source structure, not by crop or box.
 - Group UAV video frames or overlapping photographs by flight/scene before splitting.
 - Detect exact and near duplicates before assigning any custom split.
@@ -134,7 +134,7 @@ Report results per class, per source dataset, and for cracks separately from mac
 - Operations: latency, throughput, peak VRAM, rejected-image rate, and percentage sent for review/escalation.
 - Reliability: confidence intervals, performance by image quality/capture domain, and an error review of false negatives.
 
-Model choice and thresholds are locked using only training/validation sources. Run CUBIT-InSeg's official building-façade test split and the target-site field test after locking. Report DACL10K separately, if used, as out-of-domain bridge robustness rather than the beta's principal generalization result. A later leave-one-dataset-out study is useful but not required for the first beta.
+Model choice and thresholds are locked using only leakage-clean training/validation sources. Run CUBIT-InSeg's 694-image exact-deduplicated building-façade test view and the target-site field test after locking. The 701-image publisher test metric may be reported separately for comparability, with its known duplication disclosed. Report DACL10K separately, if used, as out-of-domain bridge robustness rather than the beta's principal generalization result. A later leave-one-dataset-out study is useful but not required for the first beta.
 
 ## Structured finding record
 
@@ -219,7 +219,7 @@ With the installed Quadro T2000 and a tightly curated dataset, plan for **14–2
 2. **Data gate:** immutable source manifest and checksums, audited labels, approved taxonomy, group-safe splits, duplicate report, and class/pixel statistics.
 3. **Baseline gate:** one simple result per task before imbalance correction or a cascade.
 4. **Comparison gate:** fixed splits/budgets, calibrated thresholds, ablations for sampling/loss/augmentation, and efficiency results.
-5. **External-validation gate:** one locked CUBIT-InSeg building-façade test, a target-site field test, and a false-negative review; DACL10K is an optional out-of-domain bridge stress test.
+5. **External-validation gate:** one locked, leakage-clean CUBIT-InSeg building-façade test, a target-site field test, and a false-negative review; DACL10K is an optional out-of-domain bridge stress test.
 6. **Measurement gate:** calibrated capture protocol and engineer-verified physical ground truth; otherwise release pixel measurements only.
 7. **Functional-beta gate:** end-to-end inspection workflow, review queue, structured export, generated report, persisted history, reproducible model/data versions, error states, limitations, and handoff documentation.
 
@@ -228,12 +228,13 @@ A production inspection product requires additional field collection, safety val
 ## Source acquisition layout
 
 - `source/The RoadMap.md`: preserved copy of the supplied roadmap.
-- `references/papers/`: CiF, DACL10K, CODEBRIM, UAV inspection, CUBIT-InSeg, Florence-2, SAM 2, and ResNet papers; downloaded.
+- `references/papers/`: CiF, DACL10K, CODEBRIM, UAV inspection, CUBIT-InSeg, Florence-2, SAM 2, and ResNet papers downloaded and title-checked. The initial file mislabeled as CUBIT was identified as an unrelated Taylor-Aris dispersion paper and preserved under `MISIDENTIFIED_Shear_alignment_Taylor-Aris_2026.pdf`; the correct 23-page CUBIT publisher PDF is now installed with SHA-256 `efad2118799d9762a35d1e27a4a666d7a260f136f911e600ea0b1f58e18895ab`.
 - `references/toolkits/`: official DACL10K, CODEBRIM, CUBIT-InSeg, and ConRebSeg supporting repositories; downloaded for reference only and not installed.
 - `datasets/CiF-tiled/`: selected 1024×1024 official splits; download completed (approximately 23.07 GB decimal).
 - `datasets/DACL10K/`: labeled development archive downloaded and verified: 5,109,737,241 bytes, SHA-256 `dcbcd5fb82699076a2c7f3a72492a9ef798870e0ca1f0c9399360f273ea95260`.
 - `datasets/CODEBRIM/`: original images/box annotations downloaded and verified: 8,310,630,622 bytes, MD5 `27baf3a036d0b7d757ff4df47c08c449`; official unbalanced classification archive also downloaded and verified: 7,911,716,093 bytes, MD5 `c1612d9674e2e628e72e7f5817c40130`. Both archives pass complete 7-Zip 26.02 tests and 11 extracted image probes decode correctly. Their legacy headers trigger a 32-bit-overflow warning and break Python `zipfile`/Windows `tar`, so all image extraction must use the project-local portable 7-Zip path.
-- `datasets/building-target/CUBIT-InSeg/`: official 1.86 GB test-image archive downloaded. Google Drive rate-limited the remaining test labels and train/validation image/label archives; preserve the official links and retry after its quota resets.
+- `datasets/building-target/CUBIT-InSeg/`: all six official train/validation/test image and label archives downloaded (19,059,292,068 bytes total), CRC-tested, SHA-256 recorded, and paired by filename: 5,596 train, 699 validation, and 701 locked test pairs. The definitive report is `artifacts/data-audit/cubit_archive_inventory.json`; test content remains unavailable to tuning.
+- CUBIT duplicate audit: all 6,996 images decoded and hashed without extraction. It found 589 exact `SP0`/`SP1` duplicate pairs, including 222 cross-split pairs. The non-destructive exact-dedup manifest retains 5,035 train, 678 validation, and 694 test records with no selected exact hash crossing splits; 521 perceptual cross-split candidates remain pending review.
 - `datasets/building-target/S2DS/`: repository and 1.24 GB official dataset archive downloaded.
 - `data/manifests/feasibility_v0.csv`: deterministic training-only smoke-test manifest completed with 120 CiF, 80 S2DS, 40 UAV75, and 60 DACL10K samples.
 - `data/feasibility_v0/`: all 300 selected image/annotation pairs materialized and verified readable; this set is for data-loading, inference, and VRAM feasibility only, not model-selection or accuracy claims.

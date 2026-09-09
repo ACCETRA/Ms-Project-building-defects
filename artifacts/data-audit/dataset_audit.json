@@ -187,22 +187,22 @@
       "source": "CUBIT-InSeg",
       "local_path": "datasets\\building-target\\CUBIT-InSeg\\CUBIT-InSeg",
       "available": true,
-      "acquisition_complete": false,
+      "acquisition_complete": true,
       "license": "CC BY 4.0",
       "domain": "UAV building facades",
       "annotation_types": [
         "instance masks",
         "boxes"
       ],
-      "archive_or_files_size_bytes": 4025220888,
+      "archive_or_files_size_bytes": 19059292068,
       "splits": {
         "train": {
           "expected_images": 5596,
-          "image_archive": false,
+          "image_archive": true,
           "label_archive": true,
-          "image_members": null,
+          "image_members": 5596,
           "label_members": 5596,
-          "count_matches_expected": null,
+          "count_matches_expected": true,
           "malformed_label_lines": 0
         },
         "val": {
@@ -226,7 +226,7 @@
       "notes": [
         "Preferred building-facade target benchmark.",
         "Keep the official test split locked; do not use it for model selection.",
-        "Missing archives: train_images."
+        "All six official split archives are present; integrity results are recorded separately."
       ]
     },
     {

@@ -62,6 +62,27 @@ CODEBRIM-classification,val,Crack,149,,,multi-label crop metadata
 CODEBRIM-classification,val,Efflorescence,141,,,multi-label crop metadata
 CODEBRIM-classification,val,ExposedBars,142,,,multi-label crop metadata
 CODEBRIM-classification,val,Spallation,140,,,multi-label crop metadata
+S2DS,test,background,0,,87740189,semantic RGBA mask pixels
+S2DS,test,control_point,10,,246493,semantic RGBA mask pixels
+S2DS,test,corrosion,38,,903971,semantic RGBA mask pixels
+S2DS,test,crack,27,,121350,semantic RGBA mask pixels
+S2DS,test,efflorescence,17,,1471948,semantic RGBA mask pixels
+S2DS,test,spalling,20,,4168325,semantic RGBA mask pixels
+S2DS,test,vegetation,18,,2865292,semantic RGBA mask pixels
+S2DS,train,background,0,,519911485,semantic RGBA mask pixels
+S2DS,train,control_point,70,,1542037,semantic RGBA mask pixels
+S2DS,train,corrosion,209,,8811346,semantic RGBA mask pixels
+S2DS,train,crack,180,,585670,semantic RGBA mask pixels
+S2DS,train,efflorescence,96,,4563398,semantic RGBA mask pixels
+S2DS,train,spalling,151,,39191415,semantic RGBA mask pixels
+S2DS,train,vegetation,97,,15742937,semantic RGBA mask pixels
+S2DS,val,background,0,,83842660,semantic RGBA mask pixels
+S2DS,val,control_point,9,,200693,semantic RGBA mask pixels
+S2DS,val,corrosion,36,,512685,semantic RGBA mask pixels
+S2DS,val,crack,25,,90310,semantic RGBA mask pixels
+S2DS,val,efflorescence,13,,646510,semantic RGBA mask pixels
+S2DS,val,spalling,23,,3253259,semantic RGBA mask pixels
+S2DS,val,vegetation,16,,2679995,semantic RGBA mask pixels
 CUBIT-InSeg,train,crack,2535,41811,,YOLO instance-segmentation polygon lines
 CUBIT-InSeg,train,spalling,3061,8224,,YOLO instance-segmentation polygon lines
 CUBIT-InSeg,val,crack,299,5029,,YOLO instance-segmentation polygon lines

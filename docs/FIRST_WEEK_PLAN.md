@@ -11,7 +11,7 @@ Finish the evidence needed to approve the first curated-data release and begin a
 - [Completed] Run and review `scripts/audit_datasets.py`.
 - [Technical verification completed; legal approval pending] Verify archive readability and licenses.
 - [Completed] Verify both CODEBRIM archives with portable 7-Zip and decoded image probes; standard ZIP readers remain disallowed for these legacy headers.
-- Retry missing CUBIT image/label archives after Google Drive quota reset.
+- [Completed] Acquire, CRC-test, hash, count, and pair all six official CUBIT image/label archives while keeping the test split locked.
 - Draft the first selection budget by source, class, domain, annotation type, and negative type.
 - Propose group IDs for parent images, buildings, bridges, UAV flights, and related frames.
 

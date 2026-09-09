@@ -1,0 +1,7 @@
+split,kind,path,size_bytes,sha256,member_count,expected_count,count_matches_expected,integrity_exit_code,integrity_ok
+train,images,datasets\building-target\CUBIT-InSeg\CUBIT-InSeg\train\images.zip,15034071180,895cd6a1dd8f36d987e82912be10f98530178c56755b9d891134d53a5d891180,5596,5596,True,0,True
+train,labels,datasets\building-target\CUBIT-InSeg\CUBIT-InSeg\train\labels.zip,248950377,b604e8b97151dc9305e262bd2db87966045da2d465876b3e75557d694bb13adf,5596,5596,True,0,True
+val,images,datasets\building-target\CUBIT-InSeg\CUBIT-InSeg\val\images.zip,1853116822,cede2e298f79117c2a6f694f2b261ac05b0fa0392fb96d42fdb223ab1a407c5d,699,699,True,0,True
+val,labels,datasets\building-target\CUBIT-InSeg\CUBIT-InSeg\val\labels.zip,30763780,9b25d79d258b823fe5669db8f0c4a0553718bd74e0e10a19ab655ccc616b838c,699,699,True,0,True
+test,images,datasets\building-target\CUBIT-InSeg\CUBIT-InSeg\test\images.zip,1861617729,746d776c39633cdd4c51197a9e067bf6fec454d54b706fdf34810e8b22b2d416,701,701,True,0,True
+test,labels,datasets\building-target\CUBIT-InSeg\CUBIT-InSeg\test\labels.zip,30772180,ccd952444c6ccbf150c19aed84f2fbe77272cad1217eb81fc9a5df96d31f0aa2,701,701,True,0,True

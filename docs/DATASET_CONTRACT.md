@@ -69,6 +69,8 @@ Represents intended building/construction inputs, including no-defect and diffic
 
 No tile, crop, overlapping UAV frame, or duplicate of a test parent may enter training.
 
+CUBIT-InSeg's publisher split contains exact `SP0`/`SP1` duplicates, including cross-split copies. Preserve the raw archives, but derive selected views with `test > validation > train` priority and one deterministic keeper per exact-hash group. Report the publisher test and the leakage-clean test separately. Perceptual-hash candidates require review and are never auto-deleted.
+
 ## 6. Balancing policy
 
 - Profile image, class-containing-image, instance, and annotated-pixel counts.
@@ -104,4 +106,3 @@ A curated dataset version may be frozen only when it has:
 - documented selection procedure and random seed;
 - representative image review by the engineering reviewer;
 - explicit list of known missing classes and weak mappings.
-

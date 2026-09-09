@@ -21,6 +21,8 @@
 | D-015 | Do not substitute CPU PyTorch for the required CUDA test | Completed | Official CUDA wheels were hash-verified, installed in `.venv`, and passed a float16 GPU operation on the Quadro T2000 |
 | D-016 | Run Florence from the official native-Transformers converted checkpoints | Resolved | `florence-community/Florence-2-*-ft` is the runtime source; Microsoft custom-code snapshots are retained as provenance references after a reproducible processor incompatibility was found |
 | D-017 | Require a CUDA-only one-image preflight before the representative feasibility study | Completed | All six candidates execute in FP16 on the Quadro T2000; this proves runtime fit only and does not authorize accuracy claims or training |
+| D-018 | Acquire CUBIT-InSeg completely while preserving its official test lock | Completed | Six official archives totaling 19,059,292,068 bytes pass CRC, member-count, and image/label pairing checks; SHA-256 values are recorded without profiling locked test-label contents |
+| D-019 | Derive leakage-clean CUBIT views instead of trusting the publisher split unchanged | Completed for exact duplicates | 589 byte-identical `SP0`/`SP1` pairs include 222 cross-split pairs; `test > val > train` decisions retain 5,035/678/694 records with no cross-split exact hash, while 521 perceptual candidates remain review-only |
 
 ## Open decisions
 

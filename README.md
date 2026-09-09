@@ -18,7 +18,11 @@ The original user-supplied roadmap is preserved unchanged at [`source/The RoadMa
 
 ## Current state
 
-- Dataset acquisition and non-destructive archive inspection are underway.
+- Core public dataset acquisition and non-destructive archive inspection are complete; optional sources and real target-site data remain open.
+- All six CUBIT-InSeg archives are downloaded and verified as 5,596 train, 699 validation, and 701 locked test image/label pairs. Hashes, CRC results, and pairing evidence are in [`artifacts/data-audit/cubit_archive_inventory.json`](artifacts/data-audit/cubit_archive_inventory.json).
+- CUBIT's 6,295 train/validation pairs have a metadata-only source registry at [`data/manifests/cubit_train_val_source_v1.csv`](data/manifests/cubit_train_val_source_v1.csv); the test split is excluded and unavailable to training selection.
+- CUBIT contains 589 byte-identical `SP0`/`SP1` image pairs, including 222 cross-split pairs. The auditable `test > val > train` decisions are in [`data/manifests/cubit_exact_dedup_decisions_v1.csv`](data/manifests/cubit_exact_dedup_decisions_v1.csv), yielding 5,035 train, 678 validation, and 694 test records. Perceptual candidates remain review-only.
+- The local research-paper set has been title-checked. The correct 23-page CUBIT paper is installed; an unrelated file from the initial acquisition is retained with a `MISIDENTIFIED_` filename so it cannot silently support project claims.
 - A deterministic 300-sample, training-only feasibility set has been materialized and verified: 120 CiF, 80 S2DS, 40 UAV75, and 60 DACL10K samples.
 - The reproducible selection manifest is [`data/manifests/feasibility_v0.csv`](data/manifests/feasibility_v0.csv). The content-hashed form is [`data/manifests/feasibility_v0_materialized.csv`](data/manifests/feasibility_v0_materialized.csv), and verification results are in [`artifacts/data-audit/feasibility_materialization_report.json`](artifacts/data-audit/feasibility_materialization_report.json).
 - CODEBRIM's 7,729 official classification crops have a metadata/source registry at [`data/manifests/codebrim_classification_source_v1.csv`](data/manifests/codebrim_classification_source_v1.csv); no parent image crosses its official splits.
@@ -35,7 +39,11 @@ The original user-supplied roadmap is preserved unchanged at [`source/The RoadMa
 
 ```powershell
 uv pip install --python .\.venv\Scripts\python.exe -r requirements-audit.txt
+.\.venv\Scripts\python.exe scripts\inventory_cubit_archives.py
 .\.venv\Scripts\python.exe scripts\audit_datasets.py
+.\.venv\Scripts\python.exe scripts\build_cubit_registry.py
+.\.venv\Scripts\python.exe scripts\audit_cubit_duplicates.py
+.\.venv\Scripts\python.exe scripts\build_cubit_exact_dedup_manifest.py
 .\.venv\Scripts\python.exe scripts\build_codebrim_registry.py
 .\.venv\Scripts\python.exe scripts\build_feasibility_manifest.py
 .\.venv\Scripts\python.exe scripts\materialize_feasibility_set.py

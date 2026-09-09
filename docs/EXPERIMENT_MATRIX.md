@@ -91,6 +91,7 @@ For each model record:
 - If 512 resizing erases thin cracks, use overlapping tiles rather than declaring the model incapable from a destructive resize.
 - If a stage adds no statistically/operationally meaningful value, remove it from the beta while retaining the comparison result.
 - Keep test partitions inaccessible during model and threshold selection.
+- For CUBIT, use the recorded exact-deduplicated split views for model selection and the primary public score. If the full publisher test is also reported, label it separately and disclose the official split's exact-duplicate contamination.
 
 ## 6. Licensing gate
 

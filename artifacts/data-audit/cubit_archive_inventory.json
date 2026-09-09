@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-09-09T10:40:18.088226+00:00",
+  "dataset": "CUBIT-InSeg",
+  "source_archives_modified": false,
+  "test_split_extracted": false,
+  "acquisition_complete_and_verified": true,
+  "missing_archives": [],
+  "archives": [
+    {
+      "split": "train",
+      "kind": "images",
+      "path": "datasets\\building-target\\CUBIT-InSeg\\CUBIT-InSeg\\train\\images.zip",
+      "size_bytes": 15034071180,
+      "sha256": "895cd6a1dd8f36d987e82912be10f98530178c56755b9d891134d53a5d891180",
+      "member_count": 5596,
+      "expected_count": 5596,
+      "count_matches_expected": true,
+      "integrity": {
+        "exit_code": 0,
+        "everything_ok": true,
+        "folders": 1,
+        "files": 5596,
+        "size": 15099357443,
+        "compressed": 15034071180
+      }
+    },
+    {
+      "split": "train",
+      "kind": "labels",
+      "path": "datasets\\building-target\\CUBIT-InSeg\\CUBIT-InSeg\\train\\labels.zip",
+      "size_bytes": 248950377,
+      "sha256": "b604e8b97151dc9305e262bd2db87966045da2d465876b3e75557d694bb13adf",
+      "member_count": 5596,
+      "expected_count": 5596,
+      "count_matches_expected": true,
+      "integrity": {
+        "exit_code": 0,
+        "everything_ok": true,
+        "folders": 1,
+        "files": 5596,
+        "size": 1363355992,
+        "compressed": 248950377
+      }
+    },
+    {
+      "split": "val",
+      "kind": "images",
+      "path": "datasets\\building-target\\CUBIT-InSeg\\CUBIT-InSeg\\val\\images.zip",
+      "size_bytes": 1853116822,
+      "sha256": "cede2e298f79117c2a6f694f2b261ac05b0fa0392fb96d42fdb223ab1a407c5d",
+      "member_count": 699,
+      "expected_count": 699,
+      "count_matches_expected": true,
+      "integrity": {
+        "exit_code": 0,
+        "everything_ok": true,
+        "folders": 1,
+        "files": 699,
+        "size": 1861069589,
+        "compressed": 1853116822
+      }
+    },
+    {
+      "split": "val",
+      "kind": "labels",
+      "path": "datasets\\building-target\\CUBIT-InSeg\\CUBIT-InSeg\\val\\labels.zip",
+      "size_bytes": 30763780,
+      "sha256": "9b25d79d258b823fe5669db8f0c4a0553718bd74e0e10a19ab655ccc616b838c",
+      "member_count": 699,
+      "expected_count": 699,
+      "count_matches_expected": true,
+      "integrity": {
+        "exit_code": 0,
+        "everything_ok": true,
+        "folders": 1,
+        "files": 699,
+        "size": 168223515,
+        "compressed": 30763780
+      }
+    },
+    {
+      "split": "test",
+      "kind": "images",
+      "path": "datasets\\building-target\\CUBIT-InSeg\\CUBIT-InSeg\\test\\images.zip",
+      "size_bytes": 1861617729,
+      "sha256": "746d776c39633cdd4c51197a9e067bf6fec454d54b706fdf34810e8b22b2d416",
+      "member_count": 701,
+      "expected_count": 701,
+      "count_matches_expected": true,
+      "integrity": {
+        "exit_code": 0,
+        "everything_ok": true,
+        "folders": 1,
+        "files": 701,
+        "size": 1870132374,
+        "compressed": 1861617729
+      }
+    },
+    {
+      "split": "test",
+      "kind": "labels",
+      "path": "datasets\\building-target\\CUBIT-InSeg\\CUBIT-InSeg\\test\\labels.zip",
+      "size_bytes": 30772180,
+      "sha256": "ccd952444c6ccbf150c19aed84f2fbe77272cad1217eb81fc9a5df96d31f0aa2",
+      "member_count": 701,
+      "expected_count": 701,
+      "count_matches_expected": true,
+      "integrity": {
+        "exit_code": 0,
+        "everything_ok": true,
+        "folders": 1,
+        "files": 701,
+        "size": 168508919,
+        "compressed": 30772180
+      }
+    }
+  ],
+  "splits": [
+    {
+      "split": "train",
+      "expected_count": 5596,
+      "image_count": 5596,
+      "label_count": 5596,
+      "images_without_label": [],
+      "labels_without_image": [],
+      "paired": true
+    },
+    {
+      "split": "val",
+      "expected_count": 699,
+      "image_count": 699,
+      "label_count": 699,
+      "images_without_label": [],
+      "labels_without_image": [],
+      "paired": true
+    },
+    {
+      "split": "test",
+      "expected_count": 701,
+      "image_count": 701,
+      "label_count": 701,
+      "images_without_label": [],
+      "labels_without_image": [],
+      "paired": true
+    }
+  ]
+}

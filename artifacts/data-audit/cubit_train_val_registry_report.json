@@ -1,0 +1,45 @@
+{
+  "registry_version": "cubit_train_val_source_v1",
+  "purpose": "source registry; not a balanced or frozen training selection",
+  "test_split_included": false,
+  "records": 6295,
+  "records_by_split": {
+    "train": 5596,
+    "val": 699
+  },
+  "images_with_class": {
+    "train": {
+      "crack": 2535,
+      "spalling": 3061
+    },
+    "val": {
+      "crack": 299,
+      "spalling": 400
+    }
+  },
+  "polygon_instances": {
+    "train": {
+      "crack": 41811,
+      "spalling": 8224
+    },
+    "val": {
+      "crack": 5029,
+      "spalling": 1106
+    }
+  },
+  "malformed_label_lines": {
+    "train": 0,
+    "val": 0
+  },
+  "unmatched": {
+    "train": {
+      "images_without_label": [],
+      "labels_without_image": []
+    },
+    "val": {
+      "images_without_label": [],
+      "labels_without_image": []
+    }
+  },
+  "grouping_limitation": "Official filenames do not expose verified building, flight, or capture-session IDs. Per-image group IDs are placeholders; exact/near-duplicate analysis is required before a selected manifest is frozen."
+}

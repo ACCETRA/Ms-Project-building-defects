@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+from collections import Counter
 import hashlib
 import json
 from pathlib import Path
@@ -82,6 +83,43 @@ class PreparationTests(unittest.TestCase):
         self.assertEqual(split_counts, {"test": 632, "train": 6481, "val": 616})
         self.assertFalse([parent for parent, splits in parent_splits.items() if len(splits) > 1])
 
+    def test_cubit_registry_excludes_locked_test(self) -> None:
+        path = ROOT / "data" / "manifests" / "cubit_train_val_source_v1.csv"
+        rows = read_csv(path)
+        self.assertEqual(len(rows), 6295)
+        self.assertEqual(
+            dict(Counter(row["split"] for row in rows)),
+            {"train": 5596, "val": 699},
+        )
+        self.assertNotIn("test", {row["split"] for row in rows})
+        self.assertTrue(all(row["annotation_type"] == "instance_polygon" for row in rows))
+        self.assertTrue(all("dedup_pending" in row["quality_flags"] for row in rows))
+
+    def test_cubit_exact_dedup_manifest_is_split_safe(self) -> None:
+        path = ROOT / "data" / "manifests" / "cubit_exact_dedup_decisions_v1.csv"
+        rows = read_csv(path)
+        selected = [
+            row for row in rows if row["selected_after_exact_dedup"] == "True"
+        ]
+        self.assertEqual(len(rows), 6996)
+        self.assertEqual(
+            dict(Counter(row["split"] for row in selected)),
+            {"test": 694, "val": 678, "train": 5035},
+        )
+        split_by_hash: dict[str, set[str]] = {}
+        for row in selected:
+            split_by_hash.setdefault(row["sha256"], set()).add(row["split"])
+        self.assertFalse(
+            {sha256: splits for sha256, splits in split_by_hash.items() if len(splits) > 1}
+        )
+        duplicate_audit = json.loads(
+            (ROOT / "artifacts" / "data-audit" / "cubit_duplicate_audit.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(duplicate_audit["images_processed"], 6996)
+        self.assertEqual(duplicate_audit["exact_duplicate_groups"], 589)
+        self.assertEqual(duplicate_audit["cross_split_exact_pair_count"], 222)
+        self.assertFalse(duplicate_audit["test_labels_opened"])
+
     def test_finding_schema_and_example(self) -> None:
         try:
             import jsonschema
@@ -107,6 +145,18 @@ class PreparationTests(unittest.TestCase):
         self.assertTrue(materialization["all_readable"])
         self.assertEqual(codebrim["classification_archive"]["full_test_exit_code"], 0)
         self.assertEqual(codebrim["original_archive"]["full_test_exit_code"], 0)
+
+        cubit = json.loads(
+            (ROOT / "artifacts" / "data-audit" / "cubit_archive_inventory.json").read_text(encoding="utf-8")
+        )
+        self.assertTrue(cubit["acquisition_complete_and_verified"])
+        self.assertFalse(cubit["source_archives_modified"])
+        self.assertFalse(cubit["test_split_extracted"])
+        self.assertEqual(len(cubit["archives"]), 6)
+        self.assertTrue(all(row["integrity"]["everything_ok"] for row in cubit["archives"]))
+        self.assertTrue(all(row["count_matches_expected"] for row in cubit["archives"]))
+        self.assertTrue(all(len(row["sha256"]) == 64 for row in cubit["archives"]))
+        self.assertTrue(all(row["paired"] for row in cubit["splits"]))
 
 
 if __name__ == "__main__":

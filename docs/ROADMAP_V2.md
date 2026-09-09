@@ -66,7 +66,7 @@ An image-level label never becomes a claimed pixel mask. A box can prompt SAM, b
 
 | Source | Role in this beta | Important restriction |
 |---|---|---|
-| CUBIT-InSeg | Primary public building-facade UAV crack/spalling source and locked public building test | Train/validation archives are still pending; do not tune on the official test images |
+| CUBIT-InSeg | Primary public building-facade UAV crack/spalling source and locked public building test | All archives verified; publisher split has 589 exact duplicate pairs, so use recorded leakage-clean views and disclose official-test metrics separately |
 | CiF tiled | Large supplemental crack, spalling, and rust instance-segmentation/detection source | Group by original parent image; all available tiles are positive, so it cannot supply verified whole-image negatives |
 | S2DS | Small multi-class segmentation source for cracks, spalling, corrosion appearance, and efflorescence | Do not present it as a large standalone benchmark |
 | UAV75 | Tiny UAV crack/line-mask feasibility and stress source | Too small for the main product claim |
@@ -79,7 +79,7 @@ An image-level label never becomes a claimed pixel mask. A box can prompt SAM, b
 
 The provisional training universe is approximately 20,000-25,000 selected images/tiles before augmentation:
 
-- CUBIT-InSeg: all official train/validation pairs when available; lock the official test set.
+- CUBIT-InSeg: exact-deduplicated 5,035 train and 678 validation records; lock the 694-record leakage-clean test and retain the full 701-image publisher test only for clearly disclosed comparability.
 - CiF: up to 12,000 train and 2,500 validation tiles, sampled across classes and distinct parent images.
 - S2DS: all 563 train and 87 validation pairs; lock all 93 test pairs.
 - UAV75: all 50 train and 10 validation pairs; lock all 15 test pairs.
@@ -173,7 +173,7 @@ Physical measurement evaluation needs field-measured ground truth and reports er
 Three kinds of evidence are reported separately:
 
 1. **Development validation:** group-safe validation partitions for model/threshold selection.
-2. **Public locked building test:** CUBIT-InSeg official test after the pipeline is frozen.
+2. **Public locked building test:** CUBIT-InSeg 694-record exact-deduplicated test after the pipeline is frozen; the 701-image publisher test is secondary because its official split contains disclosed duplicates.
 3. **Target-site field test:** entire unseen buildings/capture sessions, including verified negatives and image-quality failures.
 
 DACL10K official validation is a separately labelled bridge-domain robustness test if DACL train contributes to training. It is not presented as the main building generalization score. CiF/S2DS/UAV official tests are reported by source and remain untouched during tuning.
@@ -222,7 +222,7 @@ Observed local hardware:
 - NVIDIA Quadro T2000, 4,096 MiB VRAM;
 - NVIDIA driver 595.95;
 - approximately 32 GB system RAM;
-- approximately 138 GiB free on D: after current acquisition/preparation.
+- approximately 134 GiB free on D: after current acquisition/preparation.
 
 There is no blanket 24 GB minimum and no immediate 1 TB SSD requirement for the curated plan. Start with batch size 1, mixed precision where supported, controlled tiles, gradient accumulation for small training jobs, and explicit out-of-memory logging. Occasional 12-24 GB GPU access is a schedule accelerator for Florence-2 Large or SAM adaptation, not a prerequisite for validating the smaller candidates.
 
@@ -279,7 +279,7 @@ Expected total is 14-20 calendar weeks on the current workstation with a tightly
 ### Gate 2 - data v0.1
 
 - sources and checksums recorded;
-- CUBIT train/validation acquired or formally deferred;
+- CUBIT train/validation acquired, hashed, paired, and CRC-verified; **completed**;
 - taxonomy reviewed;
 - exact/near-duplicate and group rules executed;
 - task-specific selected manifests frozen;
@@ -302,7 +302,7 @@ Expected total is 14-20 calendar weeks on the current workstation with a tightly
 ### Gate 5 - product and external validation
 
 - complete upload/process/review/export/reopen workflow;
-- CUBIT locked test and target-site unseen-building test;
+- CUBIT leakage-clean locked test and target-site unseen-building test;
 - false-negative and hard-negative review;
 - measurement, safety, and license limitations visible;
 - reproducible demo uses real inference, not hard-coded findings.
@@ -312,7 +312,9 @@ Expected total is 14-20 calendar weeks on the current workstation with a tightly
 Completed:
 
 - corrected beta scope, taxonomy, dataset contract, experiment matrix, and environment plan;
-- source audit for CiF, DACL10K, CODEBRIM, S2DS, UAV75, and partial CUBIT acquisition;
+- source audit for CiF, DACL10K, CODEBRIM, S2DS, UAV75, and complete CUBIT acquisition;
+- CUBIT train/validation source registry with 6,295 image/label pairs and the locked test excluded;
+- CUBIT exact/perceptual duplicate audit across 6,996 images and exact-dedup decision manifest; 521 cross-split perceptual candidates remain for review;
 - checksum and 7-Zip verification for both CODEBRIM archives;
 - CODEBRIM classification registry with 7,729 records and zero cross-split parent groups;
 - deterministic 300-sample feasibility selection and materialization;
