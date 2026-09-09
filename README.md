@@ -16,6 +16,12 @@ This workspace is being prepared as a functional academic beta for visible-condi
 
 The original user-supplied roadmap is preserved unchanged at [`source/The RoadMap.md`](source/The%20RoadMap.md).
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the contributor guide, priorities, safe workstreams, and repo guardrails.
+
+This repository is intentionally organized so GitHub contributors can keep making progress while owner/advisor decisions are pending. The guide separates blocked decisions from parallelizable tasks and lists the validation commands needed before merging any update.
+
 ## Current state
 
 - Core public dataset acquisition and non-destructive archive inspection are complete; optional sources and real target-site data remain open.
