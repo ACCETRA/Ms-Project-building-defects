@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "manifest_version": "feasibility_v0_1",
+  "mapping_version": "BDI-TAX-001@0.1.0-beta",
+  "source_samples": 300,
+  "normalized_samples": 300,
+  "target_annotations": 667,
+  "geometry_qc_passed": true,
+  "rejected_malformed_geometries": 4,
+  "task_view_counts": {
+    "detection": 300,
+    "segmentation": 300,
+    "classification": 300,
+    "florence_product": 300
+  },
+  "policy": {
+    "image_labels_promoted_to_boxes": false,
+    "boxes_promoted_to_masks": false,
+    "mask_derived_boxes_marked": true,
+    "source_annotations_modified": false
+  }
+}

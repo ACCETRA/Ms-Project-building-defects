@@ -1,8 +1,8 @@
 # Canonical Defect Taxonomy and Annotation Guide
 
 **Taxonomy ID:** BDI-TAX-001  
-**Version:** 0.1.0-draft  
-**Approval required from:** civil/structural engineering reviewer
+**Version:** 0.1.0-beta  
+**Approval:** accepted for the academic Florence-first beta; engineering review is deferred
 
 ## Core principle
 
@@ -90,4 +90,15 @@ Unknown must never be converted to negative merely because no annotation was sup
 ## Severity policy
 
 Severity grades are excluded from taxonomy v0.1. A reviewer-approved engineering rule and calibrated measurements are required before introducing severity labels.
+
+## Beta acceptance thresholds
+
+These are provisional release gates for the Florence-first beta, not claims of engineering adequacy. They must be measured on locked validation and unseen target-building data before release:
+
+- crack recall: at least 0.90 on the locked building-domain test;
+- crack false-negative rate: at most 0.10 on the same test, with a documented review of every sampled false negative;
+- false alarms: at most 2 candidate findings per image on the target-building test median;
+- physical measurement coverage: 100% of findings presented with physical dimensions must have a valid recorded scale method and uncertainty;
+- uncalibrated images: never display millimetres or centimetres; retain pixel geometry and the `uncalibrated_measurement` limitation;
+- no severity, repair, or structural-safety conclusion may be emitted by the beta.
 

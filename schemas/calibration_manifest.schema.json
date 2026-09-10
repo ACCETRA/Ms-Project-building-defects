@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/bdi/schemas/calibration-manifest-v1.json",
+  "title": "Building Defect Inspection Calibration Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "calibrations"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "calibrations": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/calibration" }
+    }
+  },
+  "$defs": {
+    "matrix": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "array",
+        "minItems": 3,
+        "maxItems": 3,
+        "items": { "type": "number" }
+      }
+    },
+    "calibration": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["scale_status", "scale_method"],
+          "properties": {
+            "scale_status": { "enum": ["not_provided", "invalid", "out_of_plane"] },
+            "scale_method": { "const": "none" },
+            "reason": { "type": "string", "minLength": 1 }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["scale_status", "scale_method", "unit", "uncertainty"],
+          "properties": {
+            "scale_status": { "const": "valid" },
+            "scale_method": {
+              "enum": ["reference_marker", "camera_planar_calibration", "UAV_GSD", "registered_3d"]
+            },
+            "unit": { "enum": ["mm", "cm"] },
+            "uncertainty": { "type": "number", "minimum": 0 },
+            "millimeters_per_pixel": { "type": "number", "exclusiveMinimum": 0 },
+            "homography_pixel_to_mm": { "$ref": "#/$defs/matrix" },
+            "evidence_uri": { "type": "string", "minLength": 1 }
+          },
+          "oneOf": [
+            {
+              "required": ["millimeters_per_pixel"],
+              "not": { "required": ["homography_pixel_to_mm"] }
+            },
+            {
+              "required": ["homography_pixel_to_mm"],
+              "not": { "required": ["millimeters_per_pixel"] }
+            }
+          ],
+          "allOf": [
+            {
+              "if": { "properties": { "scale_method": { "const": "camera_planar_calibration" } } },
+              "then": { "required": ["homography_pixel_to_mm"] }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+

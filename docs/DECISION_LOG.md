@@ -23,11 +23,14 @@
 | D-017 | Require a CUDA-only one-image preflight before the representative feasibility study | Completed | All six candidates execute in FP16 on the Quadro T2000; this proves runtime fit only and does not authorize accuracy claims or training |
 | D-018 | Acquire CUBIT-InSeg completely while preserving its official test lock | Completed | Six official archives totaling 19,059,292,068 bytes pass CRC, member-count, and image/label pairing checks; SHA-256 values are recorded without profiling locked test-label contents |
 | D-019 | Derive leakage-clean CUBIT views instead of trusting the publisher split unchanged | Completed for exact duplicates | 589 byte-identical `SP0`/`SP1` pairs include 222 cross-split pairs; `test > val > train` decisions retain 5,035/678/694 records with no cross-split exact hash, while 521 perceptual candidates remain review-only |
+| D-020 | Focus beta implementation on the two Florence-2 models before broader model comparison | Approved for implementation phase | Florence-2 Base is the primary route; Florence-2 Large is an escalation route for validation-defined positive or uncertain cases; YOLO, SAM, and ResNet/RetinaNet comparisons are deferred |
+| D-021 | Accept the v0.1 visible-condition taxonomy for the academic beta without waiting for an engineering reviewer | Approved for academic beta | Use the documented labels and `unknown_review`; do not introduce severity, repair, or structural-safety claims |
+| D-022 | Require physical measurements in beta 1 | Approved with calibration constraint | Physical dimensions are emitted only for images with a valid reference marker, planar camera calibration, valid UAV GSD, or registered 3D scale; otherwise pixel geometry is retained and physical output is withheld |
+| D-023 | Use royalty-free or explicitly licensed target images | Approved policy | Record source URL, license terms, retrieval date, and attribution requirements; this does not change the separate license obligations of public training datasets |
+| D-024 | Use YOLO only under an open-source delivery direction | Deferred implementation decision | Any delivered YOLO component must remain compatible with the selected open-source license and its AGPL obligations; it is outside the Florence-first implementation phase |
 
 ## Open decisions
 
-- Advisor confirmation: ResNet or RetinaNet.
-- Engineering reviewer identity and availability.
-- Target-building/site access and image-use permission.
-- Whether the complete beta will be open source under AGPL-compatible terms if Ultralytics remains in the delivered product.
-- Whether physical crack dimensions are required for the first release and, if so, which capture-scale method will be used.
+- Advisor confirmation: ResNet or RetinaNet; deferred until the comparison phase.
+- Target-building/site access and image-use permission; still required for target-domain validation, even when royalty-free images are used.
+- Selection and field validation of the physical scale method; the requirement for physical measurements is approved, but the method must be supplied per image.

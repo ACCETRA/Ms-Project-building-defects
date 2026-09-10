@@ -106,3 +106,18 @@ A curated dataset version may be frozen only when it has:
 - documented selection procedure and random seed;
 - representative image review by the engineering reviewer;
 - explicit list of known missing classes and weak mappings.
+
+## 9. Feasibility v0.1 implementation
+
+The training-only 300-sample feasibility collection now has a normalized master
+manifest and row-level detection, segmentation, classification, and Florence
+product views at `data/manifests/feasibility_*_v0_1.csv`. Normalized annotations
+are reproducibly generated under `data/feasibility_v0/normalized/` by
+`scripts/build_feasibility_task_views.py`.
+
+The conversion preserves native labels and source-annotation hashes, identifies
+mapping strength, marks boxes derived from genuine masks, and does not create masks
+from boxes or image labels. The first full conversion retained 667 target
+annotations and rejected four malformed native polygon fragments while retaining
+the valid native boxes associated with those objects. This is a feasibility view,
+not the final curated mega-dataset release.

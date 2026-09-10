@@ -1,5 +1,5 @@
 schema_version: 1
-status: provisional_for_feasibility
+status: florence_first_implementation
 hardware_profile: quadro_t2000_4gb
 
 runtime:
@@ -16,14 +16,14 @@ models:
     origin_checkpoint: microsoft/Florence-2-base-ft
     local_path: weights/florence-community-2-base-ft
     role: detection_and_triage
-    initial_mode: inference
+    initial_mode: primary_beta_route
     cuda_smoke_status: passed
   florence_large:
     checkpoint: florence-community/Florence-2-large-ft
     origin_checkpoint: microsoft/Florence-2-large-ft
     local_path: weights/florence-community-2-large-ft
     role: uncertain_case_escalation
-    initial_mode: inference_feasibility_only
+    initial_mode: uncertain_case_escalation
     cuda_smoke_status: passed
   yolo_detector:
     checkpoint: yolo11n.pt
@@ -58,6 +58,22 @@ feasibility:
   require_cuda: true
   log_peak_vram: true
   forbid_silent_cpu_fallback: true
+
+implementation_phase:
+  primary_route: florence_base
+  escalation_route: florence_large
+  escalation_policy: validation_calibrated_positive_or_uncertain_cases
+  deferred_routes:
+    - yolo_detector
+    - yolo_segmenter
+    - sam_segmenter
+    - resnet_classifier
+  physical_measurements_required: true
+  physical_measurement_methods:
+    - reference_marker
+    - camera_planar_calibration
+    - UAV_GSD
+    - registered_3d
 
 optional_after_baseline:
   - checkpoint: yolo26n.pt

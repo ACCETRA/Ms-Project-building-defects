@@ -402,7 +402,7 @@ def make_rows(root: Path) -> list[dict[str, str | int]]:
                     "native_labels": "|".join(candidate.native_labels),
                     "canonical_labels": "|".join(canonical_labels(candidate.native_labels)),
                     "annotation_status": "positive",
-                    "mapping_version": "BDI-TAX-001@0.1.0-draft",
+                    "mapping_version": "BDI-TAX-001@0.1.0-beta",
                     "license_id": license_name,
                     "quality_flags": "",
                     "selection_reason": reason,

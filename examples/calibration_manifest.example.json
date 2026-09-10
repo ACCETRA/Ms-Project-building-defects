@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "calibrations": {
+    "cif_0001": {
+      "scale_status": "valid",
+      "scale_method": "reference_marker",
+      "unit": "mm",
+      "millimeters_per_pixel": 0.25,
+      "uncertainty": 0.5,
+      "evidence_uri": "calibration://cif_0001/reference-marker-review"
+    },
+    "cif_0002": {
+      "scale_status": "invalid",
+      "scale_method": "none",
+      "reason": "Reference marker is not in the inspected surface plane."
+    }
+  }
+}
+
