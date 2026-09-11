@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BDI Review Harness</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead">
+      <div>
+        <p class="kicker">BUILDING DEFECT INSPECTION</p>
+        <h1>Review desk</h1>
+        <p class="lede">A local proving ground for image intake, candidate findings, and accountable review.</p>
+      </div>
+      <div class="status"><span class="pulse"></span><span id="system-status">Checking harness</span></div>
+    </header>
+
+    <section class="intake band">
+      <div class="section-title"><span class="step">01</span><div><h2>Image intake</h2><p>Upload an RGB image to create a review candidate.</p></div></div>
+      <form id="upload-form" class="upload-form">
+        <label class="dropzone" id="dropzone"><input id="image-input" name="image" type="file" accept="image/*" required><strong>Drop an image here</strong><span>or choose a file from this device</span></label>
+        <button class="button button-primary" type="submit">Start processing <span>→</span></button>
+      </form>
+      <div id="processing" class="processing hidden"><span class="spinner"></span><span>Reading image and preparing candidate finding...</span></div>
+    </section>
+
+    <section class="workspace band">
+      <div class="section-title"><span class="step">02</span><div><h2>Findings queue</h2><p>Predictions remain immutable; review is recorded separately.</p></div></div>
+      <div id="empty" class="empty"><span class="empty-mark">+</span><p>No images in this run yet.</p><small>Upload an image above to begin.</small></div>
+      <div id="findings" class="findings"></div>
+    </section>
+
+    <section class="exports band">
+      <div class="section-title"><span class="step">03</span><div><h2>Export</h2><p>Download the current review state in the format you need.</p></div></div>
+      <div class="export-actions"><a class="button" href="/api/export/json" download>JSON record <span>↓</span></a><a class="button" href="/api/export/csv" download>CSV register <span>↓</span></a><a class="button" href="/api/export/image" download>Annotated image <span>↓</span></a></div>
+    </section>
+
+    <footer><span>LOCAL HARNESS · NO MODEL EXECUTION</span><span>Review required · Not a structural safety determination</span></footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
