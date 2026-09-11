@@ -1,23 +1,8 @@
 {
-  "checked_at_utc": "2026-09-08T13:01:36.581402+00:00",
-  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
-  "platform": "Windows-10-10.0.26200-SP0",
-  "status": "passed",
-  "torch_version": "2.6.0+cu124",
-  "torchvision_version": "0.21.0+cu124",
-  "torch_cuda_build": "12.4",
-  "cuda_available": true,
-  "nvidia_smi": "Quadro T2000, 4096 MiB, 595.95",
-  "device_name": "Quadro T2000",
-  "compute_capability": "7.5",
-  "device_total_memory_bytes": 4294639616,
-  "float16_matmul_shape": [
-    1024,
-    1024
-  ],
-  "float16_matmul_checksum": 26728.107421875,
-  "peak_allocated_bytes": 19006976,
-  "peak_reserved_bytes": 23068672,
-  "free_memory_after_test_bytes": 3412852736,
-  "total_memory_after_test_bytes": 4294639616
+  "checked_at_utc": "2026-09-11T22:55:36.886131+00:00",
+  "python": "3.11.9 (main, Aug 14 2024, 04:18:20) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "status": "failed",
+  "error": "FileNotFoundError: [WinError 2] The system cannot find the file specified",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\ammads crack\\Project-Alpha_Legal_Intra\\scripts\\verify_cuda.py\", line 54, in main\n    \"nvidia_smi\": nvidia_smi(),\n                  ^^^^^^^^^^^^\n  File \"D:\\ammads crack\\Project-Alpha_Legal_Intra\\scripts\\verify_cuda.py\", line 17, in nvidia_smi\n    completed = subprocess.run(\n                ^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Shoaib\\AppData\\Roaming\\uv\\python\\cpython-3.11.9-windows-x86_64-none\\Lib\\subprocess.py\", line 548, in run\n    with Popen(*popenargs, **kwargs) as process:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Shoaib\\AppData\\Roaming\\uv\\python\\cpython-3.11.9-windows-x86_64-none\\Lib\\subprocess.py\", line 1026, in __init__\n    self._execute_child(args, executable, preexec_fn, close_fds,\n  File \"C:\\Users\\Shoaib\\AppData\\Roaming\\uv\\python\\cpython-3.11.9-windows-x86_64-none\\Lib\\subprocess.py\", line 1538, in _execute_child\n    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [WinError 2] The system cannot find the file specified\n"
 }
