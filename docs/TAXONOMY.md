@@ -2,7 +2,9 @@
 
 **Taxonomy ID:** BDI-TAX-001  
 **Version:** 0.1.0-beta  
-**Approval:** accepted for the academic Florence-first beta; engineering review is deferred
+**Approval:** accepted for the academic feasibility/comparison beta; final v1 mapping and representative QA remain
+
+The taxonomy is shared by Florence, YOLO, SAM prompts, and ResNet targets. It is not Florence-only. Final full-data training requires representative review of every source mapping and explicit handling of positive, verified-negative, unknown, and not-applicable states. See [`COMPLETION_PLAN.md`](COMPLETION_PLAN.md).
 
 ## Core principle
 
@@ -91,9 +93,9 @@ Unknown must never be converted to negative merely because no annotation was sup
 
 Severity grades are excluded from taxonomy v0.1. A reviewer-approved engineering rule and calibrated measurements are required before introducing severity labels.
 
-## Beta acceptance thresholds
+## FYP evaluation criteria
 
-These are provisional release gates for the Florence-first beta, not claims of engineering adequacy. They must be measured on locked validation and unseen target-building data before release:
+These are evaluation targets for the Florence-first FYP prototype, not claims of engineering adequacy or production readiness:
 
 - crack recall: at least 0.90 on the locked building-domain test;
 - crack false-negative rate: at most 0.10 on the same test, with a documented review of every sampled false negative;

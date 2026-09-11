@@ -1,10 +1,12 @@
 # First Execution Gate — Three-Person Team
 
-**Status:** Technical preparation substantially complete; owner/advisor and field-access decisions remain open.
+**Status:** Feasibility gate closed; full-data execution gate open. Comparison feasibility training is complete, but the FYP is not complete.
+
+Use [`COMPLETION_PLAN.md`](COMPLETION_PLAN.md) as the current execution checklist. This file records the first gate; it does not claim that full-data manifests, locked evaluation, or the product workflow are finished.
 
 ## Objective
 
-Finish the evidence needed to approve the first curated-data release and begin a truthful hardware feasibility test. This gate does not include full training.
+The first gate is complete. The next gate is to freeze v1 task views, run full-data baselines, integrate YOLO-to-SAM, evaluate locked sources, and finish the real-inference review/export demonstration.
 
 ## Data lead
 
@@ -19,15 +21,18 @@ Finish the evidence needed to approve the first curated-data release and begin a
 
 - [Completed] Create the isolated CUDA-enabled Python 3.11 environment.
 - [Completed] Verify CUDA on the Quadro T2000.
-- Confirm the advisor meant ResNet rather than RetinaNet.
+- [Completed] Confirm ResNet-50 rather than RetinaNet as the classification baseline.
 - [Completed for feasibility] Review and acquire the model/checkpoint choices in `docs/EXPERIMENT_MATRIX.md`.
 - Define the common detector and segmentation evaluation inputs.
 - [Completed] Select and materialize 300 training-only feasibility images after provenance review.
+- [Completed] Normalize the 300-sample detection, segmentation, and classification labels.
+- [Completed] Build full CUBIT train/validation labels, exact-dedup decisions, and CODEBRIM classification labels for the acquired sources.
+- [Completed] Run short YOLO11n and ResNet-50 comparison training jobs. All three 5-epoch runs finished on CUDA (FP32): YOLO11n detection (`runs/comparison/yolo/yolo11n_detect_fyp/weights/best.pt`), YOLO11n-seg (`runs/comparison/yolo/yolo11n_seg_fyp/weights/best.pt`), and ResNet-50 classification (`runs/comparison/resnet50_fyp/resnet50_comparison.pt`). SAM 2.1 remains pretrained for the first comparison.
 
 ## Product/evaluation lead
 
 - Convert `docs/BETA_SPECIFICATION.md` into the first user-flow/wireframe checklist.
-- Review the structured finding fields with the engineering reviewer.
+- Review the structured finding fields for the FYP demonstration.
 - Draft the inspection PDF/CSV/JSON content contract.
 - Define preliminary operational measurements: latency, false alarms per image, escalation rate, and review time.
 - Plan target-building capture permissions and metadata.
@@ -35,18 +40,17 @@ Finish the evidence needed to approve the first curated-data release and begin a
 ## End-of-gate evidence
 
 - Approved beta specification.
-- Engineer-reviewed taxonomy or a logged list of disputed classes.
+- Taxonomy and known limitations documented for the FYP demonstration.
 - Dataset inventory and license table.
 - Archive health report.
 - Proposed curated subset and frozen test sources.
 - Exact model/checkpoint matrix.
 - CUDA-enabled environment verification.
 - Feasibility sample manifest.
-- Product workflow and output-record review.
+- Prototype workflow and output-record review.
 
 ## Blocking decisions for the owner/advisor
 
-- Confirm ResNet versus RetinaNet.
-- Confirm whether the complete project will be open-source under AGPL-compatible terms if Ultralytics YOLO remains in the beta.
-- Identify the qualified engineering reviewer.
-- Identify target buildings/construction sites and image-use permissions.
+- [Completed] Confirm ResNet-50 rather than RetinaNet as the classification baseline.
+- [Completed] Confirm open-source distribution under AGPL-compatible terms if Ultralytics YOLO remains in the beta.
+- Identify demonstration images and record their provenance/permissions.

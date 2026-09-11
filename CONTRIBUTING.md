@@ -11,6 +11,8 @@ The current workspace is in the data-preparation and feasibility phase. The proj
 - the Python environment and model runtime smoke tests are complete;
 - the feasibility set and source registries are materialized.
 
+The five-epoch YOLO11n detection, YOLO11n-segmentation, and ResNet-50 feasibility runs are now complete. Full-data work must follow [`docs/COMPLETION_PLAN.md`](docs/COMPLETION_PLAN.md); do not confuse the completed feasibility tier with the unbuilt v1 manifests or final evaluation.
+
 Important guardrails:
 
 - Do not start model training before the dataset freeze is approved.
@@ -26,7 +28,7 @@ Important guardrails:
 These are not optional technical tasks; they are shared responsibilities of the co-owners and must be resolved before finalization:
 
 1. ResNet vs RetinaNet
-2. Engineering reviewer identity and review schedule
+2. FYP demonstration review scope and schedule
 3. Target buildings and site image-use permissions
 4. YOLO licensing/open-source direction
 5. Whether physical crack dimensions are required for beta 1 and how they will be calibrated
@@ -50,6 +52,7 @@ These tasks can proceed in parallel without risking the final model route:
 - prepare the beta application workflow and output contract review checklist;
 - validate script reproducibility and documentation links;
 - prepare issue lists and contributor notes for the next delivery gate.
+- implement the missing v1 manifest and evaluator scripts listed in [`docs/COMPLETION_PLAN.md`](docs/COMPLETION_PLAN.md), provided locked test data remains untouched.
 
 ## 3. Current repo map
 
@@ -192,4 +195,4 @@ This keeps the backlog evidence-based and reduces rework.
 
 ## 9. Final note
 
-A contributor should assume this repo is in a disciplined research-prep stage: the data and model feasibility groundwork is complete, but the project is still waiting on governance and product decisions. The right contributor contribution is not to guess the final direction; it is to keep the repo ready, reproducible, and decision-ready while those decisions are pending.
+A contributor should assume this repo is between feasibility and full-data execution: the data/model smoke foundation is complete, but v1 manifests, full training, YOLO-to-SAM integration, locked evaluation, target-site validation, and the browser workflow remain. Ownership and exact paths are listed in [`docs/COMPLETION_PLAN.md`](docs/COMPLETION_PLAN.md).

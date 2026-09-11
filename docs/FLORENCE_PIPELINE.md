@@ -1,7 +1,9 @@
 # Florence-First Feasibility Pipeline
 
 **Pipeline version:** `0.1.0-florence-feasibility`  
-**Scope:** CUDA-only, training-only feasibility execution
+**Scope:** CUDA-only, pretrained inference feasibility execution; full-data comparison remains pending
+
+This is not a Florence fine-tuning pipeline. It runs the local pretrained Florence-2 Base/Large checkpoints over the current 300-sample feasibility view. Full-data Florence execution, escalation evaluation, and comparison against the specialist route are tracked in [`COMPLETION_PLAN.md`](COMPLETION_PLAN.md).
 
 ## What it does
 
@@ -63,7 +65,7 @@ evidence for any real image.
 
 ## Interpretation boundary
 
-This pipeline produces candidate visible conditions for qualified review. The
+This pipeline produces candidate visible conditions for manual review. The
 300 samples are drawn only from training partitions, so a run is not an accuracy
 evaluation and cannot satisfy the release thresholds in `docs/TAXONOMY.md`.
 No-candidate output is not evidence that a structure or element is safe.

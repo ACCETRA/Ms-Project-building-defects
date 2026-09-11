@@ -79,7 +79,7 @@
   ],
   "limitation_codes": [
     "candidate_only",
-    "qualified_review_required",
+    "manual_review_required",
     "not_structural_safety_determination",
     "uncalibrated_measurement"
   ]

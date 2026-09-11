@@ -1,7 +1,9 @@
 # Finding and Export Contract
 
 **Contract ID:** BDI-OUTPUT-001  
-**Status:** Draft implementation boundary  
+**Status:** Draft implementation boundary; required for the remaining integration and product gates
+
+The schema is the handoff boundary for both routes: Florence findings and YOLO -> SAM findings must use the same record shape. The current feasibility scripts do not yet constitute the complete browser review/export workflow described here. See [`COMPLETION_PLAN.md`](COMPLETION_PLAN.md).
 **Machine schema:** `schemas/finding_record.schema.json`
 
 ## Core rule
@@ -31,4 +33,4 @@ The same stored records drive all output formats:
 
 ## Safety wording
 
-Every user-facing report must include both `qualified_review_required` and `not_structural_safety_determination` limitations unless a qualified reviewer establishes a stricter approved wording. An image with no finding is not evidence that the structure or element is safe.
+Every user-facing report must include both `manual_review_required` and `not_structural_safety_determination` limitations. An image with no finding is not evidence that the structure or element is safe.

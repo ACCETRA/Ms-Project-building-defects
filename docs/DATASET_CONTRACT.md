@@ -1,7 +1,9 @@
 # Curated Mega Dataset Contract
 
 **Contract ID:** BDI-DATA-001  
-**Status:** Active for data preparation
+**Status:** Active; feasibility v0.1 complete, v1 full-data task views still required
+
+The current 300-row task views are a feasibility checkpoint. The full release must be built as the versioned v1 manifests described in [`COMPLETION_PLAN.md`](COMPLETION_PLAN.md); it is not acceptable to silently treat all raw files as one training folder.
 
 ## 1. Definition
 
@@ -104,7 +106,7 @@ A curated dataset version may be frozen only when it has:
 - split report;
 - per-class counts by source and annotation type;
 - documented selection procedure and random seed;
-- representative image review by the engineering reviewer;
+- representative image review by the project team;
 - explicit list of known missing classes and weak mappings.
 
 ## 9. Feasibility v0.1 implementation
@@ -114,6 +116,11 @@ manifest and row-level detection, segmentation, classification, and Florence
 product views at `data/manifests/feasibility_*_v0_1.csv`. Normalized annotations
 are reproducibly generated under `data/feasibility_v0/normalized/` by
 `scripts/build_feasibility_task_views.py`.
+
+The acquired full-source label indexes are also available: CUBIT train/validation
+labels at `data/manifests/cubit_train_val_source_v1.csv`, CUBIT exact-dedup
+decisions at `data/manifests/cubit_exact_dedup_decisions_v1.csv`, and CODEBRIM
+classification labels at `data/manifests/codebrim_classification_source_v1.csv`.
 
 The conversion preserves native labels and source-annotation hashes, identifies
 mapping strength, marks boxes derived from genuine masks, and does not create masks

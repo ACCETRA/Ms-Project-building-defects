@@ -10,7 +10,7 @@
 | D-004 | Use a curated, balanced mega dataset rather than every source image | Approved | Task manifests select subsets while raw sources remain immutable |
 | D-005 | Keep separate detection, segmentation, and classification views | Approved by data compatibility | Prevents boxes/image tags from being presented as genuine masks |
 | D-006 | Compare Florence, YOLO, SAM, and a ResNet baseline by task and end to end | Approved | Provisional exact model matrix created |
-| D-007 | Treat “REZNEK” as ResNet pending confirmation | Pending advisor confirmation | ResNet-50 is provisional; RetinaNet would change the comparison track |
+| D-007 | Treat “REZNEK” as ResNet-50 | Approved by project owner on 2026-09-11 | ResNet-50 is the classification baseline; RetinaNet is deferred |
 | D-008 | Defer operational 3D/thermal/GPR/historical fusion | Recommended and recorded | Structured visual finding schema preserves a future fusion interface |
 | D-009 | Report pixel measurements unless calibration is valid | Approved default | Prevents unsupported millimetre claims |
 | D-010 | Use the installed GPU first; larger GPU is optional | Approved correction | Local environment/hardware feasibility precedes any cloud requirement |
@@ -23,14 +23,15 @@
 | D-017 | Require a CUDA-only one-image preflight before the representative feasibility study | Completed | All six candidates execute in FP16 on the Quadro T2000; this proves runtime fit only and does not authorize accuracy claims or training |
 | D-018 | Acquire CUBIT-InSeg completely while preserving its official test lock | Completed | Six official archives totaling 19,059,292,068 bytes pass CRC, member-count, and image/label pairing checks; SHA-256 values are recorded without profiling locked test-label contents |
 | D-019 | Derive leakage-clean CUBIT views instead of trusting the publisher split unchanged | Completed for exact duplicates | 589 byte-identical `SP0`/`SP1` pairs include 222 cross-split pairs; `test > val > train` decisions retain 5,035/678/694 records with no cross-split exact hash, while 521 perceptual candidates remain review-only |
-| D-020 | Focus beta implementation on the two Florence-2 models before broader model comparison | Approved for implementation phase | Florence-2 Base is the primary route; Florence-2 Large is an escalation route for validation-defined positive or uncertain cases; YOLO, SAM, and ResNet/RetinaNet comparisons are deferred |
-| D-021 | Accept the v0.1 visible-condition taxonomy for the academic beta without waiting for an engineering reviewer | Approved for academic beta | Use the documented labels and `unknown_review`; do not introduce severity, repair, or structural-safety claims |
+| D-020 | Use Florence Base/Large with segmentation as the full FYP pipeline | Approved for implementation phase | Florence-2 Base is the primary route and Florence-2 Large is the escalation route; the full route must produce localized findings and segmentation masks |
+| D-021 | Accept the v0.1 visible-condition taxonomy for the academic FYP prototype without external engineering review | Approved for FYP prototype | Use the documented labels and `unknown_review`; do not introduce severity, repair, or structural-safety claims |
 | D-022 | Require physical measurements in beta 1 | Approved with calibration constraint | Physical dimensions are emitted only for images with a valid reference marker, planar camera calibration, valid UAV GSD, or registered 3D scale; otherwise pixel geometry is retained and physical output is withheld |
 | D-023 | Use royalty-free or explicitly licensed target images | Approved policy | Record source URL, license terms, retrieval date, and attribution requirements; this does not change the separate license obligations of public training datasets |
-| D-024 | Use YOLO only under an open-source delivery direction | Deferred implementation decision | Any delivered YOLO component must remain compatible with the selected open-source license and its AGPL obligations; it is outside the Florence-first implementation phase |
+| D-024 | Release the academic beta as open source under AGPL-compatible terms | Approved by project owner on 2026-09-11 | Any delivered YOLO component must remain compatible with AGPL obligations; commercial distribution requires separate dataset permissions and any required commercial model licensing |
+| D-025 | Use ResNet-50 + YOLO11n + SAM 2.1 as the comparison pipeline | Approved by project owner on 2026-09-11 | Compare the Florence full pipeline against a conventional classification, detection, and segmentation route; build the web demo only after real model results are available |
+| D-026 | Treat the 300-sample runs as feasibility evidence, not full-data completion | Recorded on 2026-09-12 | Full v1 task manifests, annotation QA, full-data training, YOLO-to-SAM integration, locked evaluation, target-site validation, and the browser workflow remain open; see `docs/COMPLETION_PLAN.md` |
 
 ## Open decisions
 
-- Advisor confirmation: ResNet or RetinaNet; deferred until the comparison phase.
 - Target-building/site access and image-use permission; still required for target-domain validation, even when royalty-free images are used.
 - Selection and field validation of the physical scale method; the requirement for physical measurements is approved, but the method must be supplied per image.

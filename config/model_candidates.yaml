@@ -63,11 +63,17 @@ implementation_phase:
   primary_route: florence_base
   escalation_route: florence_large
   escalation_policy: validation_calibrated_positive_or_uncertain_cases
-  deferred_routes:
-    - yolo_detector
-    - yolo_segmenter
-    - sam_segmenter
+  full_pipeline:
+    - florence_base
+    - florence_large
+    - florence_segmentation_adapter
+  comparison_pipeline:
     - resnet_classifier
+    - yolo_detector
+    - sam_segmenter
+  training_scripts:
+    yolo: scripts/train_yolo_comparison.py
+    resnet: scripts/train_resnet_comparison.py
   physical_measurements_required: true
   physical_measurement_methods:
     - reference_marker

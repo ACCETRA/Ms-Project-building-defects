@@ -1,16 +1,18 @@
 # Building Defect Inspection Beta - Roadmap v2
 
 **Roadmap ID:** BDI-ROADMAP-002  
-**Status:** Approved scope; preparation in progress  
+**Status:** Approved scope; feasibility tier complete; full-data and product gates remain
 **Updated:** 2026-09-08  
 **Supersedes for execution:** `source/The RoadMap.md`  
 **Original preserved:** yes
 
 ## 1. Outcome
 
-Build a fully functional academic beta for visible-condition inspection of completed and under-construction buildings. It should look and behave like a small real product, not a collection of notebooks. A user must be able to create an inspection, upload RGB images, follow processing, review model findings, and export a traceable report.
+The current repository checkpoint is documented in [`COMPLETION_PLAN.md`](COMPLETION_PLAN.md). The roadmap remains the intended outcome; it should not be read as evidence that the v1 manifests, full training, locked evaluations, or browser workflow already exist.
 
-Cracks are the primary target. Secondary visible targets are spalling, honeycombing/rock pockets, exposed rebar, rust/corrosion staining, and efflorescence/leaching. The beta identifies candidate visible conditions for qualified review. It does not declare a structure safe, diagnose hidden damage, prescribe repairs, or certify code compliance.
+Build a demonstrable master's FYP prototype for visible-condition inspection. It should provide a coherent workflow rather than a collection of notebooks: a user can upload RGB images, run inference, manually review model findings, and export a traceable report. Target completion is Sunday 2026-09-13.
+
+Cracks are the primary target. Secondary visible targets are spalling, honeycombing/rock pockets, exposed rebar, rust/corrosion staining, and efflorescence/leaching. The prototype identifies candidate visible conditions for manual review. It does not declare a structure safe, diagnose hidden damage, prescribe repairs, or certify code compliance.
 
 The first release uses handheld and UAV still images of visible concrete and masonry surfaces. Live video, operational thermal/GPR/3D fusion, and autonomous engineering conclusions are later phases.
 
@@ -104,7 +106,7 @@ The canonical top-level labels are:
 
 Rust-colored evidence is recorded as rust staining, not proof of hidden reinforcement corrosion. Ambiguous data remains unknown instead of being forced into a class. Each image/class relationship distinguishes positive, verified negative, unknown, and not applicable.
 
-A qualified civil/structural reviewer must approve the annotation guide, resolve edge cases, and review representative examples before dataset v0.1 is frozen.
+The project team must document the annotation guide, unresolved edge cases, and representative-example review before using dataset v0.1 in the demonstration.
 
 ## 6. Leakage, duplicates, and balancing
 
@@ -151,7 +153,7 @@ This ablation determines whether the large stage adds enough quality to justify 
 
 Compare the best Florence route with the best specialist route (likely YOLO -> SAM or YOLO segmentation) using crack recall, mask quality, false alarms per image, escalation rate, latency, peak VRAM, failure rate, and reviewer workload.
 
-`REZNEK` is provisionally interpreted as **ResNet**. The advisor must confirm this. If the intended term was **RetinaNet**, it becomes another detector beside YOLO and changes the experiment matrix.
+`REZNEK` is confirmed as **ResNet-50** by the project owner. It remains the separate image/crop classification baseline; RetinaNet is deferred because Florence and YOLO already cover the detector comparison track.
 
 YOLO26n may be tested only after the YOLO11 baseline is reproducible; it must not expand the first matrix by default.
 
@@ -247,7 +249,7 @@ CUDA-enabled PyTorch must pass a real tensor operation before model acquisition/
 - inspection workflow, persistence, review UI, structured findings, and exports;
 - locked evaluation, confidence/calibration, measurement protocol, field pilot, and demo.
 
-A qualified civil/structural reviewer is additionally required unless one team member is qualified and formally takes that role.
+No external civil/structural reviewer is assumed for this FYP prototype; limitations and the absence of professional validation must be stated explicitly.
 
 ## 13. Delivery schedule
 
@@ -272,9 +274,9 @@ Expected total is 14-20 calendar weeks on the current workstation with a tightly
 
 - beta specification approved;
 - ResNet versus RetinaNet confirmed;
-- engineer/reviewer named;
+- project-team review scope documented;
 - target sites and image permissions identified;
-- Ultralytics AGPL/enterprise implications accepted for the intended distribution.
+- Open-source AGPL-compatible distribution accepted for the academic beta; any commercial release requires separate dataset permissions and appropriate model licensing.
 
 ### Gate 2 - data v0.1
 
@@ -309,6 +311,8 @@ Expected total is 14-20 calendar weeks on the current workstation with a tightly
 
 ## 15. Current checkpoint
 
+For the precise split between completed work and remaining implementation, see [`COMPLETION_PLAN.md`](COMPLETION_PLAN.md). In summary, the 300-sample feasibility tier and comparison checkpoints are complete; the full-data task views, full runs, YOLO-to-SAM adapter, locked evaluation, target-site test, and product workflow are still open.
+
 Completed:
 
 - corrected beta scope, taxonomy, dataset contract, experiment matrix, and environment plan;
@@ -342,9 +346,9 @@ Not started:
 ## 16. Actions required from the project owner
 
 1. Ask the advisor to confirm whether the comparison is **ResNet** or **RetinaNet**.
-2. Name the civil/structural reviewer and schedule taxonomy plus sample-image review.
+2. Document the project-team taxonomy and sample-image review scope.
 3. Identify at least three candidate buildings/construction sites and obtain written image-use permission.
-4. Decide whether the delivered source must be open under AGPL-compatible terms or whether Ultralytics enterprise licensing/another implementation is needed.
+4. Preserve AGPL-compatible licensing for the delivered academic beta; revisit commercial licensing only if the product direction changes.
 5. Decide whether physical crack dimensions are required in beta 1; if yes, choose and field-test the scale/calibration method.
 6. Provide any separate T3000/larger-GPU machine details if it exists; otherwise all claims remain tied to the observed T2000.
 7. Keep the official test sets and target-site test buildings unavailable to day-to-day model/UI tuning.

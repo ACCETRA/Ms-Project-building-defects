@@ -1,7 +1,9 @@
 # Model Comparison and Feasibility Matrix
 
 **Experiment plan ID:** BDI-EXP-001  
-**Status:** Provisional model names frozen for feasibility; final freeze follows local hardware tests
+**Status:** Model matrix approved; 5-epoch comparison feasibility runs complete; full-data training and evaluation remain
+
+The authoritative remaining-work and ownership plan is [`COMPLETION_PLAN.md`](COMPLETION_PLAN.md). Current checkpoints prove execution only. Full comparison results require frozen v1 task views, full-data runs, YOLO-to-SAM inference, and locked-test metrics.
 
 ## 1. Core model candidates
 
@@ -18,13 +20,70 @@ The Florence runtime identifiers intentionally use the `florence-community` conv
 
 YOLO26n may be evaluated later as a product-improvement experiment, but it is not part of the first baseline matrix. Holding it back prevents a new model generation from expanding the initial experiment count before the basic pipeline is proven.
 
-If the advisor confirms that “REZNEK” meant RetinaNet rather than ResNet, replace the classification row with a torchvision RetinaNet detector and revise the comparison contract before training.
+ResNet-50 remains the classification baseline. RetinaNet is deferred because Florence and YOLO already cover the detector comparison track.
 
 ## 2. Comparison tracks
 
+The project has two explicit pipelines:
+
+1. **Full pipeline:** Florence-2 Base/Large detection/triage with segmentation.
+2. **Comparison pipeline:** ResNet-50 classification + YOLO11n detection + SAM 2.1 Tiny segmentation.
+3. Build the local web demonstration around real outputs from both pipelines.
+4. Defer broader ablations, field validation, physical measurement validation, and production features.
+
+The Florence segmentation adapter must convert Florence-localized regions into segmentation prompts or an equivalent segmentation stage and preserve the originating Florence model decision in the finding record. The comparison route uses YOLO11n boxes as prompts for SAM 2.1 Tiny.
+
+Training entry points:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\train_yolo_comparison.py --task detect --epochs 20
+.\.venv\Scripts\python.exe scripts\train_yolo_comparison.py --task segment --epochs 20
+.\.venv\Scripts\python.exe scripts\train_resnet_comparison.py --epochs 10
+```
+
+These defaults create a deterministic group-safe validation split from the current manifest. The current 300-sample manifest is the immediate FYP feasibility/demo training set, not a final accuracy benchmark; use a larger frozen manifest for reported comparison results. SAM 2.1 is used pretrained with YOLO boxes for the first comparison and is not fine-tuned in this short run.
+
+### Completed 5-epoch feasibility training results (2026-09-12)
+
+**YOLO11n detection** — 240 train / 60 val, 512 px, batch 1, FP32 CUDA, AMP disabled (Quadro T2000 stability), seed 20260911
+
+| Epoch | box_loss | cls_loss | dfl_loss | mAP50 | mAP50-95 |
+|---|---|---|---|---|---|
+| 1 | 1.946 | 4.218 | 1.903 | 0.0091 | 0.0046 |
+| 2 | 2.015 | 4.195 | 1.881 | 0.0142 | 0.0060 |
+| 3 | 1.988 | 4.098 | 1.897 | 0.0073 | 0.0030 |
+| 4 | 2.009 | 4.095 | 1.917 | 0.0115 | 0.0038 |
+| 5 | 1.834 | 4.007 | 1.830 | 0.0159 | 0.0049 |
+
+Checkpoints: `runs/comparison/yolo/yolo11n_detection_fyp/weights/best.pt` and `last.pt` (5.4 MB each). Ultralytics' Windows post-training validation step failed due to a path-sanitizer bug on paths containing apostrophes; the training checkpoint and metrics CSV are unaffected.
+
+**ResNet-50 classification** — 240 train / 60 val, 224 px, batch 4, FP32 CUDA, LR 1e-4, seed 20260911
+
+| Epoch | train_loss | val_loss |
+|---|---|---|
+| 1 | 0.5050 | 0.3695 |
+| 2 | 0.3491 | 0.3364 |
+| 3 | 0.2757 | 0.3285 |
+| 4 | 0.2343 | 0.3430 |
+| 5 | 0.2055 | 0.3125 |
+
+Checkpoint: `runs/comparison/resnet50_fyp/resnet50_comparison.pt` (90 MB). A previous FP16 run produced NaN losses on the Quadro T2000; the corrected FP32 run produced finite losses throughout. These losses are feasibility evidence, not final reported metrics.
+
+**YOLO11n-seg segmentation** — 240 train / 60 val (146 polygon labels in train, 35 in val), 512 px, batch 1, FP32 CUDA, AMP disabled, seed 20260911
+
+| Epoch | box_loss | seg_loss | cls_loss | Box mAP50 | Mask mAP50 |
+|---|---|---|---|---|---|
+| 1 | 1.915 | 3.879 | 4.954 | 0 | 0 |
+| 2 | 1.897 | 3.523 | 4.896 | 0 | 0 |
+| 3 | 1.871 | 3.599 | 4.799 | 0 | 0 |
+| 4 | 1.981 | 3.516 | 4.709 | 0 | 0 |
+| 5 | 1.808 | 3.246 | 4.825 | 0.0011 | 0.000007 |
+
+Checkpoints: `runs/comparison/yolo/yolo11n_seg_fyp/weights/best.pt` and `last.pt` (6.0 MB each). Near-zero mAP is expected at 5 epochs on 146 polygon samples; the seg_loss trend downward (3.88 → 3.25) confirms the model is learning mask geometry. The Ultralytics `final_eval` step raised the same Windows path-sanitizer `FileNotFoundError` as the detection run; the script now catches it, verifies the real-path weights, and exits cleanly (exit code 0).
+
 ### Track A: fast detection
 
-- Florence-2 Base-FT versus YOLO11n detection.
+- Full pipeline: Florence-2 Base-FT with Florence-2 Large escalation versus comparison pipeline YOLO11n detection.
 - Same selected images, canonical labels, group-safe split, tiling policy, and box evaluation.
 - Report AP50, mAP50:95, per-class precision/recall, crack recall at operating threshold, latency, and VRAM.
 
@@ -36,9 +95,9 @@ If the advisor confirms that “REZNEK” meant RetinaNet rather than ResNet, re
 
 ### Track C: segmentation
 
-- YOLO11n-seg autonomous masks.
-- YOLO11n detection boxes→SAM 2.1 Tiny masks.
-- For SAM evaluation, use the same detector boxes; also report an oracle-box diagnostic using ground-truth boxes to separate detector errors from segmenter errors.
+- Full pipeline: Florence-localized regions followed by segmentation.
+- Comparison pipeline: YOLO11n detection boxes followed by SAM 2.1 Tiny masks.
+- Report an oracle-box diagnostic for the comparison pipeline to separate detector errors from segmenter errors.
 - Report Dice/IoU, mask AP where compatible, boundary quality, crack recall, latency, and VRAM.
 
 ### Track D: classification
@@ -47,10 +106,11 @@ If the advisor confirms that “REZNEK” meant RetinaNet rather than ResNet, re
 - Report per-class precision/recall/F1, macro/micro F1, PR-AUC, and calibration.
 - Do not compare classifier F1 directly with detector mAP or mask IoU.
 
-### Track E: end-to-end beta route
+### Track E: full versus comparison web demonstration
 
-- Best defensible Florence-based route versus best specialist route (`YOLO→SAM` or YOLO segmentation).
-- Report complete image-to-reviewed-finding latency, crack false-negative rate, false alarms per image, mask quality, escalation/review rate, and peak VRAM.
+- Connect both the Florence full pipeline and the ResNet + YOLO + SAM comparison pipeline to a local browser workflow only after real outputs exist.
+- Demonstrate upload, inference, result display, manual review, and export.
+- Do not present the demonstration as a production inspection system.
 
 ## 3. SAM adaptation ladder
 

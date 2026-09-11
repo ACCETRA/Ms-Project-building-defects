@@ -18,7 +18,7 @@ TAXONOMY_VERSION = "BDI-TAX-001@0.1.0-beta"
 PIPELINE_VERSION = "0.1.0-florence-feasibility"
 MANDATORY_LIMITATIONS = [
     "candidate_only",
-    "qualified_review_required",
+    "manual_review_required",
     "not_structural_safety_determination",
 ]
 

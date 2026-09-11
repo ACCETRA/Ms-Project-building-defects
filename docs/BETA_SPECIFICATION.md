@@ -1,19 +1,21 @@
 # Functional Beta Specification
 
 **Specification ID:** BDI-BETA-001  
-**Status:** Approved for preparation  
+**Status:** FYP prototype scope; feasibility tier complete; acceptance gates remain
 **Date:** 2026-09-07
 
 ## 1. Product outcome
 
-Deliver a functional, mobile-friendly inspection beta that accepts RGB still images of completed and under-construction buildings, finds visible surface-condition candidates, supports human review, and produces a traceable inspection package. It must operate end to end without requiring a notebook or hard-coded demonstration results.
+The repository is not yet at this definition of done. Current feasibility outputs are real, but full-data training, locked evaluation, YOLO-to-SAM integration, target-site validation, and the complete review/export workflow remain. See [`COMPLETION_PLAN.md`](COMPLETION_PLAN.md).
 
-This is an academic project with product-quality workflow and architecture. It is a decision-support beta, not an autonomous structural-safety system.
+Deliver a functional master's FYP prototype that accepts RGB still images, finds visible surface-condition candidates, supports manual review, and produces a traceable demonstration package. It must operate end to end with real inference rather than hard-coded demonstration results.
+
+This is an academic prototype for demonstration and evaluation, not a production inspection product or autonomous structural-safety system.
 
 ## 2. Intended users
 
 - Site or building inspector who creates an inspection and uploads images.
-- Civil/structural engineer or qualified reviewer who verifies findings.
+- Student/project reviewer who inspects the model outputs for the demonstration.
 - Project administrator who manages inspections, users, model versions, and exports.
 
 ## 3. Target assets and materials
@@ -96,15 +98,15 @@ The default beta reports pixel geometry. Millimetres or centimetres may only be 
 
 ## 9. Safety and human review
 
-- Display “candidate visible condition—qualified review required.”
+- Display “candidate visible condition—manual review required.”
 - Do not label absence of a model finding as proof that an element is safe.
 - Retain no-defect decisions for audit.
 - Escalate uncertain, low-quality, and out-of-distribution images.
-- Preserve reviewer identity, timestamp, and changes.
+- Preserve reviewer identity, timestamp, and changes where review is performed.
 
 ## 10. Definition of done
 
-The beta is complete when the workflow in section 6 functions with real inference results; the selected model is reproducible; failure states are honest; target-building validation is reported; outputs are exportable and reopenable; and limitations/licensing are visible in both the application and report.
+The FYP prototype is complete when the workflow in section 6 functions with real inference results on the local Windows workstation; the selected model is reproducible; failure states are honest; outputs are exportable; and limitations/licensing are visible in the demonstration and report.
 
-Numerical acceptance thresholds remain a pre-release decision because they require target-site data. At minimum they must cover crack recall, smallest evaluated crack width in pixels, false alarms per image, mask quality, latency, peak VRAM, image rejection rate, and reviewer workload.
+FYP acceptance is functional and evidence-based rather than production-grade: real inference runs, records validate against the schema, the demo handles success/failure/empty-result cases, latency and VRAM are recorded, and no unsupported structural or physical-measurement claims are presented.
 

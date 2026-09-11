@@ -1,6 +1,6 @@
 # Curated Mega Dataset v0.1 — Selection Proposal
 
-**Status:** Draft source budget; feasibility sample completed  
+**Status:** Source budget draft; feasibility sample completed; full v1 selection and QA remain
 **Audit evidence:** `artifacts/data-audit/`  
 **Purpose:** bound the first detector, segmenter, classifier, and hardware-feasibility datasets
 
@@ -72,7 +72,7 @@ Exact sampler weights will be calculated from the selected manifest. They must n
 
 Before beta acceptance, collect permission-cleared RGB images from at least three distinct completed/under-construction buildings or clearly document why fewer sites were possible. Include:
 
-- confirmed target defects reviewed by the engineering reviewer;
+- confirmed target defects reviewed by the project team;
 - verified no-visible-target-defect surfaces;
 - joints, formwork seams, tie holes, concrete edges, conduits/cables, chalk/paint marks, dust, shadows, wet patches, scaffolding, and occlusion;
 - interior and exterior conditions where intended;
@@ -81,6 +81,8 @@ Before beta acceptance, collect permission-cleared RGB images from at least thre
 A practical pilot target is 500–1,000 reviewed site images, with whole buildings/capture sessions reserved for final testing. This is a planning target, not a statistical guarantee; rare-class availability may require more collection.
 
 ## 6. Promotion gates
+
+The proposal is not yet a frozen full-data training manifest. The next step is to create the v1 master and task views, review the source/class counts, and record the freeze before full training. See [`COMPLETION_PLAN.md`](COMPLETION_PLAN.md) for ownership, exact output paths, and the required sequence.
 
 Version 0.1 cannot be frozen until:
 

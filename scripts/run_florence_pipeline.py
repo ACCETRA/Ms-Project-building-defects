@@ -358,7 +358,7 @@ def main() -> None:
             "All source samples are training-only; this run cannot establish accuracy.",
             "Florence sequence likelihood is not a calibrated per-box confidence.",
             "Physical dimensions are absent unless calibration is explicitly valid.",
-            "Candidate visible conditions require qualified review and are not structural-safety determinations.",
+            "Candidate visible conditions require manual review and are not structural-safety determinations.",
         ],
     }
     (output_dir / "summary.json").write_text(

@@ -1,9 +1,11 @@
-# Infrastructure Defect Inspection — Functional Beta Readiness Plan
+# Infrastructure Defect Inspection — Master's FYP Prototype Readiness Plan
 
 Prepared: 2026-09-07; preparation checkpoint updated 2026-09-08  
-Status: scope and data-preparation work is active. A 300-sample feasibility set has been materialized and verified; no model execution or training has begun.
+Status: feasibility training is complete; full-data labeling, training, evaluation, and product completion remain. See [`docs/COMPLETION_PLAN.md`](docs/COMPLETION_PLAN.md) for the authoritative execution plan.
 
 ## Recommended project boundary
+
+This document describes the intended beta. The actual repository checkpoint is narrower: the 300-sample feasibility tier has run, while the proposed 20,000-25,000 sample v1 mixture has not yet been materialized into task-specific manifests or trained. Do not describe the feasibility checkpoints as final accuracy results.
 
 Build a **fully functional academic beta for RGB-image inspection of buildings and construction works, with cracks as the primary defect**. The initial material scope is visible concrete and masonry surfaces on façades, walls, slabs, columns, beams, ceilings, and foundations. It should behave like a coherent product, not a loose collection of model notebooks. The beta should:
 
@@ -18,13 +20,13 @@ Thermal, GPR, full 3D fusion, and historical-record fusion should remain future 
 
 ## Decisions the project owner must make before implementation
 
-- **Use case:** an academic beta with product-quality presentation and architecture. DACL10K and CODEBRIM can support the academic beta under their non-commercial terms, but a later commercial release will require permission or retraining on commercially usable/private data. Ultralytics YOLO also has AGPL/enterprise licensing implications.
+- **Use case:** a master's FYP prototype with a coherent demonstration workflow, released under AGPL-compatible open-source terms. It is not a production inspection product and has no professional engineering validation. DACL10K and CODEBRIM can support the academic prototype under their non-commercial terms, but a later commercial release will require permission or retraining on commercially usable/private data. Ultralytics YOLO remains subject to its AGPL obligations.
 - **Target asset:** completed and under-construction buildings, initially limited to visible concrete and masonry elements. General workmanship defects, MEP defects, steel fabrication, fire damage, and hidden/internal structural diagnosis are outside the first beta.
 - **Capture mode:** handheld/mobile still images for interiors and accessible elements, plus UAV still images for exterior façades. Extracted video frames are deferred until frame grouping and duplicate handling are designed.
 - **Primary deliverable:** an end-to-end reviewed inspection package containing annotated images, crack boxes/masks, confidence and quality warnings, structured JSON/CSV findings, and a generated summary report. Crack measurement remains a separate validation problem, not an automatic by-product of segmentation.
 - **Secondary visible classes:** recommended first-beta set is spalling, honeycombing/rock pockets, exposed rebar, rust/corrosion staining, efflorescence/leaching, and dampness/moisture staining. Public datasets do not cover these evenly, so the owner must either reduce this list or fund target-site annotation. Algae and general weathering can wait.
-- **Deployment target:** this laptop, another workstation, cloud, or an edge device.
-- **Acceptance criteria:** maximum acceptable crack false-negative rate, minimum detectable crack width at the chosen capture distance, acceptable latency, and review workload.
+- **Deployment target:** local browser-based demonstration on this Windows workstation.
+- **Acceptance criteria:** complete real-inference demo by Sunday 2026-09-13, schema-valid outputs, honest failure/empty-result handling, recorded latency/VRAM, and no unsupported structural or physical-measurement claims.
 - **Named UAV dataset:** use building-façade-focused CUBIT-InSeg as the preferred UAV source under its repository's CC BY 4.0 terms. Retain UAV75 only as a tiny stress set. The larger Liu repository is a consolidated crack benchmark and is not equivalent to 11,298 independently captured UAV images.
 
 ## Corrections to the supplied roadmap
@@ -36,7 +38,7 @@ Thermal, GPR, full 3D fusion, and historical-record fusion should remain future 
 5. **CODEBRIM incompatibility:** CODEBRIM supplies multi-label crops and original-image bounding boxes, not pixel-accurate masks. It can train/evaluate classification and detection, but it cannot be pooled as equal segmentation ground truth without new human masks or explicitly labeled weak/pseudo masks.
 6. **Label semantics:** rust staining is evidence associated with corrosion, not proof of internal corrosion; DACL10K's washout/concrete-corrosion label is not steel corrosion. Net-crack/alligator crack and crack-with-precipitation should remain subtypes under a crack family rather than be silently erased.
 7. **Measurement:** pixels cannot be reported as millimetres without a scale, camera calibration, known ground-sample distance, planar geometry, a reference marker, or registered 3D geometry.
-8. **Safety:** “minimal human review” is not an appropriate initial claim for a safety-related inspection system. The beta can look polished and operate end to end while still labelling outputs as candidate findings that require qualified review.
+8. **Safety:** “minimal human review” is not an appropriate claim for a safety-related inspection system. The prototype can look polished and operate end to end while still labelling outputs as candidate findings that require manual review.
 
 ## Data strategy
 
@@ -73,7 +75,7 @@ Recommended shared visible taxonomy:
 - `Dampness/moisture staining`;
 - optional surface conditions such as `Algae` and `Weathering`.
 
-The structural-engineering reviewer must approve this mapping and define what is excluded or marked unknown.
+The project team must document this mapping and mark disputed cases as `unknown_review`; no professional engineering approval is assumed.
 
 ### Splitting and leakage controls
 
@@ -113,7 +115,7 @@ Recommended comparison, aligned with the supplied Florence-2 roadmap:
 
 “YOLO is the small model and SAM is the large model” is a useful verbal simplification, not a technical definition. Both families have multiple sizes; for example, SAM 2.1 Tiny is much smaller than SAM 2.1 Large. The correct distinction is that YOLO performs autonomous detection on every image, while SAM performs prompt-driven pixel segmentation only for selected detections.
 
-If “REZNEK” meant **ResNet**, treat it as a separate image/crop classifier baseline or as a deliberately selected backbone inside another architecture; it is not automatically the backbone used by YOLO or SAM. If the intended word was **RetinaNet**, it is a complete detector and belongs beside YOLO in the detection track. Confirm the name before the experiment matrix is frozen.
+Use **ResNet-50** as the separate image/crop classification baseline. It is not the backbone used by YOLO or SAM. RetinaNet is deferred because Florence and YOLO already cover the detector comparison track.
 
 If the project needs a pure semantic-mask baseline, add one conventional segmentation model such as U-Net, DeepLabV3+, or SegFormer and remove a less relevant experiment rather than expanding the matrix indefinitely.
 
@@ -215,7 +217,7 @@ With the installed Quadro T2000 and a tightly curated dataset, plan for **14–2
 
 ## Delivery gates
 
-1. **Scope/license gate:** signed one-page MVP, commercial/non-commercial decision, named target asset/capture mode, selected datasets/models, and license approval.
+1. **Scope/license gate:** signed one-page MVP, AGPL-compatible academic distribution decision, named target asset/capture mode, selected datasets/models, and license approval.
 2. **Data gate:** immutable source manifest and checksums, audited labels, approved taxonomy, group-safe splits, duplicate report, and class/pixel statistics.
 3. **Baseline gate:** one simple result per task before imbalance correction or a cascade.
 4. **Comparison gate:** fixed splits/budgets, calibrated thresholds, ablations for sampling/loss/augmentation, and efficiency results.
@@ -223,7 +225,7 @@ With the installed Quadro T2000 and a tightly curated dataset, plan for **14–2
 6. **Measurement gate:** calibrated capture protocol and engineer-verified physical ground truth; otherwise release pixel measurements only.
 7. **Functional-beta gate:** end-to-end inspection workflow, review queue, structured export, generated report, persisted history, reproducible model/data versions, error states, limitations, and handoff documentation.
 
-A production inspection product requires additional field collection, safety validation, monitoring, security, and regulatory/contractual work and should be planned as a separate phase.
+A production inspection product would require additional field collection, professional safety validation, monitoring, security, and regulatory/contractual work; those are outside this FYP deadline.
 
 ## Source acquisition layout
 

@@ -231,7 +231,7 @@
     "limitation_codes": {
       "type": "array",
       "uniqueItems": true,
-      "items": { "enum": ["candidate_only", "qualified_review_required", "not_structural_safety_determination", "uncalibrated_measurement", "low_image_quality", "out_of_domain"] }
+      "items": { "enum": ["candidate_only", "manual_review_required", "not_structural_safety_determination", "uncalibrated_measurement", "low_image_quality", "out_of_domain"] }
     }
   },
   "$defs": {
