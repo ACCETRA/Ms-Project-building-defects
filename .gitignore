@@ -10,11 +10,24 @@ artifacts/**/cache/
 runs/
 weights/
 
-# Datasets and model caches stay outside version control
-datasets/
+# Model caches stay outside version control
 data/*
 !data/manifests/
 !data/manifests/*.csv
+datasets/**/*
+!datasets/**/
+!datasets/**/*.md
+!datasets/**/*.yaml
+!datasets/**/*.yml
+!datasets/**/*.json
+!datasets/**/*.csv
+datasets/UAV-candidates/Liu-UAV-benchmark/
+datasets/UAV-candidates/UAV75/
+datasets/building-target/S2DS/
+google-drive/*
+!google-drive/README.md
+usb/*
+!usb/README.md
 vendor/
 references/papers/
 references/toolkits/
