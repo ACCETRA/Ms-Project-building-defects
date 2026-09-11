@@ -48,12 +48,31 @@ class FlorencePipelineUnitTests(unittest.TestCase):
             annotation for annotation in payload["annotations"]
             if annotation["canonical_label"] == "unknown_review"
         ]
-        self.assertEqual(len(unknown), 9)
+        self.assertEqual(len(unknown), 10)
+        unmapped = [
+            annotation for annotation in unknown
+            if annotation["native_label"] != "Rockpocket"
+        ]
         self.assertEqual(
-            {annotation["native_label"] for annotation in unknown},
+            {annotation["native_label"] for annotation in unmapped},
             {"Cavity", "Hollowareas", "Wetspot", "Weathering", "WConccor"},
         )
         self.assertTrue(all(annotation["annotation_status"] == "unknown" for annotation in unknown))
+
+    def test_reviewer_decision_is_reflected_in_normalized_annotation(self) -> None:
+        payload = json.loads(
+            (ROOT / "data" / "feasibility_v0" / "normalized" / "dacl_0001.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        reviewed = next(
+            annotation for annotation in payload["annotations"] if annotation["annotation_id"] == "shape-19"
+        )
+        self.assertEqual(reviewed["native_label"], "Rockpocket")
+        self.assertEqual(reviewed["canonical_label"], "unknown_review")
+        self.assertEqual(reviewed["annotation_status"], "unknown")
+        self.assertEqual(reviewed["mapping_strength"], "reviewed")
+        self.assertEqual(reviewed["reviewer_id"], "shah231")
 
     def test_dacl_unknown_source_labels_are_not_dropped(self) -> None:
         expected = {"Cavity", "Hollowareas", "Wetspot", "Weathering", "WConccor"}

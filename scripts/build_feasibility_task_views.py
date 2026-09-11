@@ -24,6 +24,7 @@ SOURCE_MANIFEST = ROOT / "data" / "manifests" / "feasibility_v0_materialized.csv
 NORMALIZED_ROOT = ROOT / "data" / "feasibility_v0" / "normalized"
 MANIFEST_ROOT = ROOT / "data" / "manifests"
 REPORT_PATH = ROOT / "artifacts" / "data-audit" / "feasibility_task_views_report.json"
+REVIEWER_LEDGER = ROOT / "confirmation" / "annotation_qa_confirmation.csv"
 MAPPING_VERSION = "BDI-TAX-001@0.1.0-beta"
 
 CIF_CLASSES = {
@@ -64,6 +65,22 @@ S2DS_COLORS = {
 
 def digest(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
+
+
+def load_reviewer_decisions(path: Path) -> dict[tuple[str, str], dict[str, str]]:
+    with path.open(newline="", encoding="utf-8") as stream:
+        rows = csv.DictReader(stream)
+        if "annotation_id" not in (rows.fieldnames or []):
+            raise ValueError("Reviewer ledger must include an annotation_id column")
+        decisions: dict[tuple[str, str], dict[str, str]] = {}
+        for row in rows:
+            sample_id = (row.get("sample_id") or "").strip()
+            annotation_id = (row.get("annotation_id") or "").strip()
+            if not sample_id or not annotation_id:
+                continue
+            key = (sample_id, annotation_id)
+            decisions[key] = row
+    return decisions
 
 
 def clamp_box(box: Iterable[float], width: int, height: int) -> list[float]:
@@ -233,7 +250,9 @@ def normalize_uav(path: Path, width: int, height: int, relative_uri: str) -> lis
     ]
 
 
-def normalize(row: dict[str, str]) -> dict[str, Any]:
+def normalize(
+    row: dict[str, str], reviewer_decisions: dict[tuple[str, str], dict[str, str]]
+) -> dict[str, Any]:
     width = int(row["materialized_width"])
     height = int(row["materialized_height"])
     path = ROOT / row["output_annotation"]
@@ -250,6 +269,29 @@ def normalize(row: dict[str, str]) -> dict[str, Any]:
         raise ValueError(f"Unsupported source: {source}")
     if not annotations:
         raise ValueError(f"No target annotations remain after mapping for {row['sample_id']}")
+    for annotation in annotations:
+        decision = reviewer_decisions.get((row["sample_id"], annotation["annotation_id"]))
+        if decision is None:
+            continue
+        final_label = (decision.get("final_canonical_label") or "").strip()
+        review_status = (decision.get("annotation_status") or "").strip()
+        if not final_label or "|" in final_label:
+            raise ValueError(
+                f"Reviewer decision for {row['sample_id']}/{annotation['annotation_id']} "
+                "must contain one final_canonical_label"
+            )
+        if review_status not in {"positive", "verified_negative", "unknown", "not_applicable"}:
+            raise ValueError(
+                f"Reviewer decision for {row['sample_id']}/{annotation['annotation_id']} "
+                f"has invalid annotation_status: {review_status!r}"
+            )
+        annotation["canonical_label"] = final_label
+        annotation["mapping_strength"] = "reviewed"
+        annotation["annotation_status"] = review_status
+        annotation["review_decision"] = (decision.get("review_decision") or "").strip()
+        annotation["geometry_decision"] = (decision.get("geometry_decision") or "").strip()
+        annotation["reviewer_id"] = (decision.get("reviewer_id") or "").strip()
+        annotation["review_notes"] = (decision.get("review_notes") or "").strip()
     return {
         "schema_version": 1,
         "sample_id": row["sample_id"],
@@ -275,7 +317,7 @@ def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
 
 
 def main() -> None:
-    global ROOT, SOURCE_MANIFEST, NORMALIZED_ROOT, MANIFEST_ROOT, REPORT_PATH
+    global ROOT, SOURCE_MANIFEST, NORMALIZED_ROOT, MANIFEST_ROOT, REPORT_PATH, REVIEWER_LEDGER
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, default=ROOT)
     args = parser.parse_args()
@@ -284,17 +326,19 @@ def main() -> None:
     NORMALIZED_ROOT = ROOT / "data" / "feasibility_v0" / "normalized"
     MANIFEST_ROOT = ROOT / "data" / "manifests"
     REPORT_PATH = ROOT / "artifacts" / "data-audit" / "feasibility_task_views_report.json"
+    REVIEWER_LEDGER = ROOT / "confirmation" / "annotation_qa_confirmation.csv"
 
     with SOURCE_MANIFEST.open(newline="", encoding="utf-8") as stream:
         source_rows = list(csv.DictReader(stream))
     if len(source_rows) != 300:
         raise ValueError(f"Expected 300 feasibility records, found {len(source_rows)}")
+    reviewer_decisions = load_reviewer_decisions(REVIEWER_LEDGER)
     NORMALIZED_ROOT.mkdir(parents=True, exist_ok=True)
     MANIFEST_ROOT.mkdir(parents=True, exist_ok=True)
 
     master: list[dict[str, Any]] = []
     for row in source_rows:
-        payload = normalize(row)
+        payload = normalize(row, reviewer_decisions)
         data = (json.dumps(payload, indent=2, ensure_ascii=False) + "\n").encode("utf-8")
         normalized_path = NORMALIZED_ROOT / f"{row['sample_id']}.json"
         normalized_path.write_bytes(data)
