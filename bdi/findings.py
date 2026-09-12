@@ -76,6 +76,7 @@ def build_finding(
     quality: dict[str, Any],
     calibration: Calibration | None,
     unavailable_scale_status: str = "not_provided",
+    pipeline_version: str = PIPELINE_VERSION,
 ) -> dict[str, Any]:
     width, height = image_size
     box_xywh = clamp_box(box_xyxy, width, height)
@@ -151,7 +152,7 @@ def build_finding(
         "provenance": {
             "model_id": model_id,
             "checkpoint_sha256": checkpoint_sha256,
-            "pipeline_version": PIPELINE_VERSION,
+            "pipeline_version": pipeline_version,
             "taxonomy_version": TAXONOMY_VERSION,
             "dataset_manifest_version": "feasibility_v0_materialized",
             "runtime": "windows-python311-cuda-fp16",

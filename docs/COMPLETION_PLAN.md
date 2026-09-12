@@ -61,7 +61,7 @@ Existing data inputs are in `data/manifests/`, `data/feasibility_v0/`, `datasets
 - Implement or extend `scripts/build_v1_training_inputs.py` to validate all task views and write reproducible YOLO data files.
 - Run `scripts/train_yolo_comparison.py` for detection and segmentation using the frozen v1 manifests.
 - Run `scripts/train_resnet_comparison.py` using the frozen classification manifest.
-- Implement the YOLO-box to SAM 2.1 Tiny adapter and write outputs through the finding schema.
+- ~~Implement the YOLO-box to SAM 2.1 Tiny adapter and write outputs through the finding schema.~~ **Completed for feasibility:** `scripts/run_yolo_sam_comparison.py` emits schema-valid box-prompted SAM findings and records comparison provenance; full-data execution remains pending training and evaluation.
 - Record checkpoints, seeds, resolution, split counts, losses, metrics, latency, VRAM, and failure states.
 - Run the Florence Base/Large comparison route using `scripts/run_florence_pipeline.py`; Florence fine-tuning is optional and is not currently implemented.
 
@@ -85,7 +85,7 @@ Product contracts are `docs/BETA_SPECIFICATION.md`, `docs/OUTPUT_CONTRACT.md`, a
 4. Freeze group-safe train/validation/test views and hashes.
 5. Prepare YOLO detection and segmentation directories from the frozen views.
 6. Train YOLO11n detection, YOLO11n-segmentation, and ResNet-50.
-7. Implement and run YOLO boxes -> SAM 2.1 Tiny masks.
+7. ~~Implement and run YOLO boxes -> SAM 2.1 Tiny masks.~~ **Completed for feasibility smoke:** one image produced five schema-valid SAM-mask findings; full-data execution remains pending.
 8. Run Florence Base and validation-defined Large escalation on the same approved inputs.
 9. Select thresholds and checkpoints using validation only.
 10. Evaluate locked CUBIT, source-specific tests, CODEBRIM classification test, and target-site buildings.

@@ -96,6 +96,35 @@ class FlorencePipelineUnitTests(unittest.TestCase):
         self.assertEqual(source_labels, expected)
         self.assertEqual(normalized_labels, expected)
 
+    def test_comparison_label_mapping_excludes_unknown_targets(self) -> None:
+        from scripts.run_yolo_sam_comparison import canonical_model_label
+
+        self.assertEqual(canonical_model_label("crack"), ("crack", "unspecified"))
+        self.assertEqual(canonical_model_label("rust staining"), ("rust_staining", "not_applicable"))
+        self.assertIsNone(canonical_model_label("unknown_review"))
+
+    def test_florence_target_manifest_excludes_unknown_annotations(self) -> None:
+        path = ROOT / "data" / "manifests" / "florence_targets_v0_1.jsonl"
+        with path.open(encoding="utf-8") as stream:
+            records = [json.loads(line) for line in stream if line.strip()]
+        self.assertEqual(len(records), 300)
+        self.assertEqual({record["split"] for record in records}, {"train", "validation"})
+        self.assertEqual(len({record["group_id"] for record in records}), 300)
+        self.assertTrue(all(record["target_encoding"] == "structured_pre_tokenization" for record in records))
+        self.assertTrue(
+            all(target["label"] != "unknown_review" for record in records for target in record["targets"])
+        )
+
+    def test_florence_location_target_uses_checkpoint_token_format(self) -> None:
+        from scripts.train_florence import target_text
+
+        record = {
+            "image": "data/feasibility_v0/images/cif/cif_0002.jpg",
+            "sample_id": "cif_0002",
+            "targets": [{"label": "crack", "box_xyxy": [0, 0, 1024, 1024]}],
+        }
+        self.assertEqual(target_text(record), "crack<loc_0><loc_0><loc_1000><loc_1000>")
+
     def test_calibration_schema_and_example(self) -> None:
         schema = json.loads(
             (ROOT / "schemas" / "calibration_manifest.schema.json").read_text(encoding="utf-8")

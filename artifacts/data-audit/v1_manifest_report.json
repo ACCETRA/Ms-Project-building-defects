@@ -1,0 +1,50 @@
+{
+  "manifest_version": "v1_0_0",
+  "mapping_version": "BDI-TAX-001@0.1.0-beta",
+  "rows": 5520,
+  "rows_by_split_and_source": {
+    "train": {
+      "CUBIT-InSeg": 4694,
+      "CiF-tiled": 120,
+      "DACL10K-v2-devphase": 60,
+      "S2DS": 80,
+      "UAV75": 40
+    },
+    "val": {
+      "CUBIT-InSeg": 526
+    }
+  },
+  "class_image_counts": {
+    "train": {
+      "crack": 2679,
+      "efflorescence_leaching": 22,
+      "exposed_rebar": 8,
+      "honeycombing_rock_pocket": 8,
+      "rust_staining": 82,
+      "spalling": 2310
+    },
+    "val": {
+      "crack": 282,
+      "spalling": 244
+    }
+  },
+  "annotation_counts": {
+    "train": 47687,
+    "val": 5451
+  },
+  "frozen_file_sha256": {
+    "detection": "7eb1390bc941ed0326bbb69e8264480e855a6c78dc44781e1d64e128cc3ea3db",
+    "segmentation": "18b4d3fc665551fcd6f2b597de352a187035900684620bcc003f567f28244f14",
+    "classification": "5907eef010ff284b5e7bdf773d9fd5fa312e8b8aff696ed08bb326efffb94452",
+    "florence_product": "7e45b3ce5d26d62f9c439a487a6599b16c27029ea118577f9d17910d5bb88a16",
+    "florence_targets": "b9f4654529f2c3be178654aaf8d13f1c9f9d8c3b9a9c722758d5623a5fbc6b63",
+    "master": "1401ea78a4739fab51c61454e031ee05dcd614c420cb6cac3cc3522f496f01b2"
+  },
+  "near_duplicate_queue_records": 405,
+  "reviewed_duplicate_queue_records": 405,
+  "unresolved_near_duplicate_candidates": 0,
+  "excluded_reviewed_or_unresolved_non_test_records": 493,
+  "locked_test_records_in_manifest": 0,
+  "policy": "Reviewed duplicates and unresolved candidates are excluded from train/validation; CUBIT test remains locked and absent.",
+  "source_archives_modified": false
+}

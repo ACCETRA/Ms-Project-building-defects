@@ -1,406 +1,406 @@
 review_rank,phash_hamming_distance,grayscale_correlation,grayscale_mae_0_1,grayscale_rmse_0_1,same_dimensions,left_record_id,left_split,left_member,right_record_id,right_split,right_member,decision,review_notes
-1,0,0.95695102,0.03093358,0.07777364,False,cubit_train_sp0_1224,train,images/SP0_1224.JPG,cubit_test_sp1_1210,test,images/SP1_1210.JPG,pending_human_review,
-2,0,0.95666617,0.04052591,0.09212723,False,cubit_train_sp1_112,train,images/SP1_112.JPG,cubit_test_sp0_109,test,images/SP0_109.JPG,pending_human_review,
-3,0,0.73289526,0.05886949,0.10305827,False,cubit_train_sp0_1325,train,images/SP0_1325.JPG,cubit_test_sp1_1313,test,images/SP1_1313.JPG,pending_human_review,
-4,2,0.98165041,0.02103942,0.05558899,False,cubit_train_sp1_241,train,images/SP1_241.JPG,cubit_val_sp0_237,val,images/SP0_237.JPG,pending_human_review,
-5,2,0.96331704,0.02760704,0.07226317,False,cubit_train_sp0_203,train,images/SP0_203.JPG,cubit_test_sp1_207,test,images/SP1_207.JPG,pending_human_review,
-6,2,0.95969921,0.01864109,0.06700833,True,cubit_train_cr1_1438,train,images/CR1_1438.JPG,cubit_val_cr1_1439,val,images/CR1_1439.JPG,pending_human_review,
-7,2,0.95956445,0.04274783,0.08991442,False,cubit_train_sp1_17,train,images/SP1_17.JPG,cubit_test_sp1_27,test,images/SP1_27.JPG,pending_human_review,
-8,2,0.93071854,0.05379974,0.11672586,False,cubit_val_sp0_108,val,images/SP0_108.JPG,cubit_test_sp1_111,test,images/SP1_111.JPG,pending_human_review,
-9,2,0.92003155,0.05449458,0.09309213,True,cubit_train_cr1_101,train,images/CR1_101.JPG,cubit_val_sp1_685,val,images/SP1_685.JPG,pending_human_review,
-10,2,0.91144794,0.05559848,0.09438558,True,cubit_train_sp1_684,train,images/SP1_684.JPG,cubit_test_cr1_100,test,images/CR1_100.JPG,pending_human_review,
-11,2,0.90919304,0.02779996,0.05577554,False,cubit_train_sp1_1820,train,images/SP1_1820.JPG,cubit_test_sp0_1828,test,images/SP0_1828.JPG,pending_human_review,
-12,2,0.90732127,0.04724647,0.08707445,True,cubit_train_cr1_112,train,images/CR1_112.JPG,cubit_test_sp1_696,test,images/SP1_696.JPG,pending_human_review,
-13,2,0.88375419,0.0259981,0.04573193,True,cubit_train_cr1_1090,train,images/CR1_1090.JPG,cubit_val_cr1_720,val,images/CR1_720.JPG,pending_human_review,
-14,2,0.87545085,0.03457199,0.07153405,False,cubit_train_sp0_1820,train,images/SP0_1820.JPG,cubit_test_sp1_1803,test,images/SP1_1803.JPG,pending_human_review,
-15,2,0.85577285,0.07745074,0.12862867,False,cubit_train_sp1_829,train,images/SP1_829.JPG,cubit_val_sp0_848,val,images/SP0_848.JPG,pending_human_review,
-16,2,0.84805727,0.07063299,0.12574378,False,cubit_train_sp1_914,train,images/SP1_914.JPG,cubit_test_sp1_922,test,images/SP1_922.JPG,pending_human_review,
-17,2,0.84392452,0.09318154,0.14774692,False,cubit_train_sp1_902,train,images/SP1_902.JPG,cubit_test_sp0_922,test,images/SP0_922.JPG,pending_human_review,
-18,2,0.84072006,0.06161128,0.09236652,False,cubit_train_sp0_1427,train,images/SP0_1427.JPG,cubit_test_sp1_1417,test,images/SP1_1417.JPG,pending_human_review,
-19,2,0.82826865,0.03293242,0.07110588,False,cubit_train_sp1_451,train,images/SP1_451.JPG,cubit_test_sp1_462,test,images/SP1_462.JPG,pending_human_review,
-20,2,0.79986262,0.07045683,0.11630489,False,cubit_train_sp1_1327,train,images/SP1_1327.JPG,cubit_test_sp1_1338,test,images/SP1_1338.JPG,pending_human_review,
-21,2,0.79507369,0.03203341,0.07387706,True,cubit_train_sp0_458,train,images/SP0_458.JPG,cubit_val_sp0_459,val,images/SP0_459.JPG,pending_human_review,
-22,2,0.78889823,0.01646274,0.04781905,True,cubit_train_cr1_1426,train,images/CR1_1426.JPG,cubit_test_cr1_1427,test,images/CR1_1427.JPG,pending_human_review,
-23,2,0.74213481,0.04835612,0.07996219,False,cubit_train_sp1_766,train,images/SP1_766.JPG,cubit_val_sp1_777,val,images/SP1_777.JPG,pending_human_review,
-24,2,0.71489501,0.04842146,0.08091272,False,cubit_train_sp1_763,train,images/SP1_763.JPG,cubit_val_sp0_778,val,images/SP0_778.JPG,pending_human_review,
-25,2,0.71293962,0.0597503,0.09753102,False,cubit_train_sp1_54,train,images/SP1_54.JPG,cubit_val_sp1_64,val,images/SP1_64.JPG,pending_human_review,
-26,2,0.70370811,0.08140175,0.14990786,False,cubit_train_cr1_111,train,images/CR1_111.JPG,cubit_test_sp0_711,test,images/SP0_711.JPG,pending_human_review,
-27,2,0.68723965,0.01474346,0.05183095,True,cubit_train_cr1_779,train,images/CR1_779.JPG,cubit_test_cr1_780,test,images/CR1_780.JPG,pending_human_review,
-28,2,0.64735699,0.05909567,0.07321812,True,cubit_val_cr1_549,val,images/CR1_549.JPG,cubit_test_cr1_1427,test,images/CR1_1427.JPG,pending_human_review,
-29,2,0.64629674,0.02606488,0.05473245,True,cubit_train_cr1_902,train,images/CR1_902.JPG,cubit_test_cr1_780,test,images/CR1_780.JPG,pending_human_review,
-30,2,0.64456809,0.06311275,0.09783304,False,cubit_train_sp1_802,train,images/SP1_802.JPG,cubit_val_sp0_818,val,images/SP0_818.JPG,pending_human_review,
-31,2,0.45268828,0.02625684,0.06357127,True,cubit_train_cr1_901,train,images/CR1_901.JPG,cubit_test_cr1_780,test,images/CR1_780.JPG,pending_human_review,
-32,4,0.98049194,0.02283624,0.05728447,True,cubit_train_sp0_236,train,images/SP0_236.JPG,cubit_val_sp0_237,val,images/SP0_237.JPG,pending_human_review,
-33,4,0.9686169,0.02468764,0.07173075,False,cubit_train_sp0_239,train,images/SP0_239.JPG,cubit_test_sp1_243,test,images/SP1_243.JPG,pending_human_review,
-34,4,0.96254539,0.04383042,0.08452093,False,cubit_train_sp0_1384,train,images/SP0_1384.JPG,cubit_val_sp1_1362,val,images/SP1_1362.JPG,pending_human_review,
-35,4,0.96199882,0.03190727,0.0733171,True,cubit_train_sp0_203,train,images/SP0_203.JPG,cubit_test_sp0_204,test,images/SP0_204.JPG,pending_human_review,
-36,4,0.95928043,0.03289245,0.06711834,False,cubit_train_sp1_211,train,images/SP1_211.JPG,cubit_test_sp0_213,test,images/SP0_213.JPG,pending_human_review,
-37,4,0.9530862,0.05363746,0.09537221,False,cubit_train_sp0_12,train,images/SP0_12.JPG,cubit_val_sp1_10,val,images/SP1_10.JPG,pending_human_review,
-38,4,0.95013791,0.05861337,0.07790021,True,cubit_train_cr1_2847,train,images/CR1_2847.JPG,cubit_val_cr1_1470,val,images/CR1_1470.JPG,pending_human_review,
-39,4,0.9435991,0.04124469,0.09612549,False,cubit_train_sp0_1215,train,images/SP0_1215.JPG,cubit_val_sp1_1203,val,images/SP1_1203.JPG,pending_human_review,
-40,4,0.94320297,0.02886364,0.09437037,True,cubit_train_cr1_1450,train,images/CR1_1450.JPG,cubit_test_cr1_1451,test,images/CR1_1451.JPG,pending_human_review,
-41,4,0.94236398,0.04418539,0.0886482,False,cubit_train_sp1_878,train,images/SP1_878.JPG,cubit_test_sp0_907,test,images/SP0_907.JPG,pending_human_review,
-42,4,0.94150883,0.08390108,0.09553836,True,cubit_train_cr1_1078,train,images/CR1_1078.JPG,cubit_val_cr1_908,val,images/CR1_908.JPG,pending_human_review,
-43,4,0.93332571,0.03136728,0.08016329,False,cubit_train_sp1_252,train,images/SP1_252.JPG,cubit_test_sp0_257,test,images/SP0_257.JPG,pending_human_review,
-44,4,0.92845416,0.03804022,0.08322793,False,cubit_train_sp1_213,train,images/SP1_213.JPG,cubit_val_sp0_217,val,images/SP0_217.JPG,pending_human_review,
-45,4,0.9270829,0.0407801,0.08461918,False,cubit_train_sp1_1272,train,images/SP1_1272.JPG,cubit_val_sp0_1283,val,images/SP0_1283.JPG,pending_human_review,
-46,4,0.92180443,0.0452517,0.08742642,False,cubit_train_sp0_1188,train,images/SP0_1188.JPG,cubit_test_sp1_1175,test,images/SP1_1175.JPG,pending_human_review,
-47,4,0.91917682,0.01701995,0.04596918,True,cubit_train_cr1_1650,train,images/CR1_1650.JPG,cubit_test_cr1_1657,test,images/CR1_1657.JPG,pending_human_review,
-48,4,0.91730857,0.06219411,0.11244746,False,cubit_train_sp1_1478,train,images/SP1_1478.JPG,cubit_val_sp0_1484,val,images/SP0_1484.JPG,pending_human_review,
-49,4,0.91558921,0.04739703,0.09535025,False,cubit_train_sp1_880,train,images/SP1_880.JPG,cubit_test_sp0_910,test,images/SP0_910.JPG,pending_human_review,
-50,4,0.91326338,0.04256831,0.09155093,False,cubit_train_sp0_168,train,images/SP0_168.JPG,cubit_test_sp1_172,test,images/SP1_172.JPG,pending_human_review,
-51,4,0.90881062,0.06253926,0.09180618,True,cubit_train_cr1_814,train,images/CR1_814.JPG,cubit_test_cr1_852,test,images/CR1_852.JPG,pending_human_review,
-52,4,0.90201998,0.01637202,0.03550681,True,cubit_train_cr1_1009,train,images/CR1_1009.JPG,cubit_test_cr1_1003,test,images/CR1_1003.JPG,pending_human_review,
-53,4,0.90154558,0.02813218,0.06321225,True,cubit_train_sp0_1777,train,images/SP0_1777.JPG,cubit_val_sp1_1772,val,images/SP1_1772.JPG,pending_human_review,
-54,4,0.899553,0.05893674,0.14077508,False,cubit_train_sp0_129,train,images/SP0_129.JPG,cubit_val_sp1_123,val,images/SP1_123.JPG,pending_human_review,
-55,4,0.89729595,0.06125799,0.10233874,True,cubit_train_sp1_678,train,images/SP1_678.JPG,cubit_val_cr1_94,val,images/CR1_94.JPG,pending_human_review,
-56,4,0.89725494,0.03635852,0.06426746,True,cubit_train_cr1_853,train,images/CR1_853.JPG,cubit_val_cr1_908,val,images/CR1_908.JPG,pending_human_review,
-57,4,0.89568526,0.03258487,0.06304487,False,cubit_train_sp0_1831,train,images/SP0_1831.JPG,cubit_test_sp1_1822,test,images/SP1_1822.JPG,pending_human_review,
-58,4,0.89399678,0.02984787,0.07256424,False,cubit_val_sp1_553,val,images/SP1_553.JPG,cubit_test_sp0_568,test,images/SP0_568.JPG,pending_human_review,
-59,4,0.89177173,0.04629432,0.08777802,True,cubit_val_sp1_693,val,images/SP1_693.JPG,cubit_test_cr1_109,test,images/CR1_109.JPG,pending_human_review,
-60,4,0.8903982,0.03321318,0.06458038,False,cubit_train_sp0_1832,train,images/SP0_1832.JPG,cubit_test_sp1_1822,test,images/SP1_1822.JPG,pending_human_review,
-61,4,0.8850826,0.07457443,0.12695926,False,cubit_train_sp0_1672,train,images/SP0_1672.JPG,cubit_test_sp1_1656,test,images/SP1_1656.JPG,pending_human_review,
-62,4,0.88238132,0.02619772,0.03746068,True,cubit_train_cr1_1009,train,images/CR1_1009.JPG,cubit_val_cr1_720,val,images/CR1_720.JPG,pending_human_review,
-63,4,0.87380552,0.06336957,0.11563197,False,cubit_val_sp1_1359,val,images/SP1_1359.JPG,cubit_test_sp1_1368,test,images/SP1_1368.JPG,pending_human_review,
-64,4,0.87110198,0.03123564,0.06237589,False,cubit_train_sp0_408,train,images/SP0_408.JPG,cubit_val_sp1_402,val,images/SP1_402.JPG,pending_human_review,
-65,4,0.86901712,0.01662143,0.03968482,True,cubit_train_cr1_1663,train,images/CR1_1663.JPG,cubit_test_cr1_1656,test,images/CR1_1656.JPG,pending_human_review,
-66,4,0.86822897,0.07230392,0.1379969,False,cubit_train_sp0_906,train,images/SP0_906.JPG,cubit_val_sp1_877,val,images/SP1_877.JPG,pending_human_review,
-67,4,0.86677527,0.07181851,0.1361454,False,cubit_train_sp1_1648,train,images/SP1_1648.JPG,cubit_val_sp0_1655,val,images/SP0_1655.JPG,pending_human_review,
-68,4,0.8642866,0.04618184,0.09295086,False,cubit_train_sp1_149,train,images/SP1_149.JPG,cubit_test_sp0_151,test,images/SP0_151.JPG,pending_human_review,
-69,4,0.86289966,0.03220718,0.05719369,False,cubit_train_sp0_305,train,images/SP0_305.JPG,cubit_test_sp1_312,test,images/SP1_312.JPG,pending_human_review,
-70,4,0.86101371,0.08119255,0.1387575,False,cubit_train_sp0_1673,train,images/SP0_1673.JPG,cubit_test_sp1_1656,test,images/SP1_1656.JPG,pending_human_review,
-71,4,0.86100203,0.05794558,0.10481615,False,cubit_train_sp1_1289,train,images/SP1_1289.JPG,cubit_val_sp1_1298,val,images/SP1_1298.JPG,pending_human_review,
-72,4,0.86090696,0.05988363,0.1077861,False,cubit_train_cr1_112,train,images/CR1_112.JPG,cubit_val_sp1_707,val,images/SP1_707.JPG,pending_human_review,
-73,4,0.85725778,0.05688979,0.11482306,False,cubit_train_sp1_1105,train,images/SP1_1105.JPG,cubit_test_sp0_1118,test,images/SP0_1118.JPG,pending_human_review,
-74,4,0.85430086,0.03211096,0.06310537,True,cubit_train_sp0_1276,train,images/SP0_1276.JPG,cubit_val_sp1_1266,val,images/SP1_1266.JPG,pending_human_review,
-75,4,0.85142833,0.05988219,0.08956563,False,cubit_train_sp0_1426,train,images/SP0_1426.JPG,cubit_test_sp1_1417,test,images/SP1_1417.JPG,pending_human_review,
-76,4,0.84847087,0.0325966,0.07010969,False,cubit_train_sp0_1723,train,images/SP0_1723.JPG,cubit_test_sp1_1716,test,images/SP1_1716.JPG,pending_human_review,
-77,4,0.84833664,0.05336292,0.09710065,True,cubit_train_sp0_1124,train,images/SP0_1124.JPG,cubit_test_sp0_1123,test,images/SP0_1123.JPG,pending_human_review,
-78,4,0.84064221,0.06358308,0.11547896,False,cubit_val_sp1_707,val,images/SP1_707.JPG,cubit_test_sp1_696,test,images/SP1_696.JPG,pending_human_review,
-79,4,0.84005934,0.07207582,0.11111627,False,cubit_train_sp1_269,train,images/SP1_269.JPG,cubit_test_sp0_262,test,images/SP0_262.JPG,pending_human_review,
-80,4,0.83471793,0.05427844,0.11371233,False,cubit_train_sp0_1115,train,images/SP0_1115.JPG,cubit_val_sp1_1103,val,images/SP1_1103.JPG,pending_human_review,
-81,4,0.83257902,0.05718827,0.10706435,False,cubit_train_sp1_1315,train,images/SP1_1315.JPG,cubit_val_sp0_1328,val,images/SP0_1328.JPG,pending_human_review,
-82,4,0.83114702,0.08626613,0.16506872,False,cubit_train_sp1_1029,train,images/SP1_1029.JPG,cubit_test_sp0_1041,test,images/SP0_1041.JPG,pending_human_review,
-83,4,0.82973611,0.0711816,0.12760103,False,cubit_train_sp0_1510,train,images/SP0_1510.JPG,cubit_test_sp1_1498,test,images/SP1_1498.JPG,pending_human_review,
-84,4,0.82598007,0.07070959,0.1160527,False,cubit_train_sp1_289,train,images/SP1_289.JPG,cubit_test_sp1_299,test,images/SP1_299.JPG,pending_human_review,
-85,4,0.82596439,0.02817598,0.06565922,False,cubit_val_sp1_448,val,images/SP1_448.JPG,cubit_test_sp1_458,test,images/SP1_458.JPG,pending_human_review,
-86,4,0.81650907,0.07530949,0.13261478,False,cubit_train_sp0_882,train,images/SP0_882.JPG,cubit_val_sp1_862,val,images/SP1_862.JPG,pending_human_review,
-87,4,0.81419098,0.10040092,0.15543389,False,cubit_train_sp1_904,train,images/SP1_904.JPG,cubit_test_sp0_925,test,images/SP0_925.JPG,pending_human_review,
-88,4,0.8131628,0.02668194,0.03755556,True,cubit_train_cr1_1015,train,images/CR1_1015.JPG,cubit_val_cr1_720,val,images/CR1_720.JPG,pending_human_review,
-89,4,0.80982524,0.14281127,0.17101787,False,cubit_train_sp1_1352,train,images/SP1_1352.JPG,cubit_val_sp0_1328,val,images/SP0_1328.JPG,pending_human_review,
-90,4,0.8081972,0.03728027,0.07674036,True,cubit_train_sp0_468,train,images/SP0_468.JPG,cubit_test_sp1_462,test,images/SP1_462.JPG,pending_human_review,
-91,4,0.80571163,0.08609763,0.14939982,False,cubit_train_sp1_1544,train,images/SP1_1544.JPG,cubit_val_sp0_1552,val,images/SP0_1552.JPG,pending_human_review,
-92,4,0.80177569,0.04342137,0.08425391,False,cubit_train_sp0_1741,train,images/SP0_1741.JPG,cubit_val_sp1_1725,val,images/SP1_1725.JPG,pending_human_review,
-93,4,0.80138832,0.05651041,0.10995226,False,cubit_train_sp0_1714,train,images/SP0_1714.JPG,cubit_val_sp1_1697,val,images/SP1_1697.JPG,pending_human_review,
-94,4,0.80038232,0.0354497,0.07270799,False,cubit_train_sp1_1255,train,images/SP1_1255.JPG,cubit_val_sp1_1266,val,images/SP1_1266.JPG,pending_human_review,
-95,4,0.80007607,0.06713197,0.12286594,False,cubit_train_sp0_1114,train,images/SP0_1114.JPG,cubit_val_sp1_1103,val,images/SP1_1103.JPG,pending_human_review,
-96,4,0.79760998,0.07651392,0.13393973,False,cubit_train_sp1_939,train,images/SP1_939.JPG,cubit_test_sp0_968,test,images/SP0_968.JPG,pending_human_review,
-97,4,0.79490119,0.08299824,0.13322319,False,cubit_train_sp1_999,train,images/SP1_999.JPG,cubit_val_sp0_1018,val,images/SP0_1018.JPG,pending_human_review,
-98,4,0.77999103,0.04624335,0.09518511,False,cubit_train_sp1_478,train,images/SP1_478.JPG,cubit_test_sp0_485,test,images/SP0_485.JPG,pending_human_review,
-99,4,0.7724095,0.05109337,0.10352283,False,cubit_train_sp1_482,train,images/SP1_482.JPG,cubit_val_sp0_497,val,images/SP0_497.JPG,pending_human_review,
-100,4,0.76910955,0.03909912,0.09473328,False,cubit_train_sp1_472,train,images/SP1_472.JPG,cubit_val_sp0_479,val,images/SP0_479.JPG,pending_human_review,
-101,4,0.76234704,0.05107278,0.0884086,False,cubit_train_sp1_53,train,images/SP1_53.JPG,cubit_test_sp0_59,test,images/SP0_59.JPG,pending_human_review,
-102,4,0.75612545,0.0996649,0.15231706,True,cubit_train_sp0_1510,train,images/SP0_1510.JPG,cubit_test_sp0_1511,test,images/SP0_1511.JPG,pending_human_review,
-103,4,0.75238216,0.0404328,0.09369812,False,cubit_train_sp1_1730,train,images/SP1_1730.JPG,cubit_val_sp0_1747,val,images/SP0_1747.JPG,pending_human_review,
-104,4,0.73638535,0.04762538,0.07880062,False,cubit_val_sp1_765,val,images/SP1_765.JPG,cubit_test_sp1_776,test,images/SP1_776.JPG,pending_human_review,
-105,4,0.73424876,0.04420358,0.10003076,False,cubit_train_sp1_377,train,images/SP1_377.JPG,cubit_val_sp1_387,val,images/SP1_387.JPG,pending_human_review,
-106,4,0.73236328,0.04728597,0.07871094,False,cubit_train_sp1_764,train,images/SP1_764.JPG,cubit_val_sp1_774,val,images/SP1_774.JPG,pending_human_review,
-107,4,0.73207331,0.07447725,0.13683788,False,cubit_train_sp1_1589,train,images/SP1_1589.JPG,cubit_test_sp1_1599,test,images/SP1_1599.JPG,pending_human_review,
-108,4,0.73166162,0.08845764,0.14143212,False,cubit_val_sp1_1023,val,images/SP1_1023.JPG,cubit_test_sp1_1012,test,images/SP1_1012.JPG,pending_human_review,
-109,4,0.73118395,0.02536453,0.05588168,True,cubit_train_cr1_1670,train,images/CR1_1670.JPG,cubit_test_cr1_1656,test,images/CR1_1656.JPG,pending_human_review,
-110,4,0.7281841,0.05405489,0.08704211,False,cubit_train_sp1_795,train,images/SP1_795.JPG,cubit_test_sp1_805,test,images/SP1_805.JPG,pending_human_review,
-111,4,0.72792888,0.0929338,0.14720149,False,cubit_train_sp1_1005,train,images/SP1_1005.JPG,cubit_test_sp1_1015,test,images/SP1_1015.JPG,pending_human_review,
-112,4,0.72498763,0.06507856,0.11637701,False,cubit_val_sp1_1626,val,images/SP1_1626.JPG,cubit_test_sp1_1636,test,images/SP1_1636.JPG,pending_human_review,
-113,4,0.71900302,0.05378418,0.08854211,False,cubit_train_sp1_761,train,images/SP1_761.JPG,cubit_test_sp1_771,test,images/SP1_771.JPG,pending_human_review,
-114,4,0.7139985,0.09691282,0.13025187,True,cubit_train_cr1_714,train,images/CR1_714.JPG,cubit_val_cr1_908,val,images/CR1_908.JPG,pending_human_review,
-115,4,0.71255827,0.03113559,0.06293268,True,cubit_train_cr1_1455,train,images/CR1_1455.JPG,cubit_test_cr1_781,test,images/CR1_781.JPG,pending_human_review,
-116,4,0.70876598,0.08411745,0.12986599,False,cubit_train_sp0_1534,train,images/SP0_1534.JPG,cubit_val_sp1_1518,val,images/SP1_1518.JPG,pending_human_review,
-117,4,0.69703615,0.04848896,0.07126249,True,cubit_train_cr1_1425,train,images/CR1_1425.JPG,cubit_test_cr1_1790,test,images/CR1_1790.JPG,pending_human_review,
-118,4,0.69264245,0.05310226,0.0651656,True,cubit_train_cr1_3052,train,images/CR1_3052.JPG,cubit_test_cr1_1790,test,images/CR1_1790.JPG,pending_human_review,
-119,4,0.69150829,0.01457519,0.04207268,True,cubit_train_cr1_1421,train,images/CR1_1421.JPG,cubit_test_cr1_1427,test,images/CR1_1427.JPG,pending_human_review,
-120,4,0.67930102,0.05444838,0.10094136,False,cubit_train_sp0_1871,train,images/SP0_1871.JPG,cubit_val_sp1_1861,val,images/SP1_1861.JPG,pending_human_review,
-121,4,0.67767733,0.0355768,0.10394427,True,cubit_train_cr1_1689,train,images/CR1_1689.JPG,cubit_test_cr1_1684,test,images/CR1_1684.JPG,pending_human_review,
-122,4,0.67127872,0.08600046,0.15759096,False,cubit_train_sp1_695,train,images/SP1_695.JPG,cubit_test_sp0_711,test,images/SP0_711.JPG,pending_human_review,
-123,4,0.66378039,0.08454829,0.20281629,False,cubit_train_sp1_340,train,images/SP1_340.JPG,cubit_test_sp0_331,test,images/SP0_331.JPG,pending_human_review,
-124,4,0.63719261,0.04748655,0.09778607,False,cubit_train_sp1_1385,train,images/SP1_1385.JPG,cubit_test_sp0_1398,test,images/SP0_1398.JPG,pending_human_review,
-125,4,0.62507951,0.09828815,0.16602172,False,cubit_train_sp1_1327,train,images/SP1_1327.JPG,cubit_test_sp1_1339,test,images/SP1_1339.JPG,pending_human_review,
-126,4,0.58583242,0.04039283,0.12609683,True,cubit_val_cr1_857,val,images/CR1_857.JPG,cubit_test_cr1_858,test,images/CR1_858.JPG,pending_human_review,
-127,4,0.56993902,0.0738894,0.13733126,True,cubit_val_sp1_161,val,images/SP1_161.JPG,cubit_test_sp0_154,test,images/SP0_154.JPG,pending_human_review,
-128,4,0.53898513,0.0678292,0.09352854,True,cubit_train_cr1_1426,train,images/CR1_1426.JPG,cubit_val_cr1_549,val,images/CR1_549.JPG,pending_human_review,
-129,4,0.51176184,0.05127959,0.06657882,True,cubit_train_cr1_1792,train,images/CR1_1792.JPG,cubit_test_cr1_1427,test,images/CR1_1427.JPG,pending_human_review,
-130,4,0.31931669,0.26882803,0.27670622,True,cubit_train_cr1_1009,train,images/CR1_1009.JPG,cubit_test_cr1_343,test,images/CR1_343.JPG,pending_human_review,
-131,4,0.29535744,0.01767674,0.07741027,True,cubit_train_cr1_341,train,images/CR1_341.JPG,cubit_test_cr1_342,test,images/CR1_342.JPG,pending_human_review,
-132,6,0.98056316,0.02367087,0.05804253,True,cubit_train_sp0_235,train,images/SP0_235.JPG,cubit_val_sp0_234,val,images/SP0_234.JPG,pending_human_review,
-133,6,0.97729224,0.02376781,0.06055866,False,cubit_train_sp0_240,train,images/SP0_240.JPG,cubit_test_sp1_243,test,images/SP1_243.JPG,pending_human_review,
-134,6,0.97368276,0.02480397,0.05483065,True,cubit_train_sp0_1231,train,images/SP0_1231.JPG,cubit_test_sp0_1230,test,images/SP0_1230.JPG,pending_human_review,
-135,6,0.97059387,0.02831792,0.06208833,True,cubit_train_sp0_330,train,images/SP0_330.JPG,cubit_test_sp0_331,test,images/SP0_331.JPG,pending_human_review,
-136,6,0.96960706,0.03037827,0.0712266,True,cubit_train_sp0_192,train,images/SP0_192.JPG,cubit_test_sp0_193,test,images/SP0_193.JPG,pending_human_review,
-137,6,0.96863896,0.03152334,0.07759677,True,cubit_val_sp1_354,val,images/SP1_354.JPG,cubit_test_sp1_355,test,images/SP1_355.JPG,pending_human_review,
-138,6,0.9668746,0.02456222,0.05735889,True,cubit_train_sp0_256,train,images/SP0_256.JPG,cubit_test_sp0_257,test,images/SP0_257.JPG,pending_human_review,
-139,6,0.96646374,0.0313838,0.07326183,True,cubit_train_sp0_196,train,images/SP0_196.JPG,cubit_val_sp0_197,val,images/SP0_197.JPG,pending_human_review,
-140,6,0.96636999,0.02892014,0.06781729,False,cubit_train_sp0_205,train,images/SP0_205.JPG,cubit_val_sp1_208,val,images/SP1_208.JPG,pending_human_review,
-141,6,0.96555591,0.03179789,0.07388834,True,cubit_train_sp0_198,train,images/SP0_198.JPG,cubit_val_sp0_197,val,images/SP0_197.JPG,pending_human_review,
-142,6,0.96548426,0.02442914,0.0574932,True,cubit_train_sp0_258,train,images/SP0_258.JPG,cubit_test_sp0_257,test,images/SP0_257.JPG,pending_human_review,
-143,6,0.96113896,0.03173852,0.07140954,True,cubit_train_sp0_206,train,images/SP0_206.JPG,cubit_val_sp0_207,val,images/SP0_207.JPG,pending_human_review,
-144,6,0.95984983,0.02814176,0.07511095,False,cubit_train_sp1_1209,train,images/SP1_1209.JPG,cubit_val_sp0_1222,val,images/SP0_1222.JPG,pending_human_review,
-145,6,0.95943403,0.04009579,0.0749931,False,cubit_train_sp0_1286,train,images/SP0_1286.JPG,cubit_val_sp1_1274,val,images/SP1_1274.JPG,pending_human_review,
-146,6,0.95892584,0.02576378,0.0592797,True,cubit_train_sp0_260,train,images/SP0_260.JPG,cubit_test_sp1_267,test,images/SP1_267.JPG,pending_human_review,
-147,6,0.95804721,0.02835334,0.04539238,True,cubit_train_cr1_525,train,images/CR1_525.JPG,cubit_val_cr1_460,val,images/CR1_460.JPG,pending_human_review,
-148,6,0.95703983,0.04266238,0.0798324,False,cubit_train_sp1_1354,train,images/SP1_1354.JPG,cubit_test_sp0_1367,test,images/SP0_1367.JPG,pending_human_review,
-149,6,0.9566862,0.03126843,0.07466701,True,cubit_train_cr1_2092,train,images/CR1_2092.JPG,cubit_val_cr1_2085,val,images/CR1_2085.JPG,pending_human_review,
-150,6,0.95572698,0.03195346,0.07861222,False,cubit_train_sp1_1209,train,images/SP1_1209.JPG,cubit_test_sp0_1221,test,images/SP0_1221.JPG,pending_human_review,
-151,6,0.95364112,0.03215452,0.06738197,False,cubit_train_sp1_213,train,images/SP1_213.JPG,cubit_test_sp0_216,test,images/SP0_216.JPG,pending_human_review,
-152,6,0.95241845,0.04457337,0.09636008,False,cubit_val_sp1_34,val,images/SP1_34.JPG,cubit_test_sp1_23,test,images/SP1_23.JPG,pending_human_review,
-153,6,0.95224041,0.03249225,0.07151544,True,cubit_train_sp0_214,train,images/SP0_214.JPG,cubit_test_sp0_213,test,images/SP0_213.JPG,pending_human_review,
-154,6,0.95123893,0.0298213,0.04886214,True,cubit_train_cr1_454,train,images/CR1_454.JPG,cubit_val_cr1_519,val,images/CR1_519.JPG,pending_human_review,
-155,6,0.95030677,0.04178323,0.09887595,False,cubit_train_sp1_122,train,images/SP1_122.JPG,cubit_test_sp1_132,test,images/SP1_132.JPG,pending_human_review,
-156,6,0.9491412,0.03132708,0.06801376,False,cubit_train_sp0_1236,train,images/SP0_1236.JPG,cubit_val_sp1_1215,val,images/SP1_1215.JPG,pending_human_review,
-157,6,0.9488098,0.04887049,0.0966568,False,cubit_train_sp0_13,train,images/SP0_13.JPG,cubit_val_sp1_11,val,images/SP1_11.JPG,pending_human_review,
-158,6,0.94812131,0.0604564,0.08133115,True,cubit_val_cr1_2848,val,images/CR1_2848.JPG,cubit_test_cr1_1471,test,images/CR1_1471.JPG,pending_human_review,
-159,6,0.94527364,0.03400233,0.08757921,False,cubit_val_sp1_208,val,images/SP1_208.JPG,cubit_test_sp0_204,test,images/SP0_204.JPG,pending_human_review,
-160,6,0.9433291,0.02675638,0.05526919,True,cubit_train_sp0_1240,train,images/SP0_1240.JPG,cubit_test_sp1_1228,test,images/SP1_1228.JPG,pending_human_review,
-161,6,0.94098854,0.04731685,0.08776342,False,cubit_train_sp0_886,train,images/SP0_886.JPG,cubit_val_sp1_866,val,images/SP1_866.JPG,pending_human_review,
-162,6,0.94048899,0.046611,0.07766818,True,cubit_train_sp0_955,train,images/SP0_955.JPG,cubit_test_sp0_954,test,images/SP0_954.JPG,pending_human_review,
-163,6,0.94028711,0.05576579,0.10795017,False,cubit_train_sp1_3,train,images/SP1_3.JPG,cubit_test_sp0_3,test,images/SP0_3.JPG,pending_human_review,
-164,6,0.93862522,0.04177605,0.10791503,False,cubit_train_sp0_229,train,images/SP0_229.JPG,cubit_val_sp1_235,val,images/SP1_235.JPG,pending_human_review,
-165,6,0.93817425,0.04005678,0.0724704,True,cubit_train_sp0_970,train,images/SP0_970.JPG,cubit_test_sp0_969,test,images/SP0_969.JPG,pending_human_review,
-166,6,0.93616396,0.05855809,0.11290057,False,cubit_val_sp1_10,val,images/SP1_10.JPG,cubit_test_sp0_11,test,images/SP0_11.JPG,pending_human_review,
-167,6,0.93309468,0.03113822,0.08333279,False,cubit_train_sp1_251,train,images/SP1_251.JPG,cubit_test_sp0_255,test,images/SP0_255.JPG,pending_human_review,
-168,6,0.93219006,0.047808,0.10212353,False,cubit_train_sp0_1083,train,images/SP0_1083.JPG,cubit_test_sp1_1070,test,images/SP1_1070.JPG,pending_human_review,
-169,6,0.93216968,0.03446045,0.06334787,True,cubit_train_cr1_907,train,images/CR1_907.JPG,cubit_test_cr1_852,test,images/CR1_852.JPG,pending_human_review,
-170,6,0.92912567,0.05272504,0.09082533,False,cubit_train_sp0_1179,train,images/SP0_1179.JPG,cubit_val_sp1_1167,val,images/SP1_1167.JPG,pending_human_review,
-171,6,0.92372268,0.02397389,0.05119909,True,cubit_val_sp0_1747,val,images/SP0_1747.JPG,cubit_test_sp0_1746,test,images/SP0_1746.JPG,pending_human_review,
-172,6,0.92281413,0.04937601,0.11513431,False,cubit_train_sp1_199,train,images/SP1_199.JPG,cubit_test_sp0_193,test,images/SP0_193.JPG,pending_human_review,
-173,6,0.92266709,0.02615177,0.08116785,True,cubit_train_cr1_2216,train,images/CR1_2216.JPG,cubit_test_cr1_2217,test,images/CR1_2217.JPG,pending_human_review,
-174,6,0.92147171,0.06615493,0.09505616,True,cubit_train_cr1_2808,train,images/CR1_2808.JPG,cubit_val_cr1_2826,val,images/CR1_2826.JPG,pending_human_review,
-175,6,0.92133343,0.05521264,0.09525331,False,cubit_train_sp0_1178,train,images/SP0_1178.JPG,cubit_val_sp1_1167,val,images/SP1_1167.JPG,pending_human_review,
-176,6,0.91969037,0.04300896,0.11510029,False,cubit_train_sp1_348,train,images/SP1_348.JPG,cubit_test_sp0_341,test,images/SP0_341.JPG,pending_human_review,
-177,6,0.91845852,0.07195973,0.12537128,True,cubit_train_sp0_28,train,images/SP0_28.JPG,cubit_test_sp1_27,test,images/SP1_27.JPG,pending_human_review,
-178,6,0.9175173,0.04120759,0.07273007,True,cubit_val_sp0_1102,val,images/SP0_1102.JPG,cubit_test_sp1_1092,test,images/SP1_1092.JPG,pending_human_review,
-179,6,0.91728282,0.05202326,0.12887399,False,cubit_val_sp1_123,val,images/SP1_123.JPG,cubit_test_sp0_128,test,images/SP0_128.JPG,pending_human_review,
-180,6,0.91640478,0.05089853,0.0989088,False,cubit_train_sp1_167,train,images/SP1_167.JPG,cubit_val_sp0_162,val,images/SP0_162.JPG,pending_human_review,
-181,6,0.91571462,0.03749856,0.08206218,False,cubit_train_sp0_1464,train,images/SP0_1464.JPG,cubit_test_sp1_1455,test,images/SP1_1455.JPG,pending_human_review,
-182,6,0.91546535,0.03450066,0.06779896,True,cubit_train_sp0_1263,train,images/SP0_1263.JPG,cubit_val_sp0_1262,val,images/SP0_1262.JPG,pending_human_review,
-183,6,0.91543657,0.07329749,0.12766375,False,cubit_train_sp0_35,train,images/SP0_35.JPG,cubit_test_sp1_23,test,images/SP1_23.JPG,pending_human_review,
-184,6,0.91312873,0.05517506,0.13201642,False,cubit_train_sp0_107,train,images/SP0_107.JPG,cubit_test_sp1_111,test,images/SP1_111.JPG,pending_human_review,
-185,6,0.91250128,0.04138136,0.07124367,True,cubit_train_sp0_1099,train,images/SP0_1099.JPG,cubit_val_sp1_1089,val,images/SP1_1089.JPG,pending_human_review,
-186,6,0.91196042,0.0511173,0.09500869,True,cubit_train_sp0_1107,train,images/SP0_1107.JPG,cubit_val_sp0_1108,val,images/SP0_1108.JPG,pending_human_review,
-187,6,0.91174614,0.05132075,0.12513967,False,cubit_train_sp1_1349,train,images/SP1_1349.JPG,cubit_test_sp0_1362,test,images/SP0_1362.JPG,pending_human_review,
-188,6,0.91153997,0.0319604,0.06333414,False,cubit_train_sp0_1796,train,images/SP0_1796.JPG,cubit_test_sp1_1789,test,images/SP1_1789.JPG,pending_human_review,
-189,6,0.91130918,0.05788646,0.12629052,False,cubit_train_sp1_1355,train,images/SP1_1355.JPG,cubit_val_sp0_1369,val,images/SP0_1369.JPG,pending_human_review,
-190,6,0.91012812,0.03181943,0.07889983,False,cubit_train_sp1_507,train,images/SP1_507.JPG,cubit_test_sp0_513,test,images/SP0_513.JPG,pending_human_review,
-191,6,0.91001612,0.07044511,0.10069636,True,cubit_train_cr1_2833,train,images/CR1_2833.JPG,cubit_test_cr1_2815,test,images/CR1_2815.JPG,pending_human_review,
-192,6,0.90852559,0.05694245,0.12705441,False,cubit_train_sp0_1383,train,images/SP0_1383.JPG,cubit_test_sp1_1361,test,images/SP1_1361.JPG,pending_human_review,
-193,6,0.9058525,0.05449985,0.08965813,False,cubit_train_sp1_1131,train,images/SP1_1131.JPG,cubit_test_sp0_1142,test,images/SP0_1142.JPG,pending_human_review,
-194,6,0.90369236,0.03723696,0.08718073,False,cubit_train_sp0_220,train,images/SP0_220.JPG,cubit_val_sp1_216,val,images/SP1_216.JPG,pending_human_review,
-195,6,0.90363443,0.03188357,0.05799504,True,cubit_train_sp0_1720,train,images/SP0_1720.JPG,cubit_test_sp0_1721,test,images/SP0_1721.JPG,pending_human_review,
-196,6,0.90324748,0.03118107,0.06425974,False,cubit_train_sp0_1761,train,images/SP0_1761.JPG,cubit_test_sp1_1754,test,images/SP1_1754.JPG,pending_human_review,
-197,6,0.90036315,0.03003025,0.06555535,True,cubit_train_sp0_1775,train,images/SP0_1775.JPG,cubit_val_sp0_1774,val,images/SP0_1774.JPG,pending_human_review,
-198,6,0.90026814,0.05283131,0.09963017,False,cubit_train_sp0_1189,train,images/SP0_1189.JPG,cubit_test_sp1_1175,test,images/SP1_1175.JPG,pending_human_review,
-199,6,0.89937973,0.06246601,0.08950728,True,cubit_train_cr1_2821,train,images/CR1_2821.JPG,cubit_val_cr1_2804,val,images/CR1_2804.JPG,pending_human_review,
-200,6,0.89803773,0.05705015,0.09615222,True,cubit_train_cr1_98,train,images/CR1_98.JPG,cubit_val_sp1_682,val,images/SP1_682.JPG,pending_human_review,
-201,6,0.89751256,0.02943833,0.06702638,False,cubit_train_sp1_1752,train,images/SP1_1752.JPG,cubit_test_sp0_1759,test,images/SP0_1759.JPG,pending_human_review,
-202,6,0.89715028,0.04917064,0.10609437,False,cubit_train_sp0_166,train,images/SP0_166.JPG,cubit_test_sp1_171,test,images/SP1_171.JPG,pending_human_review,
-203,6,0.89555138,0.04758636,0.08293394,True,cubit_train_sp0_1192,train,images/SP0_1192.JPG,cubit_val_sp0_1193,val,images/SP0_1193.JPG,pending_human_review,
-204,6,0.89335549,0.05906097,0.11177688,False,cubit_train_sp0_1291,train,images/SP0_1291.JPG,cubit_val_sp1_1279,val,images/SP1_1279.JPG,pending_human_review,
-205,6,0.89330506,0.04610667,0.09318405,False,cubit_train_sp0_1452,train,images/SP0_1452.JPG,cubit_test_sp1_1445,test,images/SP1_1445.JPG,pending_human_review,
-206,6,0.89303589,0.05471527,0.10922623,True,cubit_val_sp0_162,val,images/SP0_162.JPG,cubit_test_sp0_163,test,images/SP0_163.JPG,pending_human_review,
-207,6,0.89102268,0.03573429,0.10139398,False,cubit_train_sp1_253,train,images/SP1_253.JPG,cubit_test_sp0_257,test,images/SP0_257.JPG,pending_human_review,
-208,6,0.88932002,0.07049249,0.13281319,False,cubit_train_sp1_1033,train,images/SP1_1033.JPG,cubit_test_sp0_1046,test,images/SP0_1046.JPG,pending_human_review,
-209,6,0.88842857,0.07323549,0.15096308,False,cubit_train_sp1_1363,train,images/SP1_1363.JPG,cubit_val_sp0_1385,val,images/SP0_1385.JPG,pending_human_review,
-210,6,0.88732779,0.0615895,0.11244583,False,cubit_train_sp0_1351,train,images/SP0_1351.JPG,cubit_val_sp1_1341,val,images/SP1_1341.JPG,pending_human_review,
-211,6,0.88518709,0.0698594,0.13122635,False,cubit_train_sp0_1308,train,images/SP0_1308.JPG,cubit_val_sp1_1287,val,images/SP1_1287.JPG,pending_human_review,
-212,6,0.8844189,0.03067962,0.06329085,False,cubit_train_sp1_1820,train,images/SP1_1820.JPG,cubit_val_sp0_1829,val,images/SP0_1829.JPG,pending_human_review,
-213,6,0.88328815,0.06363262,0.10441663,True,cubit_train_cr1_91,train,images/CR1_91.JPG,cubit_val_sp1_675,val,images/SP1_675.JPG,pending_human_review,
-214,6,0.88237214,0.06496893,0.1100614,True,cubit_train_sp0_1503,train,images/SP0_1503.JPG,cubit_val_sp1_1502,val,images/SP1_1502.JPG,pending_human_review,
-215,6,0.88120896,0.03470746,0.06558608,False,cubit_train_sp1_1858,train,images/SP1_1858.JPG,cubit_test_sp0_1869,test,images/SP0_1869.JPG,pending_human_review,
-216,6,0.87954849,0.0620706,0.11764014,False,cubit_train_sp1_167,train,images/SP1_167.JPG,cubit_test_sp0_163,test,images/SP0_163.JPG,pending_human_review,
-217,6,0.87868857,0.07944288,0.12403113,False,cubit_val_sp0_1494,val,images/SP0_1494.JPG,cubit_test_sp1_1485,test,images/SP1_1485.JPG,pending_human_review,
-218,6,0.87832093,0.07744548,0.12412091,False,cubit_train_sp0_1500,train,images/SP0_1500.JPG,cubit_val_sp1_1490,val,images/SP1_1490.JPG,pending_human_review,
-219,6,0.87798393,0.03357891,0.06551533,False,cubit_train_sp1_1249,train,images/SP1_1249.JPG,cubit_test_sp1_1259,test,images/SP1_1259.JPG,pending_human_review,
-220,6,0.87447721,0.04262169,0.07081767,False,cubit_train_sp1_1145,train,images/SP1_1145.JPG,cubit_val_sp1_1155,val,images/SP1_1155.JPG,pending_human_review,
-221,6,0.87367898,0.03532882,0.04649051,True,cubit_train_cr1_1090,train,images/CR1_1090.JPG,cubit_test_cr1_1003,test,images/CR1_1003.JPG,pending_human_review,
-222,6,0.87311476,0.0445729,0.09717771,False,cubit_train_sp0_1479,train,images/SP0_1479.JPG,cubit_test_sp1_1462,test,images/SP1_1462.JPG,pending_human_review,
-223,6,0.87287688,0.07165623,0.13830303,False,cubit_train_sp0_1301,train,images/SP0_1301.JPG,cubit_val_sp1_1287,val,images/SP1_1287.JPG,pending_human_review,
-224,6,0.87087375,0.03033352,0.07280889,False,cubit_train_sp0_1785,train,images/SP0_1785.JPG,cubit_val_sp1_1768,val,images/SP1_1768.JPG,pending_human_review,
-225,6,0.86994869,0.05726893,0.0854703,False,cubit_train_sp1_1414,train,images/SP1_1414.JPG,cubit_test_sp0_1422,test,images/SP0_1422.JPG,pending_human_review,
-226,6,0.8692494,0.04471076,0.09973039,False,cubit_train_sp0_522,train,images/SP0_522.JPG,cubit_test_sp1_514,test,images/SP1_514.JPG,pending_human_review,
-227,6,0.86911577,0.05437371,0.11317177,True,cubit_train_cr1_470,train,images/CR1_470.JPG,cubit_val_cr1_529,val,images/CR1_529.JPG,pending_human_review,
-228,6,0.86709672,0.03654642,0.06482439,False,cubit_train_sp1_1149,train,images/SP1_1149.JPG,cubit_val_sp1_1159,val,images/SP1_1159.JPG,pending_human_review,
-229,6,0.86637235,0.26090926,0.2640205,True,cubit_train_cr1_652,train,images/CR1_652.JPG,cubit_val_cr1_289,val,images/CR1_289.JPG,pending_human_review,
-230,6,0.86426473,0.06741991,0.12323034,False,cubit_val_sp1_867,val,images/SP1_867.JPG,cubit_test_sp0_888,test,images/SP0_888.JPG,pending_human_review,
-231,6,0.86414093,0.07201072,0.11680123,False,cubit_train_sp1_914,train,images/SP1_914.JPG,cubit_test_sp0_942,test,images/SP0_942.JPG,pending_human_review,
-232,6,0.8617416,0.03138141,0.05584396,False,cubit_val_sp0_303,val,images/SP0_303.JPG,cubit_test_sp1_311,test,images/SP1_311.JPG,pending_human_review,
-233,6,0.86080974,0.07583679,0.12562907,False,cubit_train_sp1_271,train,images/SP1_271.JPG,cubit_test_sp0_265,test,images/SP0_265.JPG,pending_human_review,
-234,6,0.85426801,0.0735677,0.13780069,False,cubit_train_sp0_1499,train,images/SP0_1499.JPG,cubit_val_sp1_1490,val,images/SP1_1490.JPG,pending_human_review,
-235,6,0.85275769,0.13437931,0.15916573,False,cubit_train_sp0_1321,train,images/SP0_1321.JPG,cubit_val_sp1_1346,val,images/SP1_1346.JPG,pending_human_review,
-236,6,0.85242385,0.05257736,0.0901126,False,cubit_train_sp1_1182,train,images/SP1_1182.JPG,cubit_val_sp0_1203,val,images/SP0_1203.JPG,pending_human_review,
-237,6,0.8522377,0.26151866,0.26645687,True,cubit_train_cr1_293,train,images/CR1_293.JPG,cubit_val_cr1_656,val,images/CR1_656.JPG,pending_human_review,
-238,6,0.85075033,0.0987118,0.13887371,True,cubit_train_sp0_859,train,images/SP0_859.JPG,cubit_test_sp0_858,test,images/SP0_858.JPG,pending_human_review,
-239,6,0.85000694,0.0344638,0.07129668,True,cubit_val_sp0_1829,val,images/SP0_1829.JPG,cubit_test_sp0_1828,test,images/SP0_1828.JPG,pending_human_review,
-240,6,0.84961218,0.07548541,0.17131196,True,cubit_train_sp0_119,train,images/SP0_119.JPG,cubit_test_sp0_120,test,images/SP0_120.JPG,pending_human_review,
-241,6,0.84879589,0.08259804,0.12693787,False,cubit_train_sp0_582,train,images/SP0_582.JPG,cubit_test_sp1_576,test,images/SP1_576.JPG,pending_human_review,
-242,6,0.84839737,0.0997695,0.14202604,False,cubit_train_sp0_857,train,images/SP0_857.JPG,cubit_val_sp1_844,val,images/SP1_844.JPG,pending_human_review,
-243,6,0.84772879,0.05261087,0.09650806,False,cubit_train_sp0_1149,train,images/SP0_1149.JPG,cubit_test_sp1_1137,test,images/SP1_1137.JPG,pending_human_review,
-244,6,0.84675294,0.05281623,0.10906211,False,cubit_val_sp1_945,val,images/SP1_945.JPG,cubit_test_sp0_975,test,images/SP0_975.JPG,pending_human_review,
-245,6,0.84547406,0.07964849,0.16467525,True,cubit_train_sp0_1368,train,images/SP0_1368.JPG,cubit_val_sp0_1369,val,images/SP0_1369.JPG,pending_human_review,
-246,6,0.84426028,0.05569972,0.1160084,False,cubit_train_sp0_1117,train,images/SP0_1117.JPG,cubit_test_sp1_1104,test,images/SP1_1104.JPG,pending_human_review,
-247,6,0.84295774,0.03894258,0.08422891,False,cubit_train_sp0_1797,train,images/SP0_1797.JPG,cubit_test_sp1_1789,test,images/SP1_1789.JPG,pending_human_review,
-248,6,0.84155846,0.0302416,0.06548796,False,cubit_train_sp0_1278,train,images/SP0_1278.JPG,cubit_test_sp1_1256,test,images/SP1_1256.JPG,pending_human_review,
-249,6,0.8409338,0.03072749,0.06891634,False,cubit_train_sp0_409,train,images/SP0_409.JPG,cubit_val_sp1_402,val,images/SP1_402.JPG,pending_human_review,
-250,6,0.84015787,0.06208041,0.09458053,True,cubit_train_sp0_1423,train,images/SP0_1423.JPG,cubit_test_sp0_1422,test,images/SP0_1422.JPG,pending_human_review,
-251,6,0.83931684,0.06096143,0.11468265,True,cubit_train_sp0_676,train,images/SP0_676.JPG,cubit_val_sp0_675,val,images/SP0_675.JPG,pending_human_review,
-252,6,0.83407772,0.04663229,0.08538248,False,cubit_train_sp0_1809,train,images/SP0_1809.JPG,cubit_val_sp1_1794,val,images/SP1_1794.JPG,pending_human_review,
-253,6,0.83243626,0.05630888,0.11185908,False,cubit_train_sp0_1473,train,images/SP0_1473.JPG,cubit_test_sp1_1462,test,images/SP1_1462.JPG,pending_human_review,
-254,6,0.83101827,0.0367075,0.09245075,False,cubit_train_sp0_548,train,images/SP0_548.JPG,cubit_val_sp1_542,val,images/SP1_542.JPG,pending_human_review,
-255,6,0.83091676,0.04137489,0.07890458,True,cubit_train_sp0_1840,train,images/SP0_1840.JPG,cubit_test_sp0_1841,test,images/SP0_1841.JPG,pending_human_review,
-256,6,0.83009219,0.07674465,0.12677519,False,cubit_train_sp1_690,train,images/SP1_690.JPG,cubit_val_sp0_705,val,images/SP0_705.JPG,pending_human_review,
-257,6,0.82976794,0.08172464,0.13561842,True,cubit_train_sp0_1497,train,images/SP0_1497.JPG,cubit_test_sp0_1502,test,images/SP0_1502.JPG,pending_human_review,
-258,6,0.8296786,0.05910908,0.11326344,True,cubit_train_sp0_374,train,images/SP0_374.JPG,cubit_test_sp0_373,test,images/SP0_373.JPG,pending_human_review,
-259,6,0.82939112,0.05386748,0.09709717,False,cubit_train_sp1_181,train,images/SP1_181.JPG,cubit_test_sp0_186,test,images/SP0_186.JPG,pending_human_review,
-260,6,0.82738012,0.04418515,0.0944427,False,cubit_train_sp1_182,train,images/SP1_182.JPG,cubit_test_sp0_186,test,images/SP0_186.JPG,pending_human_review,
-261,6,0.82672703,0.08157384,0.12894543,True,cubit_train_sp1_1493,train,images/SP1_1493.JPG,cubit_test_sp1_1498,test,images/SP1_1498.JPG,pending_human_review,
-262,6,0.82596332,0.03148289,0.05227878,True,cubit_val_cr1_720,val,images/CR1_720.JPG,cubit_test_cr1_1003,test,images/CR1_1003.JPG,pending_human_review,
-263,6,0.82583445,0.07244992,0.12103885,True,cubit_train_sp0_1593,train,images/SP0_1593.JPG,cubit_test_sp0_1594,test,images/SP0_1594.JPG,pending_human_review,
-264,6,0.82472366,0.05925437,0.09317426,True,cubit_train_sp0_1433,train,images/SP0_1433.JPG,cubit_val_sp0_1434,val,images/SP0_1434.JPG,pending_human_review,
-265,6,0.82443398,0.06912435,0.1224378,False,cubit_train_sp0_1329,train,images/SP0_1329.JPG,cubit_val_sp1_1316,val,images/SP1_1316.JPG,pending_human_review,
-266,6,0.82301348,0.06168691,0.10728725,False,cubit_train_sp0_1623,train,images/SP0_1623.JPG,cubit_test_sp1_1615,test,images/SP1_1615.JPG,pending_human_review,
-267,6,0.82293004,0.04541758,0.07757106,False,cubit_train_sp1_414,train,images/SP1_414.JPG,cubit_test_sp1_424,test,images/SP1_424.JPG,pending_human_review,
-268,6,0.8195166,0.03514357,0.07336146,True,cubit_train_sp0_419,train,images/SP0_419.JPG,cubit_val_sp0_418,val,images/SP0_418.JPG,pending_human_review,
-269,6,0.8186087,0.09010225,0.15866607,False,cubit_train_sp0_74,train,images/SP0_74.JPG,cubit_val_sp1_77,val,images/SP1_77.JPG,pending_human_review,
-270,6,0.8171922,0.05185092,0.10173742,True,cubit_train_sp0_185,train,images/SP0_185.JPG,cubit_test_sp0_186,test,images/SP0_186.JPG,pending_human_review,
-271,6,0.81674242,0.08661391,0.13590944,False,cubit_train_sp1_678,train,images/SP1_678.JPG,cubit_val_sp0_684,val,images/SP0_684.JPG,pending_human_review,
-272,6,0.81461805,0.05422147,0.08969787,False,cubit_train_sp0_62,train,images/SP0_62.JPG,cubit_test_sp1_55,test,images/SP1_55.JPG,pending_human_review,
-273,6,0.81270021,0.05110534,0.08512402,True,cubit_train_sp0_1165,train,images/SP0_1165.JPG,cubit_val_sp1_1155,val,images/SP1_1155.JPG,pending_human_review,
-274,6,0.81247997,0.08303677,0.13555685,True,cubit_train_sp0_683,train,images/SP0_683.JPG,cubit_val_sp0_684,val,images/SP0_684.JPG,pending_human_review,
-275,6,0.81208557,0.09048234,0.140771,False,cubit_train_sp0_581,train,images/SP0_581.JPG,cubit_test_sp1_576,test,images/SP1_576.JPG,pending_human_review,
-276,6,0.8118028,0.06910472,0.11732426,False,cubit_train_sp1_276,train,images/SP1_276.JPG,cubit_test_sp0_271,test,images/SP0_271.JPG,pending_human_review,
-277,6,0.80844527,0.03734466,0.08744562,True,cubit_train_sp0_495,train,images/SP0_495.JPG,cubit_test_sp0_494,test,images/SP0_494.JPG,pending_human_review,
-278,6,0.80797505,0.07585282,0.12530346,False,cubit_train_sp1_660,train,images/SP1_660.JPG,cubit_val_sp0_675,val,images/SP0_675.JPG,pending_human_review,
-279,6,0.80708933,0.08327182,0.11899817,True,cubit_train_cr1_835,train,images/CR1_835.JPG,cubit_test_cr1_820,test,images/CR1_820.JPG,pending_human_review,
-280,6,0.8063494,0.10248449,0.1654411,True,cubit_train_sp0_1486,train,images/SP0_1486.JPG,cubit_val_sp0_1485,val,images/SP0_1485.JPG,pending_human_review,
-281,6,0.80366904,0.03469908,0.08448752,False,cubit_train_sp1_1731,train,images/SP1_1731.JPG,cubit_test_sp1_1742,test,images/SP1_1742.JPG,pending_human_review,
-282,6,0.80314755,0.04464686,0.09186454,False,cubit_train_sp0_503,train,images/SP0_503.JPG,cubit_test_sp1_486,test,images/SP1_486.JPG,pending_human_review,
-283,6,0.80268997,0.04815123,0.0883984,True,cubit_val_sp1_1846,val,images/SP1_1846.JPG,cubit_test_sp0_1853,test,images/SP0_1853.JPG,pending_human_review,
-284,6,0.80261064,0.08259516,0.13862815,True,cubit_train_sp0_691,train,images/SP0_691.JPG,cubit_val_sp0_690,val,images/SP0_690.JPG,pending_human_review,
-285,6,0.80250126,0.04445801,0.07826146,True,cubit_train_sp0_1206,train,images/SP0_1206.JPG,cubit_val_sp1_1196,val,images/SP1_1196.JPG,pending_human_review,
-286,6,0.80125958,0.0761264,0.13784596,True,cubit_train_sp0_292,train,images/SP0_292.JPG,cubit_test_sp1_300,test,images/SP1_300.JPG,pending_human_review,
-287,6,0.79866755,0.04152042,0.09817632,False,cubit_train_sp1_552,train,images/SP1_552.JPG,cubit_test_sp1_562,test,images/SP1_562.JPG,pending_human_review,
-288,6,0.7983827,0.07648351,0.13366036,False,cubit_train_sp1_940,train,images/SP1_940.JPG,cubit_test_sp0_969,test,images/SP0_969.JPG,pending_human_review,
-289,6,0.79779506,0.06444451,0.10983924,False,cubit_train_sp1_298,train,images/SP1_298.JPG,cubit_val_sp1_288,val,images/SP1_288.JPG,pending_human_review,
-290,6,0.79766971,0.03733652,0.0775579,True,cubit_train_sp0_461,train,images/SP0_461.JPG,cubit_val_sp0_460,val,images/SP0_460.JPG,pending_human_review,
-291,6,0.79724169,0.09686255,0.1434937,False,cubit_train_sp1_591,train,images/SP1_591.JPG,cubit_test_sp1_602,test,images/SP1_602.JPG,pending_human_review,
-292,6,0.7967068,0.05647954,0.10112008,True,cubit_train_sp0_1643,train,images/SP0_1643.JPG,cubit_test_sp1_1636,test,images/SP1_1636.JPG,pending_human_review,
-293,6,0.79654056,0.03284816,0.07105511,False,cubit_val_sp1_448,val,images/SP1_448.JPG,cubit_test_sp0_462,test,images/SP0_462.JPG,pending_human_review,
-294,6,0.79451436,0.03551983,0.10553554,True,cubit_train_cr1_1679,train,images/CR1_1679.JPG,cubit_test_cr1_1684,test,images/CR1_1684.JPG,pending_human_review,
-295,6,0.79400468,0.08454829,0.14819013,False,cubit_train_sp1_1555,train,images/SP1_1555.JPG,cubit_val_sp1_1565,val,images/SP1_1565.JPG,pending_human_review,
-296,6,0.79306012,0.02894766,0.07156304,False,cubit_train_sp0_445,train,images/SP0_445.JPG,cubit_val_sp1_438,val,images/SP1_438.JPG,pending_human_review,
-297,6,0.78927809,0.03491642,0.08510116,False,cubit_val_sp1_1729,val,images/SP1_1729.JPG,cubit_test_sp1_1739,test,images/SP1_1739.JPG,pending_human_review,
-298,6,0.78909504,0.0612769,0.12219717,True,cubit_train_sp0_1481,train,images/SP0_1481.JPG,cubit_test_sp1_1468,test,images/SP1_1468.JPG,pending_human_review,
-299,6,0.78895646,0.03588867,0.06140926,False,cubit_train_sp1_731,train,images/SP1_731.JPG,cubit_val_sp1_743,val,images/SP1_743.JPG,pending_human_review,
-300,6,0.78839892,0.04550494,0.08963712,False,cubit_train_sp1_480,train,images/SP1_480.JPG,cubit_test_sp0_489,test,images/SP0_489.JPG,pending_human_review,
-301,6,0.78832918,0.07878227,0.13759345,False,cubit_train_sp0_965,train,images/SP0_965.JPG,cubit_test_sp1_937,test,images/SP1_937.JPG,pending_human_review,
-302,6,0.78692657,0.07997425,0.13798973,False,cubit_train_sp1_936,train,images/SP1_936.JPG,cubit_val_sp0_964,val,images/SP0_964.JPG,pending_human_review,
-303,6,0.78601158,0.03506529,0.08732039,False,cubit_train_sp1_381,train,images/SP1_381.JPG,cubit_test_sp1_392,test,images/SP1_392.JPG,pending_human_review,
-304,6,0.78488451,0.08055563,0.16428879,True,cubit_train_sp0_1067,train,images/SP0_1067.JPG,cubit_val_sp1_1057,val,images/SP1_1057.JPG,pending_human_review,
-305,6,0.78422022,0.08344271,0.13811757,False,cubit_val_sp1_1577,val,images/SP1_1577.JPG,cubit_test_sp0_1584,test,images/SP0_1584.JPG,pending_human_review,
-306,6,0.7834695,0.08133066,0.13294782,False,cubit_train_sp1_1322,train,images/SP1_1322.JPG,cubit_val_sp0_1343,val,images/SP0_1343.JPG,pending_human_review,
-307,6,0.78323126,0.04327944,0.10368135,False,cubit_train_sp1_1219,train,images/SP1_1219.JPG,cubit_test_sp1_1228,test,images/SP1_1228.JPG,pending_human_review,
-308,6,0.78144354,0.03257147,0.07516681,True,cubit_train_sp0_451,train,images/SP0_451.JPG,cubit_val_sp0_452,val,images/SP0_452.JPG,pending_human_review,
-309,6,0.78063786,0.04167815,0.10365126,False,cubit_train_sp0_553,train,images/SP0_553.JPG,cubit_val_sp1_546,val,images/SP1_546.JPG,pending_human_review,
-310,6,0.77928472,0.05022451,0.08624302,True,cubit_train_sp0_430,train,images/SP0_430.JPG,cubit_test_sp1_424,test,images/SP1_424.JPG,pending_human_review,
-311,6,0.77737552,0.07750483,0.13738075,False,cubit_train_sp1_623,train,images/SP1_623.JPG,cubit_val_sp0_638,val,images/SP0_638.JPG,pending_human_review,
-312,6,0.77437216,0.07005759,0.11401863,False,cubit_train_sp0_1704,train,images/SP0_1704.JPG,cubit_val_sp1_1689,val,images/SP1_1689.JPG,pending_human_review,
-313,6,0.77382129,0.0443984,0.09653347,False,cubit_train_sp0_1924,train,images/SP0_1924.JPG,cubit_val_sp1_1905,val,images/SP1_1905.JPG,pending_human_review,
-314,6,0.77083772,0.06575114,0.13511279,False,cubit_train_sp1_1277,train,images/SP1_1277.JPG,cubit_test_sp0_1289,test,images/SP0_1289.JPG,pending_human_review,
-315,6,0.77064931,0.04548268,0.09460531,False,cubit_train_sp1_1904,train,images/SP1_1904.JPG,cubit_test_sp0_1922,test,images/SP0_1922.JPG,pending_human_review,
-316,6,0.76971126,0.10017353,0.15099895,True,cubit_train_sp0_591,train,images/SP0_591.JPG,cubit_val_sp0_592,val,images/SP0_592.JPG,pending_human_review,
-317,6,0.76771629,0.10016611,0.15215643,False,cubit_train_sp1_588,train,images/SP1_588.JPG,cubit_test_sp0_603,test,images/SP0_603.JPG,pending_human_review,
-318,6,0.76729459,0.06700367,0.11826006,False,cubit_train_sp0_1713,train,images/SP0_1713.JPG,cubit_val_sp1_1697,val,images/SP1_1697.JPG,pending_human_review,
-319,6,0.76659942,0.08557177,0.13047351,True,cubit_train_sp1_1024,train,images/SP1_1024.JPG,cubit_val_sp1_1023,val,images/SP1_1023.JPG,pending_human_review,
-320,6,0.76555836,0.04029302,0.09666242,False,cubit_train_sp0_476,train,images/SP0_476.JPG,cubit_val_sp1_470,val,images/SP1_470.JPG,pending_human_review,
-321,6,0.76419842,0.05465327,0.09089101,True,cubit_train_sp0_1163,train,images/SP0_1163.JPG,cubit_val_sp1_1159,val,images/SP1_1159.JPG,pending_human_review,
-322,6,0.76406205,0.10575406,0.15454659,False,cubit_train_sp1_590,train,images/SP1_590.JPG,cubit_val_sp1_600,val,images/SP1_600.JPG,pending_human_review,
-323,6,0.76271588,0.03949788,0.0672567,False,cubit_train_sp1_722,train,images/SP1_722.JPG,cubit_val_sp0_729,val,images/SP0_729.JPG,pending_human_review,
-324,6,0.76160735,0.10316999,0.1627676,False,cubit_train_sp0_1572,train,images/SP0_1572.JPG,cubit_test_sp1_1556,test,images/SP1_1556.JPG,pending_human_review,
-325,6,0.7597065,0.04343118,0.10740904,True,cubit_train_sp0_548,train,images/SP0_548.JPG,cubit_val_sp0_547,val,images/SP0_547.JPG,pending_human_review,
-326,6,0.75849336,0.06680238,0.13751253,False,cubit_train_sp1_1271,train,images/SP1_1271.JPG,cubit_test_sp0_1282,test,images/SP0_1282.JPG,pending_human_review,
-327,6,0.75645852,0.10565592,0.18961319,False,cubit_train_sp0_73,train,images/SP0_73.JPG,cubit_val_sp1_77,val,images/SP1_77.JPG,pending_human_review,
-328,6,0.75574285,0.0564312,0.11703615,False,cubit_train_sp1_1080,train,images/SP1_1080.JPG,cubit_val_sp0_1101,val,images/SP0_1101.JPG,pending_human_review,
-329,6,0.75510776,0.04409348,0.07662211,False,cubit_train_sp1_760,train,images/SP1_760.JPG,cubit_test_sp0_768,test,images/SP0_768.JPG,pending_human_review,
-330,6,0.75508386,0.05755448,0.12125544,False,cubit_train_sp1_1081,train,images/SP1_1081.JPG,cubit_test_sp1_1092,test,images/SP1_1092.JPG,pending_human_review,
-331,6,0.75299084,0.10356134,0.15587822,False,cubit_train_sp1_588,train,images/SP1_588.JPG,cubit_test_sp0_602,test,images/SP0_602.JPG,pending_human_review,
-332,6,0.75236851,0.04470119,0.0913055,True,cubit_train_sp0_191,train,images/SP0_191.JPG,cubit_val_sp0_190,val,images/SP0_190.JPG,pending_human_review,
-333,6,0.74941087,0.10580625,0.16778055,True,cubit_train_cr1_41,train,images/CR1_41.JPG,cubit_test_cr1_42,test,images/CR1_42.JPG,pending_human_review,
-334,6,0.74938476,0.10145049,0.15995575,False,cubit_train_sp1_993,train,images/SP1_993.JPG,cubit_test_sp0_1011,test,images/SP0_1011.JPG,pending_human_review,
-335,6,0.74352235,0.08147978,0.12845843,False,cubit_train_sp1_1691,train,images/SP1_1691.JPG,cubit_val_sp1_1701,val,images/SP1_1701.JPG,pending_human_review,
-336,6,0.74086285,0.07078546,0.10749526,True,cubit_train_cr1_1245,train,images/CR1_1245.JPG,cubit_val_cr1_908,val,images/CR1_908.JPG,pending_human_review,
-337,6,0.74085963,0.05455155,0.10658166,False,cubit_train_sp1_151,train,images/SP1_151.JPG,cubit_test_sp0_154,test,images/SP0_154.JPG,pending_human_review,
-338,6,0.73571146,0.08104727,0.1344929,False,cubit_train_sp0_1694,train,images/SP0_1694.JPG,cubit_test_sp1_1686,test,images/SP1_1686.JPG,pending_human_review,
-339,6,0.73558682,0.04380051,0.07660898,True,cubit_train_sp0_304,train,images/SP0_304.JPG,cubit_val_sp0_303,val,images/SP0_303.JPG,pending_human_review,
-340,6,0.7348842,0.06113257,0.13385867,True,cubit_train_cr1_1068,train,images/CR1_1068.JPG,cubit_test_cr1_680,test,images/CR1_680.JPG,pending_human_review,
-341,6,0.7344991,0.07180679,0.13839427,False,cubit_train_sp0_708,train,images/SP0_708.JPG,cubit_test_cr1_109,test,images/CR1_109.JPG,pending_human_review,
-342,6,0.73287481,0.11234657,0.16540031,False,cubit_train_sp1_589,train,images/SP1_589.JPG,cubit_val_sp1_600,val,images/SP1_600.JPG,pending_human_review,
-343,6,0.72917008,0.08869079,0.16046977,False,cubit_train_sp0_1523,train,images/SP0_1523.JPG,cubit_test_sp1_1514,test,images/SP1_1514.JPG,pending_human_review,
-344,6,0.72841293,0.04876518,0.080546,False,cubit_train_sp0_313,train,images/SP0_313.JPG,cubit_test_sp1_319,test,images/SP1_319.JPG,pending_human_review,
-345,6,0.72487348,0.09321384,0.15464458,True,cubit_train_sp0_618,train,images/SP0_618.JPG,cubit_test_sp0_619,test,images/SP0_619.JPG,pending_human_review,
-346,6,0.7244972,0.04848226,0.08838688,False,cubit_val_sp0_786,val,images/SP0_786.JPG,cubit_test_sp1_781,test,images/SP1_781.JPG,pending_human_review,
-347,6,0.72382945,0.05374444,0.10170415,False,cubit_train_sp1_1727,train,images/SP1_1727.JPG,cubit_test_sp1_1737,test,images/SP1_1737.JPG,pending_human_review,
-348,6,0.72134,0.04778646,0.07851479,False,cubit_train_sp1_318,train,images/SP1_318.JPG,cubit_val_sp0_319,val,images/SP0_319.JPG,pending_human_review,
-349,6,0.72117078,0.04549105,0.10096392,False,cubit_train_sp1_1731,train,images/SP1_1731.JPG,cubit_test_sp0_1749,test,images/SP0_1749.JPG,pending_human_review,
-350,6,0.72065967,0.07944982,0.11614419,False,cubit_train_sp0_1437,train,images/SP0_1437.JPG,cubit_test_sp1_1421,test,images/SP1_1421.JPG,pending_human_review,
-351,6,0.71530491,0.09142228,0.14537327,False,cubit_train_sp1_1024,train,images/SP1_1024.JPG,cubit_test_sp1_1012,test,images/SP1_1012.JPG,pending_human_review,
-352,6,0.71513301,0.15717702,0.20501296,False,cubit_train_sp0_1322,train,images/SP0_1322.JPG,cubit_val_sp1_1346,val,images/SP1_1346.JPG,pending_human_review,
-353,6,0.70881736,0.05598097,0.11532427,True,cubit_train_sp0_1907,train,images/SP0_1907.JPG,cubit_test_sp0_1906,test,images/SP0_1906.JPG,pending_human_review,
-354,6,0.69925141,0.05840298,0.10163016,False,cubit_train_sp0_1858,train,images/SP0_1858.JPG,cubit_test_sp1_1850,test,images/SP1_1850.JPG,pending_human_review,
-355,6,0.69674325,0.07186471,0.11185931,False,cubit_train_sp1_1323,train,images/SP1_1323.JPG,cubit_val_sp0_1344,val,images/SP0_1344.JPG,pending_human_review,
-356,6,0.68542165,0.03494706,0.06823288,False,cubit_train_sp0_734,train,images/SP0_734.JPG,cubit_val_sp1_726,val,images/SP1_726.JPG,pending_human_review,
-357,6,0.68339115,0.10993533,0.15313049,False,cubit_train_sp1_655,train,images/SP1_655.JPG,cubit_test_sp0_671,test,images/SP0_671.JPG,pending_human_review,
-358,6,0.67909926,0.08317895,0.15593685,False,cubit_train_sp1_1888,train,images/SP1_1888.JPG,cubit_val_sp0_1897,val,images/SP0_1897.JPG,pending_human_review,
-359,6,0.67663205,0.08053817,0.13529696,False,cubit_train_sp0_270,train,images/SP0_270.JPG,cubit_test_sp1_275,test,images/SP1_275.JPG,pending_human_review,
-360,6,0.67655569,0.03490588,0.06170359,True,cubit_train_cr1_1280,train,images/CR1_1280.JPG,cubit_test_cr1_1790,test,images/CR1_1790.JPG,pending_human_review,
-361,6,0.67078954,0.05530217,0.0877655,False,cubit_train_sp0_321,train,images/SP0_321.JPG,cubit_test_sp1_319,test,images/SP1_319.JPG,pending_human_review,
-362,6,0.66706228,0.05473705,0.0876842,False,cubit_train_sp0_320,train,images/SP0_320.JPG,cubit_test_sp1_319,test,images/SP1_319.JPG,pending_human_review,
-363,6,0.66645521,0.05115967,0.08201349,False,cubit_train_sp1_323,train,images/SP1_323.JPG,cubit_test_sp0_325,test,images/SP0_325.JPG,pending_human_review,
-364,6,0.66130042,0.06445264,0.11735516,False,cubit_train_sp0_1756,train,images/SP0_1756.JPG,cubit_test_sp1_1749,test,images/SP1_1749.JPG,pending_human_review,
-365,6,0.65768313,0.11205767,0.17537443,False,cubit_train_sp0_622,train,images/SP0_622.JPG,cubit_val_sp1_614,val,images/SP1_614.JPG,pending_human_review,
-366,6,0.6567353,0.0758983,0.12255017,False,cubit_train_sp1_1325,train,images/SP1_1325.JPG,cubit_val_sp0_1346,val,images/SP0_1346.JPG,pending_human_review,
-367,6,0.65556383,0.04416791,0.10394166,False,cubit_train_sp1_382,train,images/SP1_382.JPG,cubit_val_sp0_398,val,images/SP0_398.JPG,pending_human_review,
-368,6,0.64968753,0.1139378,0.17510955,False,cubit_train_sp1_612,train,images/SP1_612.JPG,cubit_test_sp0_619,test,images/SP0_619.JPG,pending_human_review,
-369,6,0.63102108,0.05084947,0.10119612,False,cubit_train_sp1_444,train,images/SP1_444.JPG,cubit_val_sp0_459,val,images/SP0_459.JPG,pending_human_review,
-370,6,0.62438542,0.07457994,0.14783809,True,cubit_train_sp0_1538,train,images/SP0_1538.JPG,cubit_test_sp1_1532,test,images/SP1_1532.JPG,pending_human_review,
-371,6,0.6199823,0.04705739,0.08814303,True,cubit_train_sp0_1395,train,images/SP0_1395.JPG,cubit_val_sp0_1394,val,images/SP0_1394.JPG,pending_human_review,
-372,6,0.61592031,0.06758961,0.11778137,False,cubit_train_sp1_1714,train,images/SP1_1714.JPG,cubit_test_sp0_1721,test,images/SP0_1721.JPG,pending_human_review,
-373,6,0.61521333,0.05454365,0.11583555,True,cubit_train_cr1_665,train,images/CR1_665.JPG,cubit_test_cr1_1053,test,images/CR1_1053.JPG,pending_human_review,
-374,6,0.59580189,0.09868141,0.16185002,True,cubit_val_sp0_1348,val,images/SP0_1348.JPG,cubit_test_sp1_1338,test,images/SP1_1338.JPG,pending_human_review,
-375,6,0.59554219,0.09463513,0.1131046,True,cubit_train_cr1_612,train,images/CR1_612.JPG,cubit_test_cr1_1427,test,images/CR1_1427.JPG,pending_human_review,
-376,6,0.59324414,0.14801145,0.22313456,True,cubit_val_sp0_1561,val,images/SP0_1561.JPG,cubit_test_sp0_1560,test,images/SP0_1560.JPG,pending_human_review,
-377,6,0.59277797,0.068424,0.13923147,False,cubit_train_sp1_151,train,images/SP1_151.JPG,cubit_val_sp1_159,val,images/SP1_159.JPG,pending_human_review,
-378,6,0.58653998,0.08668668,0.13423495,True,cubit_train_sp0_1345,train,images/SP0_1345.JPG,cubit_val_sp0_1346,val,images/SP0_1346.JPG,pending_human_review,
-379,6,0.58099556,0.05748099,0.11387186,True,cubit_train_sp0_137,train,images/SP0_137.JPG,cubit_test_sp0_136,test,images/SP0_136.JPG,pending_human_review,
-380,6,0.5767675,0.20280597,0.20819707,True,cubit_train_cr1_1009,train,images/CR1_1009.JPG,cubit_test_cr1_1720,test,images/CR1_1720.JPG,pending_human_review,
-381,6,0.55603772,0.07657638,0.13366777,True,cubit_train_sp0_147,train,images/SP0_147.JPG,cubit_val_sp1_161,val,images/SP1_161.JPG,pending_human_review,
-382,6,0.55410689,0.05869739,0.06486508,True,cubit_train_cr1_1421,train,images/CR1_1421.JPG,cubit_val_cr1_549,val,images/CR1_549.JPG,pending_human_review,
-383,6,0.54795355,0.04034112,0.06514007,True,cubit_train_cr1_710,train,images/CR1_710.JPG,cubit_test_cr1_1656,test,images/CR1_1656.JPG,pending_human_review,
-384,6,0.54147613,0.03151353,0.05079434,True,cubit_train_cr1_699,train,images/CR1_699.JPG,cubit_val_cr1_720,val,images/CR1_720.JPG,pending_human_review,
-385,6,0.53646386,0.02521374,0.06859323,True,cubit_train_cr1_515,train,images/CR1_515.JPG,cubit_test_cr1_966,test,images/CR1_966.JPG,pending_human_review,
-386,6,0.53082156,0.02047741,0.06631222,True,cubit_train_cr1_1662,train,images/CR1_1662.JPG,cubit_test_cr1_1656,test,images/CR1_1656.JPG,pending_human_review,
-387,6,0.51409829,0.26213783,0.2658698,True,cubit_train_cr1_1004,train,images/CR1_1004.JPG,cubit_test_cr1_343,test,images/CR1_343.JPG,pending_human_review,
-388,6,0.51239544,0.06890271,0.13715334,False,cubit_train_sp1_480,train,images/SP1_480.JPG,cubit_val_sp0_496,val,images/SP0_496.JPG,pending_human_review,
-389,6,0.50122392,0.14426892,0.24363926,True,cubit_train_cr1_2601,train,images/CR1_2601.JPG,cubit_test_cr1_2594,test,images/CR1_2594.JPG,pending_human_review,
-390,6,0.49206528,0.04135168,0.09981155,True,cubit_train_cr1_576,train,images/CR1_576.JPG,cubit_test_cr1_497,test,images/CR1_497.JPG,pending_human_review,
-391,6,0.48572469,0.19365834,0.26757303,True,cubit_train_cr1_1626,train,images/CR1_1626.JPG,cubit_test_cr1_1656,test,images/CR1_1656.JPG,pending_human_review,
-392,6,0.46009961,0.06546344,0.12328858,True,cubit_train_sp0_1399,train,images/SP0_1399.JPG,cubit_test_sp0_1398,test,images/SP0_1398.JPG,pending_human_review,
-393,6,0.44294617,0.1403988,0.1509822,True,cubit_train_cr1_601,train,images/CR1_601.JPG,cubit_test_cr1_3074,test,images/CR1_3074.JPG,pending_human_review,
-394,6,0.40705621,0.14889923,0.21500188,True,cubit_train_cr1_1640,train,images/CR1_1640.JPG,cubit_test_cr1_1656,test,images/CR1_1656.JPG,pending_human_review,
-395,6,0.32581499,0.07133597,0.08474578,True,cubit_train_cr1_2873,train,images/CR1_2873.JPG,cubit_test_cr1_824,test,images/CR1_824.JPG,pending_human_review,
-396,6,0.31886888,0.10311279,0.11155345,True,cubit_train_cr1_1792,train,images/CR1_1792.JPG,cubit_val_cr1_549,val,images/CR1_549.JPG,pending_human_review,
-397,6,0.29750571,0.04284692,0.0840341,True,cubit_train_cr1_1074,train,images/CR1_1074.JPG,cubit_test_cr1_1003,test,images/CR1_1003.JPG,pending_human_review,
-398,6,0.25924307,0.00870194,0.04022152,True,cubit_train_cr1_331,train,images/CR1_331.JPG,cubit_test_cr1_342,test,images/CR1_342.JPG,pending_human_review,
-399,6,0.25418696,0.35166562,0.36797747,True,cubit_val_cr1_1822,val,images/CR1_1822.JPG,cubit_test_cr1_348,test,images/CR1_348.JPG,pending_human_review,
-400,6,0.2536836,0.2505663,0.25687909,True,cubit_val_cr1_720,val,images/CR1_720.JPG,cubit_test_cr1_343,test,images/CR1_343.JPG,pending_human_review,
-401,6,0.24962044,0.25652716,0.27015573,True,cubit_train_cr1_1090,train,images/CR1_1090.JPG,cubit_test_cr1_343,test,images/CR1_343.JPG,pending_human_review,
-402,6,0.11468269,0.03303797,0.06496309,True,cubit_train_cr1_1074,train,images/CR1_1074.JPG,cubit_val_cr1_720,val,images/CR1_720.JPG,pending_human_review,
-403,6,0.09270737,0.22695912,0.23092173,True,cubit_train_cr1_1074,train,images/CR1_1074.JPG,cubit_test_cr1_1720,test,images/CR1_1720.JPG,pending_human_review,
-404,6,0.01993312,0.24449772,0.24724045,True,cubit_train_cr1_1074,train,images/CR1_1074.JPG,cubit_test_cr1_343,test,images/CR1_343.JPG,pending_human_review,
-405,6,0.00018568,0.04673497,0.07837726,True,cubit_train_cr1_1004,train,images/CR1_1004.JPG,cubit_val_cr1_720,val,images/CR1_720.JPG,pending_human_review,
+1,0,0.95695102,0.03093358,0.07777364,False,cubit_train_sp0_1224,train,images/SP0_1224.JPG,cubit_test_sp1_1210,test,images/SP1_1210.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+2,0,0.95666617,0.04052591,0.09212723,False,cubit_train_sp1_112,train,images/SP1_112.JPG,cubit_test_sp0_109,test,images/SP0_109.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+3,0,0.73289526,0.05886949,0.10305827,False,cubit_train_sp0_1325,train,images/SP0_1325.JPG,cubit_test_sp1_1313,test,images/SP1_1313.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+4,2,0.98165041,0.02103942,0.05558899,False,cubit_train_sp1_241,train,images/SP1_241.JPG,cubit_val_sp0_237,val,images/SP0_237.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+5,2,0.96331704,0.02760704,0.07226317,False,cubit_train_sp0_203,train,images/SP0_203.JPG,cubit_test_sp1_207,test,images/SP1_207.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+6,2,0.95969921,0.01864109,0.06700833,True,cubit_train_cr1_1438,train,images/CR1_1438.JPG,cubit_val_cr1_1439,val,images/CR1_1439.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+7,2,0.95956445,0.04274783,0.08991442,False,cubit_train_sp1_17,train,images/SP1_17.JPG,cubit_test_sp1_27,test,images/SP1_27.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+8,2,0.93071854,0.05379974,0.11672586,False,cubit_val_sp0_108,val,images/SP0_108.JPG,cubit_test_sp1_111,test,images/SP1_111.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+9,2,0.92003155,0.05449458,0.09309213,True,cubit_train_cr1_101,train,images/CR1_101.JPG,cubit_val_sp1_685,val,images/SP1_685.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+10,2,0.91144794,0.05559848,0.09438558,True,cubit_train_sp1_684,train,images/SP1_684.JPG,cubit_test_cr1_100,test,images/CR1_100.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+11,2,0.90919304,0.02779996,0.05577554,False,cubit_train_sp1_1820,train,images/SP1_1820.JPG,cubit_test_sp0_1828,test,images/SP0_1828.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+12,2,0.90732127,0.04724647,0.08707445,True,cubit_train_cr1_112,train,images/CR1_112.JPG,cubit_test_sp1_696,test,images/SP1_696.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+13,2,0.88375419,0.0259981,0.04573193,True,cubit_train_cr1_1090,train,images/CR1_1090.JPG,cubit_val_cr1_720,val,images/CR1_720.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+14,2,0.87545085,0.03457199,0.07153405,False,cubit_train_sp0_1820,train,images/SP0_1820.JPG,cubit_test_sp1_1803,test,images/SP1_1803.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+15,2,0.85577285,0.07745074,0.12862867,False,cubit_train_sp1_829,train,images/SP1_829.JPG,cubit_val_sp0_848,val,images/SP0_848.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+16,2,0.84805727,0.07063299,0.12574378,False,cubit_train_sp1_914,train,images/SP1_914.JPG,cubit_test_sp1_922,test,images/SP1_922.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+17,2,0.84392452,0.09318154,0.14774692,False,cubit_train_sp1_902,train,images/SP1_902.JPG,cubit_test_sp0_922,test,images/SP0_922.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+18,2,0.84072006,0.06161128,0.09236652,False,cubit_train_sp0_1427,train,images/SP0_1427.JPG,cubit_test_sp1_1417,test,images/SP1_1417.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+19,2,0.82826865,0.03293242,0.07110588,False,cubit_train_sp1_451,train,images/SP1_451.JPG,cubit_test_sp1_462,test,images/SP1_462.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+20,2,0.79986262,0.07045683,0.11630489,False,cubit_train_sp1_1327,train,images/SP1_1327.JPG,cubit_test_sp1_1338,test,images/SP1_1338.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+21,2,0.79507369,0.03203341,0.07387706,True,cubit_train_sp0_458,train,images/SP0_458.JPG,cubit_val_sp0_459,val,images/SP0_459.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+22,2,0.78889823,0.01646274,0.04781905,True,cubit_train_cr1_1426,train,images/CR1_1426.JPG,cubit_test_cr1_1427,test,images/CR1_1427.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+23,2,0.74213481,0.04835612,0.07996219,False,cubit_train_sp1_766,train,images/SP1_766.JPG,cubit_val_sp1_777,val,images/SP1_777.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+24,2,0.71489501,0.04842146,0.08091272,False,cubit_train_sp1_763,train,images/SP1_763.JPG,cubit_val_sp0_778,val,images/SP0_778.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+25,2,0.71293962,0.0597503,0.09753102,False,cubit_train_sp1_54,train,images/SP1_54.JPG,cubit_val_sp1_64,val,images/SP1_64.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+26,2,0.70370811,0.08140175,0.14990786,False,cubit_train_cr1_111,train,images/CR1_111.JPG,cubit_test_sp0_711,test,images/SP0_711.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+27,2,0.68723965,0.01474346,0.05183095,True,cubit_train_cr1_779,train,images/CR1_779.JPG,cubit_test_cr1_780,test,images/CR1_780.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+28,2,0.64735699,0.05909567,0.07321812,True,cubit_val_cr1_549,val,images/CR1_549.JPG,cubit_test_cr1_1427,test,images/CR1_1427.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+29,2,0.64629674,0.02606488,0.05473245,True,cubit_train_cr1_902,train,images/CR1_902.JPG,cubit_test_cr1_780,test,images/CR1_780.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+30,2,0.64456809,0.06311275,0.09783304,False,cubit_train_sp1_802,train,images/SP1_802.JPG,cubit_val_sp0_818,val,images/SP0_818.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+31,2,0.45268828,0.02625684,0.06357127,True,cubit_train_cr1_901,train,images/CR1_901.JPG,cubit_test_cr1_780,test,images/CR1_780.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+32,4,0.98049194,0.02283624,0.05728447,True,cubit_train_sp0_236,train,images/SP0_236.JPG,cubit_val_sp0_237,val,images/SP0_237.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+33,4,0.9686169,0.02468764,0.07173075,False,cubit_train_sp0_239,train,images/SP0_239.JPG,cubit_test_sp1_243,test,images/SP1_243.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+34,4,0.96254539,0.04383042,0.08452093,False,cubit_train_sp0_1384,train,images/SP0_1384.JPG,cubit_val_sp1_1362,val,images/SP1_1362.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+35,4,0.96199882,0.03190727,0.0733171,True,cubit_train_sp0_203,train,images/SP0_203.JPG,cubit_test_sp0_204,test,images/SP0_204.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+36,4,0.95928043,0.03289245,0.06711834,False,cubit_train_sp1_211,train,images/SP1_211.JPG,cubit_test_sp0_213,test,images/SP0_213.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+37,4,0.9530862,0.05363746,0.09537221,False,cubit_train_sp0_12,train,images/SP0_12.JPG,cubit_val_sp1_10,val,images/SP1_10.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+38,4,0.95013791,0.05861337,0.07790021,True,cubit_train_cr1_2847,train,images/CR1_2847.JPG,cubit_val_cr1_1470,val,images/CR1_1470.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+39,4,0.9435991,0.04124469,0.09612549,False,cubit_train_sp0_1215,train,images/SP0_1215.JPG,cubit_val_sp1_1203,val,images/SP1_1203.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+40,4,0.94320297,0.02886364,0.09437037,True,cubit_train_cr1_1450,train,images/CR1_1450.JPG,cubit_test_cr1_1451,test,images/CR1_1451.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+41,4,0.94236398,0.04418539,0.0886482,False,cubit_train_sp1_878,train,images/SP1_878.JPG,cubit_test_sp0_907,test,images/SP0_907.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+42,4,0.94150883,0.08390108,0.09553836,True,cubit_train_cr1_1078,train,images/CR1_1078.JPG,cubit_val_cr1_908,val,images/CR1_908.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+43,4,0.93332571,0.03136728,0.08016329,False,cubit_train_sp1_252,train,images/SP1_252.JPG,cubit_test_sp0_257,test,images/SP0_257.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+44,4,0.92845416,0.03804022,0.08322793,False,cubit_train_sp1_213,train,images/SP1_213.JPG,cubit_val_sp0_217,val,images/SP0_217.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+45,4,0.9270829,0.0407801,0.08461918,False,cubit_train_sp1_1272,train,images/SP1_1272.JPG,cubit_val_sp0_1283,val,images/SP0_1283.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+46,4,0.92180443,0.0452517,0.08742642,False,cubit_train_sp0_1188,train,images/SP0_1188.JPG,cubit_test_sp1_1175,test,images/SP1_1175.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+47,4,0.91917682,0.01701995,0.04596918,True,cubit_train_cr1_1650,train,images/CR1_1650.JPG,cubit_test_cr1_1657,test,images/CR1_1657.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+48,4,0.91730857,0.06219411,0.11244746,False,cubit_train_sp1_1478,train,images/SP1_1478.JPG,cubit_val_sp0_1484,val,images/SP0_1484.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+49,4,0.91558921,0.04739703,0.09535025,False,cubit_train_sp1_880,train,images/SP1_880.JPG,cubit_test_sp0_910,test,images/SP0_910.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+50,4,0.91326338,0.04256831,0.09155093,False,cubit_train_sp0_168,train,images/SP0_168.JPG,cubit_test_sp1_172,test,images/SP1_172.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+51,4,0.90881062,0.06253926,0.09180618,True,cubit_train_cr1_814,train,images/CR1_814.JPG,cubit_test_cr1_852,test,images/CR1_852.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+52,4,0.90201998,0.01637202,0.03550681,True,cubit_train_cr1_1009,train,images/CR1_1009.JPG,cubit_test_cr1_1003,test,images/CR1_1003.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+53,4,0.90154558,0.02813218,0.06321225,True,cubit_train_sp0_1777,train,images/SP0_1777.JPG,cubit_val_sp1_1772,val,images/SP1_1772.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+54,4,0.899553,0.05893674,0.14077508,False,cubit_train_sp0_129,train,images/SP0_129.JPG,cubit_val_sp1_123,val,images/SP1_123.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+55,4,0.89729595,0.06125799,0.10233874,True,cubit_train_sp1_678,train,images/SP1_678.JPG,cubit_val_cr1_94,val,images/CR1_94.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+56,4,0.89725494,0.03635852,0.06426746,True,cubit_train_cr1_853,train,images/CR1_853.JPG,cubit_val_cr1_908,val,images/CR1_908.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+57,4,0.89568526,0.03258487,0.06304487,False,cubit_train_sp0_1831,train,images/SP0_1831.JPG,cubit_test_sp1_1822,test,images/SP1_1822.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+58,4,0.89399678,0.02984787,0.07256424,False,cubit_val_sp1_553,val,images/SP1_553.JPG,cubit_test_sp0_568,test,images/SP0_568.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+59,4,0.89177173,0.04629432,0.08777802,True,cubit_val_sp1_693,val,images/SP1_693.JPG,cubit_test_cr1_109,test,images/CR1_109.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+60,4,0.8903982,0.03321318,0.06458038,False,cubit_train_sp0_1832,train,images/SP0_1832.JPG,cubit_test_sp1_1822,test,images/SP1_1822.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+61,4,0.8850826,0.07457443,0.12695926,False,cubit_train_sp0_1672,train,images/SP0_1672.JPG,cubit_test_sp1_1656,test,images/SP1_1656.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+62,4,0.88238132,0.02619772,0.03746068,True,cubit_train_cr1_1009,train,images/CR1_1009.JPG,cubit_val_cr1_720,val,images/CR1_720.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+63,4,0.87380552,0.06336957,0.11563197,False,cubit_val_sp1_1359,val,images/SP1_1359.JPG,cubit_test_sp1_1368,test,images/SP1_1368.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+64,4,0.87110198,0.03123564,0.06237589,False,cubit_train_sp0_408,train,images/SP0_408.JPG,cubit_val_sp1_402,val,images/SP1_402.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+65,4,0.86901712,0.01662143,0.03968482,True,cubit_train_cr1_1663,train,images/CR1_1663.JPG,cubit_test_cr1_1656,test,images/CR1_1656.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+66,4,0.86822897,0.07230392,0.1379969,False,cubit_train_sp0_906,train,images/SP0_906.JPG,cubit_val_sp1_877,val,images/SP1_877.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+67,4,0.86677527,0.07181851,0.1361454,False,cubit_train_sp1_1648,train,images/SP1_1648.JPG,cubit_val_sp0_1655,val,images/SP0_1655.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+68,4,0.8642866,0.04618184,0.09295086,False,cubit_train_sp1_149,train,images/SP1_149.JPG,cubit_test_sp0_151,test,images/SP0_151.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+69,4,0.86289966,0.03220718,0.05719369,False,cubit_train_sp0_305,train,images/SP0_305.JPG,cubit_test_sp1_312,test,images/SP1_312.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+70,4,0.86101371,0.08119255,0.1387575,False,cubit_train_sp0_1673,train,images/SP0_1673.JPG,cubit_test_sp1_1656,test,images/SP1_1656.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+71,4,0.86100203,0.05794558,0.10481615,False,cubit_train_sp1_1289,train,images/SP1_1289.JPG,cubit_val_sp1_1298,val,images/SP1_1298.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+72,4,0.86090696,0.05988363,0.1077861,False,cubit_train_cr1_112,train,images/CR1_112.JPG,cubit_val_sp1_707,val,images/SP1_707.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+73,4,0.85725778,0.05688979,0.11482306,False,cubit_train_sp1_1105,train,images/SP1_1105.JPG,cubit_test_sp0_1118,test,images/SP0_1118.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+74,4,0.85430086,0.03211096,0.06310537,True,cubit_train_sp0_1276,train,images/SP0_1276.JPG,cubit_val_sp1_1266,val,images/SP1_1266.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+75,4,0.85142833,0.05988219,0.08956563,False,cubit_train_sp0_1426,train,images/SP0_1426.JPG,cubit_test_sp1_1417,test,images/SP1_1417.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+76,4,0.84847087,0.0325966,0.07010969,False,cubit_train_sp0_1723,train,images/SP0_1723.JPG,cubit_test_sp1_1716,test,images/SP1_1716.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+77,4,0.84833664,0.05336292,0.09710065,True,cubit_train_sp0_1124,train,images/SP0_1124.JPG,cubit_test_sp0_1123,test,images/SP0_1123.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+78,4,0.84064221,0.06358308,0.11547896,False,cubit_val_sp1_707,val,images/SP1_707.JPG,cubit_test_sp1_696,test,images/SP1_696.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+79,4,0.84005934,0.07207582,0.11111627,False,cubit_train_sp1_269,train,images/SP1_269.JPG,cubit_test_sp0_262,test,images/SP0_262.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+80,4,0.83471793,0.05427844,0.11371233,False,cubit_train_sp0_1115,train,images/SP0_1115.JPG,cubit_val_sp1_1103,val,images/SP1_1103.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+81,4,0.83257902,0.05718827,0.10706435,False,cubit_train_sp1_1315,train,images/SP1_1315.JPG,cubit_val_sp0_1328,val,images/SP0_1328.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+82,4,0.83114702,0.08626613,0.16506872,False,cubit_train_sp1_1029,train,images/SP1_1029.JPG,cubit_test_sp0_1041,test,images/SP0_1041.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+83,4,0.82973611,0.0711816,0.12760103,False,cubit_train_sp0_1510,train,images/SP0_1510.JPG,cubit_test_sp1_1498,test,images/SP1_1498.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+84,4,0.82598007,0.07070959,0.1160527,False,cubit_train_sp1_289,train,images/SP1_289.JPG,cubit_test_sp1_299,test,images/SP1_299.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+85,4,0.82596439,0.02817598,0.06565922,False,cubit_val_sp1_448,val,images/SP1_448.JPG,cubit_test_sp1_458,test,images/SP1_458.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+86,4,0.81650907,0.07530949,0.13261478,False,cubit_train_sp0_882,train,images/SP0_882.JPG,cubit_val_sp1_862,val,images/SP1_862.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+87,4,0.81419098,0.10040092,0.15543389,False,cubit_train_sp1_904,train,images/SP1_904.JPG,cubit_test_sp0_925,test,images/SP0_925.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+88,4,0.8131628,0.02668194,0.03755556,True,cubit_train_cr1_1015,train,images/CR1_1015.JPG,cubit_val_cr1_720,val,images/CR1_720.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+89,4,0.80982524,0.14281127,0.17101787,False,cubit_train_sp1_1352,train,images/SP1_1352.JPG,cubit_val_sp0_1328,val,images/SP0_1328.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+90,4,0.8081972,0.03728027,0.07674036,True,cubit_train_sp0_468,train,images/SP0_468.JPG,cubit_test_sp1_462,test,images/SP1_462.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+91,4,0.80571163,0.08609763,0.14939982,False,cubit_train_sp1_1544,train,images/SP1_1544.JPG,cubit_val_sp0_1552,val,images/SP0_1552.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+92,4,0.80177569,0.04342137,0.08425391,False,cubit_train_sp0_1741,train,images/SP0_1741.JPG,cubit_val_sp1_1725,val,images/SP1_1725.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+93,4,0.80138832,0.05651041,0.10995226,False,cubit_train_sp0_1714,train,images/SP0_1714.JPG,cubit_val_sp1_1697,val,images/SP1_1697.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+94,4,0.80038232,0.0354497,0.07270799,False,cubit_train_sp1_1255,train,images/SP1_1255.JPG,cubit_val_sp1_1266,val,images/SP1_1266.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+95,4,0.80007607,0.06713197,0.12286594,False,cubit_train_sp0_1114,train,images/SP0_1114.JPG,cubit_val_sp1_1103,val,images/SP1_1103.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+96,4,0.79760998,0.07651392,0.13393973,False,cubit_train_sp1_939,train,images/SP1_939.JPG,cubit_test_sp0_968,test,images/SP0_968.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+97,4,0.79490119,0.08299824,0.13322319,False,cubit_train_sp1_999,train,images/SP1_999.JPG,cubit_val_sp0_1018,val,images/SP0_1018.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+98,4,0.77999103,0.04624335,0.09518511,False,cubit_train_sp1_478,train,images/SP1_478.JPG,cubit_test_sp0_485,test,images/SP0_485.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+99,4,0.7724095,0.05109337,0.10352283,False,cubit_train_sp1_482,train,images/SP1_482.JPG,cubit_val_sp0_497,val,images/SP0_497.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+100,4,0.76910955,0.03909912,0.09473328,False,cubit_train_sp1_472,train,images/SP1_472.JPG,cubit_val_sp0_479,val,images/SP0_479.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+101,4,0.76234704,0.05107278,0.0884086,False,cubit_train_sp1_53,train,images/SP1_53.JPG,cubit_test_sp0_59,test,images/SP0_59.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+102,4,0.75612545,0.0996649,0.15231706,True,cubit_train_sp0_1510,train,images/SP0_1510.JPG,cubit_test_sp0_1511,test,images/SP0_1511.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+103,4,0.75238216,0.0404328,0.09369812,False,cubit_train_sp1_1730,train,images/SP1_1730.JPG,cubit_val_sp0_1747,val,images/SP0_1747.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+104,4,0.73638535,0.04762538,0.07880062,False,cubit_val_sp1_765,val,images/SP1_765.JPG,cubit_test_sp1_776,test,images/SP1_776.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+105,4,0.73424876,0.04420358,0.10003076,False,cubit_train_sp1_377,train,images/SP1_377.JPG,cubit_val_sp1_387,val,images/SP1_387.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+106,4,0.73236328,0.04728597,0.07871094,False,cubit_train_sp1_764,train,images/SP1_764.JPG,cubit_val_sp1_774,val,images/SP1_774.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+107,4,0.73207331,0.07447725,0.13683788,False,cubit_train_sp1_1589,train,images/SP1_1589.JPG,cubit_test_sp1_1599,test,images/SP1_1599.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+108,4,0.73166162,0.08845764,0.14143212,False,cubit_val_sp1_1023,val,images/SP1_1023.JPG,cubit_test_sp1_1012,test,images/SP1_1012.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+109,4,0.73118395,0.02536453,0.05588168,True,cubit_train_cr1_1670,train,images/CR1_1670.JPG,cubit_test_cr1_1656,test,images/CR1_1656.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+110,4,0.7281841,0.05405489,0.08704211,False,cubit_train_sp1_795,train,images/SP1_795.JPG,cubit_test_sp1_805,test,images/SP1_805.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+111,4,0.72792888,0.0929338,0.14720149,False,cubit_train_sp1_1005,train,images/SP1_1005.JPG,cubit_test_sp1_1015,test,images/SP1_1015.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+112,4,0.72498763,0.06507856,0.11637701,False,cubit_val_sp1_1626,val,images/SP1_1626.JPG,cubit_test_sp1_1636,test,images/SP1_1636.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+113,4,0.71900302,0.05378418,0.08854211,False,cubit_train_sp1_761,train,images/SP1_761.JPG,cubit_test_sp1_771,test,images/SP1_771.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+114,4,0.7139985,0.09691282,0.13025187,True,cubit_train_cr1_714,train,images/CR1_714.JPG,cubit_val_cr1_908,val,images/CR1_908.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+115,4,0.71255827,0.03113559,0.06293268,True,cubit_train_cr1_1455,train,images/CR1_1455.JPG,cubit_test_cr1_781,test,images/CR1_781.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+116,4,0.70876598,0.08411745,0.12986599,False,cubit_train_sp0_1534,train,images/SP0_1534.JPG,cubit_val_sp1_1518,val,images/SP1_1518.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+117,4,0.69703615,0.04848896,0.07126249,True,cubit_train_cr1_1425,train,images/CR1_1425.JPG,cubit_test_cr1_1790,test,images/CR1_1790.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+118,4,0.69264245,0.05310226,0.0651656,True,cubit_train_cr1_3052,train,images/CR1_3052.JPG,cubit_test_cr1_1790,test,images/CR1_1790.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+119,4,0.69150829,0.01457519,0.04207268,True,cubit_train_cr1_1421,train,images/CR1_1421.JPG,cubit_test_cr1_1427,test,images/CR1_1427.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+120,4,0.67930102,0.05444838,0.10094136,False,cubit_train_sp0_1871,train,images/SP0_1871.JPG,cubit_val_sp1_1861,val,images/SP1_1861.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+121,4,0.67767733,0.0355768,0.10394427,True,cubit_train_cr1_1689,train,images/CR1_1689.JPG,cubit_test_cr1_1684,test,images/CR1_1684.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+122,4,0.67127872,0.08600046,0.15759096,False,cubit_train_sp1_695,train,images/SP1_695.JPG,cubit_test_sp0_711,test,images/SP0_711.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+123,4,0.66378039,0.08454829,0.20281629,False,cubit_train_sp1_340,train,images/SP1_340.JPG,cubit_test_sp0_331,test,images/SP0_331.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+124,4,0.63719261,0.04748655,0.09778607,False,cubit_train_sp1_1385,train,images/SP1_1385.JPG,cubit_test_sp0_1398,test,images/SP0_1398.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+125,4,0.62507951,0.09828815,0.16602172,False,cubit_train_sp1_1327,train,images/SP1_1327.JPG,cubit_test_sp1_1339,test,images/SP1_1339.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+126,4,0.58583242,0.04039283,0.12609683,True,cubit_val_cr1_857,val,images/CR1_857.JPG,cubit_test_cr1_858,test,images/CR1_858.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+127,4,0.56993902,0.0738894,0.13733126,True,cubit_val_sp1_161,val,images/SP1_161.JPG,cubit_test_sp0_154,test,images/SP0_154.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+128,4,0.53898513,0.0678292,0.09352854,True,cubit_train_cr1_1426,train,images/CR1_1426.JPG,cubit_val_cr1_549,val,images/CR1_549.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+129,4,0.51176184,0.05127959,0.06657882,True,cubit_train_cr1_1792,train,images/CR1_1792.JPG,cubit_test_cr1_1427,test,images/CR1_1427.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+130,4,0.31931669,0.26882803,0.27670622,True,cubit_train_cr1_1009,train,images/CR1_1009.JPG,cubit_test_cr1_343,test,images/CR1_343.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+131,4,0.29535744,0.01767674,0.07741027,True,cubit_train_cr1_341,train,images/CR1_341.JPG,cubit_test_cr1_342,test,images/CR1_342.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+132,6,0.98056316,0.02367087,0.05804253,True,cubit_train_sp0_235,train,images/SP0_235.JPG,cubit_val_sp0_234,val,images/SP0_234.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+133,6,0.97729224,0.02376781,0.06055866,False,cubit_train_sp0_240,train,images/SP0_240.JPG,cubit_test_sp1_243,test,images/SP1_243.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+134,6,0.97368276,0.02480397,0.05483065,True,cubit_train_sp0_1231,train,images/SP0_1231.JPG,cubit_test_sp0_1230,test,images/SP0_1230.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+135,6,0.97059387,0.02831792,0.06208833,True,cubit_train_sp0_330,train,images/SP0_330.JPG,cubit_test_sp0_331,test,images/SP0_331.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+136,6,0.96960706,0.03037827,0.0712266,True,cubit_train_sp0_192,train,images/SP0_192.JPG,cubit_test_sp0_193,test,images/SP0_193.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+137,6,0.96863896,0.03152334,0.07759677,True,cubit_val_sp1_354,val,images/SP1_354.JPG,cubit_test_sp1_355,test,images/SP1_355.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+138,6,0.9668746,0.02456222,0.05735889,True,cubit_train_sp0_256,train,images/SP0_256.JPG,cubit_test_sp0_257,test,images/SP0_257.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+139,6,0.96646374,0.0313838,0.07326183,True,cubit_train_sp0_196,train,images/SP0_196.JPG,cubit_val_sp0_197,val,images/SP0_197.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+140,6,0.96636999,0.02892014,0.06781729,False,cubit_train_sp0_205,train,images/SP0_205.JPG,cubit_val_sp1_208,val,images/SP1_208.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+141,6,0.96555591,0.03179789,0.07388834,True,cubit_train_sp0_198,train,images/SP0_198.JPG,cubit_val_sp0_197,val,images/SP0_197.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+142,6,0.96548426,0.02442914,0.0574932,True,cubit_train_sp0_258,train,images/SP0_258.JPG,cubit_test_sp0_257,test,images/SP0_257.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+143,6,0.96113896,0.03173852,0.07140954,True,cubit_train_sp0_206,train,images/SP0_206.JPG,cubit_val_sp0_207,val,images/SP0_207.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+144,6,0.95984983,0.02814176,0.07511095,False,cubit_train_sp1_1209,train,images/SP1_1209.JPG,cubit_val_sp0_1222,val,images/SP0_1222.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+145,6,0.95943403,0.04009579,0.0749931,False,cubit_train_sp0_1286,train,images/SP0_1286.JPG,cubit_val_sp1_1274,val,images/SP1_1274.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+146,6,0.95892584,0.02576378,0.0592797,True,cubit_train_sp0_260,train,images/SP0_260.JPG,cubit_test_sp1_267,test,images/SP1_267.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+147,6,0.95804721,0.02835334,0.04539238,True,cubit_train_cr1_525,train,images/CR1_525.JPG,cubit_val_cr1_460,val,images/CR1_460.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+148,6,0.95703983,0.04266238,0.0798324,False,cubit_train_sp1_1354,train,images/SP1_1354.JPG,cubit_test_sp0_1367,test,images/SP0_1367.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+149,6,0.9566862,0.03126843,0.07466701,True,cubit_train_cr1_2092,train,images/CR1_2092.JPG,cubit_val_cr1_2085,val,images/CR1_2085.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+150,6,0.95572698,0.03195346,0.07861222,False,cubit_train_sp1_1209,train,images/SP1_1209.JPG,cubit_test_sp0_1221,test,images/SP0_1221.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+151,6,0.95364112,0.03215452,0.06738197,False,cubit_train_sp1_213,train,images/SP1_213.JPG,cubit_test_sp0_216,test,images/SP0_216.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+152,6,0.95241845,0.04457337,0.09636008,False,cubit_val_sp1_34,val,images/SP1_34.JPG,cubit_test_sp1_23,test,images/SP1_23.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+153,6,0.95224041,0.03249225,0.07151544,True,cubit_train_sp0_214,train,images/SP0_214.JPG,cubit_test_sp0_213,test,images/SP0_213.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+154,6,0.95123893,0.0298213,0.04886214,True,cubit_train_cr1_454,train,images/CR1_454.JPG,cubit_val_cr1_519,val,images/CR1_519.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+155,6,0.95030677,0.04178323,0.09887595,False,cubit_train_sp1_122,train,images/SP1_122.JPG,cubit_test_sp1_132,test,images/SP1_132.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+156,6,0.9491412,0.03132708,0.06801376,False,cubit_train_sp0_1236,train,images/SP0_1236.JPG,cubit_val_sp1_1215,val,images/SP1_1215.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+157,6,0.9488098,0.04887049,0.0966568,False,cubit_train_sp0_13,train,images/SP0_13.JPG,cubit_val_sp1_11,val,images/SP1_11.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+158,6,0.94812131,0.0604564,0.08133115,True,cubit_val_cr1_2848,val,images/CR1_2848.JPG,cubit_test_cr1_1471,test,images/CR1_1471.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+159,6,0.94527364,0.03400233,0.08757921,False,cubit_val_sp1_208,val,images/SP1_208.JPG,cubit_test_sp0_204,test,images/SP0_204.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+160,6,0.9433291,0.02675638,0.05526919,True,cubit_train_sp0_1240,train,images/SP0_1240.JPG,cubit_test_sp1_1228,test,images/SP1_1228.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+161,6,0.94098854,0.04731685,0.08776342,False,cubit_train_sp0_886,train,images/SP0_886.JPG,cubit_val_sp1_866,val,images/SP1_866.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+162,6,0.94048899,0.046611,0.07766818,True,cubit_train_sp0_955,train,images/SP0_955.JPG,cubit_test_sp0_954,test,images/SP0_954.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+163,6,0.94028711,0.05576579,0.10795017,False,cubit_train_sp1_3,train,images/SP1_3.JPG,cubit_test_sp0_3,test,images/SP0_3.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+164,6,0.93862522,0.04177605,0.10791503,False,cubit_train_sp0_229,train,images/SP0_229.JPG,cubit_val_sp1_235,val,images/SP1_235.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+165,6,0.93817425,0.04005678,0.0724704,True,cubit_train_sp0_970,train,images/SP0_970.JPG,cubit_test_sp0_969,test,images/SP0_969.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+166,6,0.93616396,0.05855809,0.11290057,False,cubit_val_sp1_10,val,images/SP1_10.JPG,cubit_test_sp0_11,test,images/SP0_11.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+167,6,0.93309468,0.03113822,0.08333279,False,cubit_train_sp1_251,train,images/SP1_251.JPG,cubit_test_sp0_255,test,images/SP0_255.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+168,6,0.93219006,0.047808,0.10212353,False,cubit_train_sp0_1083,train,images/SP0_1083.JPG,cubit_test_sp1_1070,test,images/SP1_1070.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+169,6,0.93216968,0.03446045,0.06334787,True,cubit_train_cr1_907,train,images/CR1_907.JPG,cubit_test_cr1_852,test,images/CR1_852.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+170,6,0.92912567,0.05272504,0.09082533,False,cubit_train_sp0_1179,train,images/SP0_1179.JPG,cubit_val_sp1_1167,val,images/SP1_1167.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+171,6,0.92372268,0.02397389,0.05119909,True,cubit_val_sp0_1747,val,images/SP0_1747.JPG,cubit_test_sp0_1746,test,images/SP0_1746.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+172,6,0.92281413,0.04937601,0.11513431,False,cubit_train_sp1_199,train,images/SP1_199.JPG,cubit_test_sp0_193,test,images/SP0_193.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+173,6,0.92266709,0.02615177,0.08116785,True,cubit_train_cr1_2216,train,images/CR1_2216.JPG,cubit_test_cr1_2217,test,images/CR1_2217.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+174,6,0.92147171,0.06615493,0.09505616,True,cubit_train_cr1_2808,train,images/CR1_2808.JPG,cubit_val_cr1_2826,val,images/CR1_2826.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+175,6,0.92133343,0.05521264,0.09525331,False,cubit_train_sp0_1178,train,images/SP0_1178.JPG,cubit_val_sp1_1167,val,images/SP1_1167.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+176,6,0.91969037,0.04300896,0.11510029,False,cubit_train_sp1_348,train,images/SP1_348.JPG,cubit_test_sp0_341,test,images/SP0_341.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+177,6,0.91845852,0.07195973,0.12537128,True,cubit_train_sp0_28,train,images/SP0_28.JPG,cubit_test_sp1_27,test,images/SP1_27.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+178,6,0.9175173,0.04120759,0.07273007,True,cubit_val_sp0_1102,val,images/SP0_1102.JPG,cubit_test_sp1_1092,test,images/SP1_1092.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+179,6,0.91728282,0.05202326,0.12887399,False,cubit_val_sp1_123,val,images/SP1_123.JPG,cubit_test_sp0_128,test,images/SP0_128.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+180,6,0.91640478,0.05089853,0.0989088,False,cubit_train_sp1_167,train,images/SP1_167.JPG,cubit_val_sp0_162,val,images/SP0_162.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+181,6,0.91571462,0.03749856,0.08206218,False,cubit_train_sp0_1464,train,images/SP0_1464.JPG,cubit_test_sp1_1455,test,images/SP1_1455.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+182,6,0.91546535,0.03450066,0.06779896,True,cubit_train_sp0_1263,train,images/SP0_1263.JPG,cubit_val_sp0_1262,val,images/SP0_1262.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+183,6,0.91543657,0.07329749,0.12766375,False,cubit_train_sp0_35,train,images/SP0_35.JPG,cubit_test_sp1_23,test,images/SP1_23.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+184,6,0.91312873,0.05517506,0.13201642,False,cubit_train_sp0_107,train,images/SP0_107.JPG,cubit_test_sp1_111,test,images/SP1_111.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+185,6,0.91250128,0.04138136,0.07124367,True,cubit_train_sp0_1099,train,images/SP0_1099.JPG,cubit_val_sp1_1089,val,images/SP1_1089.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+186,6,0.91196042,0.0511173,0.09500869,True,cubit_train_sp0_1107,train,images/SP0_1107.JPG,cubit_val_sp0_1108,val,images/SP0_1108.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+187,6,0.91174614,0.05132075,0.12513967,False,cubit_train_sp1_1349,train,images/SP1_1349.JPG,cubit_test_sp0_1362,test,images/SP0_1362.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+188,6,0.91153997,0.0319604,0.06333414,False,cubit_train_sp0_1796,train,images/SP0_1796.JPG,cubit_test_sp1_1789,test,images/SP1_1789.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+189,6,0.91130918,0.05788646,0.12629052,False,cubit_train_sp1_1355,train,images/SP1_1355.JPG,cubit_val_sp0_1369,val,images/SP0_1369.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+190,6,0.91012812,0.03181943,0.07889983,False,cubit_train_sp1_507,train,images/SP1_507.JPG,cubit_test_sp0_513,test,images/SP0_513.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+191,6,0.91001612,0.07044511,0.10069636,True,cubit_train_cr1_2833,train,images/CR1_2833.JPG,cubit_test_cr1_2815,test,images/CR1_2815.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+192,6,0.90852559,0.05694245,0.12705441,False,cubit_train_sp0_1383,train,images/SP0_1383.JPG,cubit_test_sp1_1361,test,images/SP1_1361.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+193,6,0.9058525,0.05449985,0.08965813,False,cubit_train_sp1_1131,train,images/SP1_1131.JPG,cubit_test_sp0_1142,test,images/SP0_1142.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+194,6,0.90369236,0.03723696,0.08718073,False,cubit_train_sp0_220,train,images/SP0_220.JPG,cubit_val_sp1_216,val,images/SP1_216.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+195,6,0.90363443,0.03188357,0.05799504,True,cubit_train_sp0_1720,train,images/SP0_1720.JPG,cubit_test_sp0_1721,test,images/SP0_1721.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+196,6,0.90324748,0.03118107,0.06425974,False,cubit_train_sp0_1761,train,images/SP0_1761.JPG,cubit_test_sp1_1754,test,images/SP1_1754.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+197,6,0.90036315,0.03003025,0.06555535,True,cubit_train_sp0_1775,train,images/SP0_1775.JPG,cubit_val_sp0_1774,val,images/SP0_1774.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+198,6,0.90026814,0.05283131,0.09963017,False,cubit_train_sp0_1189,train,images/SP0_1189.JPG,cubit_test_sp1_1175,test,images/SP1_1175.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+199,6,0.89937973,0.06246601,0.08950728,True,cubit_train_cr1_2821,train,images/CR1_2821.JPG,cubit_val_cr1_2804,val,images/CR1_2804.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+200,6,0.89803773,0.05705015,0.09615222,True,cubit_train_cr1_98,train,images/CR1_98.JPG,cubit_val_sp1_682,val,images/SP1_682.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+201,6,0.89751256,0.02943833,0.06702638,False,cubit_train_sp1_1752,train,images/SP1_1752.JPG,cubit_test_sp0_1759,test,images/SP0_1759.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+202,6,0.89715028,0.04917064,0.10609437,False,cubit_train_sp0_166,train,images/SP0_166.JPG,cubit_test_sp1_171,test,images/SP1_171.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+203,6,0.89555138,0.04758636,0.08293394,True,cubit_train_sp0_1192,train,images/SP0_1192.JPG,cubit_val_sp0_1193,val,images/SP0_1193.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+204,6,0.89335549,0.05906097,0.11177688,False,cubit_train_sp0_1291,train,images/SP0_1291.JPG,cubit_val_sp1_1279,val,images/SP1_1279.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+205,6,0.89330506,0.04610667,0.09318405,False,cubit_train_sp0_1452,train,images/SP0_1452.JPG,cubit_test_sp1_1445,test,images/SP1_1445.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+206,6,0.89303589,0.05471527,0.10922623,True,cubit_val_sp0_162,val,images/SP0_162.JPG,cubit_test_sp0_163,test,images/SP0_163.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+207,6,0.89102268,0.03573429,0.10139398,False,cubit_train_sp1_253,train,images/SP1_253.JPG,cubit_test_sp0_257,test,images/SP0_257.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+208,6,0.88932002,0.07049249,0.13281319,False,cubit_train_sp1_1033,train,images/SP1_1033.JPG,cubit_test_sp0_1046,test,images/SP0_1046.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+209,6,0.88842857,0.07323549,0.15096308,False,cubit_train_sp1_1363,train,images/SP1_1363.JPG,cubit_val_sp0_1385,val,images/SP0_1385.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+210,6,0.88732779,0.0615895,0.11244583,False,cubit_train_sp0_1351,train,images/SP0_1351.JPG,cubit_val_sp1_1341,val,images/SP1_1341.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+211,6,0.88518709,0.0698594,0.13122635,False,cubit_train_sp0_1308,train,images/SP0_1308.JPG,cubit_val_sp1_1287,val,images/SP1_1287.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+212,6,0.8844189,0.03067962,0.06329085,False,cubit_train_sp1_1820,train,images/SP1_1820.JPG,cubit_val_sp0_1829,val,images/SP0_1829.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+213,6,0.88328815,0.06363262,0.10441663,True,cubit_train_cr1_91,train,images/CR1_91.JPG,cubit_val_sp1_675,val,images/SP1_675.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+214,6,0.88237214,0.06496893,0.1100614,True,cubit_train_sp0_1503,train,images/SP0_1503.JPG,cubit_val_sp1_1502,val,images/SP1_1502.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+215,6,0.88120896,0.03470746,0.06558608,False,cubit_train_sp1_1858,train,images/SP1_1858.JPG,cubit_test_sp0_1869,test,images/SP0_1869.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+216,6,0.87954849,0.0620706,0.11764014,False,cubit_train_sp1_167,train,images/SP1_167.JPG,cubit_test_sp0_163,test,images/SP0_163.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+217,6,0.87868857,0.07944288,0.12403113,False,cubit_val_sp0_1494,val,images/SP0_1494.JPG,cubit_test_sp1_1485,test,images/SP1_1485.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+218,6,0.87832093,0.07744548,0.12412091,False,cubit_train_sp0_1500,train,images/SP0_1500.JPG,cubit_val_sp1_1490,val,images/SP1_1490.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+219,6,0.87798393,0.03357891,0.06551533,False,cubit_train_sp1_1249,train,images/SP1_1249.JPG,cubit_test_sp1_1259,test,images/SP1_1259.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+220,6,0.87447721,0.04262169,0.07081767,False,cubit_train_sp1_1145,train,images/SP1_1145.JPG,cubit_val_sp1_1155,val,images/SP1_1155.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+221,6,0.87367898,0.03532882,0.04649051,True,cubit_train_cr1_1090,train,images/CR1_1090.JPG,cubit_test_cr1_1003,test,images/CR1_1003.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+222,6,0.87311476,0.0445729,0.09717771,False,cubit_train_sp0_1479,train,images/SP0_1479.JPG,cubit_test_sp1_1462,test,images/SP1_1462.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+223,6,0.87287688,0.07165623,0.13830303,False,cubit_train_sp0_1301,train,images/SP0_1301.JPG,cubit_val_sp1_1287,val,images/SP1_1287.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+224,6,0.87087375,0.03033352,0.07280889,False,cubit_train_sp0_1785,train,images/SP0_1785.JPG,cubit_val_sp1_1768,val,images/SP1_1768.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+225,6,0.86994869,0.05726893,0.0854703,False,cubit_train_sp1_1414,train,images/SP1_1414.JPG,cubit_test_sp0_1422,test,images/SP0_1422.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+226,6,0.8692494,0.04471076,0.09973039,False,cubit_train_sp0_522,train,images/SP0_522.JPG,cubit_test_sp1_514,test,images/SP1_514.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+227,6,0.86911577,0.05437371,0.11317177,True,cubit_train_cr1_470,train,images/CR1_470.JPG,cubit_val_cr1_529,val,images/CR1_529.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+228,6,0.86709672,0.03654642,0.06482439,False,cubit_train_sp1_1149,train,images/SP1_1149.JPG,cubit_val_sp1_1159,val,images/SP1_1159.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+229,6,0.86637235,0.26090926,0.2640205,True,cubit_train_cr1_652,train,images/CR1_652.JPG,cubit_val_cr1_289,val,images/CR1_289.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+230,6,0.86426473,0.06741991,0.12323034,False,cubit_val_sp1_867,val,images/SP1_867.JPG,cubit_test_sp0_888,test,images/SP0_888.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+231,6,0.86414093,0.07201072,0.11680123,False,cubit_train_sp1_914,train,images/SP1_914.JPG,cubit_test_sp0_942,test,images/SP0_942.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+232,6,0.8617416,0.03138141,0.05584396,False,cubit_val_sp0_303,val,images/SP0_303.JPG,cubit_test_sp1_311,test,images/SP1_311.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+233,6,0.86080974,0.07583679,0.12562907,False,cubit_train_sp1_271,train,images/SP1_271.JPG,cubit_test_sp0_265,test,images/SP0_265.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+234,6,0.85426801,0.0735677,0.13780069,False,cubit_train_sp0_1499,train,images/SP0_1499.JPG,cubit_val_sp1_1490,val,images/SP1_1490.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+235,6,0.85275769,0.13437931,0.15916573,False,cubit_train_sp0_1321,train,images/SP0_1321.JPG,cubit_val_sp1_1346,val,images/SP1_1346.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+236,6,0.85242385,0.05257736,0.0901126,False,cubit_train_sp1_1182,train,images/SP1_1182.JPG,cubit_val_sp0_1203,val,images/SP0_1203.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+237,6,0.8522377,0.26151866,0.26645687,True,cubit_train_cr1_293,train,images/CR1_293.JPG,cubit_val_cr1_656,val,images/CR1_656.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+238,6,0.85075033,0.0987118,0.13887371,True,cubit_train_sp0_859,train,images/SP0_859.JPG,cubit_test_sp0_858,test,images/SP0_858.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+239,6,0.85000694,0.0344638,0.07129668,True,cubit_val_sp0_1829,val,images/SP0_1829.JPG,cubit_test_sp0_1828,test,images/SP0_1828.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+240,6,0.84961218,0.07548541,0.17131196,True,cubit_train_sp0_119,train,images/SP0_119.JPG,cubit_test_sp0_120,test,images/SP0_120.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+241,6,0.84879589,0.08259804,0.12693787,False,cubit_train_sp0_582,train,images/SP0_582.JPG,cubit_test_sp1_576,test,images/SP1_576.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+242,6,0.84839737,0.0997695,0.14202604,False,cubit_train_sp0_857,train,images/SP0_857.JPG,cubit_val_sp1_844,val,images/SP1_844.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+243,6,0.84772879,0.05261087,0.09650806,False,cubit_train_sp0_1149,train,images/SP0_1149.JPG,cubit_test_sp1_1137,test,images/SP1_1137.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+244,6,0.84675294,0.05281623,0.10906211,False,cubit_val_sp1_945,val,images/SP1_945.JPG,cubit_test_sp0_975,test,images/SP0_975.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+245,6,0.84547406,0.07964849,0.16467525,True,cubit_train_sp0_1368,train,images/SP0_1368.JPG,cubit_val_sp0_1369,val,images/SP0_1369.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+246,6,0.84426028,0.05569972,0.1160084,False,cubit_train_sp0_1117,train,images/SP0_1117.JPG,cubit_test_sp1_1104,test,images/SP1_1104.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+247,6,0.84295774,0.03894258,0.08422891,False,cubit_train_sp0_1797,train,images/SP0_1797.JPG,cubit_test_sp1_1789,test,images/SP1_1789.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+248,6,0.84155846,0.0302416,0.06548796,False,cubit_train_sp0_1278,train,images/SP0_1278.JPG,cubit_test_sp1_1256,test,images/SP1_1256.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+249,6,0.8409338,0.03072749,0.06891634,False,cubit_train_sp0_409,train,images/SP0_409.JPG,cubit_val_sp1_402,val,images/SP1_402.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+250,6,0.84015787,0.06208041,0.09458053,True,cubit_train_sp0_1423,train,images/SP0_1423.JPG,cubit_test_sp0_1422,test,images/SP0_1422.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+251,6,0.83931684,0.06096143,0.11468265,True,cubit_train_sp0_676,train,images/SP0_676.JPG,cubit_val_sp0_675,val,images/SP0_675.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+252,6,0.83407772,0.04663229,0.08538248,False,cubit_train_sp0_1809,train,images/SP0_1809.JPG,cubit_val_sp1_1794,val,images/SP1_1794.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+253,6,0.83243626,0.05630888,0.11185908,False,cubit_train_sp0_1473,train,images/SP0_1473.JPG,cubit_test_sp1_1462,test,images/SP1_1462.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+254,6,0.83101827,0.0367075,0.09245075,False,cubit_train_sp0_548,train,images/SP0_548.JPG,cubit_val_sp1_542,val,images/SP1_542.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+255,6,0.83091676,0.04137489,0.07890458,True,cubit_train_sp0_1840,train,images/SP0_1840.JPG,cubit_test_sp0_1841,test,images/SP0_1841.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+256,6,0.83009219,0.07674465,0.12677519,False,cubit_train_sp1_690,train,images/SP1_690.JPG,cubit_val_sp0_705,val,images/SP0_705.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+257,6,0.82976794,0.08172464,0.13561842,True,cubit_train_sp0_1497,train,images/SP0_1497.JPG,cubit_test_sp0_1502,test,images/SP0_1502.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+258,6,0.8296786,0.05910908,0.11326344,True,cubit_train_sp0_374,train,images/SP0_374.JPG,cubit_test_sp0_373,test,images/SP0_373.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+259,6,0.82939112,0.05386748,0.09709717,False,cubit_train_sp1_181,train,images/SP1_181.JPG,cubit_test_sp0_186,test,images/SP0_186.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+260,6,0.82738012,0.04418515,0.0944427,False,cubit_train_sp1_182,train,images/SP1_182.JPG,cubit_test_sp0_186,test,images/SP0_186.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+261,6,0.82672703,0.08157384,0.12894543,True,cubit_train_sp1_1493,train,images/SP1_1493.JPG,cubit_test_sp1_1498,test,images/SP1_1498.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+262,6,0.82596332,0.03148289,0.05227878,True,cubit_val_cr1_720,val,images/CR1_720.JPG,cubit_test_cr1_1003,test,images/CR1_1003.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+263,6,0.82583445,0.07244992,0.12103885,True,cubit_train_sp0_1593,train,images/SP0_1593.JPG,cubit_test_sp0_1594,test,images/SP0_1594.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+264,6,0.82472366,0.05925437,0.09317426,True,cubit_train_sp0_1433,train,images/SP0_1433.JPG,cubit_val_sp0_1434,val,images/SP0_1434.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+265,6,0.82443398,0.06912435,0.1224378,False,cubit_train_sp0_1329,train,images/SP0_1329.JPG,cubit_val_sp1_1316,val,images/SP1_1316.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+266,6,0.82301348,0.06168691,0.10728725,False,cubit_train_sp0_1623,train,images/SP0_1623.JPG,cubit_test_sp1_1615,test,images/SP1_1615.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+267,6,0.82293004,0.04541758,0.07757106,False,cubit_train_sp1_414,train,images/SP1_414.JPG,cubit_test_sp1_424,test,images/SP1_424.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+268,6,0.8195166,0.03514357,0.07336146,True,cubit_train_sp0_419,train,images/SP0_419.JPG,cubit_val_sp0_418,val,images/SP0_418.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+269,6,0.8186087,0.09010225,0.15866607,False,cubit_train_sp0_74,train,images/SP0_74.JPG,cubit_val_sp1_77,val,images/SP1_77.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+270,6,0.8171922,0.05185092,0.10173742,True,cubit_train_sp0_185,train,images/SP0_185.JPG,cubit_test_sp0_186,test,images/SP0_186.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+271,6,0.81674242,0.08661391,0.13590944,False,cubit_train_sp1_678,train,images/SP1_678.JPG,cubit_val_sp0_684,val,images/SP0_684.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+272,6,0.81461805,0.05422147,0.08969787,False,cubit_train_sp0_62,train,images/SP0_62.JPG,cubit_test_sp1_55,test,images/SP1_55.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+273,6,0.81270021,0.05110534,0.08512402,True,cubit_train_sp0_1165,train,images/SP0_1165.JPG,cubit_val_sp1_1155,val,images/SP1_1155.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+274,6,0.81247997,0.08303677,0.13555685,True,cubit_train_sp0_683,train,images/SP0_683.JPG,cubit_val_sp0_684,val,images/SP0_684.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+275,6,0.81208557,0.09048234,0.140771,False,cubit_train_sp0_581,train,images/SP0_581.JPG,cubit_test_sp1_576,test,images/SP1_576.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+276,6,0.8118028,0.06910472,0.11732426,False,cubit_train_sp1_276,train,images/SP1_276.JPG,cubit_test_sp0_271,test,images/SP0_271.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+277,6,0.80844527,0.03734466,0.08744562,True,cubit_train_sp0_495,train,images/SP0_495.JPG,cubit_test_sp0_494,test,images/SP0_494.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+278,6,0.80797505,0.07585282,0.12530346,False,cubit_train_sp1_660,train,images/SP1_660.JPG,cubit_val_sp0_675,val,images/SP0_675.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+279,6,0.80708933,0.08327182,0.11899817,True,cubit_train_cr1_835,train,images/CR1_835.JPG,cubit_test_cr1_820,test,images/CR1_820.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+280,6,0.8063494,0.10248449,0.1654411,True,cubit_train_sp0_1486,train,images/SP0_1486.JPG,cubit_val_sp0_1485,val,images/SP0_1485.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+281,6,0.80366904,0.03469908,0.08448752,False,cubit_train_sp1_1731,train,images/SP1_1731.JPG,cubit_test_sp1_1742,test,images/SP1_1742.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+282,6,0.80314755,0.04464686,0.09186454,False,cubit_train_sp0_503,train,images/SP0_503.JPG,cubit_test_sp1_486,test,images/SP1_486.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+283,6,0.80268997,0.04815123,0.0883984,True,cubit_val_sp1_1846,val,images/SP1_1846.JPG,cubit_test_sp0_1853,test,images/SP0_1853.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+284,6,0.80261064,0.08259516,0.13862815,True,cubit_train_sp0_691,train,images/SP0_691.JPG,cubit_val_sp0_690,val,images/SP0_690.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+285,6,0.80250126,0.04445801,0.07826146,True,cubit_train_sp0_1206,train,images/SP0_1206.JPG,cubit_val_sp1_1196,val,images/SP1_1196.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+286,6,0.80125958,0.0761264,0.13784596,True,cubit_train_sp0_292,train,images/SP0_292.JPG,cubit_test_sp1_300,test,images/SP1_300.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+287,6,0.79866755,0.04152042,0.09817632,False,cubit_train_sp1_552,train,images/SP1_552.JPG,cubit_test_sp1_562,test,images/SP1_562.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+288,6,0.7983827,0.07648351,0.13366036,False,cubit_train_sp1_940,train,images/SP1_940.JPG,cubit_test_sp0_969,test,images/SP0_969.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+289,6,0.79779506,0.06444451,0.10983924,False,cubit_train_sp1_298,train,images/SP1_298.JPG,cubit_val_sp1_288,val,images/SP1_288.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+290,6,0.79766971,0.03733652,0.0775579,True,cubit_train_sp0_461,train,images/SP0_461.JPG,cubit_val_sp0_460,val,images/SP0_460.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+291,6,0.79724169,0.09686255,0.1434937,False,cubit_train_sp1_591,train,images/SP1_591.JPG,cubit_test_sp1_602,test,images/SP1_602.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+292,6,0.7967068,0.05647954,0.10112008,True,cubit_train_sp0_1643,train,images/SP0_1643.JPG,cubit_test_sp1_1636,test,images/SP1_1636.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+293,6,0.79654056,0.03284816,0.07105511,False,cubit_val_sp1_448,val,images/SP1_448.JPG,cubit_test_sp0_462,test,images/SP0_462.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+294,6,0.79451436,0.03551983,0.10553554,True,cubit_train_cr1_1679,train,images/CR1_1679.JPG,cubit_test_cr1_1684,test,images/CR1_1684.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+295,6,0.79400468,0.08454829,0.14819013,False,cubit_train_sp1_1555,train,images/SP1_1555.JPG,cubit_val_sp1_1565,val,images/SP1_1565.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+296,6,0.79306012,0.02894766,0.07156304,False,cubit_train_sp0_445,train,images/SP0_445.JPG,cubit_val_sp1_438,val,images/SP1_438.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+297,6,0.78927809,0.03491642,0.08510116,False,cubit_val_sp1_1729,val,images/SP1_1729.JPG,cubit_test_sp1_1739,test,images/SP1_1739.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+298,6,0.78909504,0.0612769,0.12219717,True,cubit_train_sp0_1481,train,images/SP0_1481.JPG,cubit_test_sp1_1468,test,images/SP1_1468.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+299,6,0.78895646,0.03588867,0.06140926,False,cubit_train_sp1_731,train,images/SP1_731.JPG,cubit_val_sp1_743,val,images/SP1_743.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+300,6,0.78839892,0.04550494,0.08963712,False,cubit_train_sp1_480,train,images/SP1_480.JPG,cubit_test_sp0_489,test,images/SP0_489.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+301,6,0.78832918,0.07878227,0.13759345,False,cubit_train_sp0_965,train,images/SP0_965.JPG,cubit_test_sp1_937,test,images/SP1_937.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+302,6,0.78692657,0.07997425,0.13798973,False,cubit_train_sp1_936,train,images/SP1_936.JPG,cubit_val_sp0_964,val,images/SP0_964.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+303,6,0.78601158,0.03506529,0.08732039,False,cubit_train_sp1_381,train,images/SP1_381.JPG,cubit_test_sp1_392,test,images/SP1_392.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+304,6,0.78488451,0.08055563,0.16428879,True,cubit_train_sp0_1067,train,images/SP0_1067.JPG,cubit_val_sp1_1057,val,images/SP1_1057.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+305,6,0.78422022,0.08344271,0.13811757,False,cubit_val_sp1_1577,val,images/SP1_1577.JPG,cubit_test_sp0_1584,test,images/SP0_1584.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+306,6,0.7834695,0.08133066,0.13294782,False,cubit_train_sp1_1322,train,images/SP1_1322.JPG,cubit_val_sp0_1343,val,images/SP0_1343.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+307,6,0.78323126,0.04327944,0.10368135,False,cubit_train_sp1_1219,train,images/SP1_1219.JPG,cubit_test_sp1_1228,test,images/SP1_1228.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+308,6,0.78144354,0.03257147,0.07516681,True,cubit_train_sp0_451,train,images/SP0_451.JPG,cubit_val_sp0_452,val,images/SP0_452.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+309,6,0.78063786,0.04167815,0.10365126,False,cubit_train_sp0_553,train,images/SP0_553.JPG,cubit_val_sp1_546,val,images/SP1_546.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+310,6,0.77928472,0.05022451,0.08624302,True,cubit_train_sp0_430,train,images/SP0_430.JPG,cubit_test_sp1_424,test,images/SP1_424.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+311,6,0.77737552,0.07750483,0.13738075,False,cubit_train_sp1_623,train,images/SP1_623.JPG,cubit_val_sp0_638,val,images/SP0_638.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+312,6,0.77437216,0.07005759,0.11401863,False,cubit_train_sp0_1704,train,images/SP0_1704.JPG,cubit_val_sp1_1689,val,images/SP1_1689.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+313,6,0.77382129,0.0443984,0.09653347,False,cubit_train_sp0_1924,train,images/SP0_1924.JPG,cubit_val_sp1_1905,val,images/SP1_1905.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+314,6,0.77083772,0.06575114,0.13511279,False,cubit_train_sp1_1277,train,images/SP1_1277.JPG,cubit_test_sp0_1289,test,images/SP0_1289.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+315,6,0.77064931,0.04548268,0.09460531,False,cubit_train_sp1_1904,train,images/SP1_1904.JPG,cubit_test_sp0_1922,test,images/SP0_1922.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+316,6,0.76971126,0.10017353,0.15099895,True,cubit_train_sp0_591,train,images/SP0_591.JPG,cubit_val_sp0_592,val,images/SP0_592.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+317,6,0.76771629,0.10016611,0.15215643,False,cubit_train_sp1_588,train,images/SP1_588.JPG,cubit_test_sp0_603,test,images/SP0_603.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+318,6,0.76729459,0.06700367,0.11826006,False,cubit_train_sp0_1713,train,images/SP0_1713.JPG,cubit_val_sp1_1697,val,images/SP1_1697.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+319,6,0.76659942,0.08557177,0.13047351,True,cubit_train_sp1_1024,train,images/SP1_1024.JPG,cubit_val_sp1_1023,val,images/SP1_1023.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+320,6,0.76555836,0.04029302,0.09666242,False,cubit_train_sp0_476,train,images/SP0_476.JPG,cubit_val_sp1_470,val,images/SP1_470.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+321,6,0.76419842,0.05465327,0.09089101,True,cubit_train_sp0_1163,train,images/SP0_1163.JPG,cubit_val_sp1_1159,val,images/SP1_1159.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+322,6,0.76406205,0.10575406,0.15454659,False,cubit_train_sp1_590,train,images/SP1_590.JPG,cubit_val_sp1_600,val,images/SP1_600.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+323,6,0.76271588,0.03949788,0.0672567,False,cubit_train_sp1_722,train,images/SP1_722.JPG,cubit_val_sp0_729,val,images/SP0_729.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+324,6,0.76160735,0.10316999,0.1627676,False,cubit_train_sp0_1572,train,images/SP0_1572.JPG,cubit_test_sp1_1556,test,images/SP1_1556.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+325,6,0.7597065,0.04343118,0.10740904,True,cubit_train_sp0_548,train,images/SP0_548.JPG,cubit_val_sp0_547,val,images/SP0_547.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+326,6,0.75849336,0.06680238,0.13751253,False,cubit_train_sp1_1271,train,images/SP1_1271.JPG,cubit_test_sp0_1282,test,images/SP0_1282.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+327,6,0.75645852,0.10565592,0.18961319,False,cubit_train_sp0_73,train,images/SP0_73.JPG,cubit_val_sp1_77,val,images/SP1_77.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+328,6,0.75574285,0.0564312,0.11703615,False,cubit_train_sp1_1080,train,images/SP1_1080.JPG,cubit_val_sp0_1101,val,images/SP0_1101.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+329,6,0.75510776,0.04409348,0.07662211,False,cubit_train_sp1_760,train,images/SP1_760.JPG,cubit_test_sp0_768,test,images/SP0_768.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+330,6,0.75508386,0.05755448,0.12125544,False,cubit_train_sp1_1081,train,images/SP1_1081.JPG,cubit_test_sp1_1092,test,images/SP1_1092.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+331,6,0.75299084,0.10356134,0.15587822,False,cubit_train_sp1_588,train,images/SP1_588.JPG,cubit_test_sp0_602,test,images/SP0_602.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+332,6,0.75236851,0.04470119,0.0913055,True,cubit_train_sp0_191,train,images/SP0_191.JPG,cubit_val_sp0_190,val,images/SP0_190.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+333,6,0.74941087,0.10580625,0.16778055,True,cubit_train_cr1_41,train,images/CR1_41.JPG,cubit_test_cr1_42,test,images/CR1_42.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+334,6,0.74938476,0.10145049,0.15995575,False,cubit_train_sp1_993,train,images/SP1_993.JPG,cubit_test_sp0_1011,test,images/SP0_1011.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+335,6,0.74352235,0.08147978,0.12845843,False,cubit_train_sp1_1691,train,images/SP1_1691.JPG,cubit_val_sp1_1701,val,images/SP1_1701.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+336,6,0.74086285,0.07078546,0.10749526,True,cubit_train_cr1_1245,train,images/CR1_1245.JPG,cubit_val_cr1_908,val,images/CR1_908.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+337,6,0.74085963,0.05455155,0.10658166,False,cubit_train_sp1_151,train,images/SP1_151.JPG,cubit_test_sp0_154,test,images/SP0_154.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+338,6,0.73571146,0.08104727,0.1344929,False,cubit_train_sp0_1694,train,images/SP0_1694.JPG,cubit_test_sp1_1686,test,images/SP1_1686.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+339,6,0.73558682,0.04380051,0.07660898,True,cubit_train_sp0_304,train,images/SP0_304.JPG,cubit_val_sp0_303,val,images/SP0_303.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+340,6,0.7348842,0.06113257,0.13385867,True,cubit_train_cr1_1068,train,images/CR1_1068.JPG,cubit_test_cr1_680,test,images/CR1_680.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+341,6,0.7344991,0.07180679,0.13839427,False,cubit_train_sp0_708,train,images/SP0_708.JPG,cubit_test_cr1_109,test,images/CR1_109.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+342,6,0.73287481,0.11234657,0.16540031,False,cubit_train_sp1_589,train,images/SP1_589.JPG,cubit_val_sp1_600,val,images/SP1_600.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+343,6,0.72917008,0.08869079,0.16046977,False,cubit_train_sp0_1523,train,images/SP0_1523.JPG,cubit_test_sp1_1514,test,images/SP1_1514.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+344,6,0.72841293,0.04876518,0.080546,False,cubit_train_sp0_313,train,images/SP0_313.JPG,cubit_test_sp1_319,test,images/SP1_319.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+345,6,0.72487348,0.09321384,0.15464458,True,cubit_train_sp0_618,train,images/SP0_618.JPG,cubit_test_sp0_619,test,images/SP0_619.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+346,6,0.7244972,0.04848226,0.08838688,False,cubit_val_sp0_786,val,images/SP0_786.JPG,cubit_test_sp1_781,test,images/SP1_781.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+347,6,0.72382945,0.05374444,0.10170415,False,cubit_train_sp1_1727,train,images/SP1_1727.JPG,cubit_test_sp1_1737,test,images/SP1_1737.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+348,6,0.72134,0.04778646,0.07851479,False,cubit_train_sp1_318,train,images/SP1_318.JPG,cubit_val_sp0_319,val,images/SP0_319.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+349,6,0.72117078,0.04549105,0.10096392,False,cubit_train_sp1_1731,train,images/SP1_1731.JPG,cubit_test_sp0_1749,test,images/SP0_1749.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+350,6,0.72065967,0.07944982,0.11614419,False,cubit_train_sp0_1437,train,images/SP0_1437.JPG,cubit_test_sp1_1421,test,images/SP1_1421.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+351,6,0.71530491,0.09142228,0.14537327,False,cubit_train_sp1_1024,train,images/SP1_1024.JPG,cubit_test_sp1_1012,test,images/SP1_1012.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+352,6,0.71513301,0.15717702,0.20501296,False,cubit_train_sp0_1322,train,images/SP0_1322.JPG,cubit_val_sp1_1346,val,images/SP1_1346.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+353,6,0.70881736,0.05598097,0.11532427,True,cubit_train_sp0_1907,train,images/SP0_1907.JPG,cubit_test_sp0_1906,test,images/SP0_1906.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+354,6,0.69925141,0.05840298,0.10163016,False,cubit_train_sp0_1858,train,images/SP0_1858.JPG,cubit_test_sp1_1850,test,images/SP1_1850.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+355,6,0.69674325,0.07186471,0.11185931,False,cubit_train_sp1_1323,train,images/SP1_1323.JPG,cubit_val_sp0_1344,val,images/SP0_1344.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+356,6,0.68542165,0.03494706,0.06823288,False,cubit_train_sp0_734,train,images/SP0_734.JPG,cubit_val_sp1_726,val,images/SP1_726.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+357,6,0.68339115,0.10993533,0.15313049,False,cubit_train_sp1_655,train,images/SP1_655.JPG,cubit_test_sp0_671,test,images/SP0_671.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+358,6,0.67909926,0.08317895,0.15593685,False,cubit_train_sp1_1888,train,images/SP1_1888.JPG,cubit_val_sp0_1897,val,images/SP0_1897.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+359,6,0.67663205,0.08053817,0.13529696,False,cubit_train_sp0_270,train,images/SP0_270.JPG,cubit_test_sp1_275,test,images/SP1_275.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+360,6,0.67655569,0.03490588,0.06170359,True,cubit_train_cr1_1280,train,images/CR1_1280.JPG,cubit_test_cr1_1790,test,images/CR1_1790.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+361,6,0.67078954,0.05530217,0.0877655,False,cubit_train_sp0_321,train,images/SP0_321.JPG,cubit_test_sp1_319,test,images/SP1_319.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+362,6,0.66706228,0.05473705,0.0876842,False,cubit_train_sp0_320,train,images/SP0_320.JPG,cubit_test_sp1_319,test,images/SP1_319.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+363,6,0.66645521,0.05115967,0.08201349,False,cubit_train_sp1_323,train,images/SP1_323.JPG,cubit_test_sp0_325,test,images/SP0_325.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+364,6,0.66130042,0.06445264,0.11735516,False,cubit_train_sp0_1756,train,images/SP0_1756.JPG,cubit_test_sp1_1749,test,images/SP1_1749.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+365,6,0.65768313,0.11205767,0.17537443,False,cubit_train_sp0_622,train,images/SP0_622.JPG,cubit_val_sp1_614,val,images/SP1_614.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+366,6,0.6567353,0.0758983,0.12255017,False,cubit_train_sp1_1325,train,images/SP1_1325.JPG,cubit_val_sp0_1346,val,images/SP0_1346.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+367,6,0.65556383,0.04416791,0.10394166,False,cubit_train_sp1_382,train,images/SP1_382.JPG,cubit_val_sp0_398,val,images/SP0_398.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+368,6,0.64968753,0.1139378,0.17510955,False,cubit_train_sp1_612,train,images/SP1_612.JPG,cubit_test_sp0_619,test,images/SP0_619.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+369,6,0.63102108,0.05084947,0.10119612,False,cubit_train_sp1_444,train,images/SP1_444.JPG,cubit_val_sp0_459,val,images/SP0_459.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+370,6,0.62438542,0.07457994,0.14783809,True,cubit_train_sp0_1538,train,images/SP0_1538.JPG,cubit_test_sp1_1532,test,images/SP1_1532.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+371,6,0.6199823,0.04705739,0.08814303,True,cubit_train_sp0_1395,train,images/SP0_1395.JPG,cubit_val_sp0_1394,val,images/SP0_1394.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+372,6,0.61592031,0.06758961,0.11778137,False,cubit_train_sp1_1714,train,images/SP1_1714.JPG,cubit_test_sp0_1721,test,images/SP0_1721.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+373,6,0.61521333,0.05454365,0.11583555,True,cubit_train_cr1_665,train,images/CR1_665.JPG,cubit_test_cr1_1053,test,images/CR1_1053.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+374,6,0.59580189,0.09868141,0.16185002,True,cubit_val_sp0_1348,val,images/SP0_1348.JPG,cubit_test_sp1_1338,test,images/SP1_1338.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+375,6,0.59554219,0.09463513,0.1131046,True,cubit_train_cr1_612,train,images/CR1_612.JPG,cubit_test_cr1_1427,test,images/CR1_1427.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+376,6,0.59324414,0.14801145,0.22313456,True,cubit_val_sp0_1561,val,images/SP0_1561.JPG,cubit_test_sp0_1560,test,images/SP0_1560.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+377,6,0.59277797,0.068424,0.13923147,False,cubit_train_sp1_151,train,images/SP1_151.JPG,cubit_val_sp1_159,val,images/SP1_159.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+378,6,0.58653998,0.08668668,0.13423495,True,cubit_train_sp0_1345,train,images/SP0_1345.JPG,cubit_val_sp0_1346,val,images/SP0_1346.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+379,6,0.58099556,0.05748099,0.11387186,True,cubit_train_sp0_137,train,images/SP0_137.JPG,cubit_test_sp0_136,test,images/SP0_136.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+380,6,0.5767675,0.20280597,0.20819707,True,cubit_train_cr1_1009,train,images/CR1_1009.JPG,cubit_test_cr1_1720,test,images/CR1_1720.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+381,6,0.55603772,0.07657638,0.13366777,True,cubit_train_sp0_147,train,images/SP0_147.JPG,cubit_val_sp1_161,val,images/SP1_161.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+382,6,0.55410689,0.05869739,0.06486508,True,cubit_train_cr1_1421,train,images/CR1_1421.JPG,cubit_val_cr1_549,val,images/CR1_549.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+383,6,0.54795355,0.04034112,0.06514007,True,cubit_train_cr1_710,train,images/CR1_710.JPG,cubit_test_cr1_1656,test,images/CR1_1656.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+384,6,0.54147613,0.03151353,0.05079434,True,cubit_train_cr1_699,train,images/CR1_699.JPG,cubit_val_cr1_720,val,images/CR1_720.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+385,6,0.53646386,0.02521374,0.06859323,True,cubit_train_cr1_515,train,images/CR1_515.JPG,cubit_test_cr1_966,test,images/CR1_966.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+386,6,0.53082156,0.02047741,0.06631222,True,cubit_train_cr1_1662,train,images/CR1_1662.JPG,cubit_test_cr1_1656,test,images/CR1_1656.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+387,6,0.51409829,0.26213783,0.2658698,True,cubit_train_cr1_1004,train,images/CR1_1004.JPG,cubit_test_cr1_343,test,images/CR1_343.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+388,6,0.51239544,0.06890271,0.13715334,False,cubit_train_sp1_480,train,images/SP1_480.JPG,cubit_val_sp0_496,val,images/SP0_496.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+389,6,0.50122392,0.14426892,0.24363926,True,cubit_train_cr1_2601,train,images/CR1_2601.JPG,cubit_test_cr1_2594,test,images/CR1_2594.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+390,6,0.49206528,0.04135168,0.09981155,True,cubit_train_cr1_576,train,images/CR1_576.JPG,cubit_test_cr1_497,test,images/CR1_497.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+391,6,0.48572469,0.19365834,0.26757303,True,cubit_train_cr1_1626,train,images/CR1_1626.JPG,cubit_test_cr1_1656,test,images/CR1_1656.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+392,6,0.46009961,0.06546344,0.12328858,True,cubit_train_sp0_1399,train,images/SP0_1399.JPG,cubit_test_sp0_1398,test,images/SP0_1398.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+393,6,0.44294617,0.1403988,0.1509822,True,cubit_train_cr1_601,train,images/CR1_601.JPG,cubit_test_cr1_3074,test,images/CR1_3074.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+394,6,0.40705621,0.14889923,0.21500188,True,cubit_train_cr1_1640,train,images/CR1_1640.JPG,cubit_test_cr1_1656,test,images/CR1_1656.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+395,6,0.32581499,0.07133597,0.08474578,True,cubit_train_cr1_2873,train,images/CR1_2873.JPG,cubit_test_cr1_824,test,images/CR1_824.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+396,6,0.31886888,0.10311279,0.11155345,True,cubit_train_cr1_1792,train,images/CR1_1792.JPG,cubit_val_cr1_549,val,images/CR1_549.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+397,6,0.29750571,0.04284692,0.0840341,True,cubit_train_cr1_1074,train,images/CR1_1074.JPG,cubit_test_cr1_1003,test,images/CR1_1003.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+398,6,0.25924307,0.00870194,0.04022152,True,cubit_train_cr1_331,train,images/CR1_331.JPG,cubit_test_cr1_342,test,images/CR1_342.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+399,6,0.25418696,0.35166562,0.36797747,True,cubit_val_cr1_1822,val,images/CR1_1822.JPG,cubit_test_cr1_348,test,images/CR1_348.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+400,6,0.2536836,0.2505663,0.25687909,True,cubit_val_cr1_720,val,images/CR1_720.JPG,cubit_test_cr1_343,test,images/CR1_343.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+401,6,0.24962044,0.25652716,0.27015573,True,cubit_train_cr1_1090,train,images/CR1_1090.JPG,cubit_test_cr1_343,test,images/CR1_343.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+402,6,0.11468269,0.03303797,0.06496309,True,cubit_train_cr1_1074,train,images/CR1_1074.JPG,cubit_val_cr1_720,val,images/CR1_720.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+403,6,0.09270737,0.22695912,0.23092173,True,cubit_train_cr1_1074,train,images/CR1_1074.JPG,cubit_test_cr1_1720,test,images/CR1_1720.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+404,6,0.01993312,0.24449772,0.24724045,True,cubit_train_cr1_1074,train,images/CR1_1074.JPG,cubit_test_cr1_343,test,images/CR1_343.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.
+405,6,0.00018568,0.04673497,0.07837726,True,cubit_train_cr1_1004,train,images/CR1_1004.JPG,cubit_val_cr1_720,val,images/CR1_720.JPG,duplicate,Owner-confirmed duplicate; excluded from v1 tuning views.

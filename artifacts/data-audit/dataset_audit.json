@@ -14,11 +14,29 @@
         "boxes"
       ],
       "archive_or_files_size_bytes": 23619174776,
-      "splits": {},
+      "splits": {
+        "test": {
+          "shards": 18,
+          "samples": 21135,
+          "unique_parent_images": 1806,
+          "empty_or_no_instance_tiles": 0
+        },
+        "train": {
+          "shards": 84,
+          "samples": 105139,
+          "unique_parent_images": 8874,
+          "empty_or_no_instance_tiles": 0
+        },
+        "val": {
+          "shards": 18,
+          "samples": 22368,
+          "unique_parent_images": 1900,
+          "empty_or_no_instance_tiles": 0
+        }
+      },
       "notes": [
         "Tiled release only; parent-image fields must control leakage.",
-        "Do not count 1024x1024 tiles as independent structures.",
-        "Detailed parquet audit skipped: No module named 'pyarrow'"
+        "Do not count 1024x1024 tiles as independent structures."
       ]
     },
     {
@@ -238,7 +256,7 @@
       "annotation_types": [
         "samples/code only in local clone"
       ],
-      "archive_or_files_size_bytes": 109957596,
+      "archive_or_files_size_bytes": 109322821,
       "splits": {},
       "notes": [
         "Do not include until image provenance and data license are verified."

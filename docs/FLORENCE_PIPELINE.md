@@ -5,6 +5,16 @@
 
 This is not a Florence fine-tuning pipeline. It runs the local pretrained Florence-2 Base/Large checkpoints over the current 300-sample feasibility view. Full-data Florence execution, escalation evaluation, and comparison against the specialist route are tracked in [`COMPLETION_PLAN.md`](COMPLETION_PLAN.md).
 
+Florence target preparation is available through `scripts/prepare_florence_targets.py`. It creates annotation-level, group-safe train/validation records from the normalized reviewed annotations and excludes `unknown_review` records from positive targets. The output is deliberately marked `structured_pre_tokenization`; a processor-compatibility check is required before using it for gradient training.
+
+The fine-tuning entry point is `scripts/train_florence.py`. It converts boxes to the checkpoint's `<loc_0>` through `<loc_1000>` vocabulary, masks padding labels, uses FP32 by default for numerical stability on the local Quadro T2000, supports gradient accumulation and checkpoint output, and refuses non-finite losses. A one-step validation is:
+
+```powershell
+.\\.venv\\Scripts\\python.exe scripts\\train_florence.py --overfit-one --max-steps 1 --output-dir runs\\florence\\finetune-smoke
+```
+
+FP16 training is available only with `--dtype float16` and is not the recommended local setting.
+
 ## What it does
 
 `scripts/run_florence_pipeline.py` reads the hash-verified 300-sample feasibility
@@ -29,6 +39,12 @@ Run the complete training-only feasibility set with:
 
 ```powershell
 .\.venv\Scripts\python.exe scripts\run_florence_pipeline.py
+```
+
+Prepare the current feasibility targets with:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\prepare_florence_targets.py
 ```
 
 Outputs go to `runs/florence/<run-id>/`:

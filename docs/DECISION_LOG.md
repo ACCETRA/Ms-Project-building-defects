@@ -30,6 +30,9 @@
 | D-024 | Release the academic beta as open source under AGPL-compatible terms | Approved by project owner on 2026-09-11 | Any delivered YOLO component must remain compatible with AGPL obligations; commercial distribution requires separate dataset permissions and any required commercial model licensing |
 | D-025 | Use ResNet-50 + YOLO11n + SAM 2.1 as the comparison pipeline | Approved by project owner on 2026-09-11 | Compare the Florence full pipeline against a conventional classification, detection, and segmentation route; build the web demo only after real model results are available |
 | D-026 | Treat the 300-sample runs as feasibility evidence, not full-data completion | Recorded on 2026-09-12 | Full v1 task manifests, annotation QA, full-data training, YOLO-to-SAM integration, locked evaluation, target-site validation, and the browser workflow remain open; see `docs/COMPLETION_PLAN.md` |
+| D-027 | Approve the v1 source/license set, group-safe official-split policy, and `unknown_review` treatment | Approved by project owner on 2026-09-12 | Train only on approved source-train records; use source validation records or group-safe internal validation; keep locked test records isolated; preserve unknown geometry but exclude it from positive targets |
+| D-028 | Treat the current 300-sample comparison and Florence runs as demo baselines | Approved by project owner on 2026-09-12 | Their metrics must not be presented as final accuracy or harness-readiness evidence |
+| D-029 | Use staged compute for real training | Recommended for execution on 2026-09-12 | Quadro T2000 remains for smoke tests; use a supported 24 GB-class GPU for v1 YOLO/ResNet training and Florence Base LoRA fine-tuning; Florence Large or full-parameter tuning may require 40-48 GB; SAM remains prompted unless decoder adaptation is explicitly approved |
 
 ## Open decisions
 

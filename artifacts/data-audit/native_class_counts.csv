@@ -1,4 +1,22 @@
 dataset,split,native_label,images_with_label,instances_or_shapes,pixels,count_basis
+CiF-tiled,test,Algae,6961,7798,,parquet instance polygons
+CiF-tiled,test,Crack,9374,13306,,parquet instance polygons
+CiF-tiled,test,Crack with Precipitation,378,509,,parquet instance polygons
+CiF-tiled,test,Net-Crack,2055,2185,,parquet instance polygons
+CiF-tiled,test,Rust,1528,2331,,parquet instance polygons
+CiF-tiled,test,Spalling,4196,5677,,parquet instance polygons
+CiF-tiled,train,Algae,29575,32997,,parquet instance polygons
+CiF-tiled,train,Crack,51376,90823,,parquet instance polygons
+CiF-tiled,train,Crack with Precipitation,2383,3057,,parquet instance polygons
+CiF-tiled,train,Net-Crack,10272,10881,,parquet instance polygons
+CiF-tiled,train,Rust,7738,11469,,parquet instance polygons
+CiF-tiled,train,Spalling,20313,28442,,parquet instance polygons
+CiF-tiled,val,Algae,6444,7127,,parquet instance polygons
+CiF-tiled,val,Crack,11203,20861,,parquet instance polygons
+CiF-tiled,val,Crack with Precipitation,519,685,,parquet instance polygons
+CiF-tiled,val,Net-Crack,2201,2357,,parquet instance polygons
+CiF-tiled,val,Rust,1674,2396,,parquet instance polygons
+CiF-tiled,val,Spalling,4001,5241,,parquet instance polygons
 DACL10K-v2-devphase,train,ACrack,332,376,,LabelMe-style polygons/shapes
 DACL10K-v2-devphase,train,Bearing,730,1048,,LabelMe-style polygons/shapes
 DACL10K-v2-devphase,train,Cavity,1188,8119,,LabelMe-style polygons/shapes

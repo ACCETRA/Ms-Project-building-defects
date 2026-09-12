@@ -89,8 +89,8 @@ def prepare_split(rows: list[dict[str, str]], output: Path, split: str, task: st
 
 
 # Sentinel so we can detect whether --manifest / --name were explicitly supplied.
-_DETECT_MANIFEST = ROOT / "data/manifests/feasibility_detection_v0_1.csv"
-_SEGMENT_MANIFEST = ROOT / "data/manifests/feasibility_segmentation_v0_1.csv"
+_DETECT_MANIFEST = ROOT / "data/manifests/v1_detection_manifest.csv"
+_SEGMENT_MANIFEST = ROOT / "data/manifests/v1_segmentation_manifest.csv"
 
 
 def main() -> None:
@@ -102,7 +102,10 @@ def main() -> None:
     parser.add_argument("--model", type=Path, default=ROOT / "weights/yolo/yolo11n.pt")
     parser.add_argument("--epochs", type=int, default=20)
     parser.add_argument("--imgsz", type=int, default=512)
-    parser.add_argument("--batch", type=int, default=1)
+    parser.add_argument("--batch", type=int, default=4)
+    parser.add_argument("--workers", type=int, default=2)
+    parser.add_argument("--amp", action="store_true", help="Use automatic mixed precision when supported.")
+    parser.add_argument("--cache", action="store_true", help="Cache image tensors for faster YOLO training on repeated runs.")
     parser.add_argument("--val-fraction", type=float, default=0.2)
     parser.add_argument("--seed", type=int, default=20260911)
     parser.add_argument("--project", type=Path, default=ROOT / "runs/comparison/yolo")
@@ -147,6 +150,9 @@ def main() -> None:
         "epochs": args.epochs,
         "imgsz": args.imgsz,
         "batch": args.batch,
+        "workers": args.workers,
+        "amp": args.amp,
+        "cache": args.cache,
         "seed": args.seed,
         "train_samples": len(train_rows),
         "validation_samples": len(val_rows),
@@ -167,12 +173,15 @@ def main() -> None:
             epochs=args.epochs,
             imgsz=args.imgsz,
             batch=args.batch,
+            workers=args.workers,
             seed=args.seed,
             project=str(args.project),
             name=args.name,
             exist_ok=True,
             device=0,
             pretrained=True,
+            amp=args.amp,
+            cache=args.cache,
             # val=False skips per-epoch validation but Ultralytics always calls
             # final_eval() at the end of _do_train(). We catch its
             # FileNotFoundError below instead of fighting the trainer internals.
@@ -201,4 +210,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    main()

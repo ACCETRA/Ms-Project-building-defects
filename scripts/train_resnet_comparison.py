@@ -62,14 +62,16 @@ class ManifestDataset(Dataset[tuple[torch.Tensor, torch.Tensor]]):
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--manifest", type=Path, default=ROOT / "data/manifests/feasibility_classification_v0_1.csv")
+    parser.add_argument("--manifest", type=Path, default=ROOT / "data/manifests/v1_classification_manifest.csv")
     parser.add_argument("--weights", type=Path, default=ROOT / "weights/resnet/resnet50-11ad3fa6.pth")
     parser.add_argument("--epochs", type=int, default=10)
-    parser.add_argument("--batch", type=int, default=4)
+    parser.add_argument("--batch", type=int, default=8)
+    parser.add_argument("--workers", type=int, default=2)
     parser.add_argument("--lr", type=float, default=1e-4)
     parser.add_argument("--val-fraction", type=float, default=0.2)
     parser.add_argument("--seed", type=int, default=20260911)
     parser.add_argument("--output", type=Path, default=ROOT / "runs/comparison/resnet50")
+    parser.add_argument("--mixed-precision", action="store_true", help="Use CUDA autocast for higher throughput.")
     args = parser.parse_args()
     if not 0 < args.val_fraction < 1:
         raise ValueError("--val-fraction must be between 0 and 1")
@@ -80,8 +82,8 @@ def main() -> None:
     rows = [row for row in read_rows(manifest) if row.get("eligibility") and row["geometry_qc"] == "passed"]
     train_rows, val_rows = split_rows(rows, args.val_fraction, args.seed)
     transform = ResNet50_Weights.DEFAULT.transforms()
-    train_loader = DataLoader(ManifestDataset(train_rows, transform), batch_size=args.batch, shuffle=True, num_workers=0)
-    val_loader = DataLoader(ManifestDataset(val_rows, transform), batch_size=args.batch, shuffle=False, num_workers=0)
+    train_loader = DataLoader(ManifestDataset(train_rows, transform), batch_size=args.batch, shuffle=True, num_workers=args.workers, pin_memory=True)
+    val_loader = DataLoader(ManifestDataset(val_rows, transform), batch_size=args.batch, shuffle=False, num_workers=args.workers, pin_memory=True)
     model = resnet50(weights=None)
     state = torch.load((ROOT / args.weights) if not args.weights.is_absolute() else args.weights, map_location="cpu", weights_only=True)
     model.load_state_dict(state, strict=True)
@@ -90,6 +92,7 @@ def main() -> None:
     model = model.to("cuda", dtype=torch.float32)
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr)
     criterion = nn.BCEWithLogitsLoss()
+    scaler = torch.cuda.amp.GradScaler(enabled=args.mixed_precision and torch.cuda.is_available())
     args.output.mkdir(parents=True, exist_ok=True)
     config = vars(args).copy()
     config.update({"classes": CLASSES, "train_samples": len(train_rows), "validation_samples": len(val_rows), "train_groups": len({row["group_id"] for row in train_rows}), "validation_groups": len({row["group_id"] for row in val_rows})})
@@ -100,17 +103,26 @@ def main() -> None:
         train_loss = 0.0
         for images, targets in train_loader:
             optimizer.zero_grad(set_to_none=True)
-            loss = criterion(model(images.to("cuda", dtype=torch.float32)), targets.to("cuda", dtype=torch.float32))
+            images = images.to("cuda", non_blocking=True)
+            targets = targets.to("cuda", non_blocking=True)
+            with torch.cuda.amp.autocast(enabled=args.mixed_precision):
+                predictions = model(images)
+                loss = criterion(predictions, targets)
             if not torch.isfinite(loss):
                 raise FloatingPointError(f"Non-finite ResNet training loss at epoch {epoch + 1}")
-            loss.backward()
-            optimizer.step()
+            scaler.scale(loss).backward()
+            scaler.step(optimizer)
+            scaler.update()
             train_loss += loss.item() * len(images)
         model.eval()
         val_loss = 0.0
         with torch.no_grad():
             for images, targets in val_loader:
-                loss = criterion(model(images.to("cuda", dtype=torch.float32)), targets.to("cuda", dtype=torch.float32))
+                images = images.to("cuda", non_blocking=True)
+                targets = targets.to("cuda", non_blocking=True)
+                with torch.cuda.amp.autocast(enabled=args.mixed_precision):
+                    predictions = model(images)
+                    loss = criterion(predictions, targets)
                 if not torch.isfinite(loss):
                     raise FloatingPointError(f"Non-finite ResNet validation loss at epoch {epoch + 1}")
                 val_loss += loss.item() * len(images)

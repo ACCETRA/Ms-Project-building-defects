@@ -1,0 +1,28 @@
+{
+  "manifest_version": "v1_0_0",
+  "locked_test_records": 0,
+  "detection": {
+    "train": 4994,
+    "val": 526
+  },
+  "segmentation": {
+    "train": 4994,
+    "val": 526
+  },
+  "classification_records": 5520,
+  "florence_records": 5520,
+  "outputs": {
+    "yolo_detection": "data\\v1\\training_inputs\\yolo_detection",
+    "yolo_segmentation": "data\\v1\\training_inputs\\yolo_segmentation",
+    "classification": "data\\v1\\training_inputs\\classification_manifest_v1_0_0.csv",
+    "florence": "data\\v1\\training_inputs\\florence_targets_v1_0_0.jsonl"
+  },
+  "sha256": {
+    "detection_manifest": "7eb1390bc941ed0326bbb69e8264480e855a6c78dc44781e1d64e128cc3ea3db",
+    "segmentation_manifest": "18b4d3fc665551fcd6f2b597de352a187035900684620bcc003f567f28244f14",
+    "classification_manifest": "5907eef010ff284b5e7bdf773d9fd5fa312e8b8aff696ed08bb326efffb94452",
+    "florence_manifest": "7e45b3ce5d26d62f9c439a487a6599b16c27029ea118577f9d17910d5bb88a16",
+    "classification_training_input": "5907eef010ff284b5e7bdf773d9fd5fa312e8b8aff696ed08bb326efffb94452",
+    "florence_training_input": "a815f9c40d289b7a805e8e407708439b553a31613e5e905aefa3a8bf0d5d6981"
+  }
+}
