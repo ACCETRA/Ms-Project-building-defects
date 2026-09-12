@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "sample_id": "dacl_0005",
+  "mapping_version": "BDI-TAX-001@0.1.0-beta",
+  "image": {
+    "uri": "data/feasibility_v0/images/dacl/dacl_0005.jpg",
+    "width": 1416,
+    "height": 945
+  },
+  "source_annotation": {
+    "uri": "data/feasibility_v0/annotations/dacl/dacl_0005.json",
+    "sha256": "9986c1334e8799e0f102f4be6945173f9b0df53244b17c5729f458abd44647bf"
+  },
+  "annotations": [
+    {
+      "annotation_id": "shape-4",
+      "native_label": "Rockpocket",
+      "canonical_label": "honeycombing_rock_pocket",
+      "mapping_strength": "strong",
+      "annotation_status": "positive",
+      "box_xywh": [
+        508.1633,
+        315.7434,
+        64.723,
+        27.1137
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            550.1458,
+            342.8571
+          ],
+          [
+            508.1633,
+            330.3207
+          ],
+          [
+            508.1633,
+            321.2828
+          ],
+          [
+            519.8251,
+            323.9067
+          ],
+          [
+            527.9883,
+            315.7434
+          ],
+          [
+            556.5598,
+            330.6122
+          ],
+          [
+            569.9708,
+            323.0321
+          ],
+          [
+            572.8863,
+            341.3994
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-6",
+      "native_label": "Spalling",
+      "canonical_label": "spalling",
+      "mapping_strength": "direct",
+      "annotation_status": "positive",
+      "box_xywh": [
+        920.9402,
+        239.7436,
+        83.3333,
+        46.5812
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            920.9402,
+            278.2051
+          ],
+          [
+            928.6325,
+            286.3248
+          ],
+          [
+            956.8376,
+            284.6154
+          ],
+          [
+            958.547,
+            279.9145
+          ],
+          [
+            951.7094,
+            275.2137
+          ],
+          [
+            973.9316,
+            265.3846
+          ],
+          [
+            983.3333,
+            270.5128
+          ],
+          [
+            1004.2735,
+            251.7094
+          ],
+          [
+            989.7436,
+            239.7436
+          ],
+          [
+            966.2393,
+            241.453
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-7",
+      "native_label": "Spalling",
+      "canonical_label": "spalling",
+      "mapping_strength": "direct",
+      "annotation_status": "positive",
+      "box_xywh": [
+        956.4103,
+        367.094,
+        81.6239,
+        47.0086
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            956.4103,
+            405.1282
+          ],
+          [
+            962.3932,
+            414.1026
+          ],
+          [
+            1006.4103,
+            408.547
+          ],
+          [
+            1023.9316,
+            397.0085
+          ],
+          [
+            1038.0342,
+            367.094
+          ],
+          [
+            1000.0,
+            367.9487
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-8",
+      "native_label": "Rust",
+      "canonical_label": "rust_staining",
+      "mapping_strength": "direct_visual",
+      "annotation_status": "positive",
+      "box_xywh": [
+        288.8889,
+        365.873,
+        40.4762,
+        23.8095
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            292.8571,
+            369.0476
+          ],
+          [
+            327.7778,
+            365.873
+          ],
+          [
+            329.3651,
+            379.3651
+          ],
+          [
+            288.8889,
+            389.6825
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    }
+  ],
+  "geometry_qc": {
+    "rejected_geometry_count": 0
+  }
+}

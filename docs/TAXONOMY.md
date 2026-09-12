@@ -53,6 +53,7 @@ Subtypes are optional attributes under `crack`; they are not independent mutuall
 | DACL10K `Efflorescence` | `efflorescence_leaching` | Direct | — |
 | DACL10K `Spalling` | `spalling` | Direct | — |
 | DACL10K `WConccor` | `unknown_review` | Do not map to rebar corrosion | Object/washout label, not the same concept |
+| DACL10K `Cavity`, `Hollowareas`, `Wetspot`, `Weathering` | `unknown_review` | Unknown | Preserve native geometry; exclude from positive training targets until reviewed |
 | CODEBRIM `crack` | `crack` | Direct at native annotation level | Box/image labels are not pixel masks |
 | CODEBRIM `spallation`/spalling equivalent | `spalling` | Review native XML spelling | Preserve original string |
 | CODEBRIM `exposed bars` equivalent | `exposed_rebar` | Review native XML spelling | Preserve original string |

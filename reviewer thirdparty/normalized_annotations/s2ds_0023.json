@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "sample_id": "s2ds_0023",
+  "mapping_version": "BDI-TAX-001@0.1.0-beta",
+  "image": {
+    "uri": "data/feasibility_v0/images/s2ds/s2ds_0023.png",
+    "width": 1024,
+    "height": 1024
+  },
+  "source_annotation": {
+    "uri": "data/feasibility_v0/annotations/s2ds/s2ds_0023.png",
+    "sha256": "788451cf8dde3ea2e3fc69c37403ac2ac8076fab0fca9c0bdec63e5074e6c4c3"
+  },
+  "annotations": [
+    {
+      "annotation_id": "color-255-0-0-255",
+      "native_label": "spalling",
+      "canonical_label": "spalling",
+      "mapping_strength": "direct",
+      "annotation_status": "positive",
+      "box_xywh": [
+        479.0,
+        324.0,
+        56.0,
+        85.0
+      ],
+      "box_provenance": "derived_from_mask",
+      "semantic_mask": {
+        "uri": "data/feasibility_v0/annotations/s2ds/s2ds_0023.png",
+        "rgba": [
+          255,
+          0,
+          0,
+          255
+        ],
+        "pixel_count": 3000
+      },
+      "segmentation_provenance": "native_semantic_mask"
+    },
+    {
+      "annotation_id": "color-255-255-0-255",
+      "native_label": "corrosion",
+      "canonical_label": "rust_staining",
+      "mapping_strength": "weak",
+      "annotation_status": "positive",
+      "box_xywh": [
+        507.0,
+        331.0,
+        18.0,
+        47.0
+      ],
+      "box_provenance": "derived_from_mask",
+      "semantic_mask": {
+        "uri": "data/feasibility_v0/annotations/s2ds/s2ds_0023.png",
+        "rgba": [
+          255,
+          255,
+          0,
+          255
+        ],
+        "pixel_count": 238
+      },
+      "segmentation_provenance": "native_semantic_mask"
+    }
+  ],
+  "geometry_qc": {
+    "rejected_geometry_count": 0
+  }
+}

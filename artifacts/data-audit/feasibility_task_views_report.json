@@ -4,7 +4,7 @@
   "mapping_version": "BDI-TAX-001@0.1.0-beta",
   "source_samples": 300,
   "normalized_samples": 300,
-  "target_annotations": 667,
+  "target_annotations": 812,
   "geometry_qc_passed": true,
   "rejected_malformed_geometries": 4,
   "task_view_counts": {

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "sample_id": "s2ds_0024",
+  "mapping_version": "BDI-TAX-001@0.1.0-beta",
+  "image": {
+    "uri": "data/feasibility_v0/images/s2ds/s2ds_0024.png",
+    "width": 1024,
+    "height": 1024
+  },
+  "source_annotation": {
+    "uri": "data/feasibility_v0/annotations/s2ds/s2ds_0024.png",
+    "sha256": "bee187bd0cc9ccfe899cb488a2ec0856c5eda012dcdfacfd36322d71de2ee80d"
+  },
+  "annotations": [
+    {
+      "annotation_id": "color-255-255-0-255",
+      "native_label": "corrosion",
+      "canonical_label": "rust_staining",
+      "mapping_strength": "weak",
+      "annotation_status": "positive",
+      "box_xywh": [
+        40.0,
+        477.0,
+        960.0,
+        100.0
+      ],
+      "box_provenance": "derived_from_mask",
+      "semantic_mask": {
+        "uri": "data/feasibility_v0/annotations/s2ds/s2ds_0024.png",
+        "rgba": [
+          255,
+          255,
+          0,
+          255
+        ],
+        "pixel_count": 3073
+      },
+      "segmentation_provenance": "native_semantic_mask"
+    }
+  ],
+  "geometry_qc": {
+    "rejected_geometry_count": 0
+  }
+}

@@ -32,11 +32,50 @@ class FlorencePipelineUnitTests(unittest.TestCase):
             )
         )
         self.assertEqual(report["normalized_samples"], 300)
-        self.assertEqual(report["target_annotations"], 667)
+        self.assertEqual(report["target_annotations"], 812)
         self.assertEqual(report["rejected_malformed_geometries"], 4)
         self.assertTrue(report["geometry_qc_passed"])
         self.assertFalse(report["policy"]["image_labels_promoted_to_boxes"])
         self.assertFalse(report["policy"]["boxes_promoted_to_masks"])
+
+    def test_unmapped_dacl_labels_are_preserved_as_unknown(self) -> None:
+        payload = json.loads(
+            (ROOT / "data" / "feasibility_v0" / "normalized" / "dacl_0001.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        unknown = [
+            annotation for annotation in payload["annotations"]
+            if annotation["canonical_label"] == "unknown_review"
+        ]
+        self.assertEqual(len(unknown), 9)
+        self.assertEqual(
+            {annotation["native_label"] for annotation in unknown},
+            {"Cavity", "Hollowareas", "Wetspot", "Weathering", "WConccor"},
+        )
+        self.assertTrue(all(annotation["annotation_status"] == "unknown" for annotation in unknown))
+
+    def test_dacl_unknown_source_labels_are_not_dropped(self) -> None:
+        expected = {"Cavity", "Hollowareas", "Wetspot", "Weathering", "WConccor"}
+        source_labels: set[str] = set()
+        normalized_labels: set[str] = set()
+        for path in (ROOT / "data" / "feasibility_v0" / "annotations" / "dacl").glob("*.json"):
+            source = json.loads(path.read_text(encoding="utf-8"))
+            normalized = json.loads(
+                (ROOT / "data" / "feasibility_v0" / "normalized" / path.name).read_text(
+                    encoding="utf-8"
+                )
+            )
+            source_labels.update(
+                shape["label"] for shape in source.get("shapes", []) if shape.get("label") in expected
+            )
+            normalized_labels.update(
+                annotation["native_label"]
+                for annotation in normalized.get("annotations", [])
+                if annotation.get("native_label") in expected
+            )
+        self.assertEqual(source_labels, expected)
+        self.assertEqual(normalized_labels, expected)
 
     def test_calibration_schema_and_example(self) -> None:
         schema = json.loads(

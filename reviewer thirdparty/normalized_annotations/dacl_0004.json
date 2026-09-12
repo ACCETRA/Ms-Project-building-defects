@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "sample_id": "dacl_0004",
+  "mapping_version": "BDI-TAX-001@0.1.0-beta",
+  "image": {
+    "uri": "data/feasibility_v0/images/dacl/dacl_0004.jpg",
+    "width": 1024,
+    "height": 685
+  },
+  "source_annotation": {
+    "uri": "data/feasibility_v0/annotations/dacl/dacl_0004.json",
+    "sha256": "f4b1568557723ac1819fe9759406dba1a2b39ebf9601e19a14a1849cb60e5be9"
+  },
+  "annotations": [
+    {
+      "annotation_id": "shape-1",
+      "native_label": "Spalling",
+      "canonical_label": "spalling",
+      "mapping_strength": "direct",
+      "annotation_status": "positive",
+      "box_xywh": [
+        152.1304,
+        0.0,
+        65.2174,
+        222.6957
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            176.0435,
+            222.6957
+          ],
+          [
+            152.1304,
+            190.087
+          ],
+          [
+            166.0,
+            0.0
+          ],
+          [
+            209.0,
+            0.0
+          ],
+          [
+            217.3478,
+            110.7391
+          ],
+          [
+            190.1739,
+            147.6957
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-2",
+      "native_label": "Rockpocket",
+      "canonical_label": "honeycombing_rock_pocket",
+      "mapping_strength": "strong",
+      "annotation_status": "positive",
+      "box_xywh": [
+        873.7184,
+        345.7282,
+        149.2816,
+        338.2718
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            1004.7864,
+            345.7282
+          ],
+          [
+            1022.2621,
+            414.6602
+          ],
+          [
+            1008.6699,
+            596.2136
+          ],
+          [
+            1023.0,
+            649.0
+          ],
+          [
+            1023.0,
+            684.0
+          ],
+          [
+            990.2233,
+            678.7379
+          ],
+          [
+            923.233,
+            657.3786
+          ],
+          [
+            873.7184,
+            601.068
+          ],
+          [
+            906.0,
+            506.0
+          ],
+          [
+            899.0,
+            438.0
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-3",
+      "native_label": "Crack",
+      "canonical_label": "crack",
+      "mapping_strength": "direct",
+      "annotation_status": "positive",
+      "box_xywh": [
+        832.0,
+        401.7341,
+        47.1908,
+        282.2659
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            849.711,
+            466.474
+          ],
+          [
+            864.1618,
+            456.6474
+          ],
+          [
+            869.3642,
+            401.7341
+          ],
+          [
+            877.4566,
+            404.0462
+          ],
+          [
+            879.1908,
+            447.3988
+          ],
+          [
+            869.3642,
+            466.474
+          ],
+          [
+            856.6474,
+            479.7688
+          ],
+          [
+            842.0,
+            684.0
+          ],
+          [
+            832.0,
+            684.0
+          ],
+          [
+            833.2857,
+            639.25
+          ],
+          [
+            839.5357,
+            592.8214
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    }
+  ],
+  "geometry_qc": {
+    "rejected_geometry_count": 0
+  }
+}

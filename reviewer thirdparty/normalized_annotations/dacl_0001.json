@@ -1,0 +1,1499 @@
+{
+  "schema_version": 1,
+  "sample_id": "dacl_0001",
+  "mapping_version": "BDI-TAX-001@0.1.0-beta",
+  "image": {
+    "uri": "data/feasibility_v0/images/dacl/dacl_0001.jpg",
+    "width": 1200,
+    "height": 900
+  },
+  "source_annotation": {
+    "uri": "data/feasibility_v0/annotations/dacl/dacl_0001.json",
+    "sha256": "39fc389e93a9fe4349477109d0fc5a92a73a915e0b23f822670d55d3523426cb"
+  },
+  "annotations": [
+    {
+      "annotation_id": "shape-0",
+      "native_label": "Hollowareas",
+      "canonical_label": "unknown_review",
+      "mapping_strength": "unknown",
+      "annotation_status": "unknown",
+      "box_xywh": [
+        384.0,
+        509.0,
+        147.0,
+        191.0
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            480.0,
+            512.0
+          ],
+          [
+            485.0,
+            513.0
+          ],
+          [
+            490.0,
+            516.0
+          ],
+          [
+            493.0,
+            521.0
+          ],
+          [
+            529.0,
+            596.0
+          ],
+          [
+            531.0,
+            602.0
+          ],
+          [
+            531.0,
+            606.0
+          ],
+          [
+            519.0,
+            670.0
+          ],
+          [
+            517.0,
+            675.0
+          ],
+          [
+            513.0,
+            679.0
+          ],
+          [
+            509.0,
+            682.0
+          ],
+          [
+            468.0,
+            699.0
+          ],
+          [
+            463.0,
+            700.0
+          ],
+          [
+            456.0,
+            699.0
+          ],
+          [
+            413.0,
+            683.0
+          ],
+          [
+            409.0,
+            680.0
+          ],
+          [
+            405.0,
+            676.0
+          ],
+          [
+            404.0,
+            673.0
+          ],
+          [
+            385.0,
+            612.0
+          ],
+          [
+            384.0,
+            606.0
+          ],
+          [
+            385.0,
+            602.0
+          ],
+          [
+            410.0,
+            520.0
+          ],
+          [
+            412.0,
+            515.0
+          ],
+          [
+            416.0,
+            512.0
+          ],
+          [
+            422.0,
+            509.0
+          ],
+          [
+            426.0,
+            509.0
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-1",
+      "native_label": "Hollowareas",
+      "canonical_label": "unknown_review",
+      "mapping_strength": "unknown",
+      "annotation_status": "unknown",
+      "box_xywh": [
+        641.0,
+        431.0,
+        227.0,
+        268.0
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            856.0,
+            432.0
+          ],
+          [
+            861.0,
+            434.0
+          ],
+          [
+            865.0,
+            439.0
+          ],
+          [
+            867.0,
+            444.0
+          ],
+          [
+            867.0,
+            447.0
+          ],
+          [
+            868.0,
+            633.0
+          ],
+          [
+            867.0,
+            638.0
+          ],
+          [
+            866.0,
+            641.0
+          ],
+          [
+            838.0,
+            688.0
+          ],
+          [
+            834.0,
+            692.0
+          ],
+          [
+            829.0,
+            695.0
+          ],
+          [
+            824.0,
+            696.0
+          ],
+          [
+            657.0,
+            699.0
+          ],
+          [
+            652.0,
+            698.0
+          ],
+          [
+            647.0,
+            695.0
+          ],
+          [
+            643.0,
+            691.0
+          ],
+          [
+            641.0,
+            686.0
+          ],
+          [
+            641.0,
+            682.0
+          ],
+          [
+            657.0,
+            460.0
+          ],
+          [
+            658.0,
+            454.0
+          ],
+          [
+            662.0,
+            450.0
+          ],
+          [
+            666.0,
+            447.0
+          ],
+          [
+            669.0,
+            446.0
+          ],
+          [
+            700.0,
+            438.0
+          ],
+          [
+            703.0,
+            437.0
+          ],
+          [
+            850.0,
+            431.0
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-2",
+      "native_label": "Weathering",
+      "canonical_label": "unknown_review",
+      "mapping_strength": "unknown",
+      "annotation_status": "unknown",
+      "box_xywh": [
+        0.0,
+        518.3246,
+        1199.0,
+        380.6754
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            638.0,
+            899.0
+          ],
+          [
+            0.0,
+            899.0
+          ],
+          [
+            0.0,
+            692.0
+          ],
+          [
+            565.3529,
+            669.7647
+          ],
+          [
+            682.7225,
+            632.4607
+          ],
+          [
+            769.1099,
+            638.7435
+          ],
+          [
+            763.8743,
+            572.2513
+          ],
+          [
+            829.3194,
+            526.7016
+          ],
+          [
+            871.7277,
+            518.3246
+          ],
+          [
+            975.9162,
+            607.8534
+          ],
+          [
+            1199.0,
+            620.0
+          ],
+          [
+            1199.0,
+            809.0
+          ],
+          [
+            1115.4231,
+            770.4615
+          ],
+          [
+            1092.3462,
+            782.9615
+          ],
+          [
+            1069.2692,
+            771.4231
+          ],
+          [
+            1056.7692,
+            746.4231
+          ],
+          [
+            871.1923,
+            689.6923
+          ],
+          [
+            782.6517,
+            761.427
+          ],
+          [
+            672.4118,
+            827.4118
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-3",
+      "native_label": "Spalling",
+      "canonical_label": "spalling",
+      "mapping_strength": "direct",
+      "annotation_status": "positive",
+      "box_xywh": [
+        431.0174,
+        517.1216,
+        32.5062,
+        27.6675
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            447.8908,
+            544.7891
+          ],
+          [
+            431.0174,
+            535.3598
+          ],
+          [
+            440.8189,
+            517.1216
+          ],
+          [
+            463.5236,
+            529.0323
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-4",
+      "native_label": "Spalling",
+      "canonical_label": "spalling",
+      "mapping_strength": "direct",
+      "annotation_status": "positive",
+      "box_xywh": [
+        648.1132,
+        485.5795,
+        24.3935,
+        24.6631
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            664.9596,
+            485.5795
+          ],
+          [
+            649.8652,
+            491.2399
+          ],
+          [
+            648.1132,
+            510.2426
+          ],
+          [
+            666.5768,
+            502.8302
+          ],
+          [
+            672.5067,
+            494.2049
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-5",
+      "native_label": "Spalling",
+      "canonical_label": "spalling",
+      "mapping_strength": "direct",
+      "annotation_status": "positive",
+      "box_xywh": [
+        118.9112,
+        573.3524,
+        32.3782,
+        45.5588
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            140.6877,
+            573.3524
+          ],
+          [
+            151.2894,
+            585.6734
+          ],
+          [
+            140.6877,
+            593.4097
+          ],
+          [
+            150.1433,
+            614.6132
+          ],
+          [
+            134.6705,
+            618.9112
+          ],
+          [
+            132.3782,
+            596.8481
+          ],
+          [
+            118.9112,
+            573.639
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-6",
+      "native_label": "Spalling",
+      "canonical_label": "spalling",
+      "mapping_strength": "direct",
+      "annotation_status": "positive",
+      "box_xywh": [
+        142.6934,
+        541.8338,
+        35.2436,
+        47.851
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            142.6934,
+            555.3009
+          ],
+          [
+            148.7106,
+            574.7851
+          ],
+          [
+            164.7564,
+            589.6848
+          ],
+          [
+            177.937,
+            580.2292
+          ],
+          [
+            177.0774,
+            558.1662
+          ],
+          [
+            157.5931,
+            541.8338
+          ],
+          [
+            144.1261,
+            543.8395
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-7",
+      "native_label": "Spalling",
+      "canonical_label": "spalling",
+      "mapping_strength": "direct",
+      "annotation_status": "positive",
+      "box_xywh": [
+        1018.5185,
+        142.963,
+        82.5926,
+        27.037
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            1018.5185,
+            159.2593
+          ],
+          [
+            1049.6296,
+            170.0
+          ],
+          [
+            1100.7407,
+            158.5185
+          ],
+          [
+            1101.1111,
+            146.6667
+          ],
+          [
+            1057.037,
+            142.963
+          ],
+          [
+            1032.2222,
+            145.1852
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-8",
+      "native_label": "Spalling",
+      "canonical_label": "spalling",
+      "mapping_strength": "direct",
+      "annotation_status": "positive",
+      "box_xywh": [
+        947.012,
+        296.8127,
+        131.4741,
+        116.7331
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            966.9323,
+            411.5538
+          ],
+          [
+            963.745,
+            369.3227
+          ],
+          [
+            975.6972,
+            343.8247
+          ],
+          [
+            1075.2988,
+            346.2151
+          ],
+          [
+            1078.4861,
+            340.239
+          ],
+          [
+            1068.9243,
+            323.506
+          ],
+          [
+            1049.004,
+            326.2948
+          ],
+          [
+            988.8446,
+            327.0916
+          ],
+          [
+            964.1434,
+            297.2112
+          ],
+          [
+            950.1992,
+            296.8127
+          ],
+          [
+            952.5896,
+            337.8486
+          ],
+          [
+            947.012,
+            353.3865
+          ],
+          [
+            947.8088,
+            369.7211
+          ],
+          [
+            953.3865,
+            382.0717
+          ],
+          [
+            955.3785,
+            413.5458
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-9",
+      "native_label": "Spalling",
+      "canonical_label": "spalling",
+      "mapping_strength": "direct",
+      "annotation_status": "positive",
+      "box_xywh": [
+        1101.1719,
+        308.9844,
+        97.6562,
+        30.8594
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            1101.1719,
+            339.4531
+          ],
+          [
+            1198.8281,
+            339.8438
+          ],
+          [
+            1198.8281,
+            326.1719
+          ],
+          [
+            1185.9375,
+            330.4688
+          ],
+          [
+            1166.7969,
+            326.1719
+          ],
+          [
+            1158.2031,
+            308.9844
+          ],
+          [
+            1137.1094,
+            312.1094
+          ],
+          [
+            1132.0312,
+            330.0781
+          ],
+          [
+            1101.9531,
+            330.8594
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-10",
+      "native_label": "Cavity",
+      "canonical_label": "unknown_review",
+      "mapping_strength": "unknown",
+      "annotation_status": "unknown",
+      "box_xywh": [
+        474.1758,
+        30.9524,
+        18.1319,
+        20.5128
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            486.6426,
+            31.4079
+          ],
+          [
+            479.1209,
+            30.9524
+          ],
+          [
+            474.1758,
+            41.5751
+          ],
+          [
+            482.967,
+            51.4652
+          ],
+          [
+            491.0256,
+            49.4505
+          ],
+          [
+            492.3077,
+            40.293
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-11",
+      "native_label": "Rust",
+      "canonical_label": "rust_staining",
+      "mapping_strength": "direct_visual",
+      "annotation_status": "positive",
+      "box_xywh": [
+        493.7269,
+        50.5535,
+        17.5277,
+        23.0627
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            504.059,
+            52.214
+          ],
+          [
+            500.5535,
+            59.5941
+          ],
+          [
+            510.5166,
+            62.5461
+          ],
+          [
+            511.2546,
+            71.2177
+          ],
+          [
+            502.583,
+            73.6162
+          ],
+          [
+            493.9114,
+            65.1292
+          ],
+          [
+            493.7269,
+            57.5646
+          ],
+          [
+            499.262,
+            50.5535
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-12",
+      "native_label": "WConccor",
+      "canonical_label": "unknown_review",
+      "mapping_strength": "unknown",
+      "annotation_status": "unknown",
+      "box_xywh": [
+        528.2288,
+        46.8635,
+        32.4723,
+        35.4243
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            542.6199,
+            82.2878
+          ],
+          [
+            544.6494,
+            76.7528
+          ],
+          [
+            541.1439,
+            71.4022
+          ],
+          [
+            548.524,
+            61.4391
+          ],
+          [
+            560.7011,
+            54.6125
+          ],
+          [
+            550.0,
+            46.8635
+          ],
+          [
+            541.5129,
+            46.8635
+          ],
+          [
+            528.2288,
+            70.8487
+          ],
+          [
+            531.5498,
+            73.6162
+          ],
+          [
+            532.2878,
+            80.8118
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-13",
+      "native_label": "Cavity",
+      "canonical_label": "unknown_review",
+      "mapping_strength": "unknown",
+      "annotation_status": "unknown",
+      "box_xywh": [
+        403.5948,
+        406.8182,
+        32.2007,
+        47.1591
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            403.5948,
+            415.5229
+          ],
+          [
+            416.1765,
+            426.9608
+          ],
+          [
+            406.8627,
+            439.2157
+          ],
+          [
+            410.7955,
+            453.9773
+          ],
+          [
+            435.7955,
+            439.7727
+          ],
+          [
+            435.2273,
+            410.2273
+          ],
+          [
+            408.5227,
+            406.8182
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-14",
+      "native_label": "Cavity",
+      "canonical_label": "unknown_review",
+      "mapping_strength": "unknown",
+      "annotation_status": "unknown",
+      "box_xywh": [
+        472.7273,
+        359.0909,
+        21.0227,
+        19.3182
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            472.7273,
+            364.7727
+          ],
+          [
+            480.1136,
+            378.4091
+          ],
+          [
+            493.75,
+            374.4318
+          ],
+          [
+            486.9318,
+            359.0909
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-15",
+      "native_label": "Crack",
+      "canonical_label": "crack",
+      "mapping_strength": "direct",
+      "annotation_status": "positive",
+      "box_xywh": [
+        948.7633,
+        1.0601,
+        31.8021,
+        275.9717
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            968.1979,
+            1.0601
+          ],
+          [
+            967.4912,
+            15.5477
+          ],
+          [
+            970.6714,
+            24.0283
+          ],
+          [
+            968.1979,
+            34.629
+          ],
+          [
+            963.9576,
+            45.583
+          ],
+          [
+            962.1908,
+            58.3039
+          ],
+          [
+            967.4912,
+            65.0177
+          ],
+          [
+            967.8445,
+            72.0848
+          ],
+          [
+            964.6643,
+            84.0989
+          ],
+          [
+            961.8375,
+            105.6537
+          ],
+          [
+            961.8375,
+            142.4028
+          ],
+          [
+            955.477,
+            161.4841
+          ],
+          [
+            955.477,
+            178.0919
+          ],
+          [
+            953.7102,
+            198.9399
+          ],
+          [
+            955.1237,
+            219.4346
+          ],
+          [
+            950.1767,
+            243.4629
+          ],
+          [
+            949.8233,
+            262.1908
+          ],
+          [
+            948.7633,
+            277.0318
+          ],
+          [
+            961.4841,
+            275.265
+          ],
+          [
+            963.2509,
+            224.735
+          ],
+          [
+            965.0177,
+            200.3534
+          ],
+          [
+            966.7845,
+            177.0318
+          ],
+          [
+            964.6643,
+            156.1837
+          ],
+          [
+            968.9046,
+            149.47
+          ],
+          [
+            969.9647,
+            119.0813
+          ],
+          [
+            972.7915,
+            83.7456
+          ],
+          [
+            975.9717,
+            72.0848
+          ],
+          [
+            975.9717,
+            61.4841
+          ],
+          [
+            972.4382,
+            55.8304
+          ],
+          [
+            974.5583,
+            44.1696
+          ],
+          [
+            977.0318,
+            33.2155
+          ],
+          [
+            978.4452,
+            19.4346
+          ],
+          [
+            978.0919,
+            8.1272
+          ],
+          [
+            980.5654,
+            1.0601
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-16",
+      "native_label": "Spalling",
+      "canonical_label": "spalling",
+      "mapping_strength": "direct",
+      "annotation_status": "positive",
+      "box_xywh": [
+        2.2917,
+        53.4167,
+        256.25,
+        32.2916
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            2.2917,
+            75.2917
+          ],
+          [
+            118.9583,
+            85.7083
+          ],
+          [
+            157.9922,
+            82.9457
+          ],
+          [
+            258.5417,
+            83.625
+          ],
+          [
+            255.4167,
+            65.9167
+          ],
+          [
+            121.0417,
+            60.7083
+          ],
+          [
+            80.4167,
+            62.7917
+          ],
+          [
+            5.4167,
+            53.4167
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-17",
+      "native_label": "Wetspot",
+      "canonical_label": "unknown_review",
+      "mapping_strength": "unknown",
+      "annotation_status": "unknown",
+      "box_xywh": [
+        61.6667,
+        408.625,
+        171.875,
+        86.4583
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            65.8333,
+            469.0417
+          ],
+          [
+            98.125,
+            453.4167
+          ],
+          [
+            182.5,
+            424.25
+          ],
+          [
+            229.375,
+            408.625
+          ],
+          [
+            233.5417,
+            450.2917
+          ],
+          [
+            224.1667,
+            485.7083
+          ],
+          [
+            156.4583,
+            485.7083
+          ],
+          [
+            122.0833,
+            495.0833
+          ],
+          [
+            61.6667,
+            485.7083
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-18",
+      "native_label": "Wetspot",
+      "canonical_label": "unknown_review",
+      "mapping_strength": "unknown",
+      "annotation_status": "unknown",
+      "box_xywh": [
+        869.931,
+        619.0,
+        329.069,
+        187.0
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            869.931,
+            682.7586
+          ],
+          [
+            921.6552,
+            693.1034
+          ],
+          [
+            1022.5172,
+            734.4828
+          ],
+          [
+            1076.8276,
+            746.5517
+          ],
+          [
+            1073.3793,
+            770.6897
+          ],
+          [
+            1102.6897,
+            780.1724
+          ],
+          [
+            1115.6207,
+            758.6207
+          ],
+          [
+            1199.0,
+            806.0
+          ],
+          [
+            1199.0,
+            619.0
+          ],
+          [
+            1137.1724,
+            643.9655
+          ],
+          [
+            1058.7241,
+            647.4138
+          ],
+          [
+            985.4483,
+            631.8966
+          ],
+          [
+            967.3448,
+            652.5862
+          ],
+          [
+            947.5172,
+            634.4828
+          ],
+          [
+            911.3103,
+            661.2069
+          ],
+          [
+            869.931,
+            668.1034
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-19",
+      "native_label": "Rockpocket",
+      "canonical_label": "honeycombing_rock_pocket",
+      "mapping_strength": "strong",
+      "annotation_status": "positive",
+      "box_xywh": [
+        190.5455,
+        182.7273,
+        17.2727,
+        22.7272
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            201.4545,
+            182.7273
+          ],
+          [
+            207.8182,
+            201.8182
+          ],
+          [
+            190.5455,
+            205.4545
+          ],
+          [
+            190.5455,
+            190.0
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-20",
+      "native_label": "Spalling",
+      "canonical_label": "spalling",
+      "mapping_strength": "direct",
+      "annotation_status": "positive",
+      "box_xywh": [
+        2.322,
+        641.6107,
+        278.8136,
+        78.7283
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            242.953,
+            641.6107
+          ],
+          [
+            281.1356,
+            657.6271
+          ],
+          [
+            258.2542,
+            683.8983
+          ],
+          [
+            257.7181,
+            695.9732
+          ],
+          [
+            2.322,
+            720.339
+          ],
+          [
+            2.322,
+            691.5254
+          ],
+          [
+            229.4407,
+            679.661
+          ],
+          [
+            231.9831,
+            650.8475
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-21",
+      "native_label": "Spalling",
+      "canonical_label": "spalling",
+      "mapping_strength": "direct",
+      "annotation_status": "positive",
+      "box_xywh": [
+        500.5208,
+        648.4375,
+        55.2084,
+        39.0625
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            504.1667,
+            650.5208
+          ],
+          [
+            548.9583,
+            648.4375
+          ],
+          [
+            555.7292,
+            667.1875
+          ],
+          [
+            547.9167,
+            674.4792
+          ],
+          [
+            520.3125,
+            675.0
+          ],
+          [
+            516.6667,
+            687.5
+          ],
+          [
+            500.5208,
+            683.3333
+          ],
+          [
+            504.6875,
+            671.875
+          ],
+          [
+            501.5625,
+            662.5
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-22",
+      "native_label": "Spalling",
+      "canonical_label": "spalling",
+      "mapping_strength": "direct",
+      "annotation_status": "positive",
+      "box_xywh": [
+        444.2708,
+        605.7292,
+        17.1875,
+        13.0208
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            461.4583,
+            605.7292
+          ],
+          [
+            458.8542,
+            618.75
+          ],
+          [
+            444.2708,
+            615.625
+          ],
+          [
+            453.125,
+            606.25
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    },
+    {
+      "annotation_id": "shape-23",
+      "native_label": "Spalling",
+      "canonical_label": "spalling",
+      "mapping_strength": "direct",
+      "annotation_status": "positive",
+      "box_xywh": [
+        442.7083,
+        623.9583,
+        16.1459,
+        15.1042
+      ],
+      "box_provenance": "derived_from_mask",
+      "polygons_xy": [
+        [
+          [
+            446.875,
+            623.9583
+          ],
+          [
+            457.8125,
+            627.0833
+          ],
+          [
+            458.8542,
+            635.4167
+          ],
+          [
+            446.875,
+            639.0625
+          ],
+          [
+            442.7083,
+            634.375
+          ]
+        ]
+      ],
+      "segmentation_provenance": "native_polygon"
+    }
+  ],
+  "geometry_qc": {
+    "rejected_geometry_count": 0
+  }
+}

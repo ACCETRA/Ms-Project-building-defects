@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "sample_id": "s2ds_0008",
+  "mapping_version": "BDI-TAX-001@0.1.0-beta",
+  "image": {
+    "uri": "data/feasibility_v0/images/s2ds/s2ds_0008.png",
+    "width": 1024,
+    "height": 1024
+  },
+  "source_annotation": {
+    "uri": "data/feasibility_v0/annotations/s2ds/s2ds_0008.png",
+    "sha256": "93da3c9fd8ae35af2188d3073513c4dfb992fdc0f6bd97e9b9b90dea14f381c9"
+  },
+  "annotations": [
+    {
+      "annotation_id": "color-255-255-0-255",
+      "native_label": "corrosion",
+      "canonical_label": "rust_staining",
+      "mapping_strength": "weak",
+      "annotation_status": "positive",
+      "box_xywh": [
+        204.0,
+        367.0,
+        140.0,
+        392.0
+      ],
+      "box_provenance": "derived_from_mask",
+      "semantic_mask": {
+        "uri": "data/feasibility_v0/annotations/s2ds/s2ds_0008.png",
+        "rgba": [
+          255,
+          255,
+          0,
+          255
+        ],
+        "pixel_count": 19717
+      },
+      "segmentation_provenance": "native_semantic_mask"
+    },
+    {
+      "annotation_id": "color-0-255-255-255",
+      "native_label": "efflorescence",
+      "canonical_label": "efflorescence_leaching",
+      "mapping_strength": "direct",
+      "annotation_status": "positive",
+      "box_xywh": [
+        338.0,
+        50.0,
+        686.0,
+        784.0
+      ],
+      "box_provenance": "derived_from_mask",
+      "semantic_mask": {
+        "uri": "data/feasibility_v0/annotations/s2ds/s2ds_0008.png",
+        "rgba": [
+          0,
+          255,
+          255,
+          255
+        ],
+        "pixel_count": 302415
+      },
+      "segmentation_provenance": "native_semantic_mask"
+    }
+  ],
+  "geometry_qc": {
+    "rejected_geometry_count": 0
+  }
+}
