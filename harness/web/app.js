@@ -7,6 +7,7 @@ const input = document.querySelector('#image-input');
 const dropzone = document.querySelector('#dropzone');
 const projectForm = document.querySelector('#project-form');
 const routeInput = document.querySelector('#route-input');
+const summaryEl = document.querySelector('#summary');
 
 const labels = ['crack', 'spalling', 'honeycombing_rock_pocket', 'exposed_rebar', 'rust_staining', 'efflorescence_leaching', 'no_visible_target_defect', 'unknown_review'];
 const readable = value => value.replaceAll('_', ' ');
@@ -15,7 +16,20 @@ async function loadState() {
   const response = await fetch('/api/state');
   const state = await response.json();
   statusEl.textContent = state.status === 'ready' ? 'Harness ready' : state.status;
+  renderSummary(state);
   render(state.findings || []);
+}
+
+function renderSummary(state) {
+  const findings = state.findings || [];
+  const reviewed = findings.filter(finding => finding.review.state !== 'unreviewed').length;
+  const routes = [...new Set(findings.flatMap(finding => finding.prediction.pipeline_route))];
+  summaryEl.innerHTML = [
+    ['Findings', findings.length],
+    ['Reviewed', `${reviewed}/${findings.length}`],
+    ['Routes', routes.length || '—'],
+    ['Inspection', state.project?.inspection_id || 'local']
+  ].map(([label, value]) => `<div class="summary-item"><span>${label}</span><strong>${value}</strong></div>`).join('');
 }
 
 function render(findings) {
@@ -33,7 +47,7 @@ function findingCard(finding) {
   const options = labels.map(label => `<option value="${label}" ${review.reviewer_label === label ? 'selected' : ''}>${readable(label)}</option>`).join('');
   return `<article class="finding">
     <img class="preview" src="/api/findings/${finding.finding_id}/image" alt="Uploaded inspection image">
-    <div class="finding-head"><div><h3>${readable(review.reviewer_label || prediction.defect_family)}</h3><p class="meta">${finding.image.source_image_id}<br>Box ${geometry} px${mask}</p></div><span class="confidence">${Math.round(prediction.confidence * 100)}%</span></div>
+    <div class="finding-head"><div><span class="route-tag">${readable(prediction.pipeline_route.at(-1))}</span><h3>${readable(review.reviewer_label || prediction.defect_family)}</h3><p class="meta">${finding.image.source_image_id}<br>Box ${geometry} px${mask}</p></div><span class="confidence">${Math.round(prediction.confidence * 100)}%</span></div>
     <div class="review-panel"><span class="review-state">${readable(review.state)}</span>
       <div class="review-controls"><button class="button" data-review="approve" data-id="${finding.finding_id}">Approve</button><button class="button" data-review="reject" data-id="${finding.finding_id}">Reject</button></div>
       <form class="review-form" data-relabel data-id="${finding.finding_id}"><select name="label" aria-label="Relabel finding">${options}</select><input name="notes" type="text" placeholder="Review note" aria-label="Review note"><button class="button" type="submit">Relabel</button></form>

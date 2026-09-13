@@ -141,6 +141,9 @@ def main() -> None:
     parser.add_argument("--epochs", type=int, default=1)
     parser.add_argument("--batch-size", type=int, default=1)
     parser.add_argument("--learning-rate", type=float, default=1e-5)
+    parser.add_argument("--dtype", choices=("float16", "float32"), default="float16")
+    parser.add_argument("--peft", action="store_true", help="Apply optional LoRA adapters to the mask decoder.")
+    parser.add_argument("--lora-rank", type=int, default=4)
     parser.add_argument("--val-fraction", type=float, default=0.2)
     parser.add_argument("--seed", type=int, default=20260911)
     parser.add_argument("--max-train-pairs", type=int)
@@ -161,13 +164,31 @@ def main() -> None:
         raise RuntimeError("CUDA is required for SAM decoder training; use --inspect-only on CPU")
     device = torch.device("cuda")
     processor = Sam2Processor.from_pretrained(args.checkpoint.resolve(), local_files_only=True)
-    model = Sam2Model.from_pretrained(args.checkpoint.resolve(), local_files_only=True, dtype=torch.float16, low_cpu_mem_usage=True).to(device)
+    dtype = torch.float32 if args.dtype == "float32" else torch.float16
+    model = Sam2Model.from_pretrained(args.checkpoint.resolve(), local_files_only=True, dtype=dtype, low_cpu_mem_usage=True).to(device)
     for parameter in model.parameters():
         parameter.requires_grad = False
     trainable = []
     for parameter in model.mask_decoder.parameters():
         parameter.requires_grad = True
         trainable.append(parameter)
+    if args.peft:
+        try:
+            from peft import LoraConfig, TaskType, get_peft_model
+        except ImportError as exc:
+            raise RuntimeError("--peft requires the optional 'peft' package in the project environment") from exc
+        model.mask_decoder = get_peft_model(
+            model.mask_decoder,
+            LoraConfig(
+                r=args.lora_rank,
+                lora_alpha=args.lora_rank * 2,
+                lora_dropout=0.05,
+                bias="none",
+                task_type=TaskType.FEATURE_EXTRACTION,
+                target_modules=["q_proj", "k_proj", "v_proj", "o_proj"],
+            ),
+        )
+        trainable = [parameter for parameter in model.mask_decoder.parameters() if parameter.requires_grad]
     optimizer = torch.optim.AdamW(trainable, lr=args.learning_rate)
     # The checkpoint decoder is FP16 on this path; GradScaler cannot unscale
     # FP16 leaf gradients. Larger-GPU runs should use an FP32/PEFT variant.

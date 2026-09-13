@@ -13,6 +13,7 @@ The repository now includes `scripts/train_sam_decoder.py` for decoder-only SAM 
 - Loss: binary cross-entropy plus soft Dice loss.
 - Metrics: validation loss, BCE, Dice, and IoU.
 - Checkpoint: `sam_decoder_last.pt` containing model state, trainable-module declaration, history, and seed.
+- Modes: `--dtype float32` for stable full decoder training on a larger GPU, or optional `--peft` LoRA adapters when the `peft` package is installed.
 - Pair index: `pair_manifest.json`.
 
 This trains the decoder to improve mask quality for the supplied box prompts. It does not train SAM to detect classes; YOLO or another detector still supplies the class and box.
@@ -35,9 +36,24 @@ Use a larger NVIDIA GPU with enough VRAM for the image encoder forward pass and 
 .\.venv\Scripts\python.exe scripts\train_sam_decoder.py `
   --epochs 5 `
   --batch-size 1 `
+  --dtype float32 `
   --learning-rate 1e-5 `
   --output-dir runs/sam/decoder_v1
 ```
+
+Optional LoRA/PEFT mode:
+
+```powershell
+\.\.venv\Scripts\python.exe scripts\train_sam_decoder.py `
+  --epochs 5 `
+  --batch-size 1 `
+  --dtype float16 `
+  --peft `
+  --lora-rank 4 `
+  --output-dir runs/sam/decoder_v1_lora
+```
+
+Install `peft` only in the project `.venv` before using `--peft`; the base adapter does not require it.
 
 For an initial controlled run:
 
@@ -51,7 +67,7 @@ For an initial controlled run:
 
 ## Current workstation boundary
 
-The Quadro T2000 has 4 GB VRAM. The decoder-only FP16 optimizer update became non-finite even on a one-pair smoke update, so this machine must not be used to claim a trained SAM decoder. The adapter aborts before writing a corrupted checkpoint. Run the actual training on a larger supported GPU or add a tested FP32/PEFT implementation.
+The Quadro T2000 has 4 GB VRAM. The decoder-only FP16 optimizer update became non-finite even on a one-pair smoke update, so this machine must not be used to claim a trained SAM decoder. The adapter aborts before writing a corrupted checkpoint. Run the actual training in FP32 or PEFT mode on a larger supported GPU.
 
 ## Validation rules
 

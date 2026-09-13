@@ -15,6 +15,7 @@ This workspace is being prepared as a master's FYP prototype for visible-conditi
 - [`docs/FIRST_WEEK_PLAN.md`](docs/FIRST_WEEK_PLAN.md): first execution gate for the three-person team.
 - [`docs/COMPLETION_PLAN.md`](docs/COMPLETION_PLAN.md): authoritative full-dataset completion plan, ownership, file locations, verification gates, and six-hour feasibility boundary.
 - [`docs/CONTRIBUTOR_GPU_SETUP.md`](docs/CONTRIBUTOR_GPU_SETUP.md): AMD/NVIDIA/CPU contributor setup, harness startup, and GPU work boundaries.
+- [`docs/SAM_DECODER_TRAINING.md`](docs/SAM_DECODER_TRAINING.md): frozen-decoder SAM training design and larger-GPU run instructions.
 - [`PROJECT_READINESS.md`](PROJECT_READINESS.md): detailed correction and readiness analysis of the supplied roadmap.
 
 The original user-supplied roadmap is preserved unchanged at [`source/The RoadMap.md`](source/The%20RoadMap.md).
