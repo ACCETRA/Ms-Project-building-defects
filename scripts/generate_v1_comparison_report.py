@@ -189,7 +189,7 @@ Source licenses recorded in the v1 manifest:
 |---|---|
 | CUBIT-InSeg | Locked YOLO detection and segmentation evaluation completed on 701 archived test images |
 | CODEBRIM | ResNet official test evaluation completed on 632 crops |
-| CiF tiled | Adapter verified on 100-record smoke subset; full 2,500-record run remains a long-run job |
+| CiF tiled | Full 2,500-record test evaluation completed |
 | S2DS | 93-image binary foreground proxy; class identity is unavailable in supplied test masks |
 | UAV75 | 15-image crack-mask evaluation completed |
 | DACL10K | 975-image validation evaluation completed with six documented mappings |
