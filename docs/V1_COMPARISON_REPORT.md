@@ -578,6 +578,12 @@ Machine-readable source adapter results:
 }
 ```
 
+## Remaining review gates
+
+- S2DS class identity status is recorded in `data/manifests/s2ds_test_class_index_status.csv`. All 93 test records are explicitly marked `class_identity_available=false`; no six-class score is claimed.
+- Target-site evaluation is blocked until approved images and ground truth are populated in `data/manifests/target_site_evaluation_template.csv`.
+- Cross-domain error review is prioritized in `runs/evaluation/error_review_queue.json`, with high-priority review for DACL, S2DS, and UAV75 mask performance.
+
 ## Limitations
 
 This report is a training-readiness and validation summary. It is not a deployment accuracy claim. Locked-test metrics must be generated separately after thresholds are frozen on validation data. Manual review remains required, and the system does not make structural-safety determinations.
