@@ -560,17 +560,17 @@ Machine-readable source adapter results:
   "cif": {
     "source": "cif",
     "task": "segment",
-    "samples": 100,
+    "samples": 2500,
     "metrics": {
-      "metrics/precision(B)": 0.46353140432454126,
-      "metrics/recall(B)": 0.09350036310820624,
-      "metrics/mAP50(B)": 0.0841296169789436,
-      "metrics/mAP50-95(B)": 0.03664770034159003,
-      "metrics/precision(M)": 0.44474565663735505,
-      "metrics/recall(M)": 0.07855989123790512,
-      "metrics/mAP50(M)": 0.06406558799522967,
-      "metrics/mAP50-95(M)": 0.019950568927762747,
-      "fitness": 0.05659826926935278
+      "metrics/precision(B)": 0.4212057116855649,
+      "metrics/recall(B)": 0.09437061042808546,
+      "metrics/mAP50(B)": 0.03896536830243031,
+      "metrics/mAP50-95(B)": 0.016028309883703344,
+      "metrics/precision(M)": 0.4083954468003203,
+      "metrics/recall(M)": 0.07174230533307195,
+      "metrics/mAP50(M)": 0.02461904764633879,
+      "metrics/mAP50-95(M)": 0.00578705600695191,
+      "fitness": 0.021815365890655254
     },
     "test_archive_untouched": true,
     "s2ds_semantics": null
