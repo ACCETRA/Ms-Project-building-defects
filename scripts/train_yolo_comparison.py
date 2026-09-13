@@ -192,10 +192,20 @@ def main() -> None:
         # when reloading best.pt for final_eval. Training and checkpoint saving
         # are already complete at this point. Verify the weights are present at
         # the real path and exit cleanly.
-        weights_dir = run_dir / "weights"
-        best = weights_dir / "best.pt"
-        last = weights_dir / "last.pt"
-        if best.exists() and last.exists():
+        weight_dirs = [run_dir / "weights"]
+        if not args.project.is_absolute():
+            run_kind = "segment" if args.task == "segment" else "detect"
+            weight_dirs.append(ROOT / "runs" / run_kind / args.project / args.name / "weights")
+        existing = next(
+            (
+                (directory / "best.pt", directory / "last.pt")
+                for directory in weight_dirs
+                if (directory / "best.pt").exists() and (directory / "last.pt").exists()
+            ),
+            None,
+        )
+        if existing is not None:
+            best, last = existing
             print(
                 f"\nWARNING: Ultralytics final_eval raised FileNotFoundError due to the "
                 f"Windows path-sanitizer stripping apostrophes from the project path.\n"

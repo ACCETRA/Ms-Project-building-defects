@@ -5,6 +5,8 @@ const processingEl = document.querySelector('#processing');
 const form = document.querySelector('#upload-form');
 const input = document.querySelector('#image-input');
 const dropzone = document.querySelector('#dropzone');
+const projectForm = document.querySelector('#project-form');
+const routeInput = document.querySelector('#route-input');
 
 const labels = ['crack', 'spalling', 'honeycombing_rock_pocket', 'exposed_rebar', 'rust_staining', 'efflorescence_leaching', 'no_visible_target_defect', 'unknown_review'];
 const readable = value => value.replaceAll('_', ' ');
@@ -27,10 +29,11 @@ function findingCard(finding) {
   const prediction = finding.prediction;
   const review = finding.review;
   const geometry = prediction.geometry.box_xywh.map(value => Number(value).toFixed(1)).join(' × ');
+  const mask = prediction.geometry.mask ? '<br>Mask: polygon available' : '';
   const options = labels.map(label => `<option value="${label}" ${review.reviewer_label === label ? 'selected' : ''}>${readable(label)}</option>`).join('');
   return `<article class="finding">
     <img class="preview" src="/api/findings/${finding.finding_id}/image" alt="Uploaded inspection image">
-    <div class="finding-head"><div><h3>${readable(review.reviewer_label || prediction.defect_family)}</h3><p class="meta">${finding.image.source_image_id}<br>Box ${geometry} px</p></div><span class="confidence">${Math.round(prediction.confidence * 100)}% proxy</span></div>
+    <div class="finding-head"><div><h3>${readable(review.reviewer_label || prediction.defect_family)}</h3><p class="meta">${finding.image.source_image_id}<br>Box ${geometry} px${mask}</p></div><span class="confidence">${Math.round(prediction.confidence * 100)}%</span></div>
     <div class="review-panel"><span class="review-state">${readable(review.state)}</span>
       <div class="review-controls"><button class="button" data-review="approve" data-id="${finding.finding_id}">Approve</button><button class="button" data-review="reject" data-id="${finding.finding_id}">Reject</button></div>
       <form class="review-form" data-relabel data-id="${finding.finding_id}"><select name="label" aria-label="Relabel finding">${options}</select><input name="notes" type="text" placeholder="Review note" aria-label="Review note"><button class="button" type="submit">Relabel</button></form>
@@ -52,11 +55,19 @@ async function relabelFinding(event) {
   await loadState();
 }
 
+projectForm.addEventListener('submit', async event => {
+  event.preventDefault();
+  const payload = Object.fromEntries(new FormData(projectForm));
+  await fetch('/api/project', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload)});
+  await loadState();
+});
+
 form.addEventListener('submit', async event => {
   event.preventDefault();
-  if (!input.files[0]) return;
+  if (!input.files.length) return;
   processingEl.classList.remove('hidden');
   const data = new FormData(form);
+  data.append('route', routeInput.value);
   const response = await fetch('/api/upload', {method:'POST', body:data});
   processingEl.classList.add('hidden');
   if (!response.ok) return alert((await response.json()).error || 'Upload failed');

@@ -18,9 +18,24 @@
     </header>
 
     <section class="intake band">
+      <div class="section-title"><span class="step">00</span><div><h2>Inspection setup</h2><p>Save the project and location context with every finding.</p></div></div>
+      <form id="project-form" class="project-form">
+        <input name="project_id" placeholder="Project ID" aria-label="Project ID" value="harness-local">
+        <input name="inspection_id" placeholder="Inspection ID" aria-label="Inspection ID" value="inspection-local">
+        <input name="site_id" placeholder="Site" aria-label="Site">
+        <input name="building_id" placeholder="Building" aria-label="Building">
+        <input name="facade" placeholder="Facade" aria-label="Facade">
+        <input name="floor" placeholder="Floor" aria-label="Floor">
+        <input name="zone" placeholder="Zone" aria-label="Zone">
+        <button class="button" type="submit">Save context</button>
+      </form>
+    </section>
+
+    <section class="intake band">
       <div class="section-title"><span class="step">01</span><div><h2>Image intake</h2><p>Upload an RGB image to create a review candidate.</p></div></div>
       <form id="upload-form" class="upload-form">
-        <label class="dropzone" id="dropzone"><input id="image-input" name="image" type="file" accept="image/*" required><strong>Drop an image here</strong><span>or choose a file from this device</span></label>
+        <label class="dropzone" id="dropzone"><input id="image-input" name="image" type="file" accept="image/*" multiple required><strong>Drop images here</strong><span>or choose one or more files from this device</span></label>
+        <select id="route-input" name="route" aria-label="Inference route"><option value="detect">YOLO detection</option><option value="segment">YOLO segmentation</option><option value="resnet">ResNet classification route</option><option value="florence">Florence review route</option></select>
         <button class="button button-primary" type="submit">Start processing <span>→</span></button>
       </form>
       <div id="processing" class="processing hidden"><span class="spinner"></span><span>Reading image and preparing candidate finding...</span></div>
@@ -34,7 +49,7 @@
 
     <section class="exports band">
       <div class="section-title"><span class="step">03</span><div><h2>Export</h2><p>Download the current review state in the format you need.</p></div></div>
-      <div class="export-actions"><a class="button" href="/api/export/json" download>JSON record <span>↓</span></a><a class="button" href="/api/export/csv" download>CSV register <span>↓</span></a><a class="button" href="/api/export/image" download>Annotated image <span>↓</span></a></div>
+      <div class="export-actions"><a class="button" href="/api/export/json" download>JSON record <span>↓</span></a><a class="button" href="/api/export/csv" download>CSV register <span>↓</span></a><a class="button" href="/api/export/image" download>Annotated image <span>↓</span></a><a class="button" href="/api/export/report" target="_blank">Inspection report <span>↗</span></a></div>
     </section>
 
     <footer><span>LOCAL HARNESS · NO MODEL EXECUTION</span><span>Review required · Not a structural safety determination</span></footer>
