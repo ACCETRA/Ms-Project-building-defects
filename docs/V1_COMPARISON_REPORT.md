@@ -356,6 +356,52 @@ The evaluator read the immutable test archives through a temporary extraction an
 
 This is a frozen-v1 training-image route smoke sample, not an accuracy evaluation. Full source-specific SAM scoring requires source-specific test evaluators and ground-truth adapters.
 
+## Florence structured inference
+
+```json
+{
+  "schema_version": 1,
+  "run_id": "florence-v1-validation-sample-10",
+  "generated_at_utc": "2026-09-13T06:40:34.413385Z",
+  "scope": "training_only_feasibility_not_accuracy_evaluation",
+  "status": "completed",
+  "samples_processed": 10,
+  "findings_emitted": 11,
+  "images_escalated": 0,
+  "images_with_candidates": 10,
+  "images_without_candidates": 0,
+  "schema_valid_findings": 11,
+  "rejected_generated_geometries": 0,
+  "physical_findings": 0,
+  "escalation_policy": "none",
+  "uncertain_below_sequence_proxy": 0.35,
+  "manifest": "data/manifests/v1_florence_product_manifest.csv",
+  "checkpoint_sha256": {
+    "florence-2-base-ft": "1b2c35db0e11e5e48d0de7ede6e969e5a05066520872cfa79939f7efe18b3d79",
+    "florence-2-large-ft": "d8609f64629a49b28afb8feda4cea22da05247437e1b09e295d8f39d7d7d8dc0"
+  },
+  "environment": {
+    "python": "3.11.9",
+    "torch": "2.6.0+cu124",
+    "gpu": "Quadro T2000",
+    "cuda": "12.4"
+  },
+  "elapsed_seconds": 31.343,
+  "outputs": {
+    "findings": "findings.jsonl",
+    "image_results": "image_results.jsonl"
+  },
+  "limitations": [
+    "All source samples are training-only; this run cannot establish accuracy.",
+    "Florence sequence likelihood is not a calibrated per-box confidence.",
+    "Physical dimensions are absent unless calibration is explicitly valid.",
+    "Candidate visible conditions require manual review and are not structural-safety determinations."
+  ]
+}
+```
+
+This is a bounded training-only validation sample. It verifies structured parsing, schema validation, throughput, and checkpoint provenance; it is not an accuracy score.
+
 ```json
 {
   "detect": {

@@ -88,8 +88,9 @@ def load_samples(path: Path, sample_ids: list[str], limit: int | None) -> list[d
     }
     if not rows or not required.issubset(rows[0]):
         raise ValueError(f"Manifest is empty or missing required fields: {path}")
-    if any(row["split"] != "train" for row in rows):
-        raise ValueError("Feasibility inference is restricted to training records")
+    rows = [row for row in rows if row["split"] == "train"]
+    if not rows:
+        raise ValueError("Inference manifest contains no training records")
     requested = set(sample_ids)
     if requested:
         rows = [row for row in rows if row["sample_id"] in requested]

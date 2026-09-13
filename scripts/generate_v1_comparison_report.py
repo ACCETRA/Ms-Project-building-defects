@@ -55,6 +55,8 @@ def main() -> None:
     }
     sam_summary_path = ROOT / "runs/comparison/yolo_sam/v1-sample-10/summary.json"
     sam_summary = read_json(sam_summary_path) if sam_summary_path.exists() else None
+    florence_summary_path = ROOT / "runs/florence/v1-validation-sample-10/summary.json"
+    florence_summary = read_json(florence_summary_path) if florence_summary_path.exists() else None
     checkpoints = {
         "yolo_detection": sha256(ROOT / "runs/detect/runs/comparison/yolo/yolo11n_detect_v1_queue/weights/best.pt"),
         "yolo_segmentation": sha256(ROOT / "runs/segment/runs/comparison/yolo/yolo11n_seg_v1_queue/weights/best.pt"),
@@ -132,6 +134,14 @@ The evaluator read the immutable test archives through a temporary extraction an
 ```
 
 This is a frozen-v1 training-image route smoke sample, not an accuracy evaluation. Full source-specific SAM scoring requires source-specific test evaluators and ground-truth adapters.
+
+## Florence structured inference
+
+```json
+{json.dumps(florence_summary, indent=2)}
+```
+
+This is a bounded training-only validation sample. It verifies structured parsing, schema validation, throughput, and checkpoint provenance; it is not an accuracy score.
 
 ```json
 {json.dumps(locked_results, indent=2)}
