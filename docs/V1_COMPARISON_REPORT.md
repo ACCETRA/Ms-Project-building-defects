@@ -493,11 +493,90 @@ Source licenses recorded in the v1 manifest:
 |---|---|
 | CUBIT-InSeg | Locked YOLO detection and segmentation evaluation completed on 701 archived test images |
 | CODEBRIM | ResNet official test evaluation completed on 632 crops |
-| CiF tiled | Test Parquet assets available; shared YOLO ground-truth adapter not yet implemented |
-| S2DS | Source directory/test adapter not present in this workspace |
-| UAV75 | Test images and labels available; shared evaluator not yet implemented |
-| DACL10K | Archive available; source-specific extraction/evaluator not yet implemented |
+| CiF tiled | Adapter verified on 100-record smoke subset; full 2,500-record run remains a long-run job |
+| S2DS | 93-image binary foreground proxy; class identity is unavailable in supplied test masks |
+| UAV75 | 15-image crack-mask evaluation completed |
+| DACL10K | 975-image validation evaluation completed with six documented mappings |
 | Target-site buildings | No approved target-site test manifest present |
+
+Machine-readable source adapter results:
+
+```json
+{
+  "uav75": {
+    "source": "uav75",
+    "task": "segment",
+    "samples": 15,
+    "metrics": {
+      "metrics/precision(B)": 0.5505146135834218,
+      "metrics/recall(B)": 0.038461538461538464,
+      "metrics/mAP50(B)": 0.052907564505609,
+      "metrics/mAP50-95(B)": 0.032540072619089006,
+      "metrics/precision(M)": 0.0012515644555694619,
+      "metrics/recall(M)": 0.038461538461538464,
+      "metrics/mAP50(M)": 4.72972972972973e-05,
+      "metrics/mAP50-95(M)": 2.8378378378378378e-05,
+      "fitness": 0.032568450997467385
+    },
+    "test_archive_untouched": true,
+    "s2ds_semantics": null
+  },
+  "s2ds": {
+    "source": "s2ds",
+    "task": "segment",
+    "samples": 93,
+    "metrics": {
+      "metrics/precision(B)": 0.13463264305676614,
+      "metrics/recall(B)": 0.0549738219895288,
+      "metrics/mAP50(B)": 0.026248217806763587,
+      "metrics/mAP50-95(B)": 0.010256257740476253,
+      "metrics/precision(M)": 0.047152218377986596,
+      "metrics/recall(M)": 0.020942408376963352,
+      "metrics/mAP50(M)": 0.0069813553509788994,
+      "metrics/mAP50-95(M)": 0.00143851414606396,
+      "fitness": 0.011694771886540212
+    },
+    "test_archive_untouched": true,
+    "s2ds_semantics": "binary_foreground_proxy; class identity is unavailable"
+  },
+  "dacl": {
+    "source": "dacl",
+    "task": "segment",
+    "samples": 975,
+    "metrics": {
+      "metrics/precision(B)": 0.5773821176022792,
+      "metrics/recall(B)": 0.024474855999019565,
+      "metrics/mAP50(B)": 0.007766376325350777,
+      "metrics/mAP50-95(B)": 0.0030004449606881893,
+      "metrics/precision(M)": 0.5605095120160996,
+      "metrics/recall(M)": 0.012487574383485162,
+      "metrics/mAP50(M)": 0.003391086082279811,
+      "metrics/mAP50-95(M)": 0.0007641298294322618,
+      "fitness": 0.003764574790120451
+    },
+    "test_archive_untouched": true,
+    "s2ds_semantics": null
+  },
+  "cif": {
+    "source": "cif",
+    "task": "segment",
+    "samples": 100,
+    "metrics": {
+      "metrics/precision(B)": 0.46353140432454126,
+      "metrics/recall(B)": 0.09350036310820624,
+      "metrics/mAP50(B)": 0.0841296169789436,
+      "metrics/mAP50-95(B)": 0.03664770034159003,
+      "metrics/precision(M)": 0.44474565663735505,
+      "metrics/recall(M)": 0.07855989123790512,
+      "metrics/mAP50(M)": 0.06406558799522967,
+      "metrics/mAP50-95(M)": 0.019950568927762747,
+      "fitness": 0.05659826926935278
+    },
+    "test_archive_untouched": true,
+    "s2ds_semantics": null
+  }
+}
+```
 
 ## Limitations
 

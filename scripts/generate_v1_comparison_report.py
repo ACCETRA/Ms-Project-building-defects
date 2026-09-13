@@ -57,6 +57,11 @@ def main() -> None:
     sam_summary = read_json(sam_summary_path) if sam_summary_path.exists() else None
     florence_summary_path = ROOT / "runs/florence/v1-validation-sample-10/summary.json"
     florence_summary = read_json(florence_summary_path) if florence_summary_path.exists() else None
+    source_results = {}
+    for source in ("uav75", "s2ds", "dacl", "cif"):
+        path = ROOT / f"runs/evaluation/source_specific/{source}_segment.json"
+        if path.exists():
+            source_results[source] = read_json(path)
     checkpoints = {
         "yolo_detection": sha256(ROOT / "runs/detect/runs/comparison/yolo/yolo11n_detect_v1_queue/weights/best.pt"),
         "yolo_segmentation": sha256(ROOT / "runs/segment/runs/comparison/yolo/yolo11n_seg_v1_queue/weights/best.pt"),
@@ -184,11 +189,17 @@ Source licenses recorded in the v1 manifest:
 |---|---|
 | CUBIT-InSeg | Locked YOLO detection and segmentation evaluation completed on 701 archived test images |
 | CODEBRIM | ResNet official test evaluation completed on 632 crops |
-| CiF tiled | Test Parquet assets available; shared YOLO ground-truth adapter not yet implemented |
-| S2DS | Source directory/test adapter not present in this workspace |
-| UAV75 | Test images and labels available; shared evaluator not yet implemented |
-| DACL10K | Archive available; source-specific extraction/evaluator not yet implemented |
+| CiF tiled | Adapter verified on 100-record smoke subset; full 2,500-record run remains a long-run job |
+| S2DS | 93-image binary foreground proxy; class identity is unavailable in supplied test masks |
+| UAV75 | 15-image crack-mask evaluation completed |
+| DACL10K | 975-image validation evaluation completed with six documented mappings |
 | Target-site buildings | No approved target-site test manifest present |
+
+Machine-readable source adapter results:
+
+```json
+{json.dumps(source_results, indent=2)}
+```
 
 ## Limitations
 
