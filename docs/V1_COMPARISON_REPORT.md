@@ -584,6 +584,74 @@ Machine-readable source adapter results:
 - Target-site evaluation is blocked until approved images and ground truth are populated in `data/manifests/target_site_evaluation_template.csv`.
 - Cross-domain error review is prioritized in `runs/evaluation/error_review_queue.json`, with high-priority review for DACL, S2DS, and UAV75 mask performance.
 
+## Automated cross-domain analysis
+
+```json
+{
+  "status": "automated_cross_domain_analysis",
+  "results": {
+    "cif": {
+      "samples": 2500,
+      "box_map50": 0.03896536830243031,
+      "mask_map50": 0.02461904764633879,
+      "mask_map50_95": 0.00578705600695191,
+      "mask_recall": 0.07174230533307195,
+      "semantics": null
+    },
+    "dacl": {
+      "samples": 975,
+      "box_map50": 0.007766376325350777,
+      "mask_map50": 0.003391086082279811,
+      "mask_map50_95": 0.0007641298294322618,
+      "mask_recall": 0.012487574383485162,
+      "semantics": null
+    },
+    "s2ds": {
+      "samples": 93,
+      "box_map50": 0.026248217806763587,
+      "mask_map50": 0.0069813553509788994,
+      "mask_map50_95": 0.00143851414606396,
+      "mask_recall": 0.020942408376963352,
+      "semantics": "binary_foreground_proxy; class identity is unavailable"
+    },
+    "uav75": {
+      "samples": 15,
+      "box_map50": 0.052907564505609,
+      "mask_map50": 4.72972972972973e-05,
+      "mask_map50_95": 2.8378378378378378e-05,
+      "mask_recall": 0.038461538461538464,
+      "semantics": null
+    }
+  },
+  "ranking_by_mask_map50": [
+    "cif",
+    "s2ds",
+    "dacl",
+    "uav75"
+  ],
+  "findings": [
+    "CUBIT is the primary in-domain locked benchmark; cross-domain scores must not be combined into one accuracy number.",
+    "Low recall and mask AP across external sources indicate domain shift, label/task mismatch, resolution/thin-defect sensitivity, or threshold mismatch.",
+    "S2DS is binary foreground only because class identity is unavailable; it is not a six-class comparison.",
+    "Image-level false-positive and false-negative causes require human overlay review and cannot be inferred from aggregate metrics alone."
+  ],
+  "required_next_checks": [
+    "Review per-image overlays and empty predictions.",
+    "Compare source image resolution and annotation geometry.",
+    "Recheck validation thresholds against source-specific operating goals without tuning on test results.",
+    "Consider source-balanced adaptation only after error review."
+  ]
+}
+```
+
+Aggregate metrics identify the weakness pattern but cannot replace image-level human overlay review.
+
+## Unfinished model-training work
+
+- Florence full v1 fine-tuning remains pending a larger supported GPU; the current repository contains smoke fine-tuning and bounded structured inference only.
+- SAM decoder training is implemented in `scripts/train_sam_decoder.py`, but the Quadro T2000 produced non-finite FP16 decoder parameters even on a one-pair update. No trained SAM decoder checkpoint is claimed.
+- The comparison report therefore treats Florence and SAM as pipeline/feasibility evidence, not final accuracy benchmarks.
+
 ## Limitations
 
 ## Acceptance decision

@@ -62,6 +62,8 @@ def main() -> None:
         path = ROOT / f"runs/evaluation/source_specific/{source}_segment.json"
         if path.exists():
             source_results[source] = read_json(path)
+    cross_domain_path = ROOT / "runs/evaluation/cross_domain_analysis.json"
+    cross_domain = read_json(cross_domain_path) if cross_domain_path.exists() else None
     checkpoints = {
         "yolo_detection": sha256(ROOT / "runs/detect/runs/comparison/yolo/yolo11n_detect_v1_queue/weights/best.pt"),
         "yolo_segmentation": sha256(ROOT / "runs/segment/runs/comparison/yolo/yolo11n_seg_v1_queue/weights/best.pt"),
@@ -206,6 +208,20 @@ Machine-readable source adapter results:
 - S2DS class identity status is recorded in `data/manifests/s2ds_test_class_index_status.csv`. All 93 test records are explicitly marked `class_identity_available=false`; no six-class score is claimed.
 - Target-site evaluation is blocked until approved images and ground truth are populated in `data/manifests/target_site_evaluation_template.csv`.
 - Cross-domain error review is prioritized in `runs/evaluation/error_review_queue.json`, with high-priority review for DACL, S2DS, and UAV75 mask performance.
+
+## Automated cross-domain analysis
+
+```json
+{json.dumps(cross_domain, indent=2)}
+```
+
+Aggregate metrics identify the weakness pattern but cannot replace image-level human overlay review.
+
+## Unfinished model-training work
+
+- Florence full v1 fine-tuning remains pending a larger supported GPU; the current repository contains smoke fine-tuning and bounded structured inference only.
+- SAM decoder training is implemented in `scripts/train_sam_decoder.py`, but the Quadro T2000 produced non-finite FP16 decoder parameters even on a one-pair update. No trained SAM decoder checkpoint is claimed.
+- The comparison report therefore treats Florence and SAM as pipeline/feasibility evidence, not final accuracy benchmarks.
 
 ## Limitations
 
