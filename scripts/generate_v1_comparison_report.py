@@ -57,6 +57,9 @@ def main() -> None:
     sam_summary = read_json(sam_summary_path) if sam_summary_path.exists() else None
     florence_summary_path = ROOT / "runs/florence/v1-validation-sample-10/summary.json"
     florence_summary = read_json(florence_summary_path) if florence_summary_path.exists() else None
+    sam_fp32_path = ROOT / "runs/sam/decoder_v1_fp32_smoke/history.json"
+    sam_fp32_history = read_json(sam_fp32_path) if sam_fp32_path.exists() else None
+    sam_fp32_checkpoint = ROOT / "runs/sam/decoder_v1_fp32_smoke/sam_decoder_last.pt"
     source_results = {}
     for source in ("uav75", "s2ds", "dacl", "cif"):
         path = ROOT / f"runs/evaluation/source_specific/{source}_segment.json"
@@ -69,6 +72,8 @@ def main() -> None:
         "yolo_segmentation": sha256(ROOT / "runs/segment/runs/comparison/yolo/yolo11n_seg_v1_queue/weights/best.pt"),
         "resnet": sha256(ROOT / "runs/comparison/resnet50_v1_queue/resnet50_comparison.pt"),
     }
+    if sam_fp32_checkpoint.exists():
+        checkpoints["sam_decoder_fp32_smoke"] = sha256(sam_fp32_checkpoint)
     manifests = {name: sha256(ROOT / "data/manifests" / name) for name in ("v1_master_manifest.csv", "v1_detection_manifest.csv", "v1_segmentation_manifest.csv", "v1_classification_manifest.csv")}
     source_licenses = {}
     with (ROOT / "data/manifests/v1_master_manifest.csv").open(encoding="utf-8", newline="") as stream:
@@ -220,8 +225,14 @@ Aggregate metrics identify the weakness pattern but cannot replace image-level h
 ## Unfinished model-training work
 
 - Florence full v1 fine-tuning remains pending a larger supported GPU; the current repository contains smoke fine-tuning and bounded structured inference only.
-- SAM decoder training is implemented in `scripts/train_sam_decoder.py`, but the Quadro T2000 produced non-finite FP16 decoder parameters even on a one-pair update. No trained SAM decoder checkpoint is claimed.
-- The comparison report therefore treats Florence and SAM as pipeline/feasibility evidence, not final accuracy benchmarks.
+- SAM decoder training is implemented in `scripts/train_sam_decoder.py`. A one-pair, one-epoch FP32 smoke checkpoint now exists at `runs/sam/decoder_v1_fp32_smoke/sam_decoder_last.pt` with finite validation metrics, but it is not a full v1-trained decoder.
+- The comparison report therefore treats the SAM checkpoint as a valid training smoke artifact, not a final accuracy benchmark.
+
+### FP32 SAM decoder smoke result
+
+```json
+{json.dumps({'checkpoint': str(sam_fp32_checkpoint), 'history': sam_fp32_history}, indent=2)}
+```
 
 ## Limitations
 

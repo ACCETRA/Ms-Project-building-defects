@@ -460,7 +460,8 @@ Checkpoint SHA-256:
 {
   "yolo_detection": "916beaebf3b1e1a101ebf4eee054abc391ffc64612125697f05dc2d5ef68211f",
   "yolo_segmentation": "e160b40f3071bc53ebed59507311656377859cb493aa9925b5400841995bd507",
-  "resnet": "92b34d3b45ecc646904bb73f9992f656e554f5f834c625be30e062bfa7a900b8"
+  "resnet": "92b34d3b45ecc646904bb73f9992f656e554f5f834c625be30e062bfa7a900b8",
+  "sam_decoder_fp32_smoke": "3c19ae831a29808ad2c03c1aad202cf5a8aef5e21dc18bbf0c6632afad351f8f"
 }
 ```
 
@@ -649,8 +650,28 @@ Aggregate metrics identify the weakness pattern but cannot replace image-level h
 ## Unfinished model-training work
 
 - Florence full v1 fine-tuning remains pending a larger supported GPU; the current repository contains smoke fine-tuning and bounded structured inference only.
-- SAM decoder training is implemented in `scripts/train_sam_decoder.py`, but the Quadro T2000 produced non-finite FP16 decoder parameters even on a one-pair update. No trained SAM decoder checkpoint is claimed.
-- The comparison report therefore treats Florence and SAM as pipeline/feasibility evidence, not final accuracy benchmarks.
+- SAM decoder training is implemented in `scripts/train_sam_decoder.py`. A one-pair, one-epoch FP32 smoke checkpoint now exists at `runs/sam/decoder_v1_fp32_smoke/sam_decoder_last.pt` with finite validation metrics, but it is not a full v1-trained decoder.
+- The comparison report therefore treats the SAM checkpoint as a valid training smoke artifact, not a final accuracy benchmark.
+
+### FP32 SAM decoder smoke result
+
+```json
+{
+  "checkpoint": "D:\\ALI's Project\\runs\\sam\\decoder_v1_fp32_smoke\\sam_decoder_last.pt",
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.46111875772476196,
+      "validation": {
+        "loss": 0.5792883038520813,
+        "bce": 0.013234092853963375,
+        "dice": 0.43394574522972107,
+        "iou": 0.2823529541492462
+      }
+    }
+  ]
+}
+```
 
 ## Limitations
 
