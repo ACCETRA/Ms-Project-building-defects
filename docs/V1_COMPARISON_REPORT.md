@@ -586,4 +586,10 @@ Machine-readable source adapter results:
 
 ## Limitations
 
+## Acceptance decision
+
+**Status: `demo_only`**
+
+The current evidence supports an academic demonstration prototype. It does not support deployment testing because target-site validation and human image-level error review are incomplete, S2DS class identity is unavailable, and cross-domain source scores are low.
+
 This report is a training-readiness and validation summary. It is not a deployment accuracy claim. Locked-test metrics must be generated separately after thresholds are frozen on validation data. Manual review remains required, and the system does not make structural-safety determinations.

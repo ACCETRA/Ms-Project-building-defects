@@ -38,3 +38,9 @@
 
 - Target-building/site access and image-use permission; still required for target-domain validation, even when royalty-free images are used.
 - Selection and field validation of the physical scale method; the requirement for physical measurements is approved, but the method must be supplied per image.
+
+## 2026-09-13
+
+| ID | Decision | Status | Consequence |
+|---|---|---|---|
+| D-030 | Accept the current system as a demo-only academic FYP prototype, not a deployment-ready inspection system | Recorded | The browser harness, trained v1 checkpoints, source evaluations, review/export workflow, and documented limitations are sufficient for demonstration. Target-site validation, human error review, and S2DS six-class labeling remain required before any deployment-testing claim. |

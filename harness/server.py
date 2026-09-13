@@ -7,6 +7,7 @@ import json
 import mimetypes
 import re
 import shutil
+import sys
 import tempfile
 from datetime import datetime, timezone
 from http import HTTPStatus
@@ -17,6 +18,8 @@ from urllib.parse import parse_qs, urlparse
 from PIL import Image, ImageDraw
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 WEB_ROOT = ROOT / "harness" / "web"
 RUNTIME_ROOT = ROOT / "runs" / "harness"
 UPLOAD_ROOT = RUNTIME_ROOT / "uploads"
@@ -352,14 +355,19 @@ class HarnessHandler(BaseHTTPRequestHandler):
             safe_name = f"{file_hash[:16]}-{Path(filename).name}"
             destination = UPLOAD_ROOT / safe_name
             destination.write_bytes(data)
-            if route in {"detect", "segment"}:
-                findings = detector_findings(filename, destination.relative_to(ROOT).as_posix(), file_hash, data, size, route)
-            elif route == "resnet":
-                findings = classification_findings(filename, destination.relative_to(ROOT).as_posix(), file_hash, data, size)
-            elif route == "florence":
-                findings = florence_findings(filename, destination.relative_to(ROOT).as_posix(), file_hash, data, size)
-            else:
-                findings = [no_finding(filename, destination.relative_to(ROOT).as_posix(), file_hash, size, route)]
+            try:
+                if route in {"detect", "segment"}:
+                    findings = detector_findings(filename, destination.relative_to(ROOT).as_posix(), file_hash, data, size, route)
+                elif route == "resnet":
+                    findings = classification_findings(filename, destination.relative_to(ROOT).as_posix(), file_hash, data, size)
+                elif route == "florence":
+                    findings = florence_findings(filename, destination.relative_to(ROOT).as_posix(), file_hash, data, size)
+                else:
+                    findings = [no_finding(filename, destination.relative_to(ROOT).as_posix(), file_hash, size, route)]
+            except Exception as exc:
+                results.append({"filename": filename, "status": "failed", "route": route, "error": str(exc)})
+                self.server.processing[file_hash] = {"image_hash": file_hash, "filename": filename, "status": "failed", "route": route, "error": str(exc)}
+                continue
             for finding in findings:
                 self.server.findings[finding["finding_id"]] = finding
                 self.persist(finding)
