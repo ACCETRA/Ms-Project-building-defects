@@ -407,6 +407,28 @@ The project can be called complete as an **academic FYP prototype** when:
 
 This completion gate does not mean the model is production-ready or structurally safe. Deployment testing requires additional target-domain evidence, professional review, and resolution of the documented cross-domain failures.
 
+## Tasks that cannot be completed without the handoff
+
+Do not claim these tasks are complete from the repository alone:
+
+| Task | Required external evidence | Valid completion claim |
+|---|---|---|
+| S2DS six-class manifest | Authoritative per-image class evidence | Six-class S2DS scoring is complete only after every test image has a reviewed class row |
+| Target-site evaluation | Approved images, labels, metadata, permission, and hashes | Target-site evaluation is complete only for the supplied approved buildings/sessions |
+| Reproduced training | The contributor's own environment, required data, checkpoints, logs, and hardware record | Say `training reproduced on contributor machine` only after the run and verification logs exist |
+| Re-run source metrics | Raw source annotations and matching source archives | Report only the sources actually rerun, with source version and hash |
+| Independent dataset/license verification | Supplied archives, license/readme files, and hash records | Mark each source `verified`, `missing`, or `not independently verified` |
+
+The following are not acceptable substitutes:
+
+- assigning S2DS classes from binary mask colors;
+- using public images as target-site data without approval;
+- claiming a contributor reproduced training because a checkpoint was downloaded;
+- claiming source metrics were rerun from summary JSON files alone;
+- claiming license or hash verification without the supplied archive and license files.
+
+If any required evidence is missing, record the status as `blocked_pending_data` and continue with documentation, harness review, and other non-blocked work.
+
 ## Recommended order after receiving data
 
 1. Copy the supplied public datasets to the expected paths and run the non-destructive checks.
