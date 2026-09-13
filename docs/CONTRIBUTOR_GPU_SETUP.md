@@ -243,23 +243,23 @@ A successful ROCm check does not prove that this repository is ported. The scrip
 - NVIDIA contributors: YOLO, ResNet, Florence, SAM training/inference, throughput, VRAM, and source-specific model evaluations.
 - Any contributor: report review, licenses, taxonomy decisions, qualitative error labels, and acceptance documentation.
 
-## Can an AMD contributor finish the remaining work?
+## Can an AMD contributor support the follow-on work?
 
-Yes. All five remaining acceptance tasks are CPU/data/review tasks. They do not require ROCm, CUDA, model training, or an NVIDIA GPU:
+Yes. The FYP demo acceptance tasks are complete. The following completed or follow-on data/review tasks do not require ROCm, CUDA, model training, or an NVIDIA GPU:
 
 | Task | AMD/CPU capable? | What is required |
 |---|---|---|
 | S2DS class-index manifest | Yes | Human/source documentation identifying the class for each test mask |
 | Target-site evaluation data | Yes | Approved images, labels, metadata, and permission |
-| Human error review | Yes | Browser or image viewer, source outputs, and reviewer decisions |
-| Demo-versus-deployment decision | Yes | Team/advisor review of metrics, errors, and limitations |
-| Final limitations/model decision | Yes | Update `docs/DECISION_LOG.md` and the acceptance report |
+| Human error review | Completed | Completion recorded in `docs/HUMAN_ERROR_REVIEW.md`; future per-image ledgers can be added without GPU work |
+| Demo-versus-deployment decision | Completed | `demo_only` recorded in `docs/DECISION_LOG.md` |
+| Final limitations/model decision | Completed for demo | Keep the decision log and acceptance report synchronized after future changes |
 
 AMD contributors must not rerun CUDA-only model metrics and present CPU or DirectML output as equivalent. They can complete the acceptance package using the already-generated checkpoints and evaluation artifacts.
 
-## Remaining acceptance work
+## Acceptance record and follow-on work
 
-These are project inputs, not GPU setup problems:
+The FYP demo is accepted. The S2DS and target-site sections describe follow-on inputs; the human-review section records the completed demo gate and the preferred format for future review evidence.
 
 ### 1. S2DS class-index manifest
 
@@ -321,6 +321,8 @@ No target-site score may be generated while the template is empty or approval is
 
 ### 3. Human image-level error review
 
+**Status:** Complete for FYP demo acceptance by project-owner confirmation. See `docs/HUMAN_ERROR_REVIEW.md`. The instructions below are retained as the preferred structure for any future or more detailed per-image review ledger.
+
 Start from:
 
 ```text
@@ -359,7 +361,7 @@ further_deployment_testing
 blocked_pending_data
 ```
 
-For this current result set, do not choose `further_deployment_testing` without addressing the very low cross-domain segmentation results and completing human error review.
+Human error review is complete for demo acceptance and recorded in `docs/HUMAN_ERROR_REVIEW.md`. Do not choose `further_deployment_testing` without addressing the very low cross-domain segmentation results and completing approved target-site validation.
 
 Record the decision in `docs/DECISION_LOG.md` with:
 
@@ -378,7 +380,7 @@ Update `docs/V1_COMPARISON_REPORT.md` with:
 - per-source metrics and sample counts;
 - S2DS binary-only limitation unless the class-index manifest is supplied;
 - target-site status;
-- human error-review totals and representative failures;
+- the human error-review completion record and any available representative observations, without inventing totals;
 - manual-review requirement;
 - pixel-only measurement limitation unless calibration is valid;
 - explicit statement that the system is not a structural-safety determination;
@@ -395,7 +397,7 @@ git diff --check
 
 ## Completion gate
 
-The project can be called complete as an **academic FYP prototype** when:
+The project satisfies this completion gate as a **demo-only academic FYP prototype**. The accepted gate is:
 
 - the S2DS limitation is either accepted in writing or the class-index manifest is supplied;
 - target-site evaluation is either completed with permission and labels or explicitly marked out of scope;
@@ -434,8 +436,8 @@ If any required evidence is missing, record the status as `blocked_pending_data`
 1. Copy the supplied public datasets to the expected paths and run the non-destructive checks.
 2. Confirm the S2DS class-index evidence status.
 3. Confirm target-site permission and keep private data outside Git.
-4. Review `runs/evaluation/error_review_queue.json` using the existing evaluation outputs.
-5. Record the review decisions and acceptance status.
+4. Retain `runs/evaluation/error_review_queue.json` and `docs/HUMAN_ERROR_REVIEW.md`; add a per-image ledger if future review details are available.
+5. Keep the recorded `demo_only` acceptance status unless new evidence supports a formally documented change.
 6. Regenerate `docs/V1_COMPARISON_REPORT.md`.
 7. Run tests and markdown-link checks.
 8. Commit only manifests, review decisions, documentation, and code. Never commit the dataset or private target images.

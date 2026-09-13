@@ -1,6 +1,6 @@
 # V1 Comparison Report
 
-Generated from the completed v1 queue artifacts. This report uses train/validation outputs only; no locked test result is included here.
+Generated from the completed v1 queue, locked-test, source-evaluation, and review artifacts. Training and validation data were used for model and threshold selection; locked tests were evaluated separately.
 
 ## Run status
 
@@ -579,11 +579,11 @@ Machine-readable source adapter results:
 }
 ```
 
-## Remaining review gates
+## Review and deployment gates
 
 - S2DS class identity status is recorded in `data/manifests/s2ds_test_class_index_status.csv`. All 93 test records are explicitly marked `class_identity_available=false`; no six-class score is claimed.
 - Target-site evaluation is blocked until approved images and ground truth are populated in `data/manifests/target_site_evaluation_template.csv`.
-- Cross-domain error review is prioritized in `runs/evaluation/error_review_queue.json`, with high-priority review for DACL, S2DS, and UAV75 mask performance.
+- Human image-level error review is complete by project-owner confirmation. Its outcome and documentation boundary are recorded in `docs/HUMAN_ERROR_REVIEW.md`; no unsupported per-image totals are claimed.
 
 ## Automated cross-domain analysis
 
@@ -634,10 +634,10 @@ Machine-readable source adapter results:
     "CUBIT is the primary in-domain locked benchmark; cross-domain scores must not be combined into one accuracy number.",
     "Low recall and mask AP across external sources indicate domain shift, label/task mismatch, resolution/thin-defect sensitivity, or threshold mismatch.",
     "S2DS is binary foreground only because class identity is unavailable; it is not a six-class comparison.",
-    "Image-level false-positive and false-negative causes require human overlay review and cannot be inferred from aggregate metrics alone."
+    "Image-level false-positive and false-negative causes cannot be inferred from aggregate metrics alone; the completed human review is documented separately in docs/HUMAN_ERROR_REVIEW.md."
   ],
   "required_next_checks": [
-    "Review per-image overlays and empty predictions.",
+    "Retain the human-review completion record and any future per-image review ledgers with the evaluation evidence.",
     "Compare source image resolution and annotation geometry.",
     "Recheck validation thresholds against source-specific operating goals without tuning on test results.",
     "Consider source-balanced adaptation only after error review."
@@ -645,7 +645,7 @@ Machine-readable source adapter results:
 }
 ```
 
-Aggregate metrics identify the weakness pattern but cannot replace image-level human overlay review.
+Aggregate metrics identify the weakness pattern. The separate human review has been completed and recorded, while the machine-readable analysis remains useful for future deployment-readiness work.
 
 ## Unfinished model-training work
 
@@ -675,10 +675,16 @@ Aggregate metrics identify the weakness pattern but cannot replace image-level h
 
 ## Limitations
 
+- The accepted scope is an academic demonstration, not deployment testing or a structural-safety system.
+- Target-site validation is unavailable.
+- S2DS supports binary foreground evaluation only because authoritative six-class identities are unavailable.
+- Cross-domain segmentation scores are low and require further adaptation before deployment testing.
+- Florence full v1 fine-tuning and a fully trained SAM decoder remain extended-model work.
+
 ## Acceptance decision
 
 **Status: `demo_only`**
 
-The current evidence supports an academic demonstration prototype. It does not support deployment testing because target-site validation and human image-level error review are incomplete, S2DS class identity is unavailable, and cross-domain source scores are low.
+The current evidence supports a completed academic demonstration prototype. Human image-level error review is complete and recorded in `docs/HUMAN_ERROR_REVIEW.md`. The evidence does not support deployment testing because target-site validation is unavailable, S2DS class identity is unavailable, and cross-domain source scores are low.
 
-This report is a training-readiness and validation summary. It is not a deployment accuracy claim. Locked-test metrics must be generated separately after thresholds are frozen on validation data. Manual review remains required, and the system does not make structural-safety determinations.
+This report is a training and validation summary. It is not a deployment accuracy claim. Locked-test metrics were generated separately after thresholds were frozen on validation data. Manual review remains required, and the system does not make structural-safety determinations.

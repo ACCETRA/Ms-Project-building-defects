@@ -32,6 +32,7 @@ vendor/
 references/papers/
 references/toolkits/
 artifacts/data-audit/codebrim-recovery-samples/
+artifacts/Project-Alpha-FYP-offline.zip
 .cache/
 
 # Local secrets and machine overrides

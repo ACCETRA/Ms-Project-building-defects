@@ -1,12 +1,12 @@
 # Functional Beta Specification
 
 **Specification ID:** BDI-BETA-001  
-**Status:** FYP prototype scope; feasibility tier complete; acceptance gates remain
+**Status:** Complete demo-only FYP prototype
 **Date:** 2026-09-07
 
 ## 1. Product outcome
 
-The repository is not yet at this definition of done. Current feasibility outputs are real, but full-data training, locked evaluation, YOLO-to-SAM integration, target-site validation, and the complete review/export workflow remain. See [`COMPLETION_PLAN.md`](COMPLETION_PLAN.md).
+The repository meets this definition of done for a demo-only academic FYP prototype. Real inference, trained v1 baselines, locked and source-specific evaluation, manual review, exports, failure reporting, and the acceptance package are implemented. Human error review completion is recorded in [`HUMAN_ERROR_REVIEW.md`](HUMAN_ERROR_REVIEW.md).
 
 Deliver a functional master's FYP prototype that accepts RGB still images, finds visible surface-condition candidates, supports manual review, and produces a traceable demonstration package. It must operate end to end with real inference rather than hard-coded demonstration results.
 
@@ -90,7 +90,7 @@ Every model result must be convertible to a structured record containing:
 - immutable model decision plus separate reviewer decision;
 - model, checkpoint, pipeline, taxonomy, and dataset-manifest versions.
 
-This record is the future integration boundary for 3D, thermal, GPR, and historical evidence.
+This record is the stable output boundary used by the completed workflow.
 
 ## 8. Measurement rule
 
@@ -109,4 +109,3 @@ The default beta reports pixel geometry. Millimetres or centimetres may only be 
 The FYP prototype is complete when the workflow in section 6 functions with real inference results on the local Windows workstation; the selected model is reproducible; failure states are honest; outputs are exportable; and limitations/licensing are visible in the demonstration and report.
 
 FYP acceptance is functional and evidence-based rather than production-grade: real inference runs, records validate against the schema, the demo handles success/failure/empty-result cases, latency and VRAM are recorded, and no unsupported structural or physical-measurement claims are presented.
-

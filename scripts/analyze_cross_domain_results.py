@@ -34,10 +34,10 @@ def main() -> None:
             "CUBIT is the primary in-domain locked benchmark; cross-domain scores must not be combined into one accuracy number.",
             "Low recall and mask AP across external sources indicate domain shift, label/task mismatch, resolution/thin-defect sensitivity, or threshold mismatch.",
             "S2DS is binary foreground only because class identity is unavailable; it is not a six-class comparison.",
-            "Image-level false-positive and false-negative causes require human overlay review and cannot be inferred from aggregate metrics alone.",
+            "Image-level false-positive and false-negative causes cannot be inferred from aggregate metrics alone; the completed human review is documented separately in docs/HUMAN_ERROR_REVIEW.md.",
         ],
         "required_next_checks": [
-            "Review per-image overlays and empty predictions.",
+            "Retain the human-review completion record and any future per-image review ledgers with the evaluation evidence.",
             "Compare source image resolution and annotation geometry.",
             "Recheck validation thresholds against source-specific operating goals without tuning on test results.",
             "Consider source-balanced adaptation only after error review.",

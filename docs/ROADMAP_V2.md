@@ -1,7 +1,7 @@
 # Building Defect Inspection Beta - Roadmap v2
 
 **Roadmap ID:** BDI-ROADMAP-002  
-**Status:** Approved scope; feasibility tier complete; full-data and product gates remain
+**Status:** Demo-only FYP prototype complete; deployment and extended-model gates remain
 **Updated:** 2026-09-08  
 **Supersedes for execution:** `source/The RoadMap.md`  
 **Original preserved:** yes
@@ -311,7 +311,7 @@ Expected total is 14-20 calendar weeks on the current workstation with a tightly
 
 ## 15. Current checkpoint
 
-For the precise split between completed work and remaining implementation, see [`COMPLETION_PLAN.md`](COMPLETION_PLAN.md). In summary, the 300-sample feasibility tier and comparison checkpoints are complete; the full-data task views, full runs, YOLO-to-SAM adapter, locked evaluation, target-site test, and product workflow are still open.
+For the current split between accepted demo work and follow-on deployment work, see [`COMPLETION_PLAN.md`](COMPLETION_PLAN.md). The frozen v1 task views, YOLO/ResNet runs, YOLO-to-SAM demonstration adapter, locked/source evaluation, browser workflow, exports, and human error review are complete. Target-site validation, full Florence fine-tuning, a fully trained SAM decoder, and additional cross-domain improvement remain follow-on work.
 
 Completed:
 

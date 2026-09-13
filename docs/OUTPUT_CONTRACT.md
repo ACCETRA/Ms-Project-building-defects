@@ -1,9 +1,9 @@
 # Finding and Export Contract
 
 **Contract ID:** BDI-OUTPUT-001  
-**Status:** Draft implementation boundary; required for the remaining integration and product gates
+**Status:** Implemented for the demo-only FYP prototype
 
-The schema is the handoff boundary for both routes: Florence findings and YOLO -> SAM findings must use the same record shape. The current feasibility scripts do not yet constitute the complete browser review/export workflow described here. See [`COMPLETION_PLAN.md`](COMPLETION_PLAN.md).
+The schema is the handoff boundary for both routes: Florence findings and YOLO -> SAM findings use the same record shape. The local browser workflow implements upload, real inference, separate human review, persistence, and JSON/CSV/annotated-image/report exports.
 **Machine schema:** `schemas/finding_record.schema.json`
 
 ## Core rule
@@ -27,9 +27,9 @@ The same stored records drive all output formats:
 - Annotated images render accepted display labels without modifying the source image.
 - The PDF-style report summarizes inspection metadata, reviewed findings, rejected/failed images, measurement status, limitations, and model/dataset versions.
 
-## Future evidence fusion
+## Evidence links
 
-`evidence_links` already supports RGB, thermal, GPR, 3D, and historical records. In the first beta, only real RGB source links should appear. Do not add nonfunctional thermal/GPR/3D controls or pretend an unregistered file was fused.
+`evidence_links` can retain references to RGB, thermal, GPR, 3D, and historical records. The completed FYP demo processes RGB still images; other evidence-link fields are provenance metadata only and are not presented as multimodal inference.
 
 ## Safety wording
 

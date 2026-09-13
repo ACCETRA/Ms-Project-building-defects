@@ -43,5 +43,6 @@
 
 | ID | Decision | Status | Consequence |
 |---|---|---|---|
-| D-030 | Accept the current system as a demo-only academic FYP prototype, not a deployment-ready inspection system | Recorded | The browser harness, trained v1 checkpoints, source evaluations, review/export workflow, and documented limitations are sufficient for demonstration. Target-site validation, human error review, and S2DS six-class labeling remain required before any deployment-testing claim. |
+| D-030 | Accept the current system as a demo-only academic FYP prototype, not a deployment-ready inspection system | Recorded | The browser harness, trained v1 checkpoints, source evaluations, review/export workflow, and documented limitations are sufficient for demonstration. Target-site validation and S2DS six-class labeling remain required before any deployment-testing claim. |
 | D-031 | Formally accept binary-only S2DS reporting for this FYP unless an authoritative class-index manifest is later supplied | Recorded | The supplied S2DS test masks do not encode class identity. No six-class S2DS accuracy claim will be made. |
+| D-032 | Record the human image-level error review as complete for FYP demo acceptance | Completed by project-owner confirmation on 2026-09-13 | The completion and evidence boundary are documented in `docs/HUMAN_ERROR_REVIEW.md`. No unrecorded per-image counts or reviewer details are inferred. Human review is no longer an open demo gate, but manual review remains mandatory during use. |

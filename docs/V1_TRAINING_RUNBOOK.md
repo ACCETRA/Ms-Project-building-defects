@@ -2,9 +2,9 @@
 
 This document is the operator guide for the frozen v1 training queue on the Windows CUDA workstation.
 
-## Current run
+## Completed run
 
-The active queue runs jobs sequentially so only one model uses the Quadro T2000 at a time:
+The completed queue ran jobs sequentially so only one model used the Quadro T2000 at a time:
 
 1. YOLO11n detection, 20 epochs
 2. YOLO11n segmentation, 20 epochs
@@ -160,13 +160,13 @@ Then inspect the queue summary:
 Get-Content runs/v1_queue/summary.json
 ```
 
-The next project work is:
+The completed post-training work includes:
 
-1. Compare v1 metrics against the 300-sample feasibility baseline.
-2. Add multilabel ResNet precision, recall, F1, PR-AUC, and per-class results.
-3. Evaluate YOLO detection and segmentation on locked test data only after thresholds are fixed using validation data.
-4. Run the YOLO-to-SAM route and compare mask quality and latency.
-5. Finish the browser upload, review, and export workflow.
+1. Compared v1 metrics against the 300-sample feasibility baseline.
+2. Added multilabel ResNet precision, recall, F1, PR-AUC, and per-class results.
+3. Evaluated YOLO detection and segmentation on locked test data after fixing thresholds using validation data.
+4. Ran the YOLO-to-SAM route and recorded mask and latency evidence.
+5. Completed the browser upload, real-inference, review, and export workflow.
 
 ## GitHub commands
 

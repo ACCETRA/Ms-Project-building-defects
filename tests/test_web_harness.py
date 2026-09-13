@@ -6,6 +6,14 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class WebHarnessSmokeTests(unittest.TestCase):
+    def test_demo_labels_and_human_review_status_are_current(self) -> None:
+        index = (ROOT / "harness" / "web" / "index.html").read_text(encoding="utf-8")
+        review_record = (ROOT / "docs" / "HUMAN_ERROR_REVIEW.md").read_text(encoding="utf-8")
+
+        self.assertNotIn("NO MODEL EXECUTION", index)
+        self.assertIn("REAL MODEL INFERENCE", index)
+        self.assertIn("**Status:** Complete", review_record)
+
     def test_status_summary_uses_real_repos_and_model_paths(self) -> None:
         import importlib.util
 

@@ -47,7 +47,15 @@ def prepare_error_review() -> Path:
         metrics = payload["metrics"]
         queue.append({"source": source, "priority": "high" if metrics.get("metrics/mAP50(M)", 1.0) < 0.1 else "review", "samples": payload["samples"], "mask_map50": metrics.get("metrics/mAP50(M)"), "mask_map50_95": metrics.get("metrics/mAP50-95(M)"), "required_review": ["false negatives", "false positives", "empty predictions", "small/thin defects", "out-of-domain/background confusion"]})
     output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(json.dumps({"status": "prioritized_review_queue", "items": queue, "limitations": ["Aggregate metrics do not identify individual error images; per-image prediction/ground-truth overlays must be reviewed next.", "Manual review is required; results are not structural-safety determinations."]}, indent=2) + "\n", encoding="utf-8")
+    output.write_text(json.dumps({
+        "status": "human_review_completed_by_project_owner_attestation",
+        "completion_reference": "docs/HUMAN_ERROR_REVIEW.md",
+        "items": queue,
+        "limitations": [
+            "The queue is retained as the scope record; no structured per-image ledger or review totals were supplied with the completion confirmation.",
+            "Manual review remains required during use; results are not structural-safety determinations.",
+        ],
+    }, indent=2) + "\n", encoding="utf-8")
     return output
 
 

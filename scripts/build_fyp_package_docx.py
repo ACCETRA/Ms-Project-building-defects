@@ -19,6 +19,7 @@ TEXT_FILES = [
     ROOT / "docs/SAM_DECODER_TRAINING.md",
     ROOT / "docs/V1_TRAINING_RUNBOOK.md",
     ROOT / "docs/OUTPUT_CONTRACT.md",
+    ROOT / "docs/HUMAN_ERROR_REVIEW.md",
 ]
 JSON_FILES = [
     ROOT / "runs/evaluation/cubit_locked_detect.json",
@@ -81,7 +82,7 @@ def document_xml() -> str:
     body.append(paragraph(f"Generated {datetime.now(timezone.utc).isoformat()}"))
     body.append(heading("Executive Status", 1))
     body.append(paragraph("Acceptance status: demo_only. The project has a functional local browser prototype, trained YOLO/ResNet v1 baselines, locked/source-specific evaluations, and documented provenance. It is not a production-ready or structural-safety system."))
-    body.append(paragraph("Unresolved external gates: target-site validation, human image-level error review, S2DS six-class class identity, full Florence fine-tuning, and a valid trained SAM decoder checkpoint."))
+    body.append(paragraph("Human image-level error review is complete by project-owner confirmation and documented with its evidence boundary. Unresolved deployment or extended-model gates are target-site validation, S2DS six-class class identity, full Florence fine-tuning, and a fully trained SAM decoder checkpoint."))
     body.append(heading("Evidence Files", 1))
     for path in TEXT_FILES + JSON_FILES:
         if path.exists():
