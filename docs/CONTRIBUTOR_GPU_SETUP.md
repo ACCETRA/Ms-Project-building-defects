@@ -22,6 +22,114 @@ Always use the repository environment:
 
 Do not use the global Python interpreter for this project.
 
+## When the dataset arrives separately
+
+Do not put the dataset beside the repository and do not commit the dataset to Git. Copy or extract each supplied package into the repository locations expected by the scripts, preserving the filenames and directory structure below.
+
+Expected public-source locations:
+
+```text
+datasets/building-target/S2DS/s2ds.zip
+datasets/CiF-tiled/data/test_tiled-*.parquet
+datasets/UAV-candidates/UAV75/test_img/
+datasets/UAV-candidates/UAV75/test_lab/
+datasets/DACL10K/dacl10k_v2_devphase.zip
+```
+
+The contributor should receive the source license/readme files with each dataset. Do not rename archive members, edit labels, or recompress archives. The source archives must remain immutable.
+
+After copying the public datasets, verify that the expected paths exist:
+
+```powershell
+@(
+	'datasets/building-target/S2DS/s2ds.zip',
+	'datasets/CiF-tiled/data',
+	'datasets/UAV-candidates/UAV75/test_img',
+	'datasets/UAV-candidates/UAV75/test_lab',
+	'datasets/DACL10K/dacl10k_v2_devphase.zip'
+) | ForEach-Object { "$_ : $(Test-Path $_)" }
+```
+
+Then run the non-destructive checks:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\audit_datasets.py
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+```
+
+If a supplied dataset is unavailable, do not create empty placeholder folders and do not mark its evaluation complete. Record it as `blocked_pending_data`.
+
+### S2DS handoff
+
+The S2DS archive is needed to identify the 93 test images, but its test masks are binary. If six-class scoring is required, the dataset handoff must also include an authoritative class-index file or source evidence from which a reviewer can create one.
+
+Create this file after review:
+
+```text
+data/manifests/s2ds_test_class_index.csv
+```
+
+Required columns:
+
+```text
+sample_id,class_label,source_evidence,reviewer_id,reviewed_at,decision,notes
+```
+
+Allowed `class_label` values:
+
+```text
+crack
+spalling
+rust_staining
+efflorescence_leaching
+no_visible_target_defect
+unknown_review
+```
+
+There must be exactly one reviewed row per S2DS test image. Never infer the class from the binary mask color. If the separate handoff does not contain class evidence, leave six-class scoring blocked and report only the valid binary foreground result.
+
+### Target-site handoff
+
+Private target-site data must stay outside Git. Store it in a local path such as:
+
+```text
+D:/project-private/target-site/
+```
+
+Do not copy private images into `datasets/`, `data/`, `runs/`, or the repository unless the owner explicitly approves that storage and licensing arrangement.
+
+The handoff must include:
+
+- approved RGB images;
+- boxes, masks, or reviewed-negative labels;
+- building, site, facade/floor/zone, and capture-session metadata;
+- permission/consent and license evidence;
+- stable SHA-256 hashes for images and labels;
+- a statement that the buildings/sessions are unseen during training and threshold selection.
+
+Populate the repository manifest with metadata and external paths only:
+
+```text
+data/manifests/target_site_evaluation_template.csv
+```
+
+Set `approved_for_evaluation=true` only after the owner/advisor has approved the permission record. Do not run or report target-site metrics while approval or ground truth is missing.
+
+### Dataset handoff checklist
+
+The person receiving the data should confirm:
+
+```text
+[ ] Public archives copied to the expected paths
+[ ] Source README/license files preserved
+[ ] Archive hashes recorded where available
+[ ] Raw archives not edited or recompressed
+[ ] S2DS class evidence supplied, or six-class scoring marked blocked
+[ ] Target-site permission supplied, or target-site evaluation marked blocked
+[ ] Private images stored outside Git
+[ ] No checkpoints, caches, or private images staged for commit
+```
+
 ## Work that works on AMD, NVIDIA, or CPU
 
 These tasks do not require CUDA:
@@ -298,6 +406,17 @@ The project can be called complete as an **academic FYP prototype** when:
 - the regression and markdown-link checks pass.
 
 This completion gate does not mean the model is production-ready or structurally safe. Deployment testing requires additional target-domain evidence, professional review, and resolution of the documented cross-domain failures.
+
+## Recommended order after receiving data
+
+1. Copy the supplied public datasets to the expected paths and run the non-destructive checks.
+2. Confirm the S2DS class-index evidence status.
+3. Confirm target-site permission and keep private data outside Git.
+4. Review `runs/evaluation/error_review_queue.json` using the existing evaluation outputs.
+5. Record the review decisions and acceptance status.
+6. Regenerate `docs/V1_COMPARISON_REPORT.md`.
+7. Run tests and markdown-link checks.
+8. Commit only manifests, review decisions, documentation, and code. Never commit the dataset or private target images.
 
 ## Before submitting a contribution
 
