@@ -10,7 +10,7 @@ import zipfile
 from xml.sax.saxutils import escape
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = ROOT / "artifacts" / "fyp_acceptance_package.docx"
+OUTPUT = ROOT / "artifacts" / "fyp.docx"
 
 TEXT_FILES = [
     ROOT / "docs/V1_COMPARISON_REPORT.md",

@@ -16,7 +16,7 @@ Build a **fully functional academic beta for RGB-image inspection of buildings a
 5. provide a complete inspection workflow: project creation, image intake, processing status, results, review, and export;
 6. produce structured, reviewable findings rather than claim an autonomous engineering assessment.
 
-Thermal, GPR, full 3D fusion, and historical-record fusion should remain future work. The current cycle should preserve the identifiers, calibration, coordinates, timestamps, and provenance a future fusion layer will require.
+Thermal, GPR, full 3D fusion, and historical-record fusion are outside the accepted FYP scope. The current implementation preserves the identifiers, calibration, coordinates, timestamps, and provenance that additional modalities would require.
 
 ## Decisions the project owner must make before implementation
 
@@ -55,7 +55,7 @@ This matters because CODEBRIM classification labels cannot silently become SAM s
 
 | Source | Recommended use now | Do not use it for |
 |---|---|---|
-| CUBIT-InSeg | Preferred building-façade UAV instance-segmentation source for crack and spalling; target-domain benchmark | Assuming equal-distance capture makes every future flight metrically calibrated; omitting the attribution required by CC BY 4.0 |
+| CUBIT-InSeg | Preferred building-façade UAV instance-segmentation source for crack and spalling; target-domain benchmark | Assuming equal-distance capture provides metrically calibrated imagery; omitting the attribution required by CC BY 4.0 |
 | CiF tiled official splits | Primary supplemental crack/condition detection and instance-segmentation training, validation, and in-domain test | Counting tiles as unique source images; physical measurement without calibration |
 | S2DS | Small multi-class structural-surface validation/transfer source for crack, spalling, corrosion, and efflorescence | A large standalone benchmark or commercial use |
 | CODEBRIM original images/boxes | Secondary multi-label classification and box-detection transfer track; ResNet baseline | Pixel-mask training; treating bridge imagery as proof of building performance; commercial product training under its current license |
@@ -117,7 +117,7 @@ Recommended comparison, aligned with the supplied Florence-2 roadmap:
 
 Use **ResNet-50** as the separate image/crop classification baseline. It is not the backbone used by YOLO or SAM. RetinaNet is deferred because Florence and YOLO already cover the detector comparison track.
 
-If the project needs a pure semantic-mask baseline, add one conventional segmentation model such as U-Net, DeepLabV3+, or SegFormer and remove a less relevant experiment rather than expanding the matrix indefinitely.
+A pure semantic-mask baseline is outside the accepted FYP scope; the matrix remains bounded to the delivered models.
 
 For any cascade, send both positive and uncertain images forward, tune the first stage for high recall, calibrate its uncertainty threshold on validation data, and audit a random sample of “confident negatives.” A negative image may skip SAM but must still be preserved as a recorded no-defect result. Otherwise the first stage's missed cracks can never be recovered by the larger model.
 
@@ -151,9 +151,9 @@ Each prediction should eventually produce a versioned record containing:
 - physical dimensions only when calibration is valid, including units and scale method;
 - confidence, uncertainty/calibration method, image-quality flags, and escalation/review state;
 - model, weights, taxonomy, dataset, and pipeline versions;
-- links to the immutable source image and any future thermal, GPR, 3D, or historical evidence.
+- links to the immutable source image and any additional thermal, GPR, 3D, or historical evidence.
 
-This is the interface for future evidence fusion. It is not necessary to build the fusion engine in the current cycle.
+This is the interface for additional evidence integration. It is not necessary to build the integration engine in this project.
 
 ## Functional beta definition of done
 
@@ -213,7 +213,7 @@ The workstreams overlap; the durations below are not added end to end.
 | Functional beta application, review workflow, persistence, and reports | 5–7 weeks in parallel | Usable browser-based inspection beta |
 | Locked tests, target-site pilot, fixes, and handoff | 2–4 weeks | Final metrics, limitations, demo, and documentation |
 
-With the installed Quadro T2000 and a tightly curated dataset, plan for **14–20 calendar weeks**. Occasional larger-GPU access and already-available target-site labels can bring this closer to **12–16 weeks**. Starting target-site annotation from zero, requiring every secondary class, or insisting on local fine-tuning of every large variant pushes it toward **18–26 weeks**. Implementing real 3D/thermal/GPR fusion is a separate phase and is not included in these estimates.
+With the installed Quadro T2000 and a tightly curated dataset, plan for **14–20 calendar weeks**. Occasional larger-GPU access and already-available target-site labels can bring this closer to **12–16 weeks**. Starting target-site annotation from zero, requiring every secondary class, or insisting on local fine-tuning of every large variant pushes it toward **18–26 weeks**. Implementing real 3D/thermal/GPR fusion is outside the accepted FYP scope and is not included in these estimates.
 
 ## Delivery gates
 
@@ -225,7 +225,7 @@ With the installed Quadro T2000 and a tightly curated dataset, plan for **14–2
 6. **Measurement gate:** calibrated capture protocol and engineer-verified physical ground truth; otherwise release pixel measurements only.
 7. **Functional-beta gate:** end-to-end inspection workflow, review queue, structured export, generated report, persisted history, reproducible model/data versions, error states, limitations, and handoff documentation.
 
-A production inspection product would require additional field collection, professional safety validation, monitoring, security, and regulatory/contractual work; those are outside this FYP deadline.
+A production inspection product would require additional field collection, professional safety validation, monitoring, security, and regulatory/contractual work; those are outside this FYP scope.
 
 ## Source acquisition layout
 

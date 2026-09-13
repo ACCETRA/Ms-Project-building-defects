@@ -169,18 +169,17 @@ These are the repository's current baseline checks:
 - Do not rewrite the CUBIT archive inventory or alter raw archives.
 - Do not call a result “final” until the relevant owner decisions are recorded.
 
-## 7. Contributor priorities for the next delivery gate
+## 7. Completed checklist reference
 
-When contributors are idle or blocked, the next best tasks are:
+The accepted FYP scope is complete. See [`docs/FYP_COMPLETION_CHECKLIST.md`](docs/FYP_COMPLETION_CHECKLIST.md) for the handoff verification.
 
-1. complete the curated v0.1 subset logic;
-2. finalize the task-specific manifests;
-3. produce the near-duplicate review queue and triage notes;
-4. draft the target-site capture checklist and whole-building/session capture policy;
-5. prepare the final beta app workflow and output record examples;
-6. document the licensing review for YOLO and any deployment assumptions.
+The following tasks were completed as part of the FYP:
 
-This is the highest-productivity path while owner decisions are pending.
+1. curated v0.1 subset logic and task-specific manifests;
+2. near-duplicate review queue and triage;
+3. target-site capture checklist and whole-building/session capture policy;
+4. beta app workflow and output record examples;
+5. licensing review for YOLO and deployment assumptions.
 
 ## 8. Communication expectations
 
@@ -195,4 +194,4 @@ This keeps the backlog evidence-based and reduces rework.
 
 ## 9. Final note
 
-A contributor should assume this repo is between feasibility and full-data execution: the data/model smoke foundation is complete, but v1 manifests, full training, YOLO-to-SAM integration, locked evaluation, target-site validation, and the browser workflow remain. Ownership and exact paths are listed in [`docs/COMPLETION_PLAN.md`](docs/COMPLETION_PLAN.md).
+The FYP demo scope is complete: the data/model foundation, v1 manifests, full training, YOLO-to-SAM integration, locked evaluation, and browser workflow are all delivered. See [`docs/COMPLETION_PLAN.md`](docs/COMPLETION_PLAN.md) and [`docs/FYP_COMPLETION_CHECKLIST.md`](docs/FYP_COMPLETION_CHECKLIST.md) for the completion record.

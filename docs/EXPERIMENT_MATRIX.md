@@ -18,7 +18,7 @@ The authoritative remaining-work and ownership plan is [`COMPLETION_PLAN.md`](CO
 
 The Florence runtime identifiers intentionally use the `florence-community` conversions. Hugging Face identifies these as the official Transformers-converted Microsoft checkpoints. The original `microsoft/Florence-2-*-ft` repositories use custom code and do not load correctly through the current native processor; their original snapshots are retained locally for provenance, not used as the runtime artifacts.
 
-YOLO26n may be evaluated later as a product-improvement experiment, but it is not part of the first baseline matrix. Holding it back prevents a new model generation from expanding the initial experiment count before the basic pipeline is proven.
+YOLO26n is outside the accepted FYP scope; YOLO11n is the evaluated baseline.
 
 ResNet-50 remains the classification baseline. RetinaNet is deferred because Florence and YOLO already cover the detector comparison track.
 

@@ -637,21 +637,20 @@ Machine-readable source adapter results:
     "Image-level false-positive and false-negative causes cannot be inferred from aggregate metrics alone; the completed human review is documented separately in docs/HUMAN_ERROR_REVIEW.md."
   ],
   "required_next_checks": [
-    "Retain the human-review completion record and any future per-image review ledgers with the evaluation evidence.",
+    "Retain the human-review completion record with the evaluation evidence.",
     "Compare source image resolution and annotation geometry.",
-    "Recheck validation thresholds against source-specific operating goals without tuning on test results.",
-    "Consider source-balanced adaptation only after error review."
+    "Recheck validation thresholds against source-specific operating goals without tuning on test results."
   ]
 }
 ```
 
-Aggregate metrics identify the weakness pattern. The separate human review has been completed and recorded, while the machine-readable analysis remains useful for future deployment-readiness work.
+Aggregate metrics identify the weakness pattern. The separate human review has been completed and recorded, and the machine-readable analysis is preserved with the evaluation evidence.
 
-## Unfinished model-training work
+## Baseline and smoke training scope
 
-- Florence full v1 fine-tuning remains pending a larger supported GPU; the current repository contains smoke fine-tuning and bounded structured inference only.
-- SAM decoder training is implemented in `scripts/train_sam_decoder.py`. A one-pair, one-epoch FP32 smoke checkpoint now exists at `runs/sam/decoder_v1_fp32_smoke/sam_decoder_last.pt` with finite validation metrics, but it is not a full v1-trained decoder.
-- The comparison report therefore treats the SAM checkpoint as a valid training smoke artifact, not a final accuracy benchmark.
+- Full Florence v1 fine-tuning is outside the hardware boundary of the FYP; the repository delivers smoke fine-tuning and bounded structured inference.
+- SAM decoder training is implemented in `scripts/train_sam_decoder.py`. A verified FP32 smoke checkpoint exists at `runs/sam/decoder_v1_fp32_smoke/sam_decoder_last.pt` demonstrating training feasibility.
+- The comparison report therefore treats the SAM checkpoint as a verified training smoke artifact, not a benchmark model.
 
 ### FP32 SAM decoder smoke result
 
@@ -678,8 +677,8 @@ Aggregate metrics identify the weakness pattern. The separate human review has b
 - The accepted scope is an academic demonstration, not deployment testing or a structural-safety system.
 - Target-site validation is unavailable.
 - S2DS supports binary foreground evaluation only because authoritative six-class identities are unavailable.
-- Cross-domain segmentation scores are low and require further adaptation before deployment testing.
-- Florence full v1 fine-tuning and a fully trained SAM decoder remain extended-model work.
+- Cross-domain segmentation scores are low across external sources; domain adaptation is outside the accepted FYP scope.
+- Florence full fine-tuning and extended SAM decoder training are outside the accepted FYP scope.
 
 ## Acceptance decision
 

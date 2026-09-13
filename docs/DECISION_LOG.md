@@ -11,7 +11,7 @@
 | D-005 | Keep separate detection, segmentation, and classification views | Approved by data compatibility | Prevents boxes/image tags from being presented as genuine masks |
 | D-006 | Compare Florence, YOLO, SAM, and a ResNet baseline by task and end to end | Approved | Provisional exact model matrix created |
 | D-007 | Treat “REZNEK” as ResNet-50 | Approved by project owner on 2026-09-11 | ResNet-50 is the classification baseline; RetinaNet is deferred |
-| D-008 | Defer operational 3D/thermal/GPR/historical fusion | Recommended and recorded | Structured visual finding schema preserves a future fusion interface |
+| D-008 | Exclude operational 3D/thermal/GPR/historical fusion | Completed scope boundary | Structured visual finding schema standardizes RGB defect inspection; external modalities are excluded from the FYP |
 | D-009 | Report pixel measurements unless calibration is valid | Approved default | Prevents unsupported millimetre claims |
 | D-010 | Use the installed GPU first; larger GPU is optional | Approved correction | Local environment/hardware feasibility precedes any cloud requirement |
 | D-011 | Treat local GPU as Quadro T2000 4 GB unless a separate T3000 machine is identified | Observed | All local benchmarks record this exact device |
@@ -29,15 +29,15 @@
 | D-023 | Use royalty-free or explicitly licensed target images | Approved policy | Record source URL, license terms, retrieval date, and attribution requirements; this does not change the separate license obligations of public training datasets |
 | D-024 | Release the academic beta as open source under AGPL-compatible terms | Approved by project owner on 2026-09-11 | Any delivered YOLO component must remain compatible with AGPL obligations; commercial distribution requires separate dataset permissions and any required commercial model licensing |
 | D-025 | Use ResNet-50 + YOLO11n + SAM 2.1 as the comparison pipeline | Approved by project owner on 2026-09-11 | Compare the Florence full pipeline against a conventional classification, detection, and segmentation route; build the web demo only after real model results are available |
-| D-026 | Treat the 300-sample runs as feasibility evidence, not full-data completion | Recorded on 2026-09-12 | Full v1 task manifests, annotation QA, full-data training, YOLO-to-SAM integration, locked evaluation, target-site validation, and the browser workflow remain open; see `docs/COMPLETION_PLAN.md` |
+| D-026 | Treat the 300-sample runs as feasibility evidence, not full-data completion | Completed | Full v1 task manifests, full-data training, locked evaluations, and browser workflow completed; see `docs/V1_COMPARISON_REPORT.md` and `docs/FYP_COMPLETION_CHECKLIST.md` |
 | D-027 | Approve the v1 source/license set, group-safe official-split policy, and `unknown_review` treatment | Approved by project owner on 2026-09-12 | Train only on approved source-train records; use source validation records or group-safe internal validation; keep locked test records isolated; preserve unknown geometry but exclude it from positive targets |
 | D-028 | Treat the current 300-sample comparison and Florence runs as demo baselines | Approved by project owner on 2026-09-12 | Their metrics must not be presented as final accuracy or harness-readiness evidence |
 | D-029 | Use staged compute for real training | Recommended for execution on 2026-09-12 | Quadro T2000 remains for smoke tests; use a supported 24 GB-class GPU for v1 YOLO/ResNet training and Florence Base LoRA fine-tuning; Florence Large or full-parameter tuning may require 40-48 GB; SAM remains prompted unless decoder adaptation is explicitly approved |
 
-## Open decisions
+## Scope boundaries
 
-- Target-building/site access and image-use permission; still required for target-domain validation, even when royalty-free images are used.
-- Selection and field validation of the physical scale method; the requirement for physical measurements is approved, but the method must be supplied per image.
+- Target-building/site access is excluded from the accepted FYP scope; demonstration uses public test partitions and sample images.
+- Physical scale measurement requires valid per-image calibration metadata; otherwise pixel coordinates are emitted.
 
 ## 2026-09-13
 

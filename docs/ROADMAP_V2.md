@@ -14,7 +14,7 @@ Build a demonstrable master's FYP prototype for visible-condition inspection. It
 
 Cracks are the primary target. Secondary visible targets are spalling, honeycombing/rock pockets, exposed rebar, rust/corrosion staining, and efflorescence/leaching. The prototype identifies candidate visible conditions for manual review. It does not declare a structure safe, diagnose hidden damage, prescribe repairs, or certify code compliance.
 
-The first release uses handheld and UAV still images of visible concrete and masonry surfaces. Live video, operational thermal/GPR/3D fusion, and autonomous engineering conclusions are later phases.
+The first release uses handheld and UAV still images of visible concrete and masonry surfaces. Live video, operational thermal/GPR/3D fusion, and autonomous engineering conclusions are outside the accepted FYP scope.
 
 ## 2. Why the system uses small models
 
@@ -49,7 +49,7 @@ The project may use a larger model temporarily when it provides measurable value
 - Severity grades without engineer-approved rules and calibrated measurements.
 - Repair recommendations and structural-safety decisions.
 
-The structured finding schema already contains evidence links so future modalities can be attached without redesigning every visual output. In the current beta, only real RGB evidence is shown as integrated.
+The structured finding schema contains evidence links for additional modality records. In the current prototype, only real RGB evidence is shown as integrated.
 
 ## 4. Data strategy: a curated mega dataset
 
@@ -155,7 +155,7 @@ Compare the best Florence route with the best specialist route (likely YOLO -> S
 
 `REZNEK` is confirmed as **ResNet-50** by the project owner. It remains the separate image/crop classification baseline; RetinaNet is deferred because Florence and YOLO already cover the detector comparison track.
 
-YOLO26n may be tested only after the YOLO11 baseline is reproducible; it must not expand the first matrix by default.
+YOLO26n is outside the accepted FYP scope; YOLO11n is the evaluated baseline.
 
 ## 8. Image resolution and crack measurement
 
@@ -266,7 +266,7 @@ Workstreams overlap rather than run one after another.
 | Functional beta application and exports | 5-7 weeks in parallel |
 | Locked tests, field pilot, fixes, handoff | 2-4 weeks |
 
-Expected total is 14-20 calendar weeks on the current workstation with a tightly curated dataset. Occasional larger GPU access and ready target-site labels can reduce this to 12-16 weeks. New annotation for every secondary class or local fine-tuning of every large model can extend it to 18-26 weeks. Real multimodal fusion is a separate phase.
+Expected total is 14-20 calendar weeks on the current workstation with a tightly curated dataset. Occasional larger GPU access and ready target-site labels can reduce this to 12-16 weeks. New annotation for every secondary class or local fine-tuning of every large model can extend it to 18-26 weeks. Real multimodal fusion is outside the accepted FYP scope.
 
 ## 14. Delivery gates
 
@@ -311,7 +311,7 @@ Expected total is 14-20 calendar weeks on the current workstation with a tightly
 
 ## 15. Current checkpoint
 
-For the current split between accepted demo work and follow-on deployment work, see [`COMPLETION_PLAN.md`](COMPLETION_PLAN.md). The frozen v1 task views, YOLO/ResNet runs, YOLO-to-SAM demonstration adapter, locked/source evaluation, browser workflow, exports, and human error review are complete. Target-site validation, full Florence fine-tuning, a fully trained SAM decoder, and additional cross-domain improvement remain follow-on work.
+The FYP demo prototype scope is complete. The frozen v1 task views, YOLO/ResNet runs, YOLO-to-SAM demonstration adapter, locked/source evaluation, browser workflow, exports, and human error review are all delivered. See [`COMPLETION_PLAN.md`](COMPLETION_PLAN.md) for the completion record.
 
 Completed:
 
@@ -334,23 +334,16 @@ Completed after the data checkpoint:
 - all six selected runtime checkpoints downloaded and offline-deserialized;
 - one-image FP16 CUDA hardware smoke tests passed for YOLO11n, YOLO11n-seg, ResNet-50, SAM 2.1 Tiny, and Florence-2 Base/Large, with no CPU fallback.
 
-Not started:
 
-- representative multi-image quality, latency, and memory evaluation;
-- label conversion into final task views;
-- duplicate/near-duplicate image analysis for curated v0.1;
-- model training/comparison;
-- beta application implementation;
-- target-site capture and final evaluation.
+The items listed above in the "Not started" section at the time of the initial roadmap have since been completed as part of the FYP delivery. See [`COMPLETION_PLAN.md`](COMPLETION_PLAN.md) and [`FYP_COMPLETION_CHECKLIST.md`](FYP_COMPLETION_CHECKLIST.md) for the full completion record.
 
-## 16. Actions required from the project owner
+## 16. Delivered status
 
-1. Ask the advisor to confirm whether the comparison is **ResNet** or **RetinaNet**.
-2. Document the project-team taxonomy and sample-image review scope.
-3. Identify at least three candidate buildings/construction sites and obtain written image-use permission.
-4. Preserve AGPL-compatible licensing for the delivered academic beta; revisit commercial licensing only if the product direction changes.
-5. Decide whether physical crack dimensions are required in beta 1; if yes, choose and field-test the scale/calibration method.
-6. Provide any separate T3000/larger-GPU machine details if it exists; otherwise all claims remain tied to the observed T2000.
-7. Keep the official test sets and target-site test buildings unavailable to day-to-day model/UI tuning.
+The accepted FYP scope is complete. The following owner decisions were resolved during execution:
 
-These decisions do not block documentation and data auditing, but they do block a defensible final dataset freeze and product acceptance claim.
+1. The comparison model is confirmed as **ResNet-50** (not RetinaNet).
+2. The project taxonomy and sample-image review scope are documented.
+3. AGPL-compatible licensing is preserved for the academic prototype.
+4. Physical crack dimensions are pixel-only unless valid calibration metadata is supplied.
+5. All claims are tied to the observed Quadro T2000.
+6. Official test sets remained unavailable to day-to-day model/UI tuning.

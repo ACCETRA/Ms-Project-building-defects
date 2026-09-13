@@ -41,7 +41,7 @@ Build a 300-image manifest from training/validation sources only:
 - 40 UAV75 train images spanning crack/planking appearance;
 - 60 DACL10K train images spanning crack, alligator crack, spalling, rock pocket, exposed rebar, rust, and efflorescence.
 
-Do not use CUBIT test, S2DS test, UAV75 test, DACL validation, or future target-building test images for hardware tuning.
+Do not use CUBIT test, S2DS test, UAV75 test, DACL validation, or target-building test images for hardware tuning.
 
 The initial 300 images measure loading, tiling, inference compatibility, latency, and VRAM. They are not an accuracy benchmark and must not be reported as one.
 

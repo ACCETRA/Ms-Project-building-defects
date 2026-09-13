@@ -13,7 +13,7 @@ $sevenZip = Join-Path $projectRoot "vendor\7zip-portable\x64\7za.exe"
 $includeRoots = @(
     ".gitattributes", ".gitignore", "README.md", "CONTRIBUTING.md", "PROJECT_READINESS.md",
     "requirements-audit.txt", "requirements-runtime.txt", "bdi", "config", "confirmation", "docs",
-    "examples", "harness", "schemas", "scripts", "tests", "data\manifests", "artifacts", "weights", "vendor",
+    "examples", "harness", "schemas", "scripts", "source", "tests", "data\manifests", "artifacts", "weights", "vendor",
     "datasets\README.md", "datasets\license.md", "datasets\CODEBRIM\README.md", "datasets\CODEBRIM\license.md",
     "datasets\DACL10K\README.md", "datasets\building-target\README.md", "datasets\building-target\S2DS\README.md",
     "datasets\building-target\S2DS\LICENSE", "datasets\CiF-tiled\README.md", "datasets\UAV-candidates\README.md",
@@ -38,13 +38,24 @@ $files = $files | Where-Object {
 } | Sort-Object FullName -Unique
 
 $manifestLines = foreach ($file in $files) {
-    $relative = [IO.Path]::GetRelativePath($projectRoot, $file.FullName).Replace('\', '/')
+    $relative = if ($file.FullName.StartsWith($projectRoot, [System.StringComparison]::OrdinalIgnoreCase)) {
+        $file.FullName.Substring($projectRoot.Length).TrimStart('\', '/')
+    } else {
+        $file.FullName
+    }
+    $relativeSlash = $relative.Replace('\', '/')
     $hash = (Get-FileHash -LiteralPath $file.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
-    "$hash  $relative"
+    "$hash  $relativeSlash"
 }
 $manifestLines | Set-Content -LiteralPath $manifest -Encoding utf8
 $files += Get-Item -LiteralPath $manifest
-$relativeFiles = $files | ForEach-Object { [IO.Path]::GetRelativePath($projectRoot, $_.FullName) }
+$relativeFiles = $files | ForEach-Object {
+    if ($_.FullName.StartsWith($projectRoot, [System.StringComparison]::OrdinalIgnoreCase)) {
+        $_.FullName.Substring($projectRoot.Length).TrimStart('\', '/')
+    } else {
+        $_.FullName
+    }
+}
 $relativeFiles | Set-Content -LiteralPath $listFile -Encoding utf8
 
 if (-not (Test-Path -LiteralPath $sevenZip -PathType Leaf)) { throw "7-Zip is missing: $sevenZip" }
