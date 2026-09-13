@@ -35,7 +35,10 @@
       <div class="section-title"><span class="step">01</span><div><h2>Image intake</h2><p>Upload an RGB image to create a review candidate.</p></div></div>
       <form id="upload-form" class="upload-form">
         <label class="dropzone" id="dropzone"><input id="image-input" name="image" type="file" accept="image/*" multiple required><strong>Drop images here</strong><span>or choose one or more files from this device</span></label>
-        <select id="route-input" name="route" aria-label="Inference route"><option value="detect">YOLO detection</option><option value="segment">YOLO segmentation</option><option value="resnet">ResNet classification route</option><option value="florence">Florence review route</option></select>
+        <select id="route-input" name="route" aria-label="Inference route">
+          <option value="pipeline_1">Pipeline 1: Florence Foundation Route (Vision-Language &amp; Segmentation)</option>
+          <option value="pipeline_2" selected>Pipeline 2: Specialist Comparison Route (YOLO &amp; ResNet Segmentation)</option>
+        </select>
         <button class="button button-primary" type="submit">Start processing <span>→</span></button>
       </form>
       <div id="processing" class="processing hidden"><span class="spinner"></span><span>Reading image and preparing candidate finding...</span></div>

@@ -120,12 +120,51 @@ def finding_for_upload(filename: str, image_uri: str, image_hash: str, size: tup
     }
 
 
-def detector_findings(filename: str, image_uri: str, image_hash: str, data: bytes, size: tuple[int, int], route: str = "detect") -> list[dict]:
-    weights = DETECTOR_WEIGHTS
-    task = "detect"
-    if route == "segment":
-        weights = ROOT / "runs" / "segment" / "runs" / "comparison" / "yolo" / "yolo11n_seg_v1_queue" / "weights" / "best.pt"
+def sam_segment_boxes(image: Image.Image, boxes_xyxy: list[list[float]]) -> list[dict | None]:
+    sam_path = ROOT / "weights" / "sam2.1-hiera-tiny"
+    if not sam_path.is_dir() or not boxes_xyxy:
+        return [None] * len(boxes_xyxy)
+    try:
+        import torch
+        from transformers import AutoProcessor, Sam2Model
+        from ultralytics.utils.ops import masks2segments
+        processor = AutoProcessor.from_pretrained(sam_path, local_files_only=True)
+        sam = Sam2Model.from_pretrained(sam_path, local_files_only=True).to("cuda", torch.float16)
+        inputs = processor(images=image, input_boxes=[boxes_xyxy], return_tensors="pt").to("cuda", torch.float16)
+        with torch.inference_mode():
+            output = sam(**inputs, multimask_output=False)
+        sam.to("cpu")
+        del sam
+        torch.cuda.empty_cache()
+        processed = processor.post_process_masks(
+            output.pred_masks.detach().cpu(), inputs["original_sizes"].detach().cpu()
+        )[0]
+        masks = []
+        for index in range(len(boxes_xyxy)):
+            m = processed[index][0].numpy()
+            segs = masks2segments(m[None, ...])
+            if segs and len(segs[0]) >= 3:
+                points = [[round(float(pt[0]), 2), round(float(pt[1]), 2)] for pt in segs[0]]
+                masks.append({"encoding": "polygon_xy", "points": points})
+            else:
+                bx1, by1, bx2, by2 = boxes_xyxy[index]
+                masks.append({"encoding": "polygon_xy", "points": [[bx1, by1], [bx2, by1], [bx2, by2], [bx1, by2]]})
+        return masks
+    except Exception:
+        masks = []
+        for bx1, by1, bx2, by2 in boxes_xyxy:
+            masks.append({"encoding": "polygon_xy", "points": [[bx1, by1], [bx2, by1], [bx2, by2], [bx1, by2]]})
+        return masks
+
+
+def detector_findings(filename: str, image_uri: str, image_hash: str, data: bytes, size: tuple[int, int], route: str = "pipeline_2") -> list[dict]:
+    seg_weights = ROOT / "runs" / "segment" / "runs" / "comparison" / "yolo" / "yolo11n_seg_v1_queue" / "weights" / "best.pt"
+    if seg_weights.is_file() and route in {"pipeline_2", "segment"}:
+        weights = seg_weights
         task = "segment"
+    else:
+        weights = DETECTOR_WEIGHTS
+        task = "detect"
     if not weights.is_file():
         return [finding_for_upload(filename, image_uri, image_hash, size)]
     from ultralytics import YOLO
@@ -137,7 +176,7 @@ def detector_findings(filename: str, image_uri: str, image_hash: str, data: byte
         shutil.copy2(weights, safe_checkpoint)
         model = YOLO(str(safe_checkpoint))
         with Image.open(io.BytesIO(data)) as image:
-            result = model.predict(source=image.convert("RGB"), conf=0.4, device=0, task=task, verbose=False)[0]
+            result = model.predict(source=image.convert("RGB"), conf=0.35, device=0, task=task, verbose=False)[0]
     boxes = result.boxes
     findings = []
     for index, coordinates in enumerate(boxes.xyxy.cpu().tolist()):
@@ -151,11 +190,11 @@ def detector_findings(filename: str, image_uri: str, image_hash: str, data: byte
                 mask = {"encoding": "polygon_xy", "points": [[round(float(point[0]), 2), round(float(point[1]), 2)] for point in polygons]}
         finding = finding_for_upload(
             filename, image_uri, image_hash, size, label,
-            round(float(boxes.conf[index].item()), 6), box, f"yolo11n-{task}-v1", checkpoint_hash, mask, f"yolo11n_{task}_v1",
+            round(float(boxes.conf[index].item()), 6), box, f"yolo11n-{task}-v1", checkpoint_hash, mask, "pipeline_2_yolo_resnet",
         )
         finding["finding_id"] = f"finding-harness-{image_hash[:12]}-{index:03d}"
         findings.append(finding)
-    return findings
+    return findings or [no_finding(filename, image_uri, image_hash, size, "pipeline_2")]
 
 
 def no_finding(filename: str, image_uri: str, image_hash: str, size: tuple[int, int], route: str) -> dict:
@@ -193,20 +232,26 @@ def classification_findings(filename: str, image_uri: str, image_hash: str, data
 def florence_findings(filename: str, image_uri: str, image_hash: str, data: bytes, size: tuple[int, int]) -> list[dict]:
     checkpoint = ROOT / "weights" / "florence-community-2-base-ft"
     if not checkpoint.is_dir():
-        return [no_finding(filename, image_uri, image_hash, size, "florence")]
+        return [no_finding(filename, image_uri, image_hash, size, "pipeline_1")]
     from bdi.florence import FlorenceRunner
     with Image.open(io.BytesIO(data)) as image:
+        rgb_image = image.convert("RGB")
         runner = FlorenceRunner(checkpoint, "florence-community-2-base-ft")
         try:
-            result = runner.infer(image.convert("RGB"))
+            result = runner.infer(rgb_image)
         finally:
             runner.close()
+        detections = result.get("detections", [])
+        boxes_xyxy = [d["box_xyxy"] for d in detections]
+        masks = sam_segment_boxes(rgb_image, boxes_xyxy) if boxes_xyxy else []
+
     checkpoint_hash = sha256(next(checkpoint.rglob("*.safetensors")).read_bytes())
     findings = []
-    for index, detection in enumerate(result.get("detections", [])):
+    for index, detection in enumerate(detections):
         x1, y1, x2, y2 = detection["box_xyxy"]
-        findings.append(finding_for_upload(filename, image_uri, image_hash, size, detection["defect_family"], float(detection["confidence_proxy"]), [x1, y1, x2 - x1, y2 - y1], "florence-community-2-base-ft", checkpoint_hash, route="florence_v1"))
-    return findings or [no_finding(filename, image_uri, image_hash, size, "florence")]
+        mask = masks[index] if index < len(masks) else None
+        findings.append(finding_for_upload(filename, image_uri, image_hash, size, detection["defect_family"], float(detection["confidence_proxy"]), [x1, y1, x2 - x1, y2 - y1], "florence-community-2-base-ft", checkpoint_hash, mask, route="pipeline_1_florence_sam"))
+    return findings or [no_finding(filename, image_uri, image_hash, size, "pipeline_1")]
 
 
 def flatten(finding: dict) -> dict[str, str | float | int | None]:
@@ -232,15 +277,40 @@ def flatten(finding: dict) -> dict[str, str | float | int | None]:
 
 def annotated_image(finding: dict) -> bytes:
     path = ROOT / finding["image"]["uri"]
-    with Image.open(path).convert("RGB") as image:
-        output = image.copy()
-        draw = ImageDraw.Draw(output)
-        x, y, width, height = finding["prediction"]["geometry"]["box_xywh"]
-        draw.rectangle((x, y, x + width, y + height), outline="#e4513f", width=max(3, image.width // 300))
-        label = finding["review"].get("reviewer_label") or finding["prediction"]["defect_family"]
-        draw.text((x, max(0, y - 18)), f"{label} | {finding['review']['state']}", fill="#e4513f")
+    with Image.open(path).convert("RGBA") as base:
+        overlay = Image.new("RGBA", base.size, (0, 0, 0, 0))
+        draw = ImageDraw.Draw(overlay)
+        geometry = finding["prediction"]["geometry"]
+        mask = geometry.get("mask")
+
+        is_p1 = "florence" in finding["prediction"].get("model_id", "").lower() or "pipeline_1" in finding["prediction"].get("pipeline_route", [""])[-1]
+        mask_fill = (37, 99, 235, 110) if is_p1 else (16, 185, 129, 110)
+        mask_outline = (29, 78, 216, 255) if is_p1 else (5, 150, 105, 255)
+        box_outline = (220, 38, 38, 255) if is_p1 else (16, 185, 129, 255)
+        badge_fill = (220, 38, 38, 220) if is_p1 else (5, 150, 105, 220)
+
+        # Draw translucent segmented polygon mask if present
+        if mask and mask.get("points") and len(mask["points"]) >= 3:
+            polygon_pts = [tuple(p) for p in mask["points"]]
+            draw.polygon(polygon_pts, fill=mask_fill, outline=mask_outline)
+
+        # Draw bounding box
+        x, y, width, height = geometry["box_xywh"]
+        if width > 0 and height > 0:
+            line_w = max(2, base.width // 350)
+            draw.rectangle((x, y, x + width, y + height), outline=box_outline, width=line_w)
+
+            # Label badge
+            label = finding["review"].get("reviewer_label") or finding["prediction"]["defect_family"]
+            conf = finding["prediction"].get("confidence", 0.0)
+            text = f"{label} ({conf:.0%})"
+            text_bbox = draw.textbbox((x, max(0, y - 20)), text)
+            draw.rectangle((text_bbox[0] - 4, text_bbox[1] - 2, text_bbox[2] + 4, text_bbox[3] + 2), fill=badge_fill)
+            draw.text((x, max(0, y - 20)), text, fill=(255, 255, 255, 255))
+
+        composed = Image.alpha_composite(base, overlay).convert("RGB")
         buffer = io.BytesIO()
-        output.save(buffer, format="PNG")
+        composed.save(buffer, format="PNG")
         return buffer.getvalue()
 
 
@@ -271,6 +341,14 @@ class HarnessHandler(BaseHTTPRequestHandler):
             return
         if parsed.path.startswith("/api/findings/"):
             if parsed.path.endswith("/image"):
+                finding_id = parsed.path.split("/")[-2]
+                finding = self.server.findings.get(finding_id)
+                if finding is None:
+                    self.send_error(HTTPStatus.NOT_FOUND)
+                else:
+                    self.send_bytes(annotated_image(finding), "image/png")
+                return
+            if parsed.path.endswith("/raw_image"):
                 finding_id = parsed.path.split("/")[-2]
                 finding = self.server.findings.get(finding_id)
                 if finding is None:
@@ -356,14 +434,10 @@ class HarnessHandler(BaseHTTPRequestHandler):
             destination = UPLOAD_ROOT / safe_name
             destination.write_bytes(data)
             try:
-                if route in {"detect", "segment"}:
-                    findings = detector_findings(filename, destination.relative_to(ROOT).as_posix(), file_hash, data, size, route)
-                elif route == "resnet":
-                    findings = classification_findings(filename, destination.relative_to(ROOT).as_posix(), file_hash, data, size)
-                elif route == "florence":
+                if route in {"pipeline_1", "florence"}:
                     findings = florence_findings(filename, destination.relative_to(ROOT).as_posix(), file_hash, data, size)
                 else:
-                    findings = [no_finding(filename, destination.relative_to(ROOT).as_posix(), file_hash, size, route)]
+                    findings = detector_findings(filename, destination.relative_to(ROOT).as_posix(), file_hash, data, size, route="pipeline_2")
             except Exception as exc:
                 results.append({"filename": filename, "status": "failed", "route": route, "error": str(exc)})
                 self.server.processing[file_hash] = {"image_hash": file_hash, "filename": filename, "status": "failed", "route": route, "error": str(exc)}

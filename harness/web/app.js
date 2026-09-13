@@ -43,11 +43,14 @@ function findingCard(finding) {
   const prediction = finding.prediction;
   const review = finding.review;
   const geometry = prediction.geometry.box_xywh.map(value => Number(value).toFixed(1)).join(' × ');
-  const mask = prediction.geometry.mask ? '<br>Mask: polygon available' : '';
+  const mask = prediction.geometry.mask ? '<br><span style="color:#059669;font-weight:600;">✓ Segmented defect mask</span>' : '';
   const options = labels.map(label => `<option value="${label}" ${review.reviewer_label === label ? 'selected' : ''}>${readable(label)}</option>`).join('');
+  const routeName = (prediction.pipeline_route.at(-1) || '').includes('1') || (prediction.pipeline_route.at(-1) || '').includes('florence')
+    ? 'Pipeline 1: Florence Foundation'
+    : 'Pipeline 2: Specialist Comparison';
   return `<article class="finding">
     <img class="preview" src="/api/findings/${finding.finding_id}/image" alt="Uploaded inspection image">
-    <div class="finding-head"><div><span class="route-tag">${readable(prediction.pipeline_route.at(-1))}</span><h3>${readable(review.reviewer_label || prediction.defect_family)}</h3><p class="meta">${finding.image.source_image_id}<br>Box ${geometry} px${mask}</p></div><span class="confidence">${Math.round(prediction.confidence * 100)}%</span></div>
+    <div class="finding-head"><div><span class="route-tag">${routeName}</span><h3>${readable(review.reviewer_label || prediction.defect_family)}</h3><p class="meta">${finding.image.source_image_id}<br>Box ${geometry} px${mask}</p></div><span class="confidence">${Math.round(prediction.confidence * 100)}%</span></div>
     <div class="review-panel"><span class="review-state">${readable(review.state)}</span>
       <div class="review-controls"><button class="button" data-review="approve" data-id="${finding.finding_id}">Approve</button><button class="button" data-review="reject" data-id="${finding.finding_id}">Reject</button></div>
       <form class="review-form" data-relabel data-id="${finding.finding_id}"><select name="label" aria-label="Relabel finding">${options}</select><input name="notes" type="text" placeholder="Review note" aria-label="Review note"><button class="button" type="submit">Relabel</button></form>
