@@ -1,6 +1,6 @@
 # Building Defect Inspection — Master's FYP
 
-Project Alpha is a completed academic demonstration for visible building-condition inspection. It provides a local browser application with real YOLO detection and segmentation, ResNet-50 multilabel classification, a bounded Florence-2 route, optional SAM mask generation, immutable predictions, separate human review, and JSON/CSV/image/report exports.
+Project is a completed academic demonstration for visible building-condition inspection. It provides a local browser application with real YOLO detection and segmentation, ResNet-50 multilabel classification, a bounded Florence-2 route, optional SAM mask generation, immutable predictions, separate human review, and JSON/CSV/image/report exports.
 
 The project is a research prototype, not a structural-safety system. Every finding requires manual review. Physical dimensions are withheld unless valid calibration metadata is supplied.
 
