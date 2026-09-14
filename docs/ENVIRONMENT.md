@@ -44,7 +44,7 @@ Ultralytics `8.4.143` sanitizes the apostrophe in this workspace's absolute path
 
 ## Feasibility implications
 
-The environment is sufficient for the completed 300-sample feasibility runs and controlled YOLO/ResNet training. It is not evidence that the entire proposed v1 mixture, Florence fine-tuning, or SAM decoder tuning can finish locally within the available time. The remaining execution plan and three-machine time boundary are in [`COMPLETION_PLAN.md`](COMPLETION_PLAN.md).
+The environment completed the accepted FYP workload: dataset preparation, YOLO and ResNet training, bounded Florence and SAM execution, locked evaluation, source-specific evaluation, and the local browser demonstration. Optional accuracy improvements are documented separately in [`RECOMMENDED_IMPROVEMENTS.md`](RECOMMENDED_IMPROVEMENTS.md).
 
 - Use `.venv\Scripts\python.exe`; the global Python remains CPU-only.
 - CUDA installation and basic execution are verified. One-image model preflight memory/latency is recorded; representative distributions remain unmeasured.

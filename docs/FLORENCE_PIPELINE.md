@@ -1,9 +1,9 @@
 # Florence-First Feasibility Pipeline
 
 **Pipeline version:** `0.1.0-florence-feasibility`  
-**Scope:** CUDA-only, pretrained inference feasibility execution; full-data comparison remains pending
+**Scope:** Completed bounded Florence inference route for the accepted FYP demonstration
 
-This is not a Florence fine-tuning pipeline. It runs the local pretrained Florence-2 Base/Large checkpoints over the current 300-sample feasibility view. Full-data Florence execution, escalation evaluation, and comparison against the specialist route are tracked in [`COMPLETION_PLAN.md`](COMPLETION_PLAN.md).
+The completed FYP route runs local pretrained Florence-2 checkpoints and emits structured candidate findings. The included one-step training artifact verifies the fine-tuning entry point but is not used as an accuracy claim.
 
 Florence target preparation is available through `scripts/prepare_florence_targets.py`. It creates annotation-level, group-safe train/validation records from the normalized reviewed annotations and excludes `unknown_review` records from positive targets. The output is deliberately marked `structured_pre_tokenization`; a processor-compatibility check is required before using it for gradient training.
 

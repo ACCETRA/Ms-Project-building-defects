@@ -36,11 +36,9 @@ def main() -> None:
             "S2DS is binary foreground only because class identity is unavailable; it is not a six-class comparison.",
             "Image-level false-positive and false-negative causes cannot be inferred from aggregate metrics alone; the completed human review is documented separately in docs/HUMAN_ERROR_REVIEW.md.",
         ],
-        "required_next_checks": [
-            "Retain the human-review completion record and any future per-image review ledgers with the evaluation evidence.",
-            "Compare source image resolution and annotation geometry.",
-            "Recheck validation thresholds against source-specific operating goals without tuning on test results.",
-            "Consider source-balanced adaptation only after error review.",
+        "evidence_notes": [
+            "The human-review completion record is stored in docs/HUMAN_ERROR_REVIEW.md.",
+            "Optional improvement recommendations are stored separately in docs/RECOMMENDED_IMPROVEMENTS.md.",
         ],
     }
     output = ROOT / "runs/evaluation/cross_domain_analysis.json"

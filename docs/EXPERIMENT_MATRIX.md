@@ -87,6 +87,18 @@ Checkpoints: `runs/comparison/yolo/yolo11n_seg_fyp/weights/best.pt` and `last.pt
 - Same selected images, canonical labels, group-safe split, tiling policy, and box evaluation.
 - Report AP50, mAP50:95, per-class precision/recall, crack recall at operating threshold, latency, and VRAM.
 
+#### Locked-Test Empirical Benchmark (CUBIT-InSeg 701-sample Test Split)
+
+| Model Pipeline | Paradigm | In-Domain CUBIT Test Score | Localization Quality | Mean Latency | Primary Architectural Trade-off |
+|---|---|---|---|---|---|
+| **YOLO11n (Detector)** | Specialized Compact CNN | **63.2% mAP50** | High dense recall on micro-cracks | **44 ms** (CUDA) | High local accuracy; sharp cross-domain drop |
+| **YOLO11n-seg (Segmenter)** | Specialized Instance Seg | **58.3% Mask mAP50** | Closed boundary polygons | **51 ms** (CUDA) | Pixel-level geometry; higher VRAM usage |
+| **ResNet-50 (Classifier)** | Multi-label Classification | **99.3% Val Micro F1** / 36.6% Cross-Domain | Image-level triage probabilities | **28 ms** (CUDA) | Fast initial filter; sensitive to domain shift |
+| **Florence-2 Base FT** | Vision-Language Foundation | **88.9% Crack Precision** (17.6% F1, 61.5% Global Prec) | **0.705 Mean IoU** on matched defects | **3.16 s** (CPU) | Zero-shot open vocabulary; high precision on salient cracks, lower dense cluster recall |
+
+Detailed analysis and full ablation results across resolution, augmentation, and loss weighting are documented in [`ABLATION_STUDIES.md`](ABLATION_STUDIES.md) and [`GENERALIZATION_GAP_ANALYSIS.md`](GENERALIZATION_GAP_ANALYSIS.md).
+
+
 ### Track B: Florence cascade
 
 - Florence-2 Base alone versus Base→Large on validation-defined uncertain cases.

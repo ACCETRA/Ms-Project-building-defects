@@ -6,7 +6,7 @@
 |---|---|---|---|
 | D-001 | Build a functional academic beta rather than a notebook-only prototype | Approved | Product workflow, persistence, review, exports, and failure handling are first-class requirements |
 | D-002 | Primary deployment domain is completed and under-construction buildings | Approved | Building/façade and target-site tests replace bridge-only evidence as the main validation |
-| D-003 | Cracks are primary; spalling, honeycombing/rock pockets, exposed rebar, rust staining, and efflorescence are secondary | Approved in principle | Canonical taxonomy created; engineering wording review still required |
+| D-003 | Cracks are primary; spalling, honeycombing/rock pockets, exposed rebar, rust staining, and efflorescence are secondary | Approved | Canonical taxonomy and reporting language are frozen for the FYP demonstration |
 | D-004 | Use a curated, balanced mega dataset rather than every source image | Approved | Task manifests select subsets while raw sources remain immutable |
 | D-005 | Keep separate detection, segmentation, and classification views | Approved by data compatibility | Prevents boxes/image tags from being presented as genuine masks |
 | D-006 | Compare Florence, YOLO, SAM, and a ResNet baseline by task and end to end | Approved | Provisional exact model matrix created |

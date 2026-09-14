@@ -45,9 +45,10 @@ if ($LASTEXITCODE -ne 0) { throw "Offline runtime dependency installation failed
 
 Push-Location $projectRoot
 try {
-    & $venvPython -m unittest discover -s tests -v
-    if ($LASTEXITCODE -ne 0) { throw "Project tests failed" }
-    & $venvPython scripts\verify_model_assets.py --root $projectRoot
+    # Dataset-independent handoff checks. Run the full suite after dataset preparation.
+    & $venvPython -m unittest discover -s tests -p test_web_harness.py -v
+    if ($LASTEXITCODE -ne 0) { throw "Dataset-independent harness tests failed" }
+    & $venvPython scripts\verify_model_assets.py
     if ($LASTEXITCODE -ne 0) { throw "Model asset verification failed" }
 } finally {
     Pop-Location

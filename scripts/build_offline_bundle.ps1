@@ -11,7 +11,7 @@ $listFile = Join-Path $env:TEMP "project-alpha-offline-files.txt"
 $sevenZip = Join-Path $projectRoot "vendor\7zip-portable\x64\7za.exe"
 
 $includeRoots = @(
-    ".gitattributes", ".gitignore", "README.md", "CONTRIBUTING.md", "PROJECT_READINESS.md",
+    ".gitattributes", ".gitignore", "README.md", "START_HERE.md", "PROJECT_READINESS.md",
     "requirements-audit.txt", "requirements-runtime.txt", "bdi", "config", "confirmation", "docs",
     "examples", "harness", "schemas", "scripts", "source", "tests", "data\manifests", "artifacts", "weights", "vendor",
     "datasets\README.md", "datasets\license.md", "datasets\CODEBRIM\README.md", "datasets\CODEBRIM\license.md",

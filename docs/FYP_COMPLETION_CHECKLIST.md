@@ -31,6 +31,8 @@
 - [x] Offline CUDA PyTorch and torchvision wheels are included.
 - [x] The offline setup script creates and verifies a clean environment.
 - [x] The dataset downloader recreates the source layout used by this project.
+- [x] One command recreates the audited manifests and generated training inputs after dataset download.
+- [x] Exact raw and generated storage paths are documented.
 - [x] Restricted datasets require explicit terms acceptance and are not redistributed in the ZIP.
 - [x] The archive contains a SHA-256 file manifest and a verification script.
 - [x] The consolidated Word completion document is named `fyp.docx`.
@@ -42,3 +44,4 @@
 - [x] Physical values are withheld unless calibration is valid.
 - [x] Dataset licenses and provenance records are retained.
 - [x] The accepted FYP scope is marked complete consistently in presentation-facing documentation.
+- [x] Optional improvements are isolated in `docs/RECOMMENDED_IMPROVEMENTS.md` and do not change completion status.

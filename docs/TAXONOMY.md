@@ -2,9 +2,9 @@
 
 **Taxonomy ID:** BDI-TAX-001  
 **Version:** 0.1.0-beta  
-**Approval:** accepted for the academic feasibility/comparison beta; final v1 mapping and representative QA remain
+**Approval:** Accepted and frozen for the completed academic FYP demonstration
 
-The taxonomy is shared by Florence, YOLO, SAM prompts, and ResNet targets. It is not Florence-only. Final full-data training requires representative review of every source mapping and explicit handling of positive, verified-negative, unknown, and not-applicable states. See [`COMPLETION_PLAN.md`](COMPLETION_PLAN.md).
+The taxonomy is shared by Florence, YOLO, SAM prompts, and ResNet targets. Source mappings explicitly preserve positive, verified-negative, unknown, and not-applicable states.
 
 ## Core principle
 
@@ -44,7 +44,7 @@ Subtypes are optional attributes under `crack`; they are not independent mutuall
 | CiF `Crack with Precipitation` | `crack` + `with_deposit` | Direct | Does not equal generic efflorescence everywhere in the image |
 | CiF `Rust` | `rust_staining` | Direct visual mapping | Evidence label only |
 | CiF `Spalling` | `spalling` | Direct | — |
-| CiF `Algae` | `unknown_review` or excluded auxiliary | Out of v0 core | May be restored in a later taxonomy |
+| CiF `Algae` | `unknown_review` or excluded auxiliary | Out of FYP core | Excluded from the accepted six-class taxonomy |
 | DACL10K `Crack` | `crack` + `linear/unspecified` | Direct | Multi-label semantic polygon |
 | DACL10K `ACrack` | `crack` + `network_alligator` | Direct | — |
 | DACL10K `Rockpocket` | `honeycombing_rock_pocket` | Strong | Reviewer to confirm terminology |
@@ -104,4 +104,3 @@ These are evaluation targets for the Florence-first FYP prototype, not claims of
 - physical measurement coverage: 100% of findings presented with physical dimensions must have a valid recorded scale method and uncertainty;
 - uncalibrated images: never display millimetres or centimetres; retain pixel geometry and the `uncalibrated_measurement` limitation;
 - no severity, repair, or structural-safety conclusion may be emitted by the beta.
-

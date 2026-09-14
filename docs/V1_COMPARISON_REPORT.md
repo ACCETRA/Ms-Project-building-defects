@@ -636,21 +636,20 @@ Machine-readable source adapter results:
     "S2DS is binary foreground only because class identity is unavailable; it is not a six-class comparison.",
     "Image-level false-positive and false-negative causes cannot be inferred from aggregate metrics alone; the completed human review is documented separately in docs/HUMAN_ERROR_REVIEW.md."
   ],
-  "required_next_checks": [
-    "Retain the human-review completion record with the evaluation evidence.",
-    "Compare source image resolution and annotation geometry.",
-    "Recheck validation thresholds against source-specific operating goals without tuning on test results."
+  "evidence_notes": [
+    "The human-review completion record is stored in docs/HUMAN_ERROR_REVIEW.md.",
+    "Optional improvement recommendations are stored separately in docs/RECOMMENDED_IMPROVEMENTS.md."
   ]
 }
 ```
 
-Aggregate metrics identify the weakness pattern. The separate human review has been completed and recorded, and the machine-readable analysis is preserved with the evaluation evidence.
+Aggregate metrics identify the weakness pattern. The separate human review has been completed and recorded. Optional accuracy recommendations are consolidated in `docs/RECOMMENDED_IMPROVEMENTS.md` and do not block FYP completion.
 
-## Baseline and smoke training scope
+## Supporting model route status
 
-- Full Florence v1 fine-tuning is outside the hardware boundary of the FYP; the repository delivers smoke fine-tuning and bounded structured inference.
-- SAM decoder training is implemented in `scripts/train_sam_decoder.py`. A verified FP32 smoke checkpoint exists at `runs/sam/decoder_v1_fp32_smoke/sam_decoder_last.pt` demonstrating training feasibility.
-- The comparison report therefore treats the SAM checkpoint as a verified training smoke artifact, not a benchmark model.
+- The accepted Florence route uses bounded local structured inference. Its one-step fine-tuning artifact demonstrates executable training code but is not presented as an accuracy benchmark.
+- SAM decoder training is implemented in `scripts/train_sam_decoder.py`. The one-pair, one-epoch FP32 checkpoint at `runs/sam/decoder_v1_fp32_smoke/sam_decoder_last.pt` verifies the training route and is not presented as an accuracy benchmark.
+- The completed FYP accuracy claims use the evaluated YOLO and ResNet checkpoints only.
 
 ### FP32 SAM decoder smoke result
 
@@ -677,8 +676,12 @@ Aggregate metrics identify the weakness pattern. The separate human review has b
 - The accepted scope is an academic demonstration, not deployment testing or a structural-safety system.
 - Target-site validation is unavailable.
 - S2DS supports binary foreground evaluation only because authoritative six-class identities are unavailable.
-- Cross-domain segmentation scores are low across external sources; domain adaptation is outside the accepted FYP scope.
-- Florence full fine-tuning and extended SAM decoder training are outside the accepted FYP scope.
+- Cross-domain segmentation scores are low and cannot support a cross-domain accuracy claim.
+- Florence and SAM provide completed bounded demonstration routes without separate accuracy claims.
+
+## Optional improvement recommendations
+
+`docs/RECOMMENDED_IMPROVEMENTS.md` records optional data, calibration, segmentation, and evaluation improvements. These recommendations do not change the completed FYP status.
 
 ## Acceptance decision
 

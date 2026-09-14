@@ -1,9 +1,9 @@
 # Curated Mega Dataset Contract
 
 **Contract ID:** BDI-DATA-001  
-**Status:** Active; feasibility v0.1 complete, v1 full-data task views still required
+**Status:** Complete for the accepted FYP dataset release
 
-The current 300-row task views are a feasibility checkpoint. The full release must be built as the versioned v1 manifests described in [`COMPLETION_PLAN.md`](COMPLETION_PLAN.md); it is not acceptable to silently treat all raw files as one training folder.
+The 300-row feasibility views and the frozen v1 manifests are retained as separate, versioned records. The dataset is represented through manifests and generated task views; raw files are never treated as an anonymous merged training folder.
 
 ## 1. Definition
 
@@ -126,5 +126,6 @@ The conversion preserves native labels and source-annotation hashes, identifies
 mapping strength, marks boxes derived from genuine masks, and does not create masks
 from boxes or image labels. The first full conversion retained 667 target
 annotations and rejected four malformed native polygon fragments while retaining
-the valid native boxes associated with those objects. This is a feasibility view,
-not the final curated mega-dataset release.
+the valid native boxes associated with those objects. The frozen v1 manifests and
+task inputs are the completed FYP dataset release; reproduction commands are in
+[`DATASET_REPRODUCTION_GUIDE.md`](DATASET_REPRODUCTION_GUIDE.md).

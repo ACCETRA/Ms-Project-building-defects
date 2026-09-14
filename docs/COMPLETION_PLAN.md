@@ -22,7 +22,7 @@ The approved FYP workflow is implemented and verified with real model execution.
 - [x] Structured finding records validated against the schema.
 - [x] Human image-level error review recorded.
 - [x] Acceptance package generated as `artifacts/fyp.docx`.
-- [x] Offline contributor bundle scripts, dependencies, weights, and verification manifest prepared.
+- [x] Offline handoff bundle scripts, dependencies, weights, and verification manifest prepared.
 
 ## Evidence locations
 

@@ -28,7 +28,7 @@ def summarize_harness_status() -> dict[str, Any]:
         "status": status,
         "ready": ready,
         "notes": (
-            "Feasibility harness is ready for smoke tests; the full v1 freeze remains pending."
+            "The completed FYP harness is ready for local model inference and review."
             if ready
             else "Missing checkpoint or manifest; the project is not yet ready for the full v1 route."
         ),

@@ -71,7 +71,7 @@ SOURCES: dict[str, dict] = {
         "restricted": True,
         "method": "gdown",
         "file_id": "1JmlCwDyLBFLQ1JN2_c8AJIG1gR0NlO1r",
-        "filename": "CODEBRIM_classification_unbalanced.zip",
+        "filename": "CODEBRIM_classification_dataset.zip",
         "target_dir": "datasets/CODEBRIM",
         "expected_bytes": 7_911_716_093,
         "expected_md5": "c1612d9674e2e628e72e7f5817c40130",

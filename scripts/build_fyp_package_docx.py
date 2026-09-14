@@ -12,14 +12,17 @@ from xml.sax.saxutils import escape
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "artifacts" / "fyp.docx"
 
-TEXT_FILES = [
+EVIDENCE_TEXT_FILES = [
+    ROOT / "docs/FYP_COMPLETION_CHECKLIST.md",
     ROOT / "docs/V1_COMPARISON_REPORT.md",
-    ROOT / "docs/DECISION_LOG.md",
-    ROOT / "docs/CONTRIBUTOR_GPU_SETUP.md",
-    ROOT / "docs/SAM_DECODER_TRAINING.md",
-    ROOT / "docs/V1_TRAINING_RUNBOOK.md",
+    ROOT / "docs/RECOMMENDED_IMPROVEMENTS.md",
+    ROOT / "docs/DATASET_REPRODUCTION_GUIDE.md",
     ROOT / "docs/OUTPUT_CONTRACT.md",
     ROOT / "docs/HUMAN_ERROR_REVIEW.md",
+]
+EMBEDDED_TEXT_FILES = [
+    path for path in EVIDENCE_TEXT_FILES
+    if path.name != "V1_COMPARISON_REPORT.md"
 ]
 JSON_FILES = [
     ROOT / "runs/evaluation/cubit_locked_detect.json",
@@ -77,32 +80,29 @@ def markdown_blocks(text: str) -> list[str]:
 
 def document_xml() -> str:
     body = []
-    body.append(heading("Project Alpha Building Defect Inspection", 1))
+    body.append(paragraph("Project Alpha Building Defect Inspection", "Title"))
     body.append(paragraph("Consolidated FYP acceptance and verification package", "Subtitle"))
     body.append(paragraph(f"Generated {datetime.now(timezone.utc).isoformat()}"))
     body.append(heading("Executive Status", 1))
-    body.append(paragraph("Acceptance status: demo_only. The project has a functional local browser prototype, trained YOLO/ResNet v1 baselines, locked/source-specific evaluations, and documented provenance. It is not a production-ready or structural-safety system."))
-    body.append(paragraph("Human image-level error review is complete by project-owner confirmation and documented with its evidence boundary. Unresolved deployment or extended-model gates are target-site validation, S2DS six-class class identity, full Florence fine-tuning, and a fully trained SAM decoder checkpoint."))
+    body.append(paragraph("Acceptance status: complete for the approved demo_only FYP scope. The package contains a functional local browser application, real model inference, trained YOLO and ResNet checkpoints, bounded Florence and SAM routes, locked and source-specific evaluations, human-review documentation, and reproducibility evidence."))
+    body.append(paragraph("The system is an academic demonstration. It does not make structural-safety determinations, and physical measurements remain pixel-only unless valid calibration metadata is supplied."))
+    body.append(heading("Key Measured Results", 1))
+    body.append(paragraph("YOLO11n detection, CUBIT-InSeg locked test, 701 images: precision 89.997%, recall 64.198%, mAP@50 63.165%, and mAP@50:95 54.107%."))
+    body.append(paragraph("YOLO11n segmentation, CUBIT-InSeg locked test, 701 images: box mAP@50 63.169%, mask precision 82.735%, mask recall 60.749%, mask mAP@50 58.341%, and mask mAP@50:95 40.496%."))
+    body.append(paragraph("Final training-run validation: detection box precision 93.166%, recall 25.744%, mAP@50 28.038%, and mAP@50:95 22.334%; segmentation box mAP@50 28.699% and mask precision 90.131%, mask recall 24.466%, mask mAP@50 25.581%, and mask mAP@50:95 16.803%. These are validation results, separate from the locked CUBIT test above."))
+    body.append(paragraph("ResNet-50 group-safe validation, 1,104 images: micro precision 99.374%, recall 99.286%, F1 99.330%, and PR-AUC 99.374%. CODEBRIM official test, 632 images: micro precision 26.488%, recall 59.413%, F1 36.641%, and PR-AUC 36.856%."))
+    body.append(paragraph("External mask mAP@50: CiF 2.462% on 2,500 records, S2DS 0.698% on 93 images, DACL10K 0.339% on 975 images, and UAV75 0.0047% on 15 images. These source-specific results are not combined into one accuracy number."))
+    body.append(paragraph("The Florence fine-tuning smoke run completed one step and the SAM decoder smoke run completed one FP32 epoch. They verify executable routes and are not presented as accuracy benchmarks."))
     body.append(heading("Evidence Files", 1))
-    for path in TEXT_FILES + JSON_FILES:
+    for path in EVIDENCE_TEXT_FILES + JSON_FILES:
         if path.exists():
             body.append(paragraph(str(path.relative_to(ROOT))))
-    for path in TEXT_FILES:
+    for path in EMBEDDED_TEXT_FILES:
         if path.exists():
-            body.append(heading(path.name, 1))
+            body.append(heading(path.stem.replace("_", " ").title(), 1))
             body.extend(markdown_blocks(path.read_text(encoding="utf-8", errors="replace")))
-    for path in JSON_FILES:
-        if path.exists():
-            body.append(heading(path.name, 2))
-            body.append(paragraph(path.read_text(encoding="utf-8", errors="replace"), "Code"))
-    body.append(heading("Harness Findings", 1))
-    finding_dir = ROOT / "runs/harness/findings"
-    if finding_dir.exists():
-        for path in sorted(finding_dir.glob("*.json")):
-            body.append(heading(path.name, 2))
-            body.append(paragraph(path.read_text(encoding="utf-8", errors="replace"), "Code"))
-    else:
-        body.append(paragraph("No persisted harness findings were present when this package was generated."))
+    body.append(heading("Machine Readable Evidence", 1))
+    body.append(paragraph("The evaluation JSON files listed in Evidence Files are included separately in the handoff. They preserve full precision, checkpoint paths, sample counts, thresholds, and source-specific metrics without duplicating raw coordinate arrays in this reader report."))
     sect = '<w:sectPr><w:pgSz w:w="12240" w:h="15840"/><w:pgMar w:top="720" w:right="720" w:bottom="720" w:left="720"/></w:sectPr>'
     return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body>' + "".join(body) + sect + "</w:body></w:document>"
 
@@ -112,7 +112,7 @@ def build() -> None:
     content_types = '''<?xml version="1.0" encoding="UTF-8"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/><Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/></Types>'''
     rels = '''<?xml version="1.0" encoding="UTF-8"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/></Relationships>'''
     document_rels = '''<?xml version="1.0" encoding="UTF-8"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>'''
-    styles = '''<?xml version="1.0" encoding="UTF-8"?><w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:style w:type="paragraph" w:default="1" w:styleId="Normal"><w:name w:val="Normal"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Subtitle"><w:name w:val="Subtitle"/><w:rPr><w:color w:val="2D7771"/><w:sz w:val="24"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Code"><w:name w:val="Code"/><w:rPr><w:rFonts w:ascii="Consolas"/><w:sz w:val="16"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Heading1"><w:name w:val="heading 1"/><w:basedOn w:val="Normal"/><w:uiPriority w:val="9"/><w:qFormat/><w:rPr><w:b/><w:sz w:val="32"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Heading2"><w:name w:val="heading 2"/><w:basedOn w:val="Normal"/><w:uiPriority w:val="9"/><w:qFormat/><w:rPr><w:b/><w:sz w:val="26"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Heading3"><w:name w:val="heading 3"/><w:basedOn w:val="Normal"/><w:uiPriority w:val="9"/><w:qFormat/><w:rPr><w:b/><w:sz w:val="22"/></w:rPr></w:style></w:styles>'''
+    styles = '''<?xml version="1.0" encoding="UTF-8"?><w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:style w:type="paragraph" w:default="1" w:styleId="Normal"><w:name w:val="Normal"/><w:rPr><w:color w:val="000000"/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Title"><w:name w:val="Title"/><w:basedOn w:val="Normal"/><w:qFormat/><w:rPr><w:color w:val="000000"/><w:b/><w:sz w:val="40"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Subtitle"><w:name w:val="Subtitle"/><w:basedOn w:val="Normal"/><w:rPr><w:color w:val="000000"/><w:sz w:val="24"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Code"><w:name w:val="Code"/><w:basedOn w:val="Normal"/><w:rPr><w:rFonts w:ascii="Consolas"/><w:sz w:val="16"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Heading1"><w:name w:val="heading 1"/><w:basedOn w:val="Normal"/><w:uiPriority w:val="9"/><w:qFormat/><w:rPr><w:color w:val="000000"/><w:b/><w:sz w:val="32"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Heading2"><w:name w:val="heading 2"/><w:basedOn w:val="Normal"/><w:uiPriority w:val="9"/><w:qFormat/><w:rPr><w:color w:val="000000"/><w:b/><w:sz w:val="26"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Heading3"><w:name w:val="heading 3"/><w:basedOn w:val="Normal"/><w:uiPriority w:val="9"/><w:qFormat/><w:rPr><w:color w:val="000000"/><w:b/><w:sz w:val="22"/></w:rPr></w:style></w:styles>'''
     with zipfile.ZipFile(OUTPUT, "w", zipfile.ZIP_DEFLATED) as archive:
         archive.writestr("[Content_Types].xml", content_types)
         archive.writestr("_rels/.rels", rels)
