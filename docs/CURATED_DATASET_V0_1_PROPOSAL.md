@@ -72,7 +72,7 @@ Exact sampler weights will be calculated from the selected manifest. They must n
 
 Before beta acceptance, collect permission-cleared RGB images from at least three distinct completed/under-construction buildings or clearly document why fewer sites were possible. Include:
 
-- confirmed target defects reviewed by the project team;
+- confirmed target defects reviewed during dataset preparation;
 - verified no-visible-target-defect surfaces;
 - joints, formwork seams, tie holes, concrete edges, conduits/cables, chalk/paint marks, dust, shadows, wet patches, scaffolding, and occlusion;
 - interior and exterior conditions where intended;

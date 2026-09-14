@@ -34,7 +34,7 @@ def classify(row: dict[str, str]) -> tuple[str, str]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output", type=Path, default=ROOT / "hanzalah review" / "review_queue_prefilled.csv")
+    parser.add_argument("--output", type=Path, default=ROOT / "review-artifacts" / "review_queue_prefilled.csv")
     args = parser.parse_args()
     with QUEUE.open(newline="", encoding="utf-8") as stream:
         rows = list(csv.DictReader(stream))

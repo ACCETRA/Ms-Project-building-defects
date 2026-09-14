@@ -106,7 +106,7 @@ The canonical top-level labels are:
 
 Rust-colored evidence is recorded as rust staining, not proof of hidden reinforcement corrosion. Ambiguous data remains unknown instead of being forced into a class. Each image/class relationship distinguishes positive, verified negative, unknown, and not applicable.
 
-The project team must document the annotation guide, unresolved edge cases, and representative-example review before using dataset v0.1 in the demonstration.
+The annotation guide, unresolved edge cases, and representative-example review must be documented before using dataset v0.1 in the demonstration.
 
 ## 6. Leakage, duplicates, and balancing
 
@@ -153,7 +153,7 @@ This ablation determines whether the large stage adds enough quality to justify 
 
 Compare the best Florence route with the best specialist route (likely YOLO -> SAM or YOLO segmentation) using crack recall, mask quality, false alarms per image, escalation rate, latency, peak VRAM, failure rate, and reviewer workload.
 
-`REZNEK` is confirmed as **ResNet-50** by the project owner. It remains the separate image/crop classification baseline; RetinaNet is deferred because Florence and YOLO already cover the detector comparison track.
+`REZNEK` is confirmed as **ResNet-50**. It remains the separate image/crop classification baseline; RetinaNet is deferred because Florence and YOLO already cover the detector comparison track.
 
 YOLO26n is outside the accepted FYP scope; YOLO11n is the evaluated baseline.
 

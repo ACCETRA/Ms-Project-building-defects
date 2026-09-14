@@ -72,7 +72,7 @@ class FlorencePipelineUnitTests(unittest.TestCase):
         self.assertEqual(reviewed["canonical_label"], "unknown_review")
         self.assertEqual(reviewed["annotation_status"], "unknown")
         self.assertEqual(reviewed["mapping_strength"], "reviewed")
-        self.assertEqual(reviewed["reviewer_id"], "shah231")
+        self.assertEqual(reviewed["reviewer_id"], "reviewer-001")
 
     def test_dacl_unknown_source_labels_are_not_dropped(self) -> None:
         expected = {"Cavity", "Hollowareas", "Wetspot", "Weathering", "WConccor"}

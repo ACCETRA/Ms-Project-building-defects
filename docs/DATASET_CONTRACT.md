@@ -106,7 +106,7 @@ A curated dataset version may be frozen only when it has:
 - split report;
 - per-class counts by source and annotation type;
 - documented selection procedure and random seed;
-- representative image review by the project team;
+- representative image review;
 - explicit list of known missing classes and weak mappings.
 
 ## 9. Feasibility v0.1 implementation
